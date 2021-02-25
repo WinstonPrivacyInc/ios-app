@@ -4,8 +4,8 @@
 ![SwiftLint](https://github.com/ivpn/ios-app/workflows/SwiftLint/badge.svg)
 ![Lint Code Base](https://github.com/ivpn/ios-app/workflows/Lint%20Code%20Base/badge.svg)
 
-**IVPN for iOS** is a native app built using Swift language. Some of the features include: multiple protocols (IKEv2, OpenVPN, WireGuard), Kill-switch, Multi-Hop, Trusted Networks, AntiTracker, Custom DNS, Dark mode and more.  
-IVPN iOS app is distributed on the [App Store](https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8).  
+**Rogue for iOS** is a native app built using Swift language. Some of the features include: multiple protocols (IKEv2, OpenVPN, WireGuard), Kill-switch, Multi-Hop, Trusted Networks, AntiTracker, Custom DNS, Dark mode and more.  
+Rogue iOS app is distributed on the [App Store](https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8).  
 
 * [About this Repo](#about-repo)
 * [Installation](#installation)
@@ -21,7 +21,8 @@ IVPN iOS app is distributed on the [App Store](https://apps.apple.com/us/app/ivp
 <a name="about-repo"></a>
 ## About this Repo
 
-This is the official Git repo of the [IVPN for iOS project](https://github.com/ivpn/ios-app).
+This is the official Git repo of the [Rogue for iOS project](https://github.com/ivpn/ios-app).
+This is a fork of IVPN [IVPN for iOS project](https://github.com/ivpn/ios-app).
 
 <a name="installation"></a>
 ## Installation
@@ -82,7 +83,7 @@ To pull and build dependencies run:
 
 ```sh
 $ pod install  
-$ open IVPNClient.xcworkspace  
+$ open Rogue-iOS.xcworkspace  
 ```
 
 ### Xcode build configurations
@@ -134,7 +135,7 @@ $ fastlane test
 Alternatively, run tests using xcodebuild:  
 
 ```sh
-$ xcodebuild test -workspace IVPNClient.xcworkspace -scheme IVPNClient -destination 'platform=iOS Simulator,name=iPhone 11 Pro'
+$ xcodebuild test -workspace Rogue-iOS.xcworkspace -scheme RogueClient -destination 'platform=iOS Simulator,name=iPhone 11 Pro'
 ```
 
 <a name="deployment"></a>
@@ -174,7 +175,7 @@ So we have: `Major.Minor.Patch`
 <a name="contributing"></a>
 ## Contributing
 
-If you are interested in contributing to IVPN for iOS project, please read our [Contributing Guidelines](/.github/CONTRIBUTING.md).
+If you are interested in contributing to Rogue for iOS project, please read our [Contributing Guidelines](/.github/CONTRIBUTING.md).
 
 <a name="security"></a>
 ## Security Policy
