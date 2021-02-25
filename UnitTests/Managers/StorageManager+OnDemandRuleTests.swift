@@ -25,7 +25,7 @@ import XCTest
 import CoreData
 import NetworkExtension
 
-@testable import IVPNClient
+@testable import RogueClient
 
 class StorageManagerOnDemandRuleTests: XCTestCase {
     

@@ -1,7 +1,7 @@
 platform :ios, '12.0'
 use_frameworks!
 
-target 'IVPNClient' do
+target 'RogueClient' do
     pod 'TunnelKit', '~> 2.2.7'
     pod 'KeychainAccess', '~> 3.2.0'
     pod 'SwiftyStoreKit', '~> 0.15.0'

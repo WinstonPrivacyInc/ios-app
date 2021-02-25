@@ -18,13 +18,13 @@ jobs:
       run: pod install
     - name: Set up config files
       run: |
-        cp IVPNClient/Config/staging.template.xcconfig IVPNClient/Config/staging.xcconfig
-        cp IVPNClient/Config/release.template.xcconfig IVPNClient/Config/release.xcconfig
+        cp RogueClient/Config/staging.template.xcconfig RogueClient/Config/staging.xcconfig
+        cp RogueClient/Config/release.template.xcconfig RogueClient/Config/release.xcconfig
         cp wireguard-tunnel-provider/Config/wg-staging.template.xcconfig wireguard-tunnel-provider/Config/wg-staging.xcconfig
         cp wireguard-tunnel-provider/Config/wg-release.template.xcconfig wireguard-tunnel-provider/Config/wg-release.xcconfig
         cp today-extension/Config/today-extension-staging.template.xcconfig today-extension/Config/today-extension-staging.xcconfig
         cp today-extension/Config/today-extension-release.template.xcconfig today-extension/Config/today-extension-release.xcconfig
-        cp IVPNClient/Config/OpenVPNConf.template.swift IVPNClient/Config/OpenVPNConf.swift
+        cp RogueClient/Config/OpenVPNConf.template.swift RogueClient/Config/OpenVPNConf.swift
         cp fastlane/Appfile.template fastlane/Appfile
     - name: Build and test
-      run: xcodebuild test -workspace IVPNClient.xcworkspace -scheme IVPNClient -destination 'platform=iOS Simulator,name=iPhone 11'
+      run: xcodebuild test -workspace Rogue-iOS.xcworkspace -scheme Rogue-iOS -destination 'platform=iOS Simulator,name=iPhone 11'

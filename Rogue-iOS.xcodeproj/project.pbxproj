@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08DDD46C7843193A0C8A9F4D /* Pods_openvpn_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042B1F5A4F38CCA3591AD441 /* Pods_openvpn_tunnel_provider.framework */; };
-		62FD760D711D4A4507FAFE24 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58126B967EB9B059871FD7AB /* Pods_wireguard_tunnel_provider.framework */; };
+		1399E373B8304FFA7A660C25 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C683BC08705FE20C4F0FBE /* Pods_wireguard_tunnel_provider.framework */; };
+		2819F3CECBE38DA2178F312E /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0CDBAC505151B61EFC419F /* Pods_RogueClient.framework */; };
+		7482CB49F979C3DED213897B /* Pods_openvpn_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370AE9E69ADF2276EB92D348 /* Pods_openvpn_tunnel_provider.framework */; };
 		820079F42407D96D00EC2062 /* ConnectionInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820079F32407D96D00EC2062 /* ConnectionInfoBoxView.swift */; };
 		8201A5022354A32F008C83DB /* ErrorResultSessionNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8201A5012354A32F008C83DB /* ErrorResultSessionNew.swift */; };
 		8201A5042356536B008C83DB /* UpgradePlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8201A5032356536B008C83DB /* UpgradePlanViewController.swift */; };
@@ -316,8 +317,7 @@
 		9CDDD5B91D9D2F9F00D39924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD5B71D9D2F9F00D39924 /* LaunchScreen.storyboard */; };
 		9CF7E35A20F7A86E008E0EC5 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */; };
 		9CF7E37820F7ABE3008E0EC5 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7840AA20CD8A8A00335736 /* PacketTunnelProvider.swift */; };
-		D661274AA295C4153E1286AB /* Pods_IVPNClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BC1917294DF1E93B308C82 /* Pods_IVPNClient.framework */; };
-		F85098932EABDDE39B105066 /* Pods_today_extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751AB84B8432BC3E6BEDD483 /* Pods_today_extension.framework */; };
+		BCAE5B90948BD69D7B62235A /* Pods_today_extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43CDD83A34EC4F79668288F /* Pods_today_extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -382,13 +382,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		042B1F5A4F38CCA3591AD441 /* Pods_openvpn_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openvpn_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27E4E56AE774F4A2C5B24728 /* Pods-openvpn-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
-		58126B967EB9B059871FD7AB /* Pods_wireguard_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wireguard_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F8FBDE5436D2ADCA6F3A4FE /* Pods-openvpn-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
-		6F076EC404F769A3D7C17CF4 /* Pods-IVPNClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.release.xcconfig"; sourceTree = "<group>"; };
-		70DFEFF11AFF9C4E3D88A443 /* Pods-IVPNClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.debug.xcconfig"; sourceTree = "<group>"; };
-		751AB84B8432BC3E6BEDD483 /* Pods_today_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_today_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07859EFC202ED21F0692EDF8 /* Pods-today-extension.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.staging.xcconfig"; path = "Target Support Files/Pods-today-extension/Pods-today-extension.staging.xcconfig"; sourceTree = "<group>"; };
+		0EDDAB0A3A570D380FD2D51B /* Pods-wireguard-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.release.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
+		2B6CBFF5E4074F4440AD4315 /* Pods-wireguard-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.staging.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
+		2B85C1D5888894C805DC3DDC /* Pods-openvpn-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.debug.xcconfig"; path = "Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
+		370AE9E69ADF2276EB92D348 /* Pods_openvpn_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openvpn_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42C683BC08705FE20C4F0FBE /* Pods_wireguard_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wireguard_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43D04D03DE5E1BBC05CA51BC /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
+		4AEA2FCD2374B0F2F0849DFF /* Pods-RogueClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.release.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.release.xcconfig"; sourceTree = "<group>"; };
+		5E8731EE7123CFC1F2D01E5E /* Pods-RogueClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.debug.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"; sourceTree = "<group>"; };
+		6D046F37E900B0DA45236F53 /* Pods-openvpn-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.release.xcconfig"; path = "Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
+		6D0CDBAC505151B61EFC419F /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		820079F32407D96D00EC2062 /* ConnectionInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoBoxView.swift; sourceTree = "<group>"; };
 		8201A5012354A32F008C83DB /* ErrorResultSessionNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResultSessionNew.swift; sourceTree = "<group>"; };
 		8201A5032356536B008C83DB /* UpgradePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePlanViewController.swift; sourceTree = "<group>"; };
@@ -604,9 +608,6 @@
 		82F917382344861A0025ED3A /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		82FF0D4123153D1000440E5D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		82FF0D432315587000440E5D /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
-		881BCA7FAAA43B4573D9E56C /* Pods-openvpn-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
-		95BC1917294DF1E93B308C82 /* Pods_IVPNClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IVPNClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A198837B44229CF470C077A /* Pods-IVPNClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.staging.xcconfig"; sourceTree = "<group>"; };
 		9C2833731D9D3EB60024C553 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		9C2833751D9D3F060024C553 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C2833781D9D3F060024C553 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -619,9 +620,8 @@
 		9C4AFCFF21134A0A007826CC /* OpenVPNAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenVPNAdapter.framework; path = ../Carthage/Build/iOS/OpenVPNAdapter.framework; sourceTree = "<group>"; };
 		9C50959520FCF4C60048DBF2 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; };
 		9C50959920FCF6850048DBF2 /* ProtocolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTableViewCell.swift; sourceTree = "<group>"; };
-		9C5134041DE8380F00423551 /* IVPNClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVPNClient-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C5134041DE8380F00423551 /* RogueClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RogueClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C5134091DE8398400423551 /* Pinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinger.swift; sourceTree = "<group>"; };
-		9C54520B5B9FA78FA98FB0EC /* Pods-today-extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.release.xcconfig"; sourceTree = "<group>"; };
 		9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		9C69422D1DD20FC200F9A801 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		9C6942361DD218A900F9A801 /* AccessDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessDetails.swift; sourceTree = "<group>"; };
@@ -631,7 +631,7 @@
 		9C7840AD20CD8A8A00335736 /* openvpn_tunnel_provider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openvpn_tunnel_provider.entitlements; sourceTree = "<group>"; };
 		9CAE14BF20FE453E00D4DAC0 /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
 		9CB2CE1E1DAA5258007A4D2D /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		9CB2CE261DAA6C1B007A4D2D /* IVPNClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IVPNClient.entitlements; sourceTree = "<group>"; };
+		9CB2CE261DAA6C1B007A4D2D /* RogueClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RogueClient.entitlements; sourceTree = "<group>"; };
 		9CB2CE2A1DABD120007A4D2D /* NavigationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		9CB2CE301DAF9227007A4D2D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9CB2CE331DAF9283007A4D2D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -642,17 +642,17 @@
 		9CBFF02F2102254800FE1757 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9CC29DEF1E1560990080F799 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9CC29DF71E1D59E90080F799 /* Alerts+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alerts+Ext.swift"; sourceTree = "<group>"; };
-		9CDDD5AB1D9D2F9F00D39924 /* IVPNClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IVPNClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CDDD5AB1D9D2F9F00D39924 /* RogueClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RogueClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CDDD5AE1D9D2F9F00D39924 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CDDD5B31D9D2F9F00D39924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CDDD5B51D9D2F9F00D39924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CDDD5B81D9D2F9F00D39924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CDDD5BA1D9D2F9F00D39924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2CECA58BD6417A99E1EF558 /* Pods-wireguard-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
-		C197220705CD8E3844CC5AC4 /* Pods-today-extension.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.staging.xcconfig"; sourceTree = "<group>"; };
-		E92B9AAA19691D5A89CA88F3 /* Pods-today-extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.debug.xcconfig"; sourceTree = "<group>"; };
-		FB0E616DCFD2233EFC808339 /* Pods-wireguard-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
-		FB6AFF9326EEB2AFD57E9426 /* Pods-wireguard-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
+		ACEC15E6250D66BC72B059B8 /* Pods-today-extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.debug.xcconfig"; path = "Target Support Files/Pods-today-extension/Pods-today-extension.debug.xcconfig"; sourceTree = "<group>"; };
+		B1DDE5E8EF2844F8A4B64B94 /* Pods-today-extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.release.xcconfig"; path = "Target Support Files/Pods-today-extension/Pods-today-extension.release.xcconfig"; sourceTree = "<group>"; };
+		B43CDD83A34EC4F79668288F /* Pods_today_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_today_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E89832A8E76904B124DAE4D1 /* Pods-wireguard-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.debug.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
+		FB889089BC738672CACEB282 /* Pods-openvpn-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.staging.xcconfig"; path = "Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -668,7 +668,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				826F7F1323A7A05F00777DB9 /* NotificationCenter.framework in Frameworks */,
-				F85098932EABDDE39B105066 /* Pods_today_extension.framework in Frameworks */,
+				BCAE5B90948BD69D7B62235A /* Pods_today_extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,7 +678,7 @@
 			files = (
 				82B6052F21708575004B40E6 /* NetworkExtension.framework in Frameworks */,
 				824F56082233FE6F00BCDD5C /* libwg-go.a in Frameworks */,
-				62FD760D711D4A4507FAFE24 /* Pods_wireguard_tunnel_provider.framework in Frameworks */,
+				1399E373B8304FFA7A660C25 /* Pods_wireguard_tunnel_provider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +695,7 @@
 			files = (
 				8294BC8C22A10F4100328932 /* TunnelKit.framework in Frameworks */,
 				9CF7E35A20F7A86E008E0EC5 /* NetworkExtension.framework in Frameworks */,
-				08DDD46C7843193A0C8A9F4D /* Pods_openvpn_tunnel_provider.framework in Frameworks */,
+				7482CB49F979C3DED213897B /* Pods_openvpn_tunnel_provider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +708,7 @@
 				9CB2CE311DAF9227007A4D2D /* CoreData.framework in Frameworks */,
 				9C6942251DD0CBF800F9A801 /* NetworkExtension.framework in Frameworks */,
 				9CC29DF01E1560990080F799 /* StoreKit.framework in Frameworks */,
-				D661274AA295C4153E1286AB /* Pods_IVPNClient.framework in Frameworks */,
+				2819F3CECBE38DA2178F312E /* Pods_RogueClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,33 +731,13 @@
 				9CC29DEF1E1560990080F799 /* StoreKit.framework */,
 				9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */,
 				9CB2CE301DAF9227007A4D2D /* CoreData.framework */,
-				95BC1917294DF1E93B308C82 /* Pods_IVPNClient.framework */,
-				042B1F5A4F38CCA3591AD441 /* Pods_openvpn_tunnel_provider.framework */,
-				58126B967EB9B059871FD7AB /* Pods_wireguard_tunnel_provider.framework */,
 				826F7F1223A7A05F00777DB9 /* NotificationCenter.framework */,
-				751AB84B8432BC3E6BEDD483 /* Pods_today_extension.framework */,
+				6D0CDBAC505151B61EFC419F /* Pods_RogueClient.framework */,
+				370AE9E69ADF2276EB92D348 /* Pods_openvpn_tunnel_provider.framework */,
+				B43CDD83A34EC4F79668288F /* Pods_today_extension.framework */,
+				42C683BC08705FE20C4F0FBE /* Pods_wireguard_tunnel_provider.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5E6278A33058E1B59C6A1B7F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				70DFEFF11AFF9C4E3D88A443 /* Pods-IVPNClient.debug.xcconfig */,
-				6F076EC404F769A3D7C17CF4 /* Pods-IVPNClient.release.xcconfig */,
-				5F8FBDE5436D2ADCA6F3A4FE /* Pods-openvpn-tunnel-provider.debug.xcconfig */,
-				27E4E56AE774F4A2C5B24728 /* Pods-openvpn-tunnel-provider.release.xcconfig */,
-				FB0E616DCFD2233EFC808339 /* Pods-wireguard-tunnel-provider.debug.xcconfig */,
-				FB6AFF9326EEB2AFD57E9426 /* Pods-wireguard-tunnel-provider.release.xcconfig */,
-				9A198837B44229CF470C077A /* Pods-IVPNClient.staging.xcconfig */,
-				881BCA7FAAA43B4573D9E56C /* Pods-openvpn-tunnel-provider.staging.xcconfig */,
-				A2CECA58BD6417A99E1EF558 /* Pods-wireguard-tunnel-provider.staging.xcconfig */,
-				E92B9AAA19691D5A89CA88F3 /* Pods-today-extension.debug.xcconfig */,
-				C197220705CD8E3844CC5AC4 /* Pods-today-extension.staging.xcconfig */,
-				9C54520B5B9FA78FA98FB0EC /* Pods-today-extension.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
 			sourceTree = "<group>";
 		};
 		820079F22407D8E700EC2062 /* View */ = {
@@ -1350,6 +1330,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		99B4C74761E2E709F4D27F15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E8731EE7123CFC1F2D01E5E /* Pods-RogueClient.debug.xcconfig */,
+				43D04D03DE5E1BBC05CA51BC /* Pods-RogueClient.staging.xcconfig */,
+				4AEA2FCD2374B0F2F0849DFF /* Pods-RogueClient.release.xcconfig */,
+				2B85C1D5888894C805DC3DDC /* Pods-openvpn-tunnel-provider.debug.xcconfig */,
+				FB889089BC738672CACEB282 /* Pods-openvpn-tunnel-provider.staging.xcconfig */,
+				6D046F37E900B0DA45236F53 /* Pods-openvpn-tunnel-provider.release.xcconfig */,
+				ACEC15E6250D66BC72B059B8 /* Pods-today-extension.debug.xcconfig */,
+				07859EFC202ED21F0692EDF8 /* Pods-today-extension.staging.xcconfig */,
+				B1DDE5E8EF2844F8A4B64B94 /* Pods-today-extension.release.xcconfig */,
+				E89832A8E76904B124DAE4D1 /* Pods-wireguard-tunnel-provider.debug.xcconfig */,
+				2B6CBFF5E4074F4440AD4315 /* Pods-wireguard-tunnel-provider.staging.xcconfig */,
+				0EDDAB0A3A570D380FD2D51B /* Pods-wireguard-tunnel-provider.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9C7840A920CD8A8A00335736 /* openvpn-tunnel-provider */ = {
 			isa = PBXGroup;
 			children = (
@@ -1363,7 +1362,7 @@
 		9CDDD5A21D9D2F9E00D39924 = {
 			isa = PBXGroup;
 			children = (
-				9CDDD5AD1D9D2F9F00D39924 /* IVPNClient */,
+				9CDDD5AD1D9D2F9F00D39924 /* RogueClient */,
 				9C7840A920CD8A8A00335736 /* openvpn-tunnel-provider */,
 				82B605242170840C004B40E6 /* wireguard-tunnel-provider */,
 				826D182721D3DAFF0045A570 /* UnitTests */,
@@ -1371,14 +1370,14 @@
 				826F7F1423A7A05F00777DB9 /* today-extension */,
 				9CDDD5AC1D9D2F9F00D39924 /* Products */,
 				584496306C3B9383149618CE /* Frameworks */,
-				5E6278A33058E1B59C6A1B7F /* Pods */,
+				99B4C74761E2E709F4D27F15 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		9CDDD5AC1D9D2F9F00D39924 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CDDD5AB1D9D2F9F00D39924 /* IVPNClient.app */,
+				9CDDD5AB1D9D2F9F00D39924 /* RogueClient.app */,
 				9C7840A820CD8A8A00335736 /* openvpn-tunnel-provider.appex */,
 				82B605232170840C004B40E6 /* wireguard-tunnel-provider.appex */,
 				826D182621D3DAFF0045A570 /* UnitTests.xctest */,
@@ -1388,7 +1387,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9CDDD5AD1D9D2F9F00D39924 /* IVPNClient */ = {
+		9CDDD5AD1D9D2F9F00D39924 /* RogueClient */ = {
 			isa = PBXGroup;
 			children = (
 				82234B6121BA7ACA00B082DE /* Config */,
@@ -1399,14 +1398,14 @@
 				82234B6B21BA900B00B082DE /* Managers */,
 				82A208B321BAA4C500C9AD44 /* Scenes */,
 				9CDDD5AE1D9D2F9F00D39924 /* AppDelegate.swift */,
-				9C5134041DE8380F00423551 /* IVPNClient-Bridging-Header.h */,
+				9C5134041DE8380F00423551 /* RogueClient-Bridging-Header.h */,
 				9CDDD5BA1D9D2F9F00D39924 /* Info.plist */,
 				9CDDD5B51D9D2F9F00D39924 /* Assets.xcassets */,
 				82FF0D4123153D1000440E5D /* Colors.xcassets */,
-				9CB2CE261DAA6C1B007A4D2D /* IVPNClient.entitlements */,
+				9CB2CE261DAA6C1B007A4D2D /* RogueClient.entitlements */,
 				9CB2CE321DAF9283007A4D2D /* Model.xcdatamodeld */,
 			);
-			path = IVPNClient;
+			path = RogueClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1451,7 +1450,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 826F7F1E23A7A05F00777DB9 /* Build configuration list for PBXNativeTarget "today-extension" */;
 			buildPhases = (
-				3149487870CE2113B6C06E41 /* [CP] Check Pods Manifest.lock */,
+				4C1B9940622DBEC08019D9AA /* [CP] Check Pods Manifest.lock */,
 				826F7F0D23A7A05F00777DB9 /* Sources */,
 				826F7F0E23A7A05F00777DB9 /* Frameworks */,
 				826F7F0F23A7A05F00777DB9 /* Resources */,
@@ -1469,7 +1468,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82B6052C2170840C004B40E6 /* Build configuration list for PBXNativeTarget "wireguard-tunnel-provider" */;
 			buildPhases = (
-				ACE9F7A7CF4721F6BB5EE7B2 /* [CP] Check Pods Manifest.lock */,
+				2F62EDC51D34845662FDB812 /* [CP] Check Pods Manifest.lock */,
 				82B6051F2170840C004B40E6 /* Sources */,
 				82B605202170840C004B40E6 /* Frameworks */,
 				82B605212170840C004B40E6 /* Resources */,
@@ -1506,7 +1505,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C7840B120CD8A8A00335736 /* Build configuration list for PBXNativeTarget "openvpn-tunnel-provider" */;
 			buildPhases = (
-				A41DECD8426C6E493395BE8D /* [CP] Check Pods Manifest.lock */,
+				8B064D641DCCCF2284D96325 /* [CP] Check Pods Manifest.lock */,
 				9C7840A420CD8A8A00335736 /* Sources */,
 				9C7840A520CD8A8A00335736 /* Frameworks */,
 				9C7840A620CD8A8A00335736 /* Resources */,
@@ -1520,17 +1519,17 @@
 			productReference = 9C7840A820CD8A8A00335736 /* openvpn-tunnel-provider.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		9CDDD5AA1D9D2F9E00D39924 /* IVPNClient */ = {
+		9CDDD5AA1D9D2F9E00D39924 /* RogueClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CDDD5D31D9D2F9F00D39924 /* Build configuration list for PBXNativeTarget "IVPNClient" */;
+			buildConfigurationList = 9CDDD5D31D9D2F9F00D39924 /* Build configuration list for PBXNativeTarget "RogueClient" */;
 			buildPhases = (
-				243D5D4C0BB6130F397907DE /* [CP] Check Pods Manifest.lock */,
+				D439723A59E4873F0725DED2 /* [CP] Check Pods Manifest.lock */,
 				9CDDD5A71D9D2F9E00D39924 /* Sources */,
 				9CDDD5A81D9D2F9E00D39924 /* Frameworks */,
 				9CDDD5A91D9D2F9E00D39924 /* Resources */,
 				9C7840B420CD8A8A00335736 /* Embed App Extensions */,
 				9CB2CE481DB28B8B007A4D2D /* Fetch servers.json */,
-				FBD553175C923EBDEAB6E8B5 /* [CP] Embed Pods Frameworks */,
+				CEE4F6E4D221003E02E7F3FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1539,9 +1538,9 @@
 				82B6052A2170840C004B40E6 /* PBXTargetDependency */,
 				826F7F1C23A7A05F00777DB9 /* PBXTargetDependency */,
 			);
-			name = IVPNClient;
+			name = RogueClient;
 			productName = IVPNClient;
-			productReference = 9CDDD5AB1D9D2F9F00D39924 /* IVPNClient.app */;
+			productReference = 9CDDD5AB1D9D2F9F00D39924 /* RogueClient.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1645,7 +1644,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9CDDD5A61D9D2F9E00D39924 /* Build configuration list for PBXProject "IVPNClient" */;
+			buildConfigurationList = 9CDDD5A61D9D2F9E00D39924 /* Build configuration list for PBXProject "Rogue-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1658,7 +1657,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9CDDD5AA1D9D2F9E00D39924 /* IVPNClient */,
+				9CDDD5AA1D9D2F9E00D39924 /* RogueClient */,
 				826D182521D3DAFF0045A570 /* UnitTests */,
 				82B81E3F235EE93D005986E8 /* UITests */,
 				9C7840A720CD8A8A00335736 /* openvpn-tunnel-provider */,
@@ -1732,88 +1731,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		243D5D4C0BB6130F397907DE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IVPNClient-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3149487870CE2113B6C06E41 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-today-extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9CB2CE481DB28B8B007A4D2D /* Fetch servers.json */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Fetch servers.json";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "curl -sf \"https://api.ivpn.net/v4/servers.json?pretty=true\" > IVPNClient/Config/servers.json\n";
-			showEnvVarsInLog = 0;
-		};
-		A41DECD8426C6E493395BE8D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-openvpn-tunnel-provider-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ACE9F7A7CF4721F6BB5EE7B2 /* [CP] Check Pods Manifest.lock */ = {
+		2F62EDC51D34845662FDB812 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1835,13 +1753,72 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FBD553175C923EBDEAB6E8B5 /* [CP] Embed Pods Frameworks */ = {
+		4C1B9940622DBEC08019D9AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-today-extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B064D641DCCCF2284D96325 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-openvpn-tunnel-provider-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CB2CE481DB28B8B007A4D2D /* Fetch servers.json */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fetch servers.json";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "curl -sf \"https://api.ivpn.net/v4/servers.json?pretty=true\" > RogueClient/Config/servers.json\n";
+			showEnvVarsInLog = 0;
+		};
+		CEE4F6E4D221003E02E7F3FA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IVPNClient/Pods-IVPNClient-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RogueClient/Pods-RogueClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
@@ -1868,7 +1845,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IVPNClient/Pods-IVPNClient-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RogueClient/Pods-RogueClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D439723A59E4873F0725DED2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RogueClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2203,7 +2202,7 @@
 		};
 		826D182C21D3DAFF0045A570 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9CDDD5AA1D9D2F9E00D39924 /* IVPNClient */;
+			target = 9CDDD5AA1D9D2F9E00D39924 /* RogueClient */;
 			targetProxy = 826D182B21D3DAFF0045A570 /* PBXContainerItemProxy */;
 		};
 		826F7F1C23A7A05F00777DB9 /* PBXTargetDependency */ = {
@@ -2218,7 +2217,7 @@
 		};
 		82B81E46235EE93D005986E8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9CDDD5AA1D9D2F9E00D39924 /* IVPNClient */;
+			target = 9CDDD5AA1D9D2F9E00D39924 /* RogueClient */;
 			targetProxy = 82B81E45235EE93D005986E8 /* PBXContainerItemProxy */;
 		};
 		9C7840AF20CD8A8A00335736 /* PBXTargetDependency */ = {
@@ -2317,7 +2316,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IVPNClient.app/IVPNClient";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rogue-iOS.app/Rogue-iOS";
 			};
 			name = Debug;
 		};
@@ -2341,7 +2340,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IVPNClient.app/IVPNClient";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rogue-iOS.app/Rogue-iOS";
 			};
 			name = Release;
 		};
@@ -2525,7 +2524,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IVPNClient;
+				TEST_TARGET_NAME = RogueClient;
 			};
 			name = Debug;
 		};
@@ -2547,7 +2546,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IVPNClient;
+				TEST_TARGET_NAME = RogueClient;
 			};
 			name = Staging;
 		};
@@ -2569,7 +2568,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IVPNClient;
+				TEST_TARGET_NAME = RogueClient;
 			};
 			name = Release;
 		};
@@ -2642,7 +2641,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = IVPNClient/IVPNClient.entitlements;
+				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
@@ -2650,7 +2649,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/IVPNClient/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RogueClient/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.1.0;
@@ -2665,7 +2664,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = net.rogue.clients.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "IVPNClient/IVPNClient-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RogueClient/RogueClient-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -2692,13 +2691,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IVPNClient.app/IVPNClient";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rogue-iOS.app/Rogue-iOS";
 			};
 			name = Staging;
 		};
 		82D2D80022CA404C004BCC52 /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 881BCA7FAAA43B4573D9E56C /* Pods-openvpn-tunnel-provider.staging.xcconfig */;
+			baseConfigurationReference = FB889089BC738672CACEB282 /* Pods-openvpn-tunnel-provider.staging.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -2799,7 +2798,7 @@
 		};
 		9C7840B220CD8A8A00335736 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F8FBDE5436D2ADCA6F3A4FE /* Pods-openvpn-tunnel-provider.debug.xcconfig */;
+			baseConfigurationReference = 2B85C1D5888894C805DC3DDC /* Pods-openvpn-tunnel-provider.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -2840,7 +2839,7 @@
 		};
 		9C7840B320CD8A8A00335736 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27E4E56AE774F4A2C5B24728 /* Pods-openvpn-tunnel-provider.release.xcconfig */;
+			baseConfigurationReference = 6D046F37E900B0DA45236F53 /* Pods-openvpn-tunnel-provider.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -3003,7 +3002,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = IVPNClient/IVPNClient.entitlements;
+				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
@@ -3011,7 +3010,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/IVPNClient/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RogueClient/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.1.0;
@@ -3025,7 +3024,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = net.rogue.clients.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "IVPNClient/IVPNClient-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RogueClient/RogueClient-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -3038,7 +3037,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = IVPNClient/IVPNClient.entitlements;
+				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
@@ -3046,7 +3045,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/IVPNClient/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RogueClient/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(SRCROOT)/Carthage/Build/iOS";
 				MARKETING_VERSION = 2.1.0;
@@ -3061,7 +3060,7 @@
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = net.rogue.clients.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "IVPNClient/IVPNClient-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RogueClient/RogueClient-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -3129,7 +3128,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CDDD5A61D9D2F9E00D39924 /* Build configuration list for PBXProject "IVPNClient" */ = {
+		9CDDD5A61D9D2F9E00D39924 /* Build configuration list for PBXProject "Rogue-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CDDD5D11D9D2F9F00D39924 /* Debug */,
@@ -3139,7 +3138,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CDDD5D31D9D2F9F00D39924 /* Build configuration list for PBXNativeTarget "IVPNClient" */ = {
+		9CDDD5D31D9D2F9F00D39924 /* Build configuration list for PBXNativeTarget "RogueClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CDDD5D41D9D2F9F00D39924 /* Debug */,

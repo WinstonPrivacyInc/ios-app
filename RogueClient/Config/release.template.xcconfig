@@ -1,0 +1,6 @@
+#include "Pods/Target Support Files/Pods-RogueClient/Pods-RogueClient.release.xcconfig"
+
+Environment = production
+ApiHostName = api.ivpn.net
+TlsHostName = ivpn.net
+IAPSharedSecret = 

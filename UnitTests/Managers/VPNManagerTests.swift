@@ -26,7 +26,7 @@
 import XCTest
 import NetworkExtension
 
-@testable import IVPNClient
+@testable import RogueClient
 
 class VPNManagerTests: XCTestCase {
     

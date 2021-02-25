@@ -18,7 +18,7 @@
                BlueprintIdentifier = "82B605222170840C004B40E6"
                BuildableName = "wireguard-tunnel-provider.appex"
                BlueprintName = "wireguard-tunnel-provider"
-               ReferencedContainer = "container:IVPNClient.xcodeproj">
+               ReferencedContainer = "container:Rogue-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,9 +30,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CDDD5AA1D9D2F9E00D39924"
-               BuildableName = "IVPNClient.app"
-               BlueprintName = "IVPNClient"
-               ReferencedContainer = "container:IVPNClient.xcodeproj">
+               BuildableName = "RogueClient.app"
+               BlueprintName = "RogueClient"
+               ReferencedContainer = "container:Rogue-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,7 +48,7 @@
             BlueprintIdentifier = "82B605222170840C004B40E6"
             BuildableName = "wireguard-tunnel-provider.appex"
             BlueprintName = "wireguard-tunnel-provider"
-            ReferencedContainer = "container:IVPNClient.xcodeproj">
+            ReferencedContainer = "container:Rogue-iOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -59,7 +59,7 @@
                BlueprintIdentifier = "82B81E3F235EE93D005986E8"
                BuildableName = "UITests.xctest"
                BlueprintName = "UITests"
-               ReferencedContainer = "container:IVPNClient.xcodeproj">
+               ReferencedContainer = "container:Rogue-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -81,9 +81,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CDDD5AA1D9D2F9E00D39924"
-            BuildableName = "IVPNClient.app"
-            BlueprintName = "IVPNClient"
-            ReferencedContainer = "container:IVPNClient.xcodeproj">
+            BuildableName = "RogueClient.app"
+            BlueprintName = "RogueClient"
+            ReferencedContainer = "container:Rogue-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CDDD5AA1D9D2F9E00D39924"
-            BuildableName = "IVPNClient.app"
-            BlueprintName = "IVPNClient"
-            ReferencedContainer = "container:IVPNClient.xcodeproj">
+            BuildableName = "RogueClient.app"
+            BlueprintName = "RogueClient"
+            ReferencedContainer = "container:Rogue-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

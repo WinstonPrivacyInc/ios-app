@@ -24,7 +24,7 @@
 import XCTest
 import CoreData
 
-@testable import IVPNClient
+@testable import RogueClient
 
 class VPNServersTests: XCTestCase {
     

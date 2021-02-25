@@ -1,2 +1,2 @@
 #import "../wireguard-go-bridge/wireguard.h"
-#import "../IVPNClient/Utilities/Crypto/x25519.h"
+#import "../RogueClient/Utilities/Crypto/x25519.h"

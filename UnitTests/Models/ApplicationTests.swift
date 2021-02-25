@@ -23,7 +23,7 @@
 
 import XCTest
 
-@testable import IVPNClient
+@testable import RogueClient
 
 class ApplicationTests: XCTestCase {
     

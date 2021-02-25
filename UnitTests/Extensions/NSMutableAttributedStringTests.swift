@@ -24,7 +24,7 @@
 import XCTest
 import UIKit
 
-@testable import IVPNClient
+@testable import RogueClient
 
 class NSMutableAttributedStringTests: XCTestCase {
     

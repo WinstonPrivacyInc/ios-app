@@ -9,7 +9,7 @@
 import XCTest
 import KeychainAccess
 
-@testable import IVPNClient
+@testable import RogueClient
 
 class KeychainTests: XCTestCase {
     

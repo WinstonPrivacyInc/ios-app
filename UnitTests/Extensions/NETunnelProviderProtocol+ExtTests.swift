@@ -24,7 +24,7 @@
 import XCTest
 import NetworkExtension
 
-@testable import IVPNClient
+@testable import RogueClient
 
 class NETunnelProviderProtocolExtTests: XCTestCase {
     
