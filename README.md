@@ -1,4 +1,4 @@
-# IVPN for iOS
+# Rogue for iOS
 
 ![CI](https://github.com/ivpn/ios-app/workflows/CI/badge.svg)
 ![SwiftLint](https://github.com/ivpn/ios-app/workflows/SwiftLint/badge.svg)
