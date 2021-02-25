@@ -92,8 +92,8 @@ There are different build configurations: Staging and Release.
 Rename and populate `.xcconfig` files: 
 
 ```sh
-$ cp IVPNClient/Config/staging.template.xcconfig IVPNClient/Config/staging.xcconfig  
-$ cp IVPNClient/Config/release.template.xcconfig IVPNClient/Config/release.xcconfig  
+$ cp RogueClient/Config/staging.template.xcconfig RogueClient/Config/staging.xcconfig  
+$ cp RogueClient/Config/release.template.xcconfig RogueClient/Config/release.xcconfig  
 $ cp wireguard-tunnel-provider/Config/wg-staging.template.xcconfig wireguard-tunnel-provider/Config/wg-staging.xcconfig   
 $ cp wireguard-tunnel-provider/Config/wg-release.template.xcconfig wireguard-tunnel-provider/Config/wg-release.xcconfig  
 $ cp today-extension/Config/today-extension-staging.template.xcconfig today-extension/Config/today-extension-staging.xcconfig  
@@ -105,7 +105,7 @@ $ cp today-extension/Config/today-extension-release.template.xcconfig today-exte
 Rename and populate `OpenVPNConf.swift` file: 
 
 ```sh
-$ cp IVPNClient/Config/OpenVPNConf.template.swift IVPNClient/Config/OpenVPNConf.swift
+$ cp RogueClient/Config/OpenVPNConf.template.swift RogueClient/Config/OpenVPNConf.swift
 ```
 
 ### Fastlane configuration
