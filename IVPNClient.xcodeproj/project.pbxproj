@@ -383,11 +383,11 @@
 
 /* Begin PBXFileReference section */
 		042B1F5A4F38CCA3591AD441 /* Pods_openvpn_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openvpn_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27E4E56AE774F4A2C5B24728 /* Pods-openvpn-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.release.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
+		27E4E56AE774F4A2C5B24728 /* Pods-openvpn-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
 		58126B967EB9B059871FD7AB /* Pods_wireguard_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wireguard_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F8FBDE5436D2ADCA6F3A4FE /* Pods-openvpn-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.debug.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
-		6F076EC404F769A3D7C17CF4 /* Pods-IVPNClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.release.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.release.xcconfig"; sourceTree = "<group>"; };
-		70DFEFF11AFF9C4E3D88A443 /* Pods-IVPNClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.debug.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.debug.xcconfig"; sourceTree = "<group>"; };
+		5F8FBDE5436D2ADCA6F3A4FE /* Pods-openvpn-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
+		6F076EC404F769A3D7C17CF4 /* Pods-IVPNClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.release.xcconfig"; sourceTree = "<group>"; };
+		70DFEFF11AFF9C4E3D88A443 /* Pods-IVPNClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.debug.xcconfig"; sourceTree = "<group>"; };
 		751AB84B8432BC3E6BEDD483 /* Pods_today_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_today_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		820079F32407D96D00EC2062 /* ConnectionInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoBoxView.swift; sourceTree = "<group>"; };
 		8201A5012354A32F008C83DB /* ErrorResultSessionNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResultSessionNew.swift; sourceTree = "<group>"; };
@@ -604,9 +604,9 @@
 		82F917382344861A0025ED3A /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		82FF0D4123153D1000440E5D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		82FF0D432315587000440E5D /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
-		881BCA7FAAA43B4573D9E56C /* Pods-openvpn-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.staging.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
+		881BCA7FAAA43B4573D9E56C /* Pods-openvpn-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
 		95BC1917294DF1E93B308C82 /* Pods_IVPNClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IVPNClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A198837B44229CF470C077A /* Pods-IVPNClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.staging.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.staging.xcconfig"; sourceTree = "<group>"; };
+		9A198837B44229CF470C077A /* Pods-IVPNClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IVPNClient.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-IVPNClient/Pods-IVPNClient.staging.xcconfig"; sourceTree = "<group>"; };
 		9C2833731D9D3EB60024C553 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		9C2833751D9D3F060024C553 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C2833781D9D3F060024C553 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -621,7 +621,7 @@
 		9C50959920FCF6850048DBF2 /* ProtocolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTableViewCell.swift; sourceTree = "<group>"; };
 		9C5134041DE8380F00423551 /* IVPNClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVPNClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C5134091DE8398400423551 /* Pinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinger.swift; sourceTree = "<group>"; };
-		9C54520B5B9FA78FA98FB0EC /* Pods-today-extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.release.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.release.xcconfig"; sourceTree = "<group>"; };
+		9C54520B5B9FA78FA98FB0EC /* Pods-today-extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.release.xcconfig"; sourceTree = "<group>"; };
 		9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		9C69422D1DD20FC200F9A801 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		9C6942361DD218A900F9A801 /* AccessDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessDetails.swift; sourceTree = "<group>"; };
@@ -648,11 +648,11 @@
 		9CDDD5B51D9D2F9F00D39924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CDDD5B81D9D2F9F00D39924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CDDD5BA1D9D2F9F00D39924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2CECA58BD6417A99E1EF558 /* Pods-wireguard-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.staging.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
-		C197220705CD8E3844CC5AC4 /* Pods-today-extension.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.staging.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.staging.xcconfig"; sourceTree = "<group>"; };
-		E92B9AAA19691D5A89CA88F3 /* Pods-today-extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.debug.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.debug.xcconfig"; sourceTree = "<group>"; };
-		FB0E616DCFD2233EFC808339 /* Pods-wireguard-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.debug.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
-		FB6AFF9326EEB2AFD57E9426 /* Pods-wireguard-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.release.xcconfig"; path = "../ios-app/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
+		A2CECA58BD6417A99E1EF558 /* Pods-wireguard-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
+		C197220705CD8E3844CC5AC4 /* Pods-today-extension.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.staging.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.staging.xcconfig"; sourceTree = "<group>"; };
+		E92B9AAA19691D5A89CA88F3 /* Pods-today-extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-today-extension/Pods-today-extension.debug.xcconfig"; sourceTree = "<group>"; };
+		FB0E616DCFD2233EFC808339 /* Pods-wireguard-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.debug.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
+		FB6AFF9326EEB2AFD57E9426 /* Pods-wireguard-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.release.xcconfig"; path = "../rogue-ios/Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1561,19 +1561,19 @@
 					};
 					826D182521D3DAFF0045A570 = {
 						CreatedOnToolsVersion = 10.1;
-						DevelopmentTeam = WQXXM75BYN;
+						DevelopmentTeam = 4TSHK25NM3;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9CDDD5AA1D9D2F9E00D39924;
 					};
 					826F7F1023A7A05F00777DB9 = {
 						CreatedOnToolsVersion = 11.3;
-						DevelopmentTeam = WQXXM75BYN;
+						DevelopmentTeam = 4TSHK25NM3;
 						ProvisioningStyle = Automatic;
 					};
 					82B605222170840C004B40E6 = {
 						CreatedOnToolsVersion = 10.0;
-						DevelopmentTeam = WQXXM75BYN;
+						DevelopmentTeam = 4TSHK25NM3;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1590,13 +1590,13 @@
 					};
 					82B81E3F235EE93D005986E8 = {
 						CreatedOnToolsVersion = 11.0;
-						DevelopmentTeam = WQXXM75BYN;
+						DevelopmentTeam = 4TSHK25NM3;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9CDDD5AA1D9D2F9E00D39924;
 					};
 					9C7840A720CD8A8A00335736 = {
 						CreatedOnToolsVersion = 9.4;
-						DevelopmentTeam = WQXXM75BYN;
+						DevelopmentTeam = 4TSHK25NM3;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1613,7 +1613,7 @@
 					};
 					9CDDD5AA1D9D2F9E00D39924 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = WQXXM75BYN;
+						DevelopmentTeam = 4TSHK25NM3;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2306,7 +2306,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2331,7 +2331,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2357,7 +2357,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "today-extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -2365,7 +2365,7 @@
 				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.today-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.today-extension";
 				PRODUCT_NAME = IVPN;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "today-extension/today-extension-Bridging-Header.h";
@@ -2386,14 +2386,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "today-extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2.1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.today-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.today-extension";
 				PRODUCT_NAME = IVPN;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "today-extension/today-extension-Bridging-Header.h";
@@ -2414,14 +2414,14 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "today-extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2.1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.today-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.today-extension";
 				PRODUCT_NAME = IVPN;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "today-extension/today-extension-Bridging-Header.h";
@@ -2442,7 +2442,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2459,7 +2459,7 @@
 				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.wireguard-tunnel-provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.wireguard-tunnel-provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/wireguard-tunnel-provider/wireguard-tunnel-provider-Bridging-Header.h";
@@ -2480,7 +2480,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2496,7 +2496,7 @@
 				);
 				MARKETING_VERSION = 2.1.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.wireguard-tunnel-provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.wireguard-tunnel-provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/wireguard-tunnel-provider/wireguard-tunnel-provider-Bridging-Header.h";
@@ -2514,7 +2514,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2537,7 +2537,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2559,7 +2559,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2645,7 +2645,7 @@
 				CODE_SIGN_ENTITLEMENTS = IVPNClient/IVPNClient.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -2663,7 +2663,7 @@
 					"-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null",
 				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = net.ivpn.clients.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = net.rogue.clients.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IVPNClient/IVPNClient-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2681,7 +2681,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = UnitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -2718,7 +2718,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -2729,7 +2729,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2.1.0;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.openvpn-tunnel-provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.openvpn-tunnel-provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -2749,7 +2749,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2766,7 +2766,7 @@
 				MARKETING_VERSION = 2.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.wireguard-tunnel-provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.wireguard-tunnel-provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/wireguard-tunnel-provider/wireguard-tunnel-provider-Bridging-Header.h";
@@ -2819,7 +2819,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -2830,7 +2830,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2.1.0;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.openvpn-tunnel-provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.openvpn-tunnel-provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -2860,7 +2860,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -2871,7 +2871,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 2.1.0;
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.ivpn.clients.ios.openvpn-tunnel-provider";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rogue.clients.ios.openvpn-tunnel-provider";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -3006,7 +3006,7 @@
 				CODE_SIGN_ENTITLEMENTS = IVPNClient/IVPNClient.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -3023,7 +3023,7 @@
 					"\"SwiftyStoreKit\"",
 				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = net.ivpn.clients.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = net.rogue.clients.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IVPNClient/IVPNClient-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3041,7 +3041,7 @@
 				CODE_SIGN_ENTITLEMENTS = IVPNClient/IVPNClient.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = WQXXM75BYN;
+				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
@@ -3059,7 +3059,7 @@
 					"-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null",
 				);
 				OTHER_SWIFT_FLAGS = "-D RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = net.ivpn.clients.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = net.rogue.clients.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IVPNClient/IVPNClient-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
