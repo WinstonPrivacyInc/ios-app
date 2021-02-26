@@ -57,7 +57,7 @@ class SessionManager {
     
     // MARK: - Methods -
     
-    func createSession(force: Bool = false, connecting: Bool = false, username: String? = nil, confirmation: String? = nil, captcha: String? = nil, captchaId: String? = nil) {
+    func createSession(force: Bool = false, connecting: Bool = false, username: String? = nil, confirmation: String? = nil, captcha: String? = nil, captchaId: String? = nil) {    
         delegate?.createSessionStart()
         
         if AppKeyManager.isKeyPairRequired || connecting {

@@ -100,6 +100,9 @@ class ApiService {
         log(info: "\(requestName) started")
         
         APIClient().perform(request) { result in
+            
+            print("antonio.. making request")
+            
             DispatchQueue.main.async {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 
@@ -113,6 +116,8 @@ class ApiService {
                             let successResponse = try decoder.decode(T.self, from: data)
                             completion(.success(successResponse))
                             log(info: "\(requestName) success")
+                            //response from api Account(accountId: "i-ULLY-B97B-EZ5A")
+                            log(info: "response from api \(successResponse)")
                             return
                         } catch {}
                         
