@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "logo-wb.png",
+      "filename" : "winston-logo-172-black.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "logo-bw.png",
+      "filename" : "winston-logo-172-white.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
