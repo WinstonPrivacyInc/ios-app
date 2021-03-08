@@ -28,7 +28,7 @@ struct Config {
     static let useDebugServers = false
     static let useDebugWireGuardKeyUpgrade = false
     static let minPingCheckInterval: TimeInterval = 10
-    static let appGroup = "group.net.ivpn.clients.ios"
+    static let appGroup = "group.com.winstonprivacy.rogue"
     
     static let apiServersFile = "/v4/servers.json"
     static let apiGeoLookup = "/v4/geo-lookup"
@@ -47,10 +47,11 @@ struct Config {
     static let urlTypeDisconnect = "disconnect"
     
     static let ikev2TunnelTitle = "IVPN IKEv2"
-    static let openvpnTunnelProvider = "net.ivpn.clients.ios.openvpn-tunnel-provider"
+    static let openvpnTunnelProvider = "com.winstonprivacy.rogue.openvpn-tunnel-provider"
     static let openvpnTunnelTitle = "IVPN OpenVPN"
-    static let wireguardTunnelProvider = "net.ivpn.clients.ios.wireguard-tunnel-provider"
-    static let wireguardTunnelTitle = "IVPN WireGuard"
+    static let wireguardTunnelProvider = "com.winstonprivacy.rogue.wireguard-tunnel-provider"
+    // static let wireguardTunnelTitle = "IVPN WireGuard"
+    static let wireguardTunnelTitle = "Rogue VPN"
     
     // Files and Directories
     static let serversListCacheFileName = "servers_cache1.json"
@@ -64,15 +65,16 @@ struct Config {
     static let stableVPNStatusInterval: TimeInterval = 0.5
     
     static let defaultProtocol = ConnectionSettings.ipsec
+    
     static let supportedProtocols = [
-        ConnectionSettings.ipsec,
-        ConnectionSettings.openvpn(.udp, 2049),
-        ConnectionSettings.openvpn(.udp, 2050),
-        ConnectionSettings.openvpn(.udp, 53),
-        ConnectionSettings.openvpn(.udp, 1194),
-        ConnectionSettings.openvpn(.tcp, 443),
-        ConnectionSettings.openvpn(.tcp, 1443),
-        ConnectionSettings.openvpn(.tcp, 80),
+//        ConnectionSettings.ipsec,
+//        ConnectionSettings.openvpn(.udp, 2049),
+//        ConnectionSettings.openvpn(.udp, 2050),
+//        ConnectionSettings.openvpn(.udp, 53),
+//        ConnectionSettings.openvpn(.udp, 1194),
+//        ConnectionSettings.openvpn(.tcp, 443),
+//        ConnectionSettings.openvpn(.tcp, 1443),
+//        ConnectionSettings.openvpn(.tcp, 80),
         ConnectionSettings.wireguard(.udp, 2049),
         ConnectionSettings.wireguard(.udp, 2050),
         ConnectionSettings.wireguard(.udp, 53),
