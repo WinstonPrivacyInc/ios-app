@@ -10,6 +10,8 @@ target 'RogueClient' do
     pod 'ReachabilitySwift', '~> 5.0.0'
     pod 'FloatingPanel', '~> 1.7.2'
     pod 'SnapKit', '~> 5.0.1'
+    pod 'Amplify'
+    pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 end
 
 target 'openvpn-tunnel-provider' do

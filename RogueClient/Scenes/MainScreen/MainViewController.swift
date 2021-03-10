@@ -53,11 +53,19 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func openAccountInfo(_ sender: UIButton) {
-        guard evaluateIsLoggedIn() else {
-            return
+        evaluateIsSignedIn { (isSignedIn) in
+            if isSignedIn {
+                DispatchQueue.main.async {
+                    self.presentAccountScreen()
+                }
+            }
         }
+//        guard evaluateIsLoggedIn() else {
+//            return
+//        }
+//        presentAccountScreen()
         
-        presentAccountScreen()
+        
     }
     
     // MARK: - View lifecycle -

@@ -30,6 +30,7 @@
 //
 
 import Foundation
+import Amplify
 
 // Authentication class is responsible for securely storing and retrieving of login credentials
 // It does not perform any authentication and just managing the informatino supplied
@@ -52,12 +53,34 @@ class Authentication {
         KeyChain.save(session: session)
     }
     
+    func isSignedIn(completion: @escaping (Bool) -> Void) {
+        _ = Amplify.Auth.fetchAuthSession { result in
+            switch result {
+            case .success(let session):
+                log(info: "Is user signed in - \(session.isSignedIn)")
+                completion(session.isSignedIn)
+            case .failure(let error):
+                print("Fetch session failed with error \(error)")
+                completion(false)
+            }
+        }
+    }
+    
     func logOut() {
         KeyChain.clearAll()
         FileSystemManager.clearSession()
         StorageManager.clearSession()
         UserDefaults.clearSession()
         Application.shared.clearSession()
+        
+        Amplify.Auth.signOut() { result in
+                switch result {
+                case .success:
+                    print("Successfully signed out")
+                case .failure(let error):
+                    print("Sign out failed with error \(error)")
+                }
+            }
     }
     
     func removeStoredCredentials() {

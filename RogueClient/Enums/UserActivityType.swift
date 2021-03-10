@@ -24,6 +24,6 @@
 import Foundation
 
 enum UserActivityType {
-    static let Connect = "net.ivpn.clients.ios.Connect"
-    static let Disconnect = "net.ivpn.clients.ios.Disconnect"
+    static let Connect = "com.winstonprivacy.rogue.Connect"
+    static let Disconnect = "com.winstonprivacy.rogue.Disconnect"
 }

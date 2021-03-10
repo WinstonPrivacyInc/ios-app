@@ -207,7 +207,7 @@ class VPNManager {
         manager.protocolConfiguration = NETunnelProviderProtocol.makeWireGuardProtocol(settings: settings)
         manager.localizedDescription = Config.wireguardTunnelTitle
         manager.onDemandRules = StorageManager.getOnDemandRules(status: status ?? .connected)
-        manager.isOnDemandEnabled = true
+        manager.isOnDemandEnabled = true // TODO: antonio - change to true
         manager.isEnabled = true
     }
     
@@ -346,7 +346,7 @@ class VPNManager {
                 forName: NSNotification.Name.NEVPNStatusDidChange,
                 object: manager.connection, queue: OperationQueue.main) { _ in
                     log(info: "WireGuard connection status changed.")
-                    log(info: "WireGuard status: \(manager.connection.status.rawValue)")
+                    log(info: "WireGuard status: \(manager.connection.status.rawValue) \(manager.connection.status)")
                     
                     event(TunnelType.wireguard, manager, manager.connection.status)
             }

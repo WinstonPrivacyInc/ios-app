@@ -22,6 +22,8 @@
 //
 
 import UIKit
+import Amplify
+import AmplifyPlugins
 
 @UIApplicationMain
 
@@ -149,6 +151,13 @@ extension AppDelegate: UIApplicationDelegate {
         resetLastPingTimestamp()
         clearURLCache()
         
+        do {
+                try Amplify.add(plugin: AWSCognitoAuthPlugin())
+                try Amplify.configure()
+                print("Amplify configured with auth plugin")
+            } catch {
+                print("Failed to initialize Amplify with \(error)")
+            }
         return true
     }
     

@@ -74,7 +74,11 @@ struct Interface {
             curve25519_generate_private_key(mutableBytes)
         }
         
-        return privateKey.base64EncodedString()
+        print("private key \(privateKey.base64EncodedString())")
+        // return privateKey.base64EncodedString()
+        
+        // TODO: antonio - returns hard coded private key for now
+        return "QZqecs9M2Cj535Pky7l8VbWjRT8mADoxD3N+ilHCXHs=";
     }
     
 }

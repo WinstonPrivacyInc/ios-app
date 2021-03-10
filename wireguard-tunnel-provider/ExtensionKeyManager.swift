@@ -69,6 +69,8 @@ struct ExtensionKeyManager {
             switch result {
             case .success(let model):
                 UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
+                
+                // TODO: antonio... this is not coming from the server,,, it's passed as a parameter...
                 KeyChain.wgPrivateKey = interface.privateKey
                 KeyChain.wgPublicKey = interface.publicKey
                 KeyChain.wgIpAddress = model.ipAddress

@@ -23,6 +23,7 @@
 
 import UIKit
 import JGProgressHUD
+import Amplify
 
 class LoginViewController: UIViewController {
 
@@ -31,6 +32,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userName: UITextField! {
         didSet {
             userName.delegate = self
+        }
+    }
+    
+    @IBOutlet weak var password: UITextField! {
+        didSet {
+            print("password updated...")
         }
     }
     
@@ -53,6 +60,10 @@ class LoginViewController: UIViewController {
     private var actionType: ActionType = .login
     
     // MARK: - @IBActions -
+    
+    @IBAction func handleEmailInput(_ sender: AnyObject) {
+        
+    }
     
     @IBAction func loginToAccount(_ sender: AnyObject) {
         guard UserDefaults.shared.hasUserConsent else {
@@ -153,16 +164,42 @@ class LoginViewController: UIViewController {
         guard !loginProcessStarted else { return }
         
         let username = (self.userName.text ?? "").trim()
+        let password = (self.password.text ?? "").trim()
         
         loginProcessStarted = true
         
-        guard ServiceStatus.isValid(username: username) else {
+        guard ServiceStatus.isValidEmail(email: username) else {
             loginProcessStarted = false
-            showUsernameError()
+            showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
             return
         }
         
-        sessionManager.createSession(force: force, username: username, confirmation: confirmation, captcha: captcha, captchaId: captchaId)
+        guard ServiceStatus.isValidPassword(password: password) else {
+            loginProcessStarted = false
+            showAlert(title: "Invalid Password", message: "Please enter your password.")
+            return
+        }
+        
+        
+//        guard ServiceStatus.isValid(username: username) else {
+//            loginProcessStarted = false
+//            showUsernameError()
+//            return
+//        }
+        
+        // sessionManager.createSession(force: force, username: username, confirmation: confirmation, captcha: captcha, captchaId: captchaId)
+        Amplify.Auth.signIn(username: username, password: password) { result in
+               switch result {
+               case .success:
+                    self.loginProcessStarted = false
+                    print("Sign in succeeded")
+                    self.createSessionSuccess()
+               
+               case .failure(let error):
+                    self.loginProcessStarted = false
+                    print("Sign in failed \(error)")
+               }
+           }
     }
     
     private func startSignupProcess() {
@@ -191,6 +228,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
     
     private func showUsernameError() {
         showErrorAlert(

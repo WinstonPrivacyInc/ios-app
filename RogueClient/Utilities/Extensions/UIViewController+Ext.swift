@@ -197,12 +197,14 @@ extension UIViewController {
 extension UIViewController {
     
     func evaluateIsServiceActive() -> Bool {
-        guard Application.shared.serviceStatus.isActive else {
-            let viewController = NavigationManager.getSubscriptionViewController()
-            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
-            present(viewController, animated: true, completion: nil)
-            return false
-        }
+        // TODO: antonio fake active service for now... need to create apis to verify service..
+        
+//        guard Application.shared.serviceStatus.isActive else {
+//            let viewController = NavigationManager.getSubscriptionViewController()
+//            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
+//            present(viewController, animated: true, completion: nil)
+//            return false
+//        }
         
         return true
     }
@@ -269,6 +271,24 @@ extension UIViewController {
         
         return true
     }
+    
+    func evaluateIsSignedIn(completion: @escaping (Bool) -> Void) {
+        Application.shared.authentication.isSignedIn { (isSignedIn) in
+            if !isSignedIn {
+                self.presentSignInView()
+            }
+            completion(isSignedIn)
+        }
+    }
+    
+    func presentSignInView() -> Void {
+        DispatchQueue.main.async {
+            let viewController = NavigationManager.getLoginViewController()
+            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
+            self.present(viewController, animated: true, completion: nil)
+        }
+    }
+    
     
     func evaluateHasUserConsent() -> Bool {
         guard UserDefaults.shared.hasUserConsent else {

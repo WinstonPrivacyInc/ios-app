@@ -105,7 +105,14 @@ class AppKeyManager {
                 KeyChain.wgIpAddress = model.ipAddress
                 self.delegate?.setKeySuccess()
             case .failure:
-                self.delegate?.setKeyFail()
+                // self.delegate?.setKeyFail()
+            
+                // TODO: antonio -> for testing... we don't care about sending it to the server for now...
+                UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
+                KeyChain.wgPrivateKey = interface.privateKey
+                KeyChain.wgPublicKey = interface.publicKey
+                KeyChain.wgIpAddress = "192.168.0.2/32" //model.ipAddress
+                self.delegate?.setKeySuccess()
             }
         }
     }

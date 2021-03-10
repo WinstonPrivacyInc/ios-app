@@ -34,8 +34,9 @@ class KeyChain {
     private static let vpnUsernameKey = "vpn_username"
     private static let vpnPasswordKey = "vpn_password"
     
+    // TODO: antonio -> replace with rogue's group..
     static let bundle: Keychain = {
-        return Keychain(service: "net.ivpn.clients.ios", accessGroup: "WQXXM75BYN.net.ivpn.IVPN-Client")
+        return Keychain(service: "com.winstonprivacy.rogue", accessGroup: "4TSHK25NM3.com.winstonprivacy.rogue")
     }()
     
     class var username: String? {

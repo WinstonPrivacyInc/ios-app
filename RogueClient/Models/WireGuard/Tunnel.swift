@@ -72,9 +72,11 @@ struct Tunnel {
     private func generateInterfaceProviderConfiguration(_ interface: Interface) -> String {
         var settingsString = ""
         
+        // TODO: antonio -> could it be that they are converting to base64 hex since they are sending it to the server???
         if let hexPrivateKey = interface.privateKey?.base64KeyToHex() {
             settingsString += "private_key=\(hexPrivateKey)\n"
         }
+        
         
         if interface.listenPort > 0 {
             settingsString += "listen_port=\(interface.listenPort)\n"

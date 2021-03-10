@@ -23,6 +23,7 @@
 
 import Network
 import NetworkExtension
+import os.log
 
 enum PacketTunnelProviderError: Error {
     case tunnelSetupFailed
@@ -51,6 +52,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     }
     
     override func startTunnel(options: [String: NSObject]?, completionHandler: @escaping (Error?) -> Void) {
+        NSLog("antonio --> started network interface")
+        os_log("antonio - started network interface")
+        
+        // TODO: antonio...
         guard let wgIpAddress = KeyChain.wgIpAddress, let wgPrivateKey = KeyChain.wgPrivateKey else {
             tunnelSetupFailed()
             completionHandler(PacketTunnelProviderError.tunnelSetupFailed)

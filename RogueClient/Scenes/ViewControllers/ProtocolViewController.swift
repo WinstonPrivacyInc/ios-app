@@ -99,6 +99,9 @@ class ProtocolViewController: UITableViewController {
     }
     
     func selectPreferredProtocolAndPort(connectionProtocol: ConnectionSettings) {
+        
+        print("antonio this is where you select a protocol")
+        
         let selected = Application.shared.settings.connectionProtocol.formatProtocol()
         let protocols = connectionProtocol.supportedProtocols(protocols: Config.supportedProtocols)
         let actions = connectionProtocol.supportedProtocolsFormat(protocols: Config.supportedProtocols)
@@ -175,8 +178,12 @@ extension ProtocolViewController {
 
 extension ProtocolViewController {
     
+    /** antonio - this gets called every time you update the dropdown for the protocol field... this is what will create different keys for connections g*/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let connectionProtocol = collection[indexPath.section][indexPath.row]
+        
+        print("connection protocol \(connectionProtocol)")
         
         if connectionProtocol == .wireguard(.udp, 1) {
             return

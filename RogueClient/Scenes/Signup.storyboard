@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Log in to your account-->
+        <!--Sign In-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController modalPresentationStyle="formSheet" id="BYZ-38-t0r" customClass="LoginViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,79 +22,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="mLW-w8-CLX">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="mLW-w8-CLX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYK-dw-X2I" userLabel="ContentView">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYK-dw-X2I" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsH-wX-xZq">
-                                                <rect key="frame" x="69" y="62" width="276" height="50"/>
-                                                <subviews>
-                                                    <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="i-XXXX-... or ivpnXXXXXXXX" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-AY-bCY" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="276" height="50"/>
-                                                        <color key="backgroundColor" name="ivpnGray2"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="username"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noD-gn-rO6">
-                                                        <rect key="frame" x="231" y="5" width="40" height="40"/>
-                                                        <accessibility key="accessibilityConfiguration" label="Scan QR code"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="VV0-wF-Qku"/>
-                                                            <constraint firstAttribute="width" constant="40" id="zvA-ca-FRj"/>
-                                                        </constraints>
-                                                        <state key="normal" image="icon-qr-code"/>
-                                                        <connections>
-                                                            <action selector="openScanner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PqY-Hu-yhc"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="Hx4-AY-bCY" secondAttribute="bottom" id="EPe-e7-6tL"/>
-                                                    <constraint firstItem="noD-gn-rO6" firstAttribute="top" secondItem="wsH-wX-xZq" secondAttribute="top" constant="5" id="EVn-I2-f6d"/>
-                                                    <constraint firstAttribute="trailing" secondItem="noD-gn-rO6" secondAttribute="trailing" constant="5" id="Ke2-84-66Q"/>
-                                                    <constraint firstItem="Hx4-AY-bCY" firstAttribute="leading" secondItem="wsH-wX-xZq" secondAttribute="leading" id="OWA-cH-Z5o"/>
-                                                    <constraint firstAttribute="height" constant="50" id="UAE-zQ-Nny"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Hx4-AY-bCY" secondAttribute="trailing" id="UGg-5k-cjk"/>
-                                                    <constraint firstAttribute="width" constant="276" id="hIE-HL-zsq"/>
-                                                    <constraint firstItem="Hx4-AY-bCY" firstAttribute="top" secondItem="wsH-wX-xZq" secondAttribute="top" id="qGi-rr-vs1"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51o-0K-ge0">
-                                                <rect key="frame" x="69" y="142" width="276" height="50"/>
-                                                <color key="backgroundColor" name="ivpnBlue"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="276" id="Ugg-t0-Eie"/>
-                                                    <constraint firstAttribute="height" constant="50" id="ice-WA-180"/>
-                                                </constraints>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Log In">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="winston-logo" translatesAutoresizingMaskIntoConstraints="NO" id="riO-cx-Lhm">
+                                                <rect key="frame" x="110" y="-10" width="172" height="65"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ROGUE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iax-Xh-bCA">
+                                                <rect key="frame" x="154" y="54" width="88" height="32"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-AY-bCY" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="37" y="146" width="308" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="TmK-Gg-7sn" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="37" y="215" width="308" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34F-JE-p7Q">
+                                                <rect key="frame" x="106" y="638" width="160" height="26"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Restore Purchases">
+                                                    <color key="titleColor" name="ivpnBlue"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="loginToAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jYN-zM-qKE"/>
+                                                    <action selector="restorePurchases:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mq8-35-a7Z"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-v0-Dhq">
-                                                <rect key="frame" x="69" y="208" width="276" height="50"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXe-v0-Dhq">
+                                                <rect key="frame" x="54" y="671" width="276" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" name="ivpnGray14"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="276" id="Vrb-wX-nuj"/>
-                                                    <constraint firstAttribute="height" constant="50" id="kvo-t4-cN4"/>
-                                                </constraints>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Create Account">
                                                     <color key="titleColor" name="ivpnLabelSecondary"/>
@@ -109,65 +95,55 @@
                                                     <action selector="createAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zXn-3k-jUO"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your Account ID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaq-vw-vSn">
-                                                <rect key="frame" x="62" y="30" width="290" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="lHB-hp-UWo"/>
-                                                    <constraint firstAttribute="width" constant="290" id="xEj-4J-bHv"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" name="ivpnLabelQuaternary"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forgot Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nq5-35-sFG">
+                                                <rect key="frame" x="230" y="276" width="116" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" name="ivpnBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34F-JE-p7Q">
-                                                <rect key="frame" x="127" y="694" width="160" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="160" id="q4A-Lk-rxj"/>
-                                                    <constraint firstAttribute="height" constant="50" id="raU-x7-jT2"/>
-                                                </constraints>
-                                                <state key="normal" title="Restore Purchases">
-                                                    <color key="titleColor" name="ivpnBlue"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxE-Xo-gAj">
+                                                <rect key="frame" x="80" y="612" width="161" height="18"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly6-XJ-MJW">
+                                                <rect key="frame" x="255" y="610" width="65" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" name="ivpnBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51o-0K-ge0">
+                                                <rect key="frame" x="41" y="320" width="305" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" name="ivpnBlue"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Sign In">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="restorePurchases:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mq8-35-a7Z"/>
+                                                    <action selector="loginToAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jYN-zM-qKE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Oaq-vw-vSn" firstAttribute="centerX" secondItem="BYK-dw-X2I" secondAttribute="centerX" id="GCj-u8-AZn"/>
-                                            <constraint firstItem="34F-JE-p7Q" firstAttribute="centerX" secondItem="BYK-dw-X2I" secondAttribute="centerX" id="Ju0-tk-I0p"/>
-                                            <constraint firstItem="51o-0K-ge0" firstAttribute="top" secondItem="wsH-wX-xZq" secondAttribute="bottom" constant="30" id="Xad-zk-HGz"/>
-                                            <constraint firstItem="wsH-wX-xZq" firstAttribute="top" secondItem="Oaq-vw-vSn" secondAttribute="bottom" constant="12" id="c0M-pC-F7x"/>
-                                            <constraint firstItem="51o-0K-ge0" firstAttribute="centerX" secondItem="BYK-dw-X2I" secondAttribute="centerX" id="cdc-ax-8DZ"/>
-                                            <constraint firstItem="Oaq-vw-vSn" firstAttribute="top" secondItem="BYK-dw-X2I" secondAttribute="top" constant="30" id="oQX-P1-OEP"/>
-                                            <constraint firstItem="eXe-v0-Dhq" firstAttribute="top" secondItem="51o-0K-ge0" secondAttribute="bottom" constant="16" id="qcZ-NF-5Vg"/>
-                                            <constraint firstAttribute="bottom" secondItem="34F-JE-p7Q" secondAttribute="bottom" constant="30" id="tWE-uw-LS8"/>
-                                            <constraint firstItem="eXe-v0-Dhq" firstAttribute="centerX" secondItem="BYK-dw-X2I" secondAttribute="centerX" id="vCl-zW-vYV"/>
-                                            <constraint firstItem="wsH-wX-xZq" firstAttribute="centerX" secondItem="BYK-dw-X2I" secondAttribute="centerX" id="xO7-YW-2Mq"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="BYK-dw-X2I" secondAttribute="bottom" id="2Ba-Cd-wYj"/>
-                                    <constraint firstItem="BYK-dw-X2I" firstAttribute="top" secondItem="mLW-w8-CLX" secondAttribute="top" id="VC1-PA-I1W"/>
-                                    <constraint firstAttribute="trailing" secondItem="BYK-dw-X2I" secondAttribute="trailing" id="WbM-q4-Yis"/>
-                                    <constraint firstItem="BYK-dw-X2I" firstAttribute="leading" secondItem="mLW-w8-CLX" secondAttribute="leading" id="kDp-Px-Tna"/>
-                                    <constraint firstItem="BYK-dw-X2I" firstAttribute="centerX" secondItem="mLW-w8-CLX" secondAttribute="centerX" id="pYm-0k-7NU"/>
-                                    <constraint firstItem="BYK-dw-X2I" firstAttribute="centerY" secondItem="mLW-w8-CLX" secondAttribute="centerY" id="rdK-XF-1k5"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mxq-9C-Wgq"/>
                         <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mLW-w8-CLX" secondAttribute="bottom" id="dEg-h5-N9f"/>
-                            <constraint firstAttribute="trailing" secondItem="mLW-w8-CLX" secondAttribute="trailing" id="isz-pz-O5a"/>
-                            <constraint firstItem="mLW-w8-CLX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="seM-Vq-IaZ"/>
-                            <constraint firstItem="mLW-w8-CLX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vJ6-eX-RVN"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Log in to your account" id="KqI-NH-rba">
+                    <navigationItem key="navigationItem" title="Sign In" id="KqI-NH-rba">
                         <barButtonItem key="backBarButtonItem" title="Log In" id="2Kc-uL-g2E"/>
                         <barButtonItem key="leftBarButtonItem" title="Close" id="IM8-Ul-Szc">
                             <connections>
@@ -176,13 +152,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="scannerButton" destination="noD-gn-rO6" id="WD1-7o-MJS"/>
+                        <outlet property="password" destination="TmK-Gg-7sn" id="1MX-t1-OAs"/>
                         <outlet property="userName" destination="Hx4-AY-bCY" id="0sY-d1-uGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287" y="-229"/>
+            <point key="canvasLocation" x="1286.9565217391305" y="-229.01785714285714"/>
         </scene>
         <!--Account created-->
         <scene sceneID="u3u-TB-jtU">
@@ -1393,16 +1369,16 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uYX-O5-UET"/>
-        <segue reference="rrg-Fe-V0v"/>
+        <segue reference="IKn-po-jel"/>
+        <segue reference="gLo-V8-Qbm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon-check" width="24" height="24"/>
         <image name="icon-copy" width="66" height="91"/>
-        <image name="icon-qr-code" width="24" height="24"/>
         <image name="icon-step-1" width="48" height="8"/>
         <image name="icon-step-2" width="48" height="8"/>
         <image name="icon-step-3" width="48" height="8"/>
+        <image name="winston-logo" width="172" height="53"/>
         <namedColor name="ivpnBackgroundPrimary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

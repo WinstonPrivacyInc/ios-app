@@ -87,6 +87,16 @@ struct ServiceStatus: Codable {
         return username.hasPrefix("ivpn") || username.hasPrefix("i-")
     }
     
+    static func isValidEmail(email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPredicate.evaluate(with: email)
+    }
+    
+    static func isValidPassword(password: String) -> Bool {
+        return !password.isEmpty
+    }
+    
     static func isValid(verificationCode: String) -> Bool {
         return !verificationCode.isEmpty && verificationCode.count == 6 && NumberFormatter().number(from: verificationCode) != nil
     }
