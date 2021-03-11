@@ -4,7 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,13 +21,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g41-sJ-MjD">
-                                <rect key="frame" x="88.5" y="271" width="198.5" height="125"/>
+                                <rect key="frame" x="88.5" y="266" width="198.5" height="135"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="winston-logo" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-3Y-qjo">
-                                        <rect key="frame" x="0.0" y="0.0" width="198.5" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="198.5" height="53"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ROGUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWl-xM-EIu">
-                                        <rect key="frame" x="0.0" y="53" width="198.5" height="72"/>
+                                        <rect key="frame" x="0.0" y="63" width="198.5" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -35,7 +35,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
                         <constraints>
                             <constraint firstItem="g41-sJ-MjD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SsT-vk-iqF"/>
                             <constraint firstItem="g41-sJ-MjD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wmn-r0-Dv4"/>
@@ -48,9 +48,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="winston-logo" width="140" height="43"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="winston-logo" width="172" height="53"/>
+        <namedColor name="ivpnBackgroundPrimary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

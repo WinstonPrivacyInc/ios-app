@@ -29,15 +29,15 @@ class LoginViewController: UIViewController {
 
     // MARK: - @IBOutlets -
     
-    @IBOutlet weak var userName: UITextField! {
+    @IBOutlet weak var emailTextField: UITextField! {
         didSet {
-            userName.delegate = self
+            emailTextField.delegate = self
         }
     }
     
-    @IBOutlet weak var password: UITextField! {
+    @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-            print("password updated...")
+            passwordTextField.delegate = self
         }
     }
     
@@ -62,7 +62,8 @@ class LoginViewController: UIViewController {
     // MARK: - @IBActions -
     
     @IBAction func handleEmailInput(_ sender: AnyObject) {
-        
+        emailTextField.resignFirstResponder()
+        passwordTextField.becomeFirstResponder()
     }
     
     @IBAction func loginToAccount(_ sender: AnyObject) {
@@ -106,7 +107,7 @@ class LoginViewController: UIViewController {
             }
             
             if account != nil {
-                self.userName.text = account?.accountId
+                self.emailTextField.text = account?.accountId
                 self.sessionManager.createSession()
             }
         }
@@ -163,8 +164,8 @@ class LoginViewController: UIViewController {
     private func startLoginProcess(force: Bool = false, confirmation: String? = nil, captcha: String? = nil, captchaId: String? = nil) {
         guard !loginProcessStarted else { return }
         
-        let username = (self.userName.text ?? "").trim()
-        let password = (self.password.text ?? "").trim()
+        let username = (self.emailTextField.text ?? "").trim()
+        let password = (self.passwordTextField.text ?? "").trim()
         
         loginProcessStarted = true
         
@@ -279,7 +280,7 @@ extension LoginViewController {
         hud.dismiss()
         loginProcessStarted = false
         
-        KeyChain.username = (self.userName.text ?? "").trim()
+        KeyChain.username = (self.emailTextField.text ?? "").trim()
         
         navigationController?.dismiss(animated: true, completion: {
             NotificationCenter.default.post(name: Notification.Name.ServiceAuthorized, object: nil)
@@ -291,7 +292,7 @@ extension LoginViewController {
         hud.dismiss()
         loginProcessStarted = false
         
-        KeyChain.username = (self.userName.text ?? "").trim()
+        KeyChain.username = (self.emailTextField.text ?? "").trim()
         
         let viewController = NavigationManager.getSubscriptionViewController()
         viewController.presentationController?.delegate = self
@@ -304,7 +305,7 @@ extension LoginViewController {
         hud.dismiss()
         loginProcessStarted = false
         
-        KeyChain.tempUsername = (self.userName.text ?? "").trim()
+        KeyChain.tempUsername = (self.emailTextField.text ?? "").trim()
         Application.shared.authentication.removeStoredCredentials()
         
         let viewController = NavigationManager.getSelectPlanViewController()
@@ -384,7 +385,7 @@ extension LoginViewController {
     }
     
     private func showCreateSessionAlert(message: String) {
-        showActionSheet(title: message, actions: ["Log out from all other devices", "Try again"], sourceView: self.userName) { index in
+        showActionSheet(title: message, actions: ["Log out from all other devices", "Try again"], sourceView: self.emailTextField) { index in
             switch index {
             case 0:
                 self.startLoginProcess(force: true)
@@ -409,8 +410,13 @@ extension LoginViewController {
 extension LoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        userName.resignFirstResponder()
-        startLoginProcess()
+        if textField == emailTextField {
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            emailTextField.resignFirstResponder()
+            startLoginProcess()
+        }
         
         return true
     }
@@ -440,7 +446,7 @@ extension LoginViewController: UIAdaptivePresentationControllerDelegate {
 extension LoginViewController: ScannerViewControllerDelegate {
     
     func qrCodeFound(code: String) {
-        userName.text = code
+        emailTextField.text = code
         
         guard UserDefaults.shared.hasUserConsent else {
             DispatchQueue.async {

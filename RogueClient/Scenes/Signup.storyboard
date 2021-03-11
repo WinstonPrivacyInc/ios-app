@@ -66,9 +66,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="loginToAccount:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="0WF-h5-e9k"/>
-                                                </connections>
                                             </textField>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34F-JE-p7Q">
                                                 <rect key="frame" x="106" y="638" width="160" height="26"/>
@@ -155,8 +152,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="password" destination="TmK-Gg-7sn" id="1MX-t1-OAs"/>
-                        <outlet property="userName" destination="Hx4-AY-bCY" id="0sY-d1-uGd"/>
+                        <outlet property="emailTextField" destination="Hx4-AY-bCY" id="0sY-d1-uGd"/>
+                        <outlet property="passwordTextField" destination="TmK-Gg-7sn" id="1MX-t1-OAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
