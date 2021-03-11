@@ -41,6 +41,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
     @IBOutlet weak var scannerButton: UIButton! {
         didSet {
             scannerButton.isHidden = !UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -87,6 +88,9 @@ class LoginViewController: UIViewController {
         startSignupProcess()
     }
     
+    @IBAction func presentForgotPasswordView(_ sender: Any) {
+        present(NavigationManager.getForgotPasswordViewController(), animated: true)
+    }
     @IBAction func openScanner(_ sender: AnyObject) {
         present(NavigationManager.getScannerViewController(delegate: self), animated: true)
     }

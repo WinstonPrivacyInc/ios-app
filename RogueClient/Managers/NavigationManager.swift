@@ -40,6 +40,13 @@ class NavigationManager {
         return viewController
     }
     
+    static func getForgotPasswordViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "forgotPasswordView")
+        
+        return viewController
+    }
+    
     static func getChangePlanViewController() -> UIViewController {
         let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let navController = storyBoard.instantiateViewController(withIdentifier: "selectPlanView") as? UINavigationController

@@ -92,11 +92,11 @@ extension UIViewController {
     }
     
     func openTermsOfService() {
-        openWebPage("https://www.ivpn.net/tos-mobile-app/")
+        openWebPage("https://winstonprivacy.com/pages/terms-of-service")
     }
     
     func openPrivacyPolicy() {
-        openWebPage("https://www.ivpn.net/privacy-mobile-app/")
+        openWebPage("https://winstonprivacy.com/pages/privacy-policy")
     }
     
     func registerUserActivity(type: String, title: String) {
@@ -288,7 +288,6 @@ extension UIViewController {
             self.present(viewController, animated: true, completion: nil)
         }
     }
-    
     
     func evaluateHasUserConsent() -> Bool {
         guard UserDefaults.shared.hasUserConsent else {
