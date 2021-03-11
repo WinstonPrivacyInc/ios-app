@@ -34,14 +34,14 @@ class NavigationManager {
     }
     
     static func getLoginViewController() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: "loginView")
         
         return viewController
     }
     
     static func getChangePlanViewController() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let navController = storyBoard.instantiateViewController(withIdentifier: "selectPlanView") as? UINavigationController
         navController?.modalPresentationStyle = .formSheet
         
@@ -55,7 +55,7 @@ class NavigationManager {
     }
     
     static func getSelectPlanViewController() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let navController = storyBoard.instantiateViewController(withIdentifier: "selectPlanView") as? UINavigationController
         navController?.modalPresentationStyle = .formSheet
         
@@ -67,7 +67,7 @@ class NavigationManager {
     }
     
     static func getSubscriptionViewController() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let navController = storyBoard.instantiateViewController(withIdentifier: "subscriptionView") as? UINavigationController
         navController?.modalPresentationStyle = .formSheet
         
@@ -120,7 +120,7 @@ class NavigationManager {
     }
     
     static func getScannerViewController(delegate: ScannerViewControllerDelegate? = nil) -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let navController = storyBoard.instantiateViewController(withIdentifier: "scannerView") as? UINavigationController
         navController?.modalPresentationStyle = .formSheet
         
@@ -132,12 +132,12 @@ class NavigationManager {
     }
     
     static func getCreateAccountViewController() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         return storyBoard.instantiateViewController(withIdentifier: "createAccountView")
     }
     
     static func getTwoFactorViewController(delegate: TwoFactorViewControllerDelegate? = nil) -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let navController = storyBoard.instantiateViewController(withIdentifier: "twoFactorView") as? UINavigationController
         navController?.modalPresentationStyle = .formSheet
         
@@ -149,7 +149,7 @@ class NavigationManager {
     }
     
     static func getCaptchaViewController(delegate: CaptchaViewControllerDelegate? = nil, imageData: String, captchaId: String) -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
         let navController = storyBoard.instantiateViewController(withIdentifier: "captchaView") as? UINavigationController
         navController?.modalPresentationStyle = .formSheet
         

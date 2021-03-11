@@ -93,7 +93,7 @@
 		825E836325A4834200938240 /* APIPublicKeyPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E836225A4834200938240 /* APIPublicKeyPin.swift */; };
 		825E836425A4834200938240 /* APIPublicKeyPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E836225A4834200938240 /* APIPublicKeyPin.swift */; };
 		825E836525A4834200938240 /* APIPublicKeyPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E836225A4834200938240 /* APIPublicKeyPin.swift */; };
-		826470C42446F67100403A14 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826470C32446F67100403A14 /* Signup.storyboard */; };
+		826470C42446F67100403A14 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 826470C32446F67100403A14 /* Auth.storyboard */; };
 		8264CFFC22422F6700E1721E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D90470216C7DAF0032F3BE /* Date+Ext.swift */; };
 		8269CAC32264962F00CF488A /* AntiTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269CAC22264962F00CF488A /* AntiTrackerViewController.swift */; };
 		8269CD8F2164A8C700D083A1 /* servers-dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 8269CD8E2164A8C700D083A1 /* servers-dev.json */; };
@@ -450,7 +450,7 @@
 		825A43FC215CCFE70076131F /* UserDefaults+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Ext.swift"; sourceTree = "<group>"; };
 		825E834E25A327EB00938240 /* CaptchaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaViewController.swift; sourceTree = "<group>"; };
 		825E836225A4834200938240 /* APIPublicKeyPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPublicKeyPin.swift; sourceTree = "<group>"; };
-		826470C32446F67100403A14 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		826470C32446F67100403A14 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		8269CAC22264962F00CF488A /* AntiTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiTrackerViewController.swift; sourceTree = "<group>"; };
 		8269CD8E2164A8C700D083A1 /* servers-dev.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "servers-dev.json"; sourceTree = "<group>"; };
 		826C56D122FD4F2600D2B76A /* ServiceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatus.swift; sourceTree = "<group>"; };
@@ -1058,7 +1058,7 @@
 				82DEF01B2447149000CCB5CD /* Signup */,
 				9CDDD5B71D9D2F9F00D39924 /* LaunchScreen.storyboard */,
 				9C2833731D9D3EB60024C553 /* Initial.storyboard */,
-				826470C32446F67100403A14 /* Signup.storyboard */,
+				826470C32446F67100403A14 /* Auth.storyboard */,
 				9CDDD5B21D9D2F9F00D39924 /* Main.storyboard */,
 			);
 			path = Scenes;
@@ -1714,7 +1714,7 @@
 				8269CD8F2164A8C700D083A1 /* servers-dev.json in Resources */,
 				9CDDD5B41D9D2F9F00D39924 /* Main.storyboard in Resources */,
 				9C2833741D9D3EB60024C553 /* Initial.storyboard in Resources */,
-				826470C42446F67100403A14 /* Signup.storyboard in Resources */,
+				826470C42446F67100403A14 /* Auth.storyboard in Resources */,
 				82FF0D4223153D1000440E5D /* Colors.xcassets in Resources */,
 				A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */,
 			);
