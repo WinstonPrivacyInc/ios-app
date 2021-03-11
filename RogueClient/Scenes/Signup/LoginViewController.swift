@@ -180,27 +180,39 @@ class LoginViewController: UIViewController {
             return
         }
         
+        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
+        hud.detailTextLabel.text = "Signin in..."
+        hud.show(in: (navigationController?.view)!)
         
-//        guard ServiceStatus.isValid(username: username) else {
-//            loginProcessStarted = false
-//            showUsernameError()
-//            return
-//        }
-        
-        // sessionManager.createSession(force: force, username: username, confirmation: confirmation, captcha: captcha, captchaId: captchaId)
         Amplify.Auth.signIn(username: username, password: password) { result in
-               switch result {
+           switch result {
                case .success:
-                    self.loginProcessStarted = false
-                    print("Sign in succeeded")
-                    self.createSessionSuccess()
-               
+                    DispatchQueue.main.async {
+                        self.signInSuccess()
+                    }
                case .failure(let error):
-                    self.loginProcessStarted = false
-                    print("Sign in failed \(error)")
+                    DispatchQueue.main.async {
+                        self.signInFailure(authError: error)
+                    }
                }
            }
     }
+    
+    private func signInSuccess() -> Void {
+        // sessionManager.createSession(force: force, username: username, confirmation: confirmation, captcha: captcha, captchaId: captchaId)
+        print("Sign in success")
+        self.createSessionSuccess()
+        self.hud.dismiss()
+        self.loginProcessStarted = false
+    }
+    
+    private func signInFailure(authError: AuthError) -> Void {
+        print("Sign in failure \(authError.errorDescription)")
+        self.hud.dismiss()
+        showAlert(title: "Sign in failed", message: authError.errorDescription)
+        loginProcessStarted = false
+    }
+    
     
     private func startSignupProcess() {
         if KeyChain.tempUsername != nil {
