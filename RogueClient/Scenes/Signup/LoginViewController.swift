@@ -78,6 +78,9 @@ class LoginViewController: UIViewController {
         startLoginProcess()
     }
     
+    @IBAction func passwordReset(_ sender: Any) {
+    }
+    
     @IBAction func createAccount(_ sender: AnyObject) {
         guard UserDefaults.shared.hasUserConsent else {
             actionType = .signup
