@@ -75,10 +75,10 @@ struct Interface {
         }
         
         print("private key \(privateKey.base64EncodedString())")
-        // return privateKey.base64EncodedString()
+        return privateKey.base64EncodedString()
         
         // TODO: antonio - returns hard coded private key for now
-        return "QZqecs9M2Cj535Pky7l8VbWjRT8mADoxD3N+ilHCXHs=";
+        // return "QZqecs9M2Cj535Pky7l8VbWjRT8mADoxD3N+ilHCXHs=";
     }
     
 }

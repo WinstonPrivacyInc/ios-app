@@ -24,5 +24,16 @@
 import Foundation
 
 struct InterfaceResult: Decodable {
-    var ipAddress: String
+    var endpoint: String
+    var dns: String
+    var allowed_ips: String
+    var keep_alive: Int
+    var public_key: String
+    // var ipAddress: String
 }
+
+//struct NetworkError: Decodable {
+//    error: String
+//}
+
+//{"endpoint":"13.59.81.71:51820","dns":"1.1.1.2","allowed_ips":"192.168.0.2/32","keep_alive":0,"public_key":"SJue4OvxWi4EwGkGZ5vKNb61hU4akFm1cV65tNcfyGU=","error":""}

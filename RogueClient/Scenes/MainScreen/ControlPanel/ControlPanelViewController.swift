@@ -194,19 +194,24 @@ class ControlPanelViewController: UITableViewController {
                 return
             }
         
-            guard self.evaluateHasUserConsent() else {
-                self.controlPanelView.connectSwitch.setOn(self.vpnStatusViewModel.connectToggleIsOn, animated: true)
-                NotificationCenter.default.addObserver(self, selector: #selector(self.agreedToTermsOfService), name: Notification.Name.TermsOfServiceAgreed, object: nil)
-                return
-            }
+//            guard self.evaluateHasUserConsent() else {
+//                self.controlPanelView.connectSwitch.setOn(self.vpnStatusViewModel.connectToggleIsOn, animated: true)
+//                NotificationCenter.default.addObserver(self, selector: #selector(self.agreedToTermsOfService), name: Notification.Name.TermsOfServiceAgreed, object: nil)
+//                return
+//            }
             
-            guard self.evaluateIsServiceActive() else {
-                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
-                return
-            }
+//            guard self.evaluateIsServiceActive() else {
+//                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
+//                NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
+//                return
+//            }
             
-            if AppKeyManager.isKeyPairRequired && ExtensionKeyManager.needToRegenerate() {
+            // Antonio: the problem is here... this complains about UI updates in the bg thread
+//            if AppKeyManager.isKeyPairRequired && ExtensionKeyManager.needToRegenerate() {
+//                self.keyManager.setNewKey()
+//                return
+//            }
+            if ExtensionKeyManager.needToRegenerate() {
                 self.keyManager.setNewKey()
                 return
             }

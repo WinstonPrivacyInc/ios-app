@@ -24,6 +24,11 @@
 import Foundation
 
 struct ErrorResult: Decodable {
-    let status: Int
-    let message: String
+     let status: Int
+     let message: String
+}
+
+struct ApiError: Decodable {
+    // let code: Int // TODO: api needs to return a code....
+    let error: String
 }

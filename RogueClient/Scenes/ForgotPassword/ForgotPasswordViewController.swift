@@ -19,6 +19,9 @@ class ForgotPasswordViewController: UIViewController {
 //        addObservers()
 //        hideKeyboardOnTap()
     }
+    @IBAction func passwordReset(_ sender: Any) {
+        print("password reset clicked...")
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

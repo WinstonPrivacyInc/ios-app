@@ -26,6 +26,7 @@ PODS:
     - Amplify (= 1.6.1)
     - AWSCore (~> 2.23.0)
   - FloatingPanel (1.7.4)
+  - Ipify (2.1.0)
   - JGProgressHUD (2.0.4)
   - KeychainAccess (3.2.1)
   - OpenSSL-Apple (1.1.1g.6)
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - Amplify
   - AmplifyPlugins/AWSCognitoAuthPlugin
   - FloatingPanel (~> 1.7.2)
+  - Ipify
   - JGProgressHUD (~> 2.0.3)
   - KeychainAccess (~> 3.2.0)
   - ReachabilitySwift (~> 5.0.0)
@@ -69,6 +71,7 @@ SPEC REPOS:
     - AWSMobileClient
     - AWSPluginsCore
     - FloatingPanel
+    - Ipify
     - JGProgressHUD
     - KeychainAccess
     - OpenSSL-Apple
@@ -89,6 +92,7 @@ SPEC CHECKSUMS:
   AWSMobileClient: ffe1179b9e6d5db7cea3f807df7d47f5d00a5c65
   AWSPluginsCore: f41f8a478fe3fd8839ec16278b86dededefb0628
   FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
+  Ipify: 814952650290001bee4542db6fba63df128f77c2
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   KeychainAccess: d5470352939ced6d6f7fb51cb2e67aae51fc294f
   OpenSSL-Apple: c9c1b9c5b2b1fc4e1758fc5f0836b58ae7fd8183
@@ -98,6 +102,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TunnelKit: cbd063b8b6f4f6a182cf48e646ff35cb2365bf91
 
-PODFILE CHECKSUM: b441c12b7c7d99b79c04b73fbaa5a2ab28b2abb3
+PODFILE CHECKSUM: e7cac89560ec04f90ae95cd0d4ec5ba15dee2821
 
 COCOAPODS: 1.10.1

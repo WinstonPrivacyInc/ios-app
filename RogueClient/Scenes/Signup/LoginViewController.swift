@@ -48,6 +48,12 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var passwordResetButton: UIButton! {
+        didSet {
+            
+        }
+    }
+    
     // MARK: - Properties -
     
     private lazy var sessionManager: SessionManager = {

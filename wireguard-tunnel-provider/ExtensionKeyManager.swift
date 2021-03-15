@@ -73,8 +73,10 @@ struct ExtensionKeyManager {
                 // TODO: antonio... this is not coming from the server,,, it's passed as a parameter...
                 KeyChain.wgPrivateKey = interface.privateKey
                 KeyChain.wgPublicKey = interface.publicKey
-                KeyChain.wgIpAddress = model.ipAddress
-                completion(interface.privateKey, model.ipAddress)
+//                KeyChain.wgIpAddress = model.ipAddress
+//                completion(interface.privateKey, model.ipAddress)
+                KeyChain.wgIpAddress = model.allowed_ips
+                completion(interface.privateKey, model.allowed_ips)
             case .failure:
                 completion(nil, nil)
             }
@@ -82,10 +84,12 @@ struct ExtensionKeyManager {
     }
     
     static func needToRegenerate() -> Bool {
-        guard KeyChain.wgPublicKey != nil else { return false }
-        guard Date() > UserDefaults.shared.wgKeyTimestamp.addingTimeInterval(ExtensionKeyManager.regenerationInterval) else { return false }
-        
+        // TODO: antonio - revert
         return true
+//        guard KeyChain.wgPublicKey != nil else { return false }
+//        guard Date() > UserDefaults.shared.wgKeyTimestamp.addingTimeInterval(ExtensionKeyManager.regenerationInterval) else { return false }
+//
+//        return true
     }
     
 }

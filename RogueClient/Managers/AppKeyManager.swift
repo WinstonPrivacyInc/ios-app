@@ -22,6 +22,7 @@
 //
 
 import Foundation
+import Ipify
 
 @objc protocol AppKeyManagerDelegate: class {
     func setKeyStart()
@@ -94,25 +95,43 @@ class AppKeyManager {
         
         let request = ApiRequestDI(method: .post, endpoint: Config.apiSessionWGKeySet, params: params)
         
-        delegate?.setKeyStart()
+        // antonio this throws error
+        // TODO: move out of here... why is the background thread making UI updates? UI thread should start this before calling .setNewKey right?
+//        DispatchQueue.main.async {
+//            self.delegate?.setKeyStart()
+//        }
+        // delegate?.setKeyStart()
         
+        Ipify.getPublicIPAddress { result in
+            switch result {
+            case .success(let ip):
+                print(ip) // "210.11.178.112"
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        
+        // this fails with:
+        // Main Thread Checker: UI API called on a background thread:
         ApiService.shared.request(request) { (result: Result<InterfaceResult>) in
             switch result {
             case .success(let model):
                 UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
                 KeyChain.wgPrivateKey = interface.privateKey
                 KeyChain.wgPublicKey = interface.publicKey
-                KeyChain.wgIpAddress = model.ipAddress
+                // KeyChain.wgIpAddress = model.ipAddress
+                KeyChain.wgIpAddress = model.allowed_ips
                 self.delegate?.setKeySuccess()
             case .failure:
-                // self.delegate?.setKeyFail()
+                self.delegate?.setKeyFail()
             
                 // TODO: antonio -> for testing... we don't care about sending it to the server for now...
-                UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
-                KeyChain.wgPrivateKey = interface.privateKey
-                KeyChain.wgPublicKey = interface.publicKey
-                KeyChain.wgIpAddress = "192.168.0.2/32" //model.ipAddress
-                self.delegate?.setKeySuccess()
+                // UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
+                // KeyChain.wgPrivateKey = interface.privateKey
+                // KeyChain.wgPublicKey = interface.publicKey
+                // KeyChain.wgIpAddress = "192.168.0.2/32" //model.ipAddress
+                // self.delegate?.setKeySuccess()
             }
         }
     }

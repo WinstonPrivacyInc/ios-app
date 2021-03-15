@@ -34,8 +34,16 @@ class ApiService {
             return []
         }
         
+        
         return [URLQueryItem(name: "session_token", value: sessionToken)]
     }
+    
+    private func getAccessKey(completion: @escaping (String) -> Void) {
+        Application.shared.authentication.getAccessKey(completion: { accessKey in
+            completion(accessKey)
+        });
+    }
+    
     
     // MARK: - Methods -
     
@@ -47,13 +55,20 @@ class ApiService {
             request.queryItems = params
         }
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        // this is deprecated... good to remove.. use your own network activity indicator...
+        // https://stackoverflow.com/questions/56691817/setting-network-activity-indicator-is-deprecated
+        // UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         log(info: "\(requestName) started")
         
+        getAccessKey { (accessKey) in
+            <#code#>
+        }
+        
         APIClient().perform(request) { result in
+            // TODO: antonio - perhaps no need to call in the main thread since no ui code is running anymore..
             DispatchQueue.main.async {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                // UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 
                 switch result {
                 case .success(let response):
@@ -66,15 +81,23 @@ class ApiService {
                             completion(.success(successResponse))
                             log(info: "\(requestName) success")
                             return
-                        } catch {}
+                        } catch {
+                            log(error: "\(requestName) error \(error)")
+                            log(error: "\(requestName) error \(error)")
+                        }
                         
                         do {
-                            let errorResponse = try decoder.decode(ErrorResult.self, from: data)
-                            let error = self.getServiceError(message: errorResponse.message, code: errorResponse.status)
+                            // let errorResponse = try decoder.decode(ErrorResult.self, from: data)
+                            let errorResponse = try decoder.decode(ApiError.self, from: data)
+//                            let error = self.getServiceError(message: errorResponse.message, code: errorResponse.status)
+                            let error = self.getServiceError(message: errorResponse.error, code: 200)
                             completion(.failure(error))
                             log(info: "\(requestName) error response")
                             return
-                        } catch {}
+                        } catch {
+                            log(error: "\(requestName) error2 response \(error)")
+                            
+                        }
                     }
                     
                     completion(.failure(nil))

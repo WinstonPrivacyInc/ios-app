@@ -96,7 +96,11 @@ class APIClient: NSObject {
     private var hostName = UserDefaults.shared.apiHostName
     
     private var baseURL: URL {
-        return URL(string: "https://\(hostName)")!
+         return URL(string: "https://\(hostName)")!
+    }
+    
+    private var baseURLWinston: URL {
+        return URL(string: "http://13.59.81.71:443")!
     }
     
     private var userAgent: String {
@@ -124,6 +128,14 @@ class APIClient: NSObject {
         urlComponents.host = baseURL.host
         urlComponents.path = baseURL.path
         urlComponents.queryItems = request.queryItems
+        
+        if request.path == "/api/v1/wg/connect" {
+            //return URL(string: "http://13.59.81.71")!
+            urlComponents.scheme = baseURLWinston.scheme
+            urlComponents.host = baseURLWinston.host
+            urlComponents.port = 443;
+            urlComponents.path = baseURLWinston.path
+        }
         
         if request.method == .post {
             urlComponents.queryItems = []
@@ -172,12 +184,13 @@ class APIClient: NSObject {
         
         let task = session.dataTask(with: urlRequest) { data, response, _ in
             guard let httpResponse = response as? HTTPURLResponse else {
-                if let nextHost = APIAccessManager.shared.nextHostName(failedHostName: self.hostName) {
-                    self.retry(request, nextHost: nextHost) { result in
-                        completion(result)
-                    }
-                    return
-                }
+                // this tries another server if the request failed... we don't need this
+//                if let nextHost = APIAccessManager.shared.nextHostName(failedHostName: self.hostName) {
+//                    self.retry(request, nextHost: nextHost) { result in
+//                        completion(result)
+//                    }
+//                    return
+//                }
                 
                 completion(.failure(.requestFailed))
                 return

@@ -11,6 +11,7 @@ target 'RogueClient' do
     pod 'FloatingPanel', '~> 1.7.2'
     pod 'SnapKit', '~> 5.0.1'
     pod 'Amplify'
+    pod 'Ipify'
     pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 end
 

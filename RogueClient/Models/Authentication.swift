@@ -31,7 +31,7 @@
 
 import Foundation
 import Amplify
-
+import AWSPluginsCore
 // Authentication class is responsible for securely storing and retrieving of login credentials
 // It does not perform any authentication and just managing the informatino supplied
 
@@ -63,6 +63,28 @@ class Authentication {
                 print("Fetch session failed with error \(error)")
                 completion(false)
             }
+        }
+    }
+    
+    func getAccessKey(completion: @escaping (String) -> Void) {
+        Amplify.Auth.fetchAuthSession { result in
+            
+            var accessKey = ""
+            
+            do {
+                let session = try result.get()
+
+                // Get aws credentials
+                if let awsCredentialsProvider = session as? AuthAWSCredentialsProvider {
+                    let credentials = try awsCredentialsProvider.getAWSCredentials().get()
+                    print("Access key - \(credentials.accessKey) ")
+                    accessKey = credentials.accessKey
+                }
+            } catch {
+                print("Fetch auth session failed with error - \(error)")
+            }
+            
+            completion(accessKey)
         }
     }
     
