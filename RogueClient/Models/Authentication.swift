@@ -66,25 +66,23 @@ class Authentication {
         }
     }
     
-    func getAccessKey(completion: @escaping (String) -> Void) {
+    func getAccessToken(completion: @escaping (String) -> Void) {
         Amplify.Auth.fetchAuthSession { result in
             
-            var accessKey = ""
+            var accessToken = ""
             
             do {
                 let session = try result.get()
-
-                // Get aws credentials
-                if let awsCredentialsProvider = session as? AuthAWSCredentialsProvider {
-                    let credentials = try awsCredentialsProvider.getAWSCredentials().get()
-                    print("Access key - \(credentials.accessKey) ")
-                    accessKey = credentials.accessKey
+                
+                if let cognitoTokenProvider = session as? AuthCognitoTokensProvider {
+                    let tokens = try cognitoTokenProvider.getCognitoTokens().get()
+                    accessToken = tokens.accessToken
                 }
             } catch {
-                print("Fetch auth session failed with error - \(error)")
+                log(info: "Failed to get access token with error - \(error)")
             }
             
-            completion(accessKey)
+            completion(accessToken)
         }
     }
     

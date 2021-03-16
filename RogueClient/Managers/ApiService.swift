@@ -38,14 +38,17 @@ class ApiService {
         return [URLQueryItem(name: "session_token", value: sessionToken)]
     }
     
-    private func getAccessKey(completion: @escaping (String) -> Void) {
-        Application.shared.authentication.getAccessKey(completion: { accessKey in
+    private func getAccessToken(completion: @escaping (String) -> Void) {
+        Application.shared.authentication.getAccessToken(completion: { accessKey in
             completion(accessKey)
         });
     }
     
     
     // MARK: - Methods -
+    func isSuccessCode(statusCode: Int = 500) -> Bool {
+        return statusCode >= 200 && statusCode < 300
+    }
     
     func request<T>(_ requestDI: ApiRequestDI, completion: @escaping (Result<T>) -> Void) {
         let requestName = "\(requestDI.method.description) \(requestDI.endpoint)"
@@ -61,53 +64,70 @@ class ApiService {
         
         log(info: "\(requestName) started")
         
-        getAccessKey { (accessKey) in
-            <#code#>
-        }
-        
-        APIClient().perform(request) { result in
-            // TODO: antonio - perhaps no need to call in the main thread since no ui code is running anymore..
-            DispatchQueue.main.async {
-                // UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                
-                switch result {
-                case .success(let response):
-                    if let data = response.body {
-                        let decoder = JSONDecoder()
-                        decoder.keyDecodingStrategy = .convertFromSnakeCase
-                        
-                        do {
-                            let successResponse = try decoder.decode(T.self, from: data)
-                            completion(.success(successResponse))
-                            log(info: "\(requestName) success")
-                            return
-                        } catch {
-                            log(error: "\(requestName) error \(error)")
-                            log(error: "\(requestName) error \(error)")
-                        }
-                        
-                        do {
-                            // let errorResponse = try decoder.decode(ErrorResult.self, from: data)
-                            let errorResponse = try decoder.decode(ApiError.self, from: data)
-//                            let error = self.getServiceError(message: errorResponse.message, code: errorResponse.status)
-                            let error = self.getServiceError(message: errorResponse.error, code: 200)
-                            completion(.failure(error))
-                            log(info: "\(requestName) error response")
-                            return
-                        } catch {
-                            log(error: "\(requestName) error2 response \(error)")
-                            
-                        }
-                    }
+        getAccessToken { (accessToken) in
+            print("access token \(accessToken)")
+            
+            request.headers = [HTTPHeader(field: "Authorization", value: "Bearer \(accessToken)")]
+            
+            APIClient().perform(request) { result in
+                // TODO: antonio - perhaps no need to call in the main thread since no ui code is running anymore..
+                DispatchQueue.main.async {
+                    // UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     
-                    completion(.failure(nil))
-                    log(info: "\(requestName) parse error")
-                case .failure:
-                    log(info: "\(requestName) failure")
-                    completion(.failure(nil))
+                    switch result {
+                    case .success(let response):
+                        
+//                        if self.isSuccessCode(statusCode: response.statusCode) {
+//                            if let data = response.body {
+//                                let decoder = JSONDecoder()
+//                                decoder.keyDecodingStrategy = .convertFromSnakeCase
+//
+//                                do {
+//                                    let successResponse = try decoder.decode(T.self, from: data)
+//                                    
+//                                }
+//                            }
+//                        }
+                        
+                        if let data = response.body {
+                            let decoder = JSONDecoder()
+                            decoder.keyDecodingStrategy = .convertFromSnakeCase
+                            
+                            do {
+                                let successResponse = try decoder.decode(T.self, from: data)
+                                completion(.success(successResponse))
+                                log(info: "\(requestName) success")
+                                return
+                            } catch {
+                                log(error: "\(requestName) error \(error)")
+                                log(error: "\(requestName) error \(error)")
+                            }
+                            
+                            do {
+                                // let errorResponse = try decoder.decode(ErrorResult.self, from: data)
+                                let errorResponse = try decoder.decode(ApiError.self, from: data)
+    //                            let error = self.getServiceError(message: errorResponse.message, code: errorResponse.status)
+                                let error = self.getServiceError(message: errorResponse.error, code: 200)
+                                completion(.failure(error))
+                                log(info: "\(requestName) error response")
+                                return
+                            } catch {
+                                log(error: "\(requestName) error2 response \(error)")
+                                
+                            }
+                        }
+                        
+                        completion(.failure(nil))
+                        log(info: "\(requestName) parse error")
+                    case .failure:
+                        log(info: "\(requestName) failure")
+                        completion(.failure(nil))
+                    }
                 }
             }
         }
+        
+
     }
     
     func requestCustomError<T, E>(_ requestDI: ApiRequestDI, completion: @escaping (ResultCustomError<T, E>) -> Void) {
