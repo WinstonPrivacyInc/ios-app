@@ -15,15 +15,7 @@ target 'RogueClient' do
     pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 end
 
-target 'openvpn-tunnel-provider' do
-    pod 'TunnelKit', '~> 2.2.7'
-    pod 'KeychainAccess', '~> 3.2.0'
-end
-
 target 'wireguard-tunnel-provider' do
     pod 'KeychainAccess', '~> 3.2.0'
 end
 
-target 'today-extension' do
-    pod 'KeychainAccess', '~> 3.2.0'
-end

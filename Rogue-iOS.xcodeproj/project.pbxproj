@@ -41,9 +41,6 @@
 		821F604A240D21E3008072D7 /* ControlPanelViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F6049240D21E3008072D7 /* ControlPanelViewController+Ext.swift */; };
 		8221377B2227E75E001E1BF5 /* CustomDNSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8221377A2227E75E001E1BF5 /* CustomDNSViewController.swift */; };
 		82234B6721BA7F3500B082DE /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82234B6621BA7F3500B082DE /* Logging.swift */; };
-		82234B6A21BA7F5400B082DE /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82234B6621BA7F3500B082DE /* Logging.swift */; };
-		82234B6E21BA90E400B082DE /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69422D1DD20FC200F9A801 /* KeyChain.swift */; };
-		82234B6F21BA90EC00B082DE /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB2CE371DB0F860007A4D2D /* FileSystemManager.swift */; };
 		8223C53A22325709006C4F14 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C53922325709006C4F14 /* ApiManager.swift */; };
 		8223C53C2232626E006C4F14 /* ExtensionKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C53B2232626E006C4F14 /* ExtensionKeyManager.swift */; };
 		8223C53D22326300006C4F14 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292E1A82174C11600123538 /* Interface.swift */; };
@@ -52,25 +49,21 @@
 		8223C5402232694E006C4F14 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69422D1DD20FC200F9A801 /* KeyChain.swift */; };
 		8223C54C22E9E93A00CD283D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C54B22E9E93A00CD283D /* Session.swift */; };
 		8223C54E22EAE93F00CD283D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C54D22EAE93F00CD283D /* SessionManager.swift */; };
-		8223C54F22EAEC7000CD283D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C54B22E9E93A00CD283D /* Session.swift */; };
 		8223C55022EAEC7100CD283D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C54B22E9E93A00CD283D /* Session.swift */; };
 		822563922431E03A00AE7F8D /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822563912431E03A00AE7F8D /* AccountView.swift */; };
 		8229196E2182EB1C00978BBA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8229196D2182EB1B00978BBA /* String+Ext.swift */; };
 		822919712182EB1C00978BBA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8229196D2182EB1B00978BBA /* String+Ext.swift */; };
 		822920A02480FA3600476FC1 /* ServersSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8229209F2480FA3600476FC1 /* ServersSort.swift */; };
 		822B85D921B941A200715691 /* NotificationName+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B85D821B941A200715691 /* NotificationName+Ext.swift */; };
-		822EE96C215CE0E300BE77F6 /* UserDefaults+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825A43FC215CCFE70076131F /* UserDefaults+Ext.swift */; };
 		8232FBF42240DE19006B81D2 /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232FBF32240DE19006B81D2 /* ErrorResult.swift */; };
 		8232FBF62240E40F006B81D2 /* Error+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232FBF52240E40F006B81D2 /* Error+Ext.swift */; };
 		82351FCA241FA16600E6E0FD /* InfoAlertViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82351FC9241FA16600E6E0FD /* InfoAlertViewModelTests.swift */; };
 		82351FCC241FBC8E00E6E0FD /* VPNStatusViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82351FCB241FBC8E00E6E0FD /* VPNStatusViewModelTests.swift */; };
 		82351FCE2420CE6800E6E0FD /* MapMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82351FCD2420CE6800E6E0FD /* MapMarkerView.swift */; };
 		82351FD224222F7700E6E0FD /* ConnectionInfoPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82351FD124222F7700E6E0FD /* ConnectionInfoPopupView.swift */; };
-		823BD9E3231D4C8E002E631D /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232FBF32240DE19006B81D2 /* ErrorResult.swift */; };
 		823BD9E4231D4C8F002E631D /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232FBF32240DE19006B81D2 /* ErrorResult.swift */; };
 		823DA733215E3CCB00DAFE37 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823DA732215E3CCB00DAFE37 /* Array+Ext.swift */; };
 		823FFB072338DF1800F91A5D /* Capability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823FFB062338DF1800F91A5D /* Capability.swift */; };
-		823FFB082338E09900F91A5D /* Capability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823FFB062338DF1800F91A5D /* Capability.swift */; };
 		823FFB092338E09A00F91A5D /* Capability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823FFB062338DF1800F91A5D /* Capability.swift */; };
 		824777E721A6BC3A001EEFAF /* Network+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824777E521A6BC3A001EEFAF /* Network+CoreDataClass.swift */; };
 		824777EA21A6BC3A001EEFAF /* Network+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824777E621A6BC3A001EEFAF /* Network+CoreDataProperties.swift */; };
@@ -85,7 +78,6 @@
 		82589A2B21FB5A580009CC6C /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82589A2A21FB5A580009CC6C /* UIImage+Ext.swift */; };
 		825D4EC9224A46F0002E7378 /* ExtensionKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C53B2232626E006C4F14 /* ExtensionKeyManager.swift */; };
 		825D4ECA224A48F7002E7378 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8223C53922325709006C4F14 /* ApiManager.swift */; };
-		825D5D8821908B2600B781BA /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C2E5DE21620FF100C5A09F /* UIDevice+Ext.swift */; };
 		825E834F25A327EB00938240 /* CaptchaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E834E25A327EB00938240 /* CaptchaViewController.swift */; };
 		825E836325A4834200938240 /* APIPublicKeyPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E836225A4834200938240 /* APIPublicKeyPin.swift */; };
 		825E836425A4834200938240 /* APIPublicKeyPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825E836225A4834200938240 /* APIPublicKeyPin.swift */; };
@@ -94,14 +86,12 @@
 		8269CAC32264962F00CF488A /* AntiTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8269CAC22264962F00CF488A /* AntiTrackerViewController.swift */; };
 		8269CD8F2164A8C700D083A1 /* servers-dev.json in Resources */ = {isa = PBXBuildFile; fileRef = 8269CD8E2164A8C700D083A1 /* servers-dev.json */; };
 		826C56D222FD4F2600D2B76A /* ServiceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C56D122FD4F2600D2B76A /* ServiceStatus.swift */; };
-		826C56D322FD551800D2B76A /* ServiceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C56D122FD4F2600D2B76A /* ServiceStatus.swift */; };
 		826C56D422FD551900D2B76A /* ServiceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C56D122FD4F2600D2B76A /* ServiceStatus.swift */; };
 		826D182921D3DAFF0045A570 /* StorageManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826D182821D3DAFF0045A570 /* StorageManagerTests.swift */; };
 		826E61482428F8E60064F195 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E61472428F8E60064F195 /* AccountViewController.swift */; };
 		826E614A242A1CA80064F195 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E6149242A1CA80064F195 /* AccountViewModel.swift */; };
 		826E614C242A61380064F195 /* AccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826E614B242A61380064F195 /* AccountViewModelTests.swift */; };
 		826F7F0C23A79F1500777DB9 /* UserDefaultsTodayExtension+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826F7F0B23A79F1500777DB9 /* UserDefaultsTodayExtension+Ext.swift */; };
-		826F7F4323A7AAD200777DB9 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823DA732215E3CCB00DAFE37 /* Array+Ext.swift */; };
 		826FBDA32461847D00B9E464 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826FBDA22461847D00B9E464 /* ServiceType.swift */; };
 		826FBDA52461848A00B9E464 /* ServiceDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826FBDA42461848A00B9E464 /* ServiceDuration.swift */; };
 		8270753622AFC5B90067C323 /* StringProtocol+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8270753522AFC5B90067C323 /* StringProtocol+Ext.swift */; };
@@ -127,7 +117,6 @@
 		8292E1A92174C11600123538 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292E1A82174C11600123538 /* Interface.swift */; };
 		8292E1AB2174C12200123538 /* Tunnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8292E1AA2174C12200123538 /* Tunnel.swift */; };
 		8292E1BE2174CA6800123538 /* x25519.c in Sources */ = {isa = PBXBuildFile; fileRef = 8292E1BC2174CA6800123538 /* x25519.c */; };
-		8294BC8C22A10F4100328932 /* TunnelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8294BC8B22A10F4100328932 /* TunnelKit.framework */; };
 		8294BC8E22A126C900328932 /* TunnelKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8294BC8D22A126C900328932 /* TunnelKit.framework */; };
 		82989FDE2188981900F7EBE0 /* AppKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82989FDD2188981900F7EBE0 /* AppKeyManager.swift */; };
 		829AA4732267372A00037198 /* Designable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829AA4722267372A00037198 /* Designable+Ext.swift */; };
@@ -137,7 +126,6 @@
 		829DF2822497953C000DC2DB /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829DF2812497953C000DC2DB /* UIButton+Ext.swift */; };
 		82A160BA221C4E2000730577 /* Server+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A160B8221C4E2000730577 /* Server+CoreDataClass.swift */; };
 		82A160BB221C4E2000730577 /* Server+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A160B9221C4E2000730577 /* Server+CoreDataProperties.swift */; };
-		82A208C121BAAC6C00C9AD44 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833781D9D3F060024C553 /* Config.swift */; };
 		82A208C221BAAC6C00C9AD44 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833781D9D3F060024C553 /* Config.swift */; };
 		82A3422324AB660C00761AB0 /* ApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3422224AB660C00761AB0 /* ApplicationTests.swift */; };
 		82A3422524AB6AF700761AB0 /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3422424AB6AF700761AB0 /* Double+Ext.swift */; };
@@ -180,7 +168,6 @@
 		82D598C821A6ADF1000FABDE /* NetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D598C721A6ADF1000FABDE /* NetworkType.swift */; };
 		82D6AA1B215E167C00F21CAA /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D6AA1A215E167C00F21CAA /* UIViewController+Ext.swift */; };
 		82D90471216C7DAF0032F3BE /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D90470216C7DAF0032F3BE /* Date+Ext.swift */; };
-		82D90474216C7DAF0032F3BE /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D90470216C7DAF0032F3BE /* Date+Ext.swift */; };
 		82DAB37B2457013900302F4C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB37A2457013900302F4C /* Service.swift */; };
 		82DAB37D245725E200302F4C /* ServiceTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB37C245725E200302F4C /* ServiceTitleTableViewCell.swift */; };
 		82DAB37F2457260000302F4C /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DAB37E2457260000302F4C /* ServiceTableViewCell.swift */; };
@@ -198,18 +185,14 @@
 		82E4FCB023D71FDF00BEBA1A /* UIApplication+ExtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E4FCAF23D71FDF00BEBA1A /* UIApplication+ExtTests.swift */; };
 		82E5449224EE584E006DEF8D /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E5449124EE584E006DEF8D /* UIImageView+Ext.swift */; };
 		82E7167E2181E8AF00D6B7C2 /* TunnelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7167D2181E8AF00D6B7C2 /* TunnelType.swift */; };
-		82E716812181E8AF00D6B7C2 /* TunnelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7167D2181E8AF00D6B7C2 /* TunnelType.swift */; };
 		82E716822181E8AF00D6B7C2 /* TunnelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7167D2181E8AF00D6B7C2 /* TunnelType.swift */; };
 		82E716842181E8E100D6B7C2 /* ProviderConfigurationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716832181E8E100D6B7C2 /* ProviderConfigurationKeys.swift */; };
 		82E716882181E8E100D6B7C2 /* ProviderConfigurationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716832181E8E100D6B7C2 /* ProviderConfigurationKeys.swift */; };
 		82E7168A2181E8E900D6B7C2 /* WireGuardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716892181E8E900D6B7C2 /* WireGuardProtocol.swift */; };
-		82E7168D2181E8E900D6B7C2 /* WireGuardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716892181E8E900D6B7C2 /* WireGuardProtocol.swift */; };
 		82E7168E2181E8E900D6B7C2 /* WireGuardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716892181E8E900D6B7C2 /* WireGuardProtocol.swift */; };
 		82E716902181E90500D6B7C2 /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7168F2181E90500D6B7C2 /* ConnectionSettings.swift */; };
-		82E716932181E90500D6B7C2 /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7168F2181E90500D6B7C2 /* ConnectionSettings.swift */; };
 		82E716942181E90500D6B7C2 /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7168F2181E90500D6B7C2 /* ConnectionSettings.swift */; };
 		82E716962181E96F00D6B7C2 /* OpenVPNProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716952181E96F00D6B7C2 /* OpenVPNProtocol.swift */; };
-		82E716992181E96F00D6B7C2 /* OpenVPNProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716952181E96F00D6B7C2 /* OpenVPNProtocol.swift */; };
 		82E7169A2181E96F00D6B7C2 /* OpenVPNProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E716952181E96F00D6B7C2 /* OpenVPNProtocol.swift */; };
 		82E7880C22B0DA0D00A98D76 /* NETunnelProviderProtocol+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E7880B22B0DA0D00A98D76 /* NETunnelProviderProtocol+Ext.swift */; };
 		82E81AE72449C44F00D81FB7 /* PaymentComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E81AE62449C44F00D81FB7 /* PaymentComponentView.swift */; };
@@ -241,7 +224,6 @@
 		82F917392344861A0025ED3A /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F917382344861A0025ED3A /* TermsOfServiceViewController.swift */; };
 		82FF0D4223153D1000440E5D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82FF0D4123153D1000440E5D /* Colors.xcassets */; };
 		82FF0D442315587000440E5D /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FF0D432315587000440E5D /* UITextFieldPadding.swift */; };
-		91232C132071E87AABE56D47 /* Pods_openvpn_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347615CB8A67FEFBD52C9029 /* Pods_openvpn_tunnel_provider.framework */; };
 		9C2833741D9D3EB60024C553 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2833731D9D3EB60024C553 /* Initial.storyboard */; };
 		9C28337B1D9D3F060024C553 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833751D9D3F060024C553 /* LoginViewController.swift */; };
 		9C28337E1D9D3F060024C553 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833781D9D3F060024C553 /* Config.swift */; };
@@ -257,7 +239,6 @@
 		9C6942251DD0CBF800F9A801 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */; };
 		9C69422E1DD20FC200F9A801 /* KeyChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C69422D1DD20FC200F9A801 /* KeyChain.swift */; };
 		9C6942371DD218A900F9A801 /* AccessDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6942361DD218A900F9A801 /* AccessDetails.swift */; };
-		9C7840B020CD8A8A00335736 /* openvpn-tunnel-provider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C7840A820CD8A8A00335736 /* openvpn-tunnel-provider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9CAE14C020FE453E00D4DAC0 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE14BF20FE453E00D4DAC0 /* VPNManager.swift */; };
 		9CB2CE1F1DAA5258007A4D2D /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB2CE1E1DAA5258007A4D2D /* Authentication.swift */; };
 		9CB2CE2B1DABD120007A4D2D /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB2CE2A1DABD120007A4D2D /* NavigationManager.swift */; };
@@ -274,13 +255,11 @@
 		9CDDD5B41D9D2F9F00D39924 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD5B21D9D2F9F00D39924 /* Main.storyboard */; };
 		9CDDD5B61D9D2F9F00D39924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD5B51D9D2F9F00D39924 /* Assets.xcassets */; };
 		9CDDD5B91D9D2F9F00D39924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD5B71D9D2F9F00D39924 /* LaunchScreen.storyboard */; };
-		9CF7E35A20F7A86E008E0EC5 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */; };
-		9CF7E37820F7ABE3008E0EC5 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7840AA20CD8A8A00335736 /* PacketTunnelProvider.swift */; };
 		A9B3091725FA740E00B3F73A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */; };
 		A9B3092525FA861E00B3F73A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */; };
 		A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */; };
-		E4B54035CBF6C207628AFAAA /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDB16583513E1D43256D89E /* Pods_wireguard_tunnel_provider.framework */; };
-		EE703FE3F2D81454A90F982E /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2242B612F98B3F066085A77 /* Pods_RogueClient.framework */; };
+		E8802DC3459714DE3B42A0BA /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */; };
+		FCBFE1989E1777F317A055B6 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,13 +291,6 @@
 			remoteGlobalIDString = 9CDDD5AA1D9D2F9E00D39924;
 			remoteInfo = IVPNClient;
 		};
-		9C7840AE20CD8A8A00335736 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9CDDD5A31D9D2F9E00D39924 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C7840A720CD8A8A00335736;
-			remoteInfo = "openvpn-tunnel-provider";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -329,7 +301,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				82B6052B2170840C004B40E6 /* wireguard-tunnel-provider.appex in Embed App Extensions */,
-				9C7840B020CD8A8A00335736 /* openvpn-tunnel-provider.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,14 +308,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C12E68161DD6147D5DE5376 /* Pods-openvpn-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.staging.xcconfig"; path = "Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
-		2AE5F463F9F6C5C2CEC4108F /* Pods-RogueClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.release.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.release.xcconfig"; sourceTree = "<group>"; };
-		347615CB8A67FEFBD52C9029 /* Pods_openvpn_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openvpn_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4441B053DCCFD0C7BCEB6A07 /* Pods-wireguard-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.staging.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
-		4BDB16583513E1D43256D89E /* Pods_wireguard_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wireguard_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		588A5D83994365DA0CF73C46 /* Pods-wireguard-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.debug.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
-		71515AFB9B85003F2D0CD10A /* Pods-wireguard-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.release.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
-		8153E2117BDBA1DE5FA07A5D /* Pods-today-extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.release.xcconfig"; path = "Target Support Files/Pods-today-extension/Pods-today-extension.release.xcconfig"; sourceTree = "<group>"; };
+		0557C42026F7BBC2C1CD3380 /* Pods-wireguard-tunnel-provider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.staging.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.staging.xcconfig"; sourceTree = "<group>"; };
+		42AB29DA6E1C88B7157F2CE3 /* Pods-wireguard-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.debug.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
+		5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wireguard_tunnel_provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FFE1E59417DC781BC78D711 /* Pods-RogueClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.release.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.release.xcconfig"; sourceTree = "<group>"; };
 		820079F32407D96D00EC2062 /* ConnectionInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionInfoBoxView.swift; sourceTree = "<group>"; };
 		8201A5012354A32F008C83DB /* ErrorResultSessionNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResultSessionNew.swift; sourceTree = "<group>"; };
 		8201A5032356536B008C83DB /* UpgradePlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePlanViewController.swift; sourceTree = "<group>"; };
@@ -419,16 +386,6 @@
 		826E614B242A61380064F195 /* AccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModelTests.swift; sourceTree = "<group>"; };
 		826F7F0B23A79F1500777DB9 /* UserDefaultsTodayExtension+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultsTodayExtension+Ext.swift"; sourceTree = "<group>"; };
 		826F7F1223A7A05F00777DB9 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		826F7F1523A7A05F00777DB9 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		826F7F1823A7A05F00777DB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		826F7F1A23A7A05F00777DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		826F7F2223A7A0AB00777DB9 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		826F7F2423A7A1F400777DB9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		826F7F2923A7A43A00777DB9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		826F7F2B23A7A46100777DB9 /* today-extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "today-extension-Bridging-Header.h"; sourceTree = "<group>"; };
-		826F7F2C23A7A49500777DB9 /* today-extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "today-extension.entitlements"; sourceTree = "<group>"; };
-		826F7F4A23A7B4CD00777DB9 /* today-extension-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "today-extension-release.xcconfig"; sourceTree = "<group>"; };
-		826F7F4B23A7B4CD00777DB9 /* today-extension-staging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "today-extension-staging.xcconfig"; sourceTree = "<group>"; };
 		826FBDA22461847D00B9E464 /* ServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceType.swift; sourceTree = "<group>"; };
 		826FBDA42461848A00B9E464 /* ServiceDuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDuration.swift; sourceTree = "<group>"; };
 		8270753522AFC5B90067C323 /* StringProtocol+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Ext.swift"; sourceTree = "<group>"; };
@@ -559,7 +516,7 @@
 		82F917382344861A0025ED3A /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		82FF0D4123153D1000440E5D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		82FF0D432315587000440E5D /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
-		8B6F4328177EE0BA9A554C94 /* Pods-today-extension.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.staging.xcconfig"; path = "Target Support Files/Pods-today-extension/Pods-today-extension.staging.xcconfig"; sourceTree = "<group>"; };
+		8F1B5D48B42C23CF45D5A6B5 /* Pods-wireguard-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.release.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
 		9C2833731D9D3EB60024C553 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
 		9C2833751D9D3F060024C553 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C2833781D9D3F060024C553 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -577,10 +534,6 @@
 		9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		9C69422D1DD20FC200F9A801 /* KeyChain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChain.swift; sourceTree = "<group>"; };
 		9C6942361DD218A900F9A801 /* AccessDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessDetails.swift; sourceTree = "<group>"; };
-		9C7840A820CD8A8A00335736 /* openvpn-tunnel-provider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "openvpn-tunnel-provider.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C7840AA20CD8A8A00335736 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
-		9C7840AC20CD8A8A00335736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C7840AD20CD8A8A00335736 /* openvpn_tunnel_provider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = openvpn_tunnel_provider.entitlements; sourceTree = "<group>"; };
 		9CAE14BF20FE453E00D4DAC0 /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
 		9CB2CE1E1DAA5258007A4D2D /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		9CB2CE261DAA6C1B007A4D2D /* RogueClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RogueClient.entitlements; sourceTree = "<group>"; };
@@ -600,16 +553,12 @@
 		9CDDD5B51D9D2F9F00D39924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CDDD5B81D9D2F9F00D39924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CDDD5BA1D9D2F9F00D39924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8252FB9EB126C04E07F8122 /* Pods_today_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_today_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = Config/amplifyconfiguration.json; sourceTree = "<group>"; };
-		B986C7539CA67C84C23AB2CE /* Pods-today-extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-today-extension.debug.xcconfig"; path = "Target Support Files/Pods-today-extension/Pods-today-extension.debug.xcconfig"; sourceTree = "<group>"; };
-		C1A0133AAECD6E9B869A4AEA /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
-		C2242B612F98B3F066085A77 /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CED530B48223F74DBCD2EDB6 /* Pods-openvpn-tunnel-provider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.debug.xcconfig"; path = "Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.debug.xcconfig"; sourceTree = "<group>"; };
-		ECB90AA4724F54228136BE38 /* Pods-RogueClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.debug.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"; sourceTree = "<group>"; };
-		F3950168B65B9E09220B0ACF /* Pods-openvpn-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openvpn-tunnel-provider.release.xcconfig"; path = "Target Support Files/Pods-openvpn-tunnel-provider/Pods-openvpn-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
+		B046A96FF272AF659CE47461 /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
+		ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC4B0665554A6F142005387 /* Pods-RogueClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.debug.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -626,7 +575,7 @@
 			files = (
 				82B6052F21708575004B40E6 /* NetworkExtension.framework in Frameworks */,
 				824F56082233FE6F00BCDD5C /* libwg-go.a in Frameworks */,
-				E4B54035CBF6C207628AFAAA /* Pods_wireguard_tunnel_provider.framework in Frameworks */,
+				FCBFE1989E1777F317A055B6 /* Pods_wireguard_tunnel_provider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,16 +583,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C7840A520CD8A8A00335736 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8294BC8C22A10F4100328932 /* TunnelKit.framework in Frameworks */,
-				9CF7E35A20F7A86E008E0EC5 /* NetworkExtension.framework in Frameworks */,
-				91232C132071E87AABE56D47 /* Pods_openvpn_tunnel_provider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -656,7 +595,7 @@
 				9CB2CE311DAF9227007A4D2D /* CoreData.framework in Frameworks */,
 				9C6942251DD0CBF800F9A801 /* NetworkExtension.framework in Frameworks */,
 				9CC29DF01E1560990080F799 /* StoreKit.framework in Frameworks */,
-				EE703FE3F2D81454A90F982E /* Pods_RogueClient.framework in Frameworks */,
+				E8802DC3459714DE3B42A0BA /* Pods_RogueClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,10 +619,8 @@
 				9C6942241DD0CBF800F9A801 /* NetworkExtension.framework */,
 				9CB2CE301DAF9227007A4D2D /* CoreData.framework */,
 				826F7F1223A7A05F00777DB9 /* NotificationCenter.framework */,
-				C2242B612F98B3F066085A77 /* Pods_RogueClient.framework */,
-				347615CB8A67FEFBD52C9029 /* Pods_openvpn_tunnel_provider.framework */,
-				A8252FB9EB126C04E07F8122 /* Pods_today_extension.framework */,
-				4BDB16583513E1D43256D89E /* Pods_wireguard_tunnel_provider.framework */,
+				ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */,
+				5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -902,31 +839,6 @@
 				826D182A21D3DAFF0045A570 /* Info.plist */,
 			);
 			path = UnitTests;
-			sourceTree = "<group>";
-		};
-		826F7F1423A7A05F00777DB9 /* today-extension */ = {
-			isa = PBXGroup;
-			children = (
-				826F7F4823A7B4CD00777DB9 /* Config */,
-				826F7F1523A7A05F00777DB9 /* TodayViewController.swift */,
-				826F7F2223A7A0AB00777DB9 /* ApiManager.swift */,
-				826F7F2923A7A43A00777DB9 /* ViewModel.swift */,
-				826F7F2B23A7A46100777DB9 /* today-extension-Bridging-Header.h */,
-				826F7F1723A7A05F00777DB9 /* MainInterface.storyboard */,
-				826F7F1A23A7A05F00777DB9 /* Info.plist */,
-				826F7F2C23A7A49500777DB9 /* today-extension.entitlements */,
-				826F7F2423A7A1F400777DB9 /* Colors.xcassets */,
-			);
-			path = "today-extension";
-			sourceTree = "<group>";
-		};
-		826F7F4823A7B4CD00777DB9 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				826F7F4A23A7B4CD00777DB9 /* today-extension-release.xcconfig */,
-				826F7F4B23A7B4CD00777DB9 /* today-extension-staging.xcconfig */,
-			);
-			path = Config;
 			sourceTree = "<group>";
 		};
 		8286638C21524D9F00C4D068 /* Enums */ = {
@@ -1282,41 +1194,23 @@
 		99B4C74761E2E709F4D27F15 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				ECB90AA4724F54228136BE38 /* Pods-RogueClient.debug.xcconfig */,
-				C1A0133AAECD6E9B869A4AEA /* Pods-RogueClient.staging.xcconfig */,
-				2AE5F463F9F6C5C2CEC4108F /* Pods-RogueClient.release.xcconfig */,
-				CED530B48223F74DBCD2EDB6 /* Pods-openvpn-tunnel-provider.debug.xcconfig */,
-				0C12E68161DD6147D5DE5376 /* Pods-openvpn-tunnel-provider.staging.xcconfig */,
-				F3950168B65B9E09220B0ACF /* Pods-openvpn-tunnel-provider.release.xcconfig */,
-				B986C7539CA67C84C23AB2CE /* Pods-today-extension.debug.xcconfig */,
-				8B6F4328177EE0BA9A554C94 /* Pods-today-extension.staging.xcconfig */,
-				8153E2117BDBA1DE5FA07A5D /* Pods-today-extension.release.xcconfig */,
-				588A5D83994365DA0CF73C46 /* Pods-wireguard-tunnel-provider.debug.xcconfig */,
-				4441B053DCCFD0C7BCEB6A07 /* Pods-wireguard-tunnel-provider.staging.xcconfig */,
-				71515AFB9B85003F2D0CD10A /* Pods-wireguard-tunnel-provider.release.xcconfig */,
+				FDC4B0665554A6F142005387 /* Pods-RogueClient.debug.xcconfig */,
+				B046A96FF272AF659CE47461 /* Pods-RogueClient.staging.xcconfig */,
+				7FFE1E59417DC781BC78D711 /* Pods-RogueClient.release.xcconfig */,
+				42AB29DA6E1C88B7157F2CE3 /* Pods-wireguard-tunnel-provider.debug.xcconfig */,
+				0557C42026F7BBC2C1CD3380 /* Pods-wireguard-tunnel-provider.staging.xcconfig */,
+				8F1B5D48B42C23CF45D5A6B5 /* Pods-wireguard-tunnel-provider.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		9C7840A920CD8A8A00335736 /* openvpn-tunnel-provider */ = {
-			isa = PBXGroup;
-			children = (
-				9C7840AA20CD8A8A00335736 /* PacketTunnelProvider.swift */,
-				9C7840AC20CD8A8A00335736 /* Info.plist */,
-				9C7840AD20CD8A8A00335736 /* openvpn_tunnel_provider.entitlements */,
-			);
-			path = "openvpn-tunnel-provider";
 			sourceTree = "<group>";
 		};
 		9CDDD5A21D9D2F9E00D39924 = {
 			isa = PBXGroup;
 			children = (
 				9CDDD5AD1D9D2F9F00D39924 /* RogueClient */,
-				9C7840A920CD8A8A00335736 /* openvpn-tunnel-provider */,
 				82B605242170840C004B40E6 /* wireguard-tunnel-provider */,
 				826D182721D3DAFF0045A570 /* UnitTests */,
 				82B81E41235EE93D005986E8 /* UITests */,
-				826F7F1423A7A05F00777DB9 /* today-extension */,
 				9CDDD5AC1D9D2F9F00D39924 /* Products */,
 				584496306C3B9383149618CE /* Frameworks */,
 				99B4C74761E2E709F4D27F15 /* Pods */,
@@ -1327,7 +1221,6 @@
 			isa = PBXGroup;
 			children = (
 				9CDDD5AB1D9D2F9F00D39924 /* RogueClient.app */,
-				9C7840A820CD8A8A00335736 /* openvpn-tunnel-provider.appex */,
 				82B605232170840C004B40E6 /* wireguard-tunnel-provider.appex */,
 				826D182621D3DAFF0045A570 /* UnitTests.xctest */,
 				82B81E40235EE93D005986E8 /* UITests.xctest */,
@@ -1408,7 +1301,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82B6052C2170840C004B40E6 /* Build configuration list for PBXNativeTarget "wireguard-tunnel-provider" */;
 			buildPhases = (
-				AB84DD7CD288D7D48300F4BC /* [CP] Check Pods Manifest.lock */,
+				726294DD5A73D390D2D544FA /* [CP] Check Pods Manifest.lock */,
 				82B6051F2170840C004B40E6 /* Sources */,
 				82B605202170840C004B40E6 /* Frameworks */,
 				82B605212170840C004B40E6 /* Resources */,
@@ -1441,40 +1334,21 @@
 			productReference = 82B81E40235EE93D005986E8 /* UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		9C7840A720CD8A8A00335736 /* openvpn-tunnel-provider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9C7840B120CD8A8A00335736 /* Build configuration list for PBXNativeTarget "openvpn-tunnel-provider" */;
-			buildPhases = (
-				54F3D3284816EFD92850861B /* [CP] Check Pods Manifest.lock */,
-				9C7840A420CD8A8A00335736 /* Sources */,
-				9C7840A520CD8A8A00335736 /* Frameworks */,
-				9C7840A620CD8A8A00335736 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "openvpn-tunnel-provider";
-			productName = "openvpn-tunnel-provider";
-			productReference = 9C7840A820CD8A8A00335736 /* openvpn-tunnel-provider.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		9CDDD5AA1D9D2F9E00D39924 /* RogueClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CDDD5D31D9D2F9F00D39924 /* Build configuration list for PBXNativeTarget "RogueClient" */;
 			buildPhases = (
-				FCEC13848C9EDBCBD2ECCE30 /* [CP] Check Pods Manifest.lock */,
+				74CA577B54186C5BDB90507D /* [CP] Check Pods Manifest.lock */,
 				9CDDD5A71D9D2F9E00D39924 /* Sources */,
 				9CDDD5A81D9D2F9E00D39924 /* Frameworks */,
 				9CDDD5A91D9D2F9E00D39924 /* Resources */,
 				9C7840B420CD8A8A00335736 /* Embed App Extensions */,
 				9CB2CE481DB28B8B007A4D2D /* Fetch servers.json */,
-				32B1E393AC185699B9B204F0 /* [CP] Embed Pods Frameworks */,
+				950B24F440B80C4622BAB5DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9C7840AF20CD8A8A00335736 /* PBXTargetDependency */,
 				82B6052A2170840C004B40E6 /* PBXTargetDependency */,
 			);
 			name = RogueClient;
@@ -1527,23 +1401,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9CDDD5AA1D9D2F9E00D39924;
 					};
-					9C7840A720CD8A8A00335736 = {
-						CreatedOnToolsVersion = 9.4;
-						DevelopmentTeam = 4TSHK25NM3;
-						LastSwiftMigration = 1020;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Keychain = {
-								enabled = 1;
-							};
-							com.apple.NetworkExtensions.iOS = {
-								enabled = 1;
-							};
-							com.apple.VPNLite = {
-								enabled = 1;
-							};
-						};
-					};
 					9CDDD5AA1D9D2F9E00D39924 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4TSHK25NM3;
@@ -1594,7 +1451,6 @@
 				9CDDD5AA1D9D2F9E00D39924 /* RogueClient */,
 				826D182521D3DAFF0045A570 /* UnitTests */,
 				82B81E3F235EE93D005986E8 /* UITests */,
-				9C7840A720CD8A8A00335736 /* openvpn-tunnel-provider */,
 				82B605222170840C004B40E6 /* wireguard-tunnel-provider */,
 				824F56032233FDC300BCDD5C /* wireguard-go-bridge */,
 			);
@@ -1623,13 +1479,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C7840A620CD8A8A00335736 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9CDDD5A91D9D2F9E00D39924 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1649,7 +1498,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		32B1E393AC185699B9B204F0 /* [CP] Embed Pods Frameworks */ = {
+		726294DD5A73D390D2D544FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wireguard-tunnel-provider-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74CA577B54186C5BDB90507D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RogueClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		950B24F440B80C4622BAB5DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1703,28 +1596,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RogueClient/Pods-RogueClient-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		54F3D3284816EFD92850861B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-openvpn-tunnel-provider-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9CB2CE481DB28B8B007A4D2D /* Fetch servers.json */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -1738,50 +1609,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "curl -sf \"https://api.ivpn.net/v4/servers.json?pretty=true\" > RogueClient/Config/servers.json\n";
-			showEnvVarsInLog = 0;
-		};
-		AB84DD7CD288D7D48300F4BC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wireguard-tunnel-provider-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FCEC13848C9EDBCBD2ECCE30 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RogueClient-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1877,30 +1704,6 @@
 				82B81E4C235EF11E005986E8 /* MainScreenTests.swift in Sources */,
 				82B81E4F235F2614005986E8 /* XCUIApplication+Ext.swift in Sources */,
 				82B81E51235F2A13005986E8 /* InitScreenTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C7840A420CD8A8A00335736 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				823BD9E3231D4C8E002E631D /* ErrorResult.swift in Sources */,
-				82234B6E21BA90E400B082DE /* KeyChain.swift in Sources */,
-				82E7168D2181E8E900D6B7C2 /* WireGuardProtocol.swift in Sources */,
-				9CF7E37820F7ABE3008E0EC5 /* PacketTunnelProvider.swift in Sources */,
-				82D90474216C7DAF0032F3BE /* Date+Ext.swift in Sources */,
-				82E716992181E96F00D6B7C2 /* OpenVPNProtocol.swift in Sources */,
-				822EE96C215CE0E300BE77F6 /* UserDefaults+Ext.swift in Sources */,
-				82234B6F21BA90EC00B082DE /* FileSystemManager.swift in Sources */,
-				8223C54F22EAEC7000CD283D /* Session.swift in Sources */,
-				82234B6A21BA7F5400B082DE /* Logging.swift in Sources */,
-				826C56D322FD551800D2B76A /* ServiceStatus.swift in Sources */,
-				825D5D8821908B2600B781BA /* UIDevice+Ext.swift in Sources */,
-				82E716932181E90500D6B7C2 /* ConnectionSettings.swift in Sources */,
-				823FFB082338E09900F91A5D /* Capability.swift in Sources */,
-				826F7F4323A7AAD200777DB9 /* Array+Ext.swift in Sources */,
-				82E716812181E8AF00D6B7C2 /* TunnelType.swift in Sources */,
-				82A208C121BAAC6C00C9AD44 /* Config.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2096,22 +1899,9 @@
 			target = 9CDDD5AA1D9D2F9E00D39924 /* RogueClient */;
 			targetProxy = 82B81E45235EE93D005986E8 /* PBXContainerItemProxy */;
 		};
-		9C7840AF20CD8A8A00335736 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C7840A720CD8A8A00335736 /* openvpn-tunnel-provider */;
-			targetProxy = 9C7840AE20CD8A8A00335736 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		826F7F1723A7A05F00777DB9 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				826F7F1823A7A05F00777DB9 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		9CDDD5B21D9D2F9F00D39924 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2487,47 +2277,6 @@
 			};
 			name = Staging;
 		};
-		82D2D80022CA404C004BCC52 /* Staging */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C12E68161DD6147D5DE5376 /* Pods-openvpn-tunnel-provider.staging.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "openvpn-tunnel-provider/openvpn_tunnel_provider.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = 4TSHK25NM3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "openvpn-tunnel-provider/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 2.1.0;
-				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.winstonprivacy.rogue.openvpn-tunnel-provider";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Staging;
-		};
 		82D2D80122CA404C004BCC52 /* Staging */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 82A9E8C823471FB2007BCA7E /* wg-staging.xcconfig */;
@@ -2587,88 +2336,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Staging;
-		};
-		9C7840B220CD8A8A00335736 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CED530B48223F74DBCD2EDB6 /* Pods-openvpn-tunnel-provider.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "openvpn-tunnel-provider/openvpn_tunnel_provider.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = 4TSHK25NM3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "openvpn-tunnel-provider/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 2.1.0;
-				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.winstonprivacy.rogue.openvpn-tunnel-provider";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		9C7840B320CD8A8A00335736 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3950168B65B9E09220B0ACF /* Pods-openvpn-tunnel-provider.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = "openvpn-tunnel-provider/openvpn_tunnel_provider.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
-				DEVELOPMENT_TEAM = 4TSHK25NM3;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/**",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "openvpn-tunnel-provider/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 2.1.0;
-				OTHER_SWIFT_FLAGS = "-D RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.winstonprivacy.rogue.openvpn-tunnel-provider";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
 		};
 		9CDDD5D11D9D2F9F00D39924 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2898,16 +2565,6 @@
 				82B81E48235EE93D005986E8 /* Debug */,
 				82B81E49235EE93D005986E8 /* Staging */,
 				82B81E4A235EE93D005986E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9C7840B120CD8A8A00335736 /* Build configuration list for PBXNativeTarget "openvpn-tunnel-provider" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9C7840B220CD8A8A00335736 /* Debug */,
-				82D2D80022CA404C004BCC52 /* Staging */,
-				9C7840B320CD8A8A00335736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
