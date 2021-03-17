@@ -85,15 +85,57 @@ class AppKeyManager {
         KeyChain.wgPublicKey = interface.publicKey
     }
     
+    private func getIpAddress(completion: @escaping (String) -> Void) {
+        Ipify.getPublicIPAddress { (result) in
+            switch result {
+            case .success(let ip):
+                completion(ip)
+            case .failure(let error):
+                log(error: "Unable to get public IP address \(String(describing: error))")
+                completion("")
+            }
+        }
+    }
+    
     func setNewKey() {
-        var interface = Interface()
-        interface.privateKey = Interface.generatePrivateKey()
         
-        let params = ApiService.authParams + [
-            URLQueryItem(name: "public_key", value: interface.publicKey ?? "")
-        ]
+        let keyPair = KeyPair()
         
-        let request = ApiRequestDI(method: .post, endpoint: Config.apiSessionWGKeySet, params: params)
+        self.getIpAddress { (ipAddress) in
+            let params = [
+                URLQueryItem(name: "ip_address", value: ipAddress),
+                URLQueryItem(name: "listen_port", value: "5353"),
+                URLQueryItem(name: "public_key", value: keyPair.publicKey),
+                URLQueryItem(name: "server_port", value: "51820"),
+            ]
+            
+            let request = ApiRequestDI(method: .post, endpoint: Config.apiSessionWGKeySet, params: params)
+            
+            ApiService.shared.request(request) { (result: Result<InterfaceResult>) in
+                switch result {
+                case .success(let wireguardInterface):
+                    UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
+                    KeyChain.wgPrivateKey = keyPair.privateKey
+                    KeyChain.wgPublicKey = keyPair.publicKey
+                    KeyChain.wgIpAddress = wireguardInterface.allowedIps
+                    self.delegate?.setKeySuccess()
+                case .failure:
+                    self.delegate?.setKeyFail()
+                }
+            }
+            
+        }
+        
+    
+        
+//        var interface = Interface()
+//        interface.privateKey = Interface.generatePrivateKey()
+        
+//        let params = ApiService.authParams + [
+//            URLQueryItem(name: "public_key", value: interface.publicKey ?? "")
+//        ]
+        
+        
         
         // antonio this throws error
         // TODO: move out of here... why is the background thread making UI updates? UI thread should start this before calling .setNewKey right?
@@ -102,38 +144,22 @@ class AppKeyManager {
 //        }
         // delegate?.setKeyStart()
         
-        Ipify.getPublicIPAddress { result in
-            switch result {
-            case .success(let ip):
-                print(ip) // "210.11.178.112"
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
         
         // this fails with:
         // Main Thread Checker: UI API called on a background thread:
-        ApiService.shared.request(request) { (result: Result<InterfaceResult>) in
-            switch result {
-            case .success(let model):
-                UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
-                KeyChain.wgPrivateKey = interface.privateKey
-                KeyChain.wgPublicKey = interface.publicKey
-                // KeyChain.wgIpAddress = model.ipAddress
-                KeyChain.wgIpAddress = model.allowed_ips
-                self.delegate?.setKeySuccess()
-            case .failure:
-                self.delegate?.setKeyFail()
-            
-                // TODO: antonio -> for testing... we don't care about sending it to the server for now...
-                // UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
-                // KeyChain.wgPrivateKey = interface.privateKey
-                // KeyChain.wgPublicKey = interface.publicKey
-                // KeyChain.wgIpAddress = "192.168.0.2/32" //model.ipAddress
-                // self.delegate?.setKeySuccess()
-            }
-        }
+//        ApiService.shared.request(request) { (result: Result<InterfaceResult>) in
+//            switch result {
+//            case .success(let model):
+//                UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
+//                KeyChain.wgPrivateKey = interface.privateKey
+//                KeyChain.wgPublicKey = interface.publicKey
+//                // KeyChain.wgIpAddress = model.ipAddress
+//                KeyChain.wgIpAddress = model.allowed_ips
+//                self.delegate?.setKeySuccess()
+//            case .failure:
+//                self.delegate?.setKeyFail()
+//            }
+//        }
     }
     
 }

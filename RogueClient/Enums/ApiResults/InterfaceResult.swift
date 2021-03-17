@@ -23,17 +23,48 @@
 
 import Foundation
 
-struct InterfaceResult: Decodable {
-    var endpoint: String
-    var dns: String
-    var allowed_ips: String
-    var keep_alive: Int
-    var public_key: String
-    // var ipAddress: String
+class InterfaceResult: Codable {
+    var endpoint: String?
+    var dns: String?
+    var allowedIps: String?
+    var keepAlive: Int?
+    var publicKey: String?
+    var error: String?
+    
+    init() {
+        
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case endpoint
+        case dns
+        case allowedIps = "allowed_ips"
+        case keepAlive = "keep_alive"
+        case publicKey = "public_key"
+        case error
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        endpoint = try container.decodeIfPresent(String.self, forKey: .endpoint)
+        dns = try container.decodeIfPresent(String.self, forKey: .dns)
+        allowedIps = try container.decodeIfPresent(String.self, forKey: .allowedIps)
+        keepAlive = try container.decodeIfPresent(Int.self, forKey: .keepAlive)
+        publicKey = try container.decodeIfPresent(String.self, forKey: .publicKey)
+        error = try container.decodeIfPresent(String.self, forKey: .error)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encodeIfPresent(endpoint, forKey: .endpoint)
+        try container.encodeIfPresent(dns, forKey: .dns)
+        try container.encodeIfPresent(allowedIps, forKey: .allowedIps)
+        try container.encodeIfPresent(keepAlive, forKey: .keepAlive)
+        try container.encodeIfPresent(publicKey, forKey: .publicKey)
+        try container.encodeIfPresent(error, forKey: .error)
+    }
 }
-
-//struct NetworkError: Decodable {
-//    error: String
-//}
 
 //{"endpoint":"13.59.81.71:51820","dns":"1.1.1.2","allowed_ips":"192.168.0.2/32","keep_alive":0,"public_key":"SJue4OvxWi4EwGkGZ5vKNb61hU4akFm1cV65tNcfyGU=","error":""}

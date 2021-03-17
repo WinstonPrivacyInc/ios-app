@@ -22,6 +22,7 @@
 //
 
 import Foundation
+//import Alamofire
 
 enum HTTPMethod: String {
     case get = "GET"
@@ -120,7 +121,9 @@ class APIClient: NSObject {
         return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
     }
     
-    // MARK: - Methods -
+    private func isNumber(value: String) -> Bool {
+        return Int(value) != nil
+    }
     
     func perform(_ request: APIRequest, _ completion: @escaping APIClientCompletion) {
         var urlComponents = URLComponents()
@@ -155,15 +158,18 @@ class APIClient: NSObject {
             case .applicationXWWWFromUrlencoded:
                 urlRequest.httpBody = query(queryItems).data(using: .utf8)
             case .applicationJSON:
+                
+                // TODO: this is horrible way to do this... add support to codable objects later
                 let parameters = queryItems.reduce([String: Any]()) { (dict, queryItem) -> [String: Any] in
                     var dict = dict
                     
-                    switch queryItem.value {
-                    case "true":
+                    if queryItem.value == "true" {
                         dict[queryItem.name] = true
-                    case "false":
+                    } else if queryItem.value == "false" {
                         dict[queryItem.name] = false
-                    default:
+                    } else if self.isNumber(value: queryItem.value ?? "") {
+                        dict[queryItem.name] = Int(queryItem.value ?? "0")
+                    } else {
                         dict[queryItem.name] = queryItem.value
                     }
                     
