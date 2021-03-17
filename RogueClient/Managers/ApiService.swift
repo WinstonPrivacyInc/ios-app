@@ -72,11 +72,9 @@ class ApiService {
                         if let data = response.body {
                             let decoder = JSONDecoder()
                             
-                            // decoder.keyDecodingStrategy = .convertFromSnakeCase
+                             decoder.keyDecodingStrategy = .convertFromSnakeCase
                             
                             do {
-                                let json = try? JSONSerialization.jsonObject(with: data, options: [])
-                                print("json above")
                                 let successResponse = try decoder.decode(T.self, from: data)
                                 log(info: "\(requestName) success")
                                 completion(.success(successResponse))

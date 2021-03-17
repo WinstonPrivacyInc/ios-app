@@ -84,13 +84,13 @@ struct ExtensionKeyManager {
     }
     
     static func needToRegenerate() -> Bool {
-        guard KeyChain.wgPublicKey != nil else {
-            return false
-        }
-
-        //        guard Date() > UserDefaults.shared.wgKeyTimestamp.addingTimeInterval(ExtensionKeyManager.regenerationInterval) else { return false }
+        let publicKey = KeyChain.wgPublicKey ?? ""
         
-        return true
+        return publicKey.isEmpty || isPublicKeyOld()
     }
     
+    static private func isPublicKeyOld() -> Bool {
+        let nextKeyGenerationTime = UserDefaults.shared.wgKeyTimestamp.addingTimeInterval(ExtensionKeyManager.regenerationInterval)
+        return nextKeyGenerationTime < Date()
+    }
 }

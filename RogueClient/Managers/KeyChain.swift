@@ -34,10 +34,71 @@ class KeyChain {
     private static let vpnUsernameKey = "vpn_username"
     private static let vpnPasswordKey = "vpn_password"
     
+    private static let wgPeerEndpointKey = "wg_peer_endpoint"
+    private static let wgPeerDnsKey = "wg_peer_dns"
+    private static let wgPeerAllowedIpsKey = "wg_peer_allowed_ips"
+    private static let wpPeerKeepAliveKey = "wp_peer_keep_alive"
+    private static let wpPeerPublicKey = "wp_peer_public_key"
+    
+    /**
+     {"endpoint":"13.59.81.71:51820","dns":"1.1.1.2","allowed_ips":"192.168.0.5/32","keep_alive":0,"public_key":"SJue4OvxWi4EwGkGZ5vKNb61hU4akFm1cV65tNcfyGU=","error":""}
+
+     */
+    
     // TODO: antonio -> replace with rogue's group..
     static let bundle: Keychain = {
         return Keychain(service: "com.winstonprivacy.rogue", accessGroup: "4TSHK25NM3.com.winstonprivacy.rogue")
     }()
+    
+    class var wgPeerEndpoint: String? {
+        get {
+            return KeyChain.bundle[wgPeerEndpointKey]
+            
+        }
+        set {
+            KeyChain.bundle[wgPeerEndpointKey] = newValue
+        }
+    }
+    
+    class var wpPeerDNS: String? {
+        get {
+            return KeyChain.bundle[wgPeerDnsKey]
+            
+        }
+        set {
+            KeyChain.bundle[wgPeerDnsKey] = newValue
+        }
+    }
+    
+    class var wgPeerAllowedIPs: String? {
+        get {
+            return KeyChain.bundle[wgPeerAllowedIpsKey]
+            
+        }
+        set {
+            KeyChain.bundle[wgPeerAllowedIpsKey] = newValue
+        }
+    }
+    
+    class var wgPeerKeepAlive: String? {
+        get {
+            return KeyChain.bundle[wpPeerKeepAliveKey]
+            
+        }
+        set {
+            KeyChain.bundle[wpPeerKeepAliveKey] = newValue
+        }
+    }
+    
+    class var wpPeerPublic: String? {
+        get {
+            return KeyChain.bundle[wpPeerPublicKey]
+            
+        }
+        set {
+            KeyChain.bundle[wpPeerPublicKey] = newValue
+        }
+    }
     
     class var username: String? {
         get {

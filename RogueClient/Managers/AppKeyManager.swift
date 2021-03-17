@@ -115,6 +115,9 @@ class AppKeyManager {
                 switch result {
                 case .success(let wireguardInterface):
                     UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
+                    
+                    KeyChain.wgPeerEndpoint = wireguardInterface.endpoint
+                    
                     KeyChain.wgPrivateKey = keyPair.privateKey
                     KeyChain.wgPublicKey = keyPair.publicKey
                     KeyChain.wgIpAddress = wireguardInterface.allowedIps

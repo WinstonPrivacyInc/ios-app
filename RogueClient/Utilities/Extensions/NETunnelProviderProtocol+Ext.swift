@@ -105,11 +105,11 @@ extension NETunnelProviderProtocol {
         
         // this is the server info
         let peer = Peer(
-            publicKey: hostServer.publicKey,
-            allowedIPs: "0.0.0.0/0, ::/0", //Config.wgPeerAllowedIPs, // 0.0.0.0/0 basically anything
+            publicKey: hostServer.publicKey, // TODO need to save wg server public key
+            allowedIPs: "0.0.0.0/0, ::/0", // KeyChain.wgIpAddress (rename to KeyChain.wgPeerAllowedIPs  //Config.wgPeerAllowedIPs, // 0.0.0.0/0 basically anything
 //            allowedIPs: "0.0.0.0/0", //Config.wgPeerAllowedIPs, // 0.0.0.0/0 basically anything
-            endpoint: "13.59.81.71:80", // Peer.endpoint(host: hostServer.host, port: settings.port()),
-            persistentKeepalive: 15 // Config.wgPeerPersistentKeepalive // 25 in config
+            endpoint: "13.59.81.71:80", // TODO need to save wg server public key // Peer.endpoint(host: hostServer.host, port: settings.port()),
+            persistentKeepalive: 15 // // TODO need to save wg server public key Config.wgPeerPersistentKeepalive // 25 in config
         )
         
         // this is my info
