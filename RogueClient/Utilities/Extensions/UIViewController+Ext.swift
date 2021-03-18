@@ -274,19 +274,19 @@ extension UIViewController {
     
     func evaluateIsSignedIn(completion: @escaping (Bool) -> Void) {
         Application.shared.authentication.isSignedIn { (isSignedIn) in
-            if !isSignedIn {
-                self.presentSignInView()
+            DispatchQueue.main.async {
+                if !isSignedIn {
+                    self.presentSignInView()
+                }
+                completion(isSignedIn)
             }
-            completion(isSignedIn)
         }
     }
     
     func presentSignInView() -> Void {
-        DispatchQueue.main.async {
-            let viewController = NavigationManager.getLoginViewController()
-            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
-            self.present(viewController, animated: true, completion: nil)
-        }
+        let viewController = NavigationManager.getLoginViewController()
+        viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
+        present(viewController, animated: true, completion: nil)
     }
     
     func evaluateHasUserConsent() -> Bool {
@@ -294,8 +294,11 @@ extension UIViewController {
             present(NavigationManager.getTermsOfServiceViewController(), animated: true, completion: nil)
             return false
         }
-        
         return true
+    }
+    
+    private func presentTOSView() -> Void {
+        
     }
     
     func evaluateMultiHopCapability(_ sender: Any) -> Bool {

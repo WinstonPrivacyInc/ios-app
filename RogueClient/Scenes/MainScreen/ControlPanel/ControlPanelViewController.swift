@@ -188,17 +188,17 @@ class ControlPanelViewController: UITableViewController {
         self.evaluateIsSignedIn { (isSignedIn) in
             
             if !isSignedIn {
-                log(info: "you are not logged in")
+                log(info: "user is not signed in.")
                 NotificationCenter.default.removeObserver(self, name: Notification.Name.ServiceAuthorized, object: nil)
                 NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.ServiceAuthorized, object: nil)
                 return
             }
         
-//            guard self.evaluateHasUserConsent() else {
-//                self.controlPanelView.connectSwitch.setOn(self.vpnStatusViewModel.connectToggleIsOn, animated: true)
-//                NotificationCenter.default.addObserver(self, selector: #selector(self.agreedToTermsOfService), name: Notification.Name.TermsOfServiceAgreed, object: nil)
-//                return
-//            }
+            guard self.evaluateHasUserConsent() else {
+                // self.controlPanelView.connectSwitch.setOn(self.vpnStatusViewModel.connectToggleIsOn, animated: true)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.agreedToTermsOfService), name: Notification.Name.TermsOfServiceAgreed, object: nil)
+                return
+            }
             
 //            guard self.evaluateIsServiceActive() else {
 //                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
@@ -238,50 +238,6 @@ class ControlPanelViewController: UITableViewController {
             NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
             
         }
-        
-//        guard evaluateIsLoggedIn() else {
-//            NotificationCenter.default.removeObserver(self, name: Notification.Name.ServiceAuthorized, object: nil)
-//            NotificationCenter.default.addObserver(self, selector: #selector(connectionExecute), name: Notification.Name.ServiceAuthorized, object: nil)
-//            return
-//        }
-
-//        guard evaluateHasUserConsent() else {
-//            controlPanelView.connectSwitch.setOn(vpnStatusViewModel.connectToggleIsOn, animated: true)
-//            NotificationCenter.default.addObserver(self, selector: #selector(agreedToTermsOfService), name: Notification.Name.TermsOfServiceAgreed, object: nil)
-//            return
-//        }
-
-//        guard evaluateIsServiceActive() else {
-//            NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
-//            NotificationCenter.default.addObserver(self, selector: #selector(connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
-//            return
-//        }
-//
-//        if AppKeyManager.isKeyPairRequired && ExtensionKeyManager.needToRegenerate() {
-//            keyManager.setNewKey()
-//            return
-//        }
-        
-//        let manager = Application.shared.connectionManager
-//
-//        if UserDefaults.shared.networkProtectionEnabled && !manager.canConnect {
-//            showActionSheet(title: "Rogue cannot connect to trusted network. Do you want to change Network Protection settings for the current network and connect?", actions: ["Connect"], sourceView: self.controlPanelView.connectSwitch) { index in
-//                switch index {
-//                case 0:
-//                    self.controlPanelView.networkView.resetTrustToDefault()
-//                    manager.resetRulesAndConnect()
-//                default:
-//                    self.updateStatus(vpnStatus: Application.shared.connectionManager.status)
-//                }
-//            }
-//        } else {
-//            manager.resetRulesAndConnect()
-//        }
-//
-//        registerUserActivity(type: UserActivityType.Connect, title: UserActivityTitle.Connect)
-//
-//        NotificationCenter.default.removeObserver(self, name: Notification.Name.ServiceAuthorized, object: nil)
-//        NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
     }
     
     @objc func disconnect() {
