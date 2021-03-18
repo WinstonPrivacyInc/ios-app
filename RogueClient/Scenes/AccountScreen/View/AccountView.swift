@@ -61,7 +61,7 @@ class AccountView: UITableView {
     }
     
     func initQRCode(viewModel: AccountViewModel) {
-        qrCodeImage.image = UIImage.generateQRCode(from: viewModel.accountId)
+        // qrCodeImage.image = UIImage.generateQRCode(from: viewModel.accountId)
     }
     
 }
