@@ -65,7 +65,8 @@ class AppKeyManager {
     }
     
     static var isKeyExpired: Bool {
-        guard KeyChain.wgPublicKey != nil else { return false }
+        // guard KeyChain.wgPublicKey != nil else { return false }
+        guard KeyChain.wgInterfacePublicKey != nil else { return false }
         guard Date() > keyExpirationTimestamp else { return false }
         
         return true
@@ -81,8 +82,10 @@ class AppKeyManager {
         var interface = Interface()
         interface.privateKey = Interface.generatePrivateKey()
         
-        KeyChain.wgPrivateKey = interface.privateKey
-        KeyChain.wgPublicKey = interface.publicKey
+//        KeyChain.wgPrivateKey = interface.privateKey
+//        KeyChain.wgPublicKey = interface.publicKey
+        KeyChain.wgInterfacePrivateKey = interface.privateKey
+        KeyChain.wgInterfacePublicKey = interface.publicKey
     }
     
     private func getIpAddress(completion: @escaping (String) -> Void) {
@@ -116,11 +119,25 @@ class AppKeyManager {
                 case .success(let wireguardInterface):
                     UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
                     
-                    KeyChain.wgPeerEndpoint = wireguardInterface.endpoint
+                    // new stuff
+                    KeyChain.wgInterfacePrivateKey = keyPair.privateKey
+                    KeyChain.wgInterfacePublicKey = keyPair.publicKey
+                    KeyChain.wgInterfaceDnsServers = wireguardInterface.dns
+                    KeyChain.wgInterfaceAddresses = wireguardInterface.allowedIps
                     
-                    KeyChain.wgPrivateKey = keyPair.privateKey
-                    KeyChain.wgPublicKey = keyPair.publicKey
-                    KeyChain.wgIpAddress = wireguardInterface.allowedIps
+                    KeyChain.wgPeerPublicKey = wireguardInterface.publicKey
+                    KeyChain.wgPeerEndpoint = wireguardInterface.endpoint
+                    KeyChain.wgPeerPersistentKeepAlive = wireguardInterface.keepAlive
+                    
+                    
+                    // old stuff
+//                    KeyChain.wgPeerEndpoint = wireguardInterface.endpoint
+//                    KeyChain.wgPrivateKey = keyPair.privateKey
+                    // KeyChain.wgPublicKey = keyPair.publicKey
+                    // KeyChain.wgIpAddress = wireguardInterface.allowedIps
+                    
+                    
+                    
                     self.delegate?.setKeySuccess()
                 case .failure:
                     self.delegate?.setKeyFail()

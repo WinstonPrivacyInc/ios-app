@@ -59,7 +59,8 @@ struct ExtensionKeyManager {
         interface.privateKey = Interface.generatePrivateKey()
         
         let params = ApiManager.authParams + [
-            URLQueryItem(name: "connected_public_key", value: KeyChain.wgPublicKey ?? ""),
+//            URLQueryItem(name: "connected_public_key", value: KeyChain.wgPublicKey ?? ""),
+            URLQueryItem(name: "connected_public_key", value: KeyChain.wgInterfacePublicKey ?? ""),
             URLQueryItem(name: "public_key", value: interface.publicKey ?? "")
         ]
         
@@ -71,11 +72,12 @@ struct ExtensionKeyManager {
                 UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
                 
                 // TODO: antonio... this is not coming from the server,,, it's passed as a parameter...
-                KeyChain.wgPrivateKey = interface.privateKey
-                KeyChain.wgPublicKey = interface.publicKey
+                KeyChain.wgInterfacePrivateKey = interface.privateKey
+                // KeyChain.wgPublicKey = interface.publicKey
+                KeyChain.wgInterfacePublicKey = interface.publicKey
 //                KeyChain.wgIpAddress = model.ipAddress
 //                completion(interface.privateKey, model.ipAddress)
-                KeyChain.wgIpAddress = model.allowedIps
+                KeyChain.wgInterfaceAddresses = model.allowedIps
                 completion(interface.privateKey, model.allowedIps)
             case .failure:
                 completion(nil, nil)
@@ -84,8 +86,7 @@ struct ExtensionKeyManager {
     }
     
     static func needToRegenerate() -> Bool {
-        let publicKey = KeyChain.wgPublicKey ?? ""
-        
+        let publicKey = KeyChain.wgInterfacePublicKey ?? ""
         return publicKey.isEmpty || isPublicKeyOld()
     }
     

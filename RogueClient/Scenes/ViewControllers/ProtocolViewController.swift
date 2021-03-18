@@ -274,7 +274,11 @@ extension ProtocolViewController {
         }
         
         if connectionProtocol.tunnelType() != Application.shared.settings.connectionProtocol.tunnelType() && connectionProtocol.tunnelType() == .wireguard {
-            if  KeyChain.wgPublicKey == nil || ExtensionKeyManager.needToRegenerate() {
+//            if  KeyChain.wgPublicKey == nil || ExtensionKeyManager.needToRegenerate() {
+//                keyManager.setNewKey()
+//                return
+//            }
+            if  KeyChain.wgInterfacePublicKey == nil || ExtensionKeyManager.needToRegenerate() {
                 keyManager.setNewKey()
                 return
             }

@@ -181,7 +181,11 @@ class SessionManager {
         let username = username ?? Application.shared.authentication.getStoredUsername()
         var params = [URLQueryItem(name: "username", value: username)]
         
-        if let wgPublicKey = KeyChain.wgPublicKey {
+//        if let wgPublicKey = KeyChain.wgPublicKey {
+//            params.append(URLQueryItem(name: "wg_public_key", value: wgPublicKey))
+//        }
+        
+        if let wgPublicKey = KeyChain.wgInterfacePublicKey {
             params.append(URLQueryItem(name: "wg_public_key", value: wgPublicKey))
         }
         

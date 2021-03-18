@@ -94,34 +94,51 @@ extension NETunnelProviderProtocol {
     // MARK: WireGuard
     
     static func makeWireGuardProtocol(settings: ConnectionSettings) -> NETunnelProviderProtocol {
-        guard var hostServer = Application.shared.settings.selectedServer.hosts.randomElement() else {
-            return NETunnelProviderProtocol()
-        }
-        
+//        guard var hostServer = Application.shared.settings.selectedServer.hosts.randomElement() else {
+//            return NETunnelProviderProtocol()
+//        }
+//
         // override with winston for testing
-        hostServer.host = "172.31.38.97";
-        hostServer.publicKey = "SJue4OvxWi4EwGkGZ5vKNb61hU4akFm1cV65tNcfyGU=";
+//        hostServer.host = "172.31.38.97";
+//        hostServer.publicKey = "SJue4OvxWi4EwGkGZ5vKNb61hU4akFm1cV65tNcfyGU=";
         
         
         // this is the server info
-        let peer = Peer(
-            publicKey: hostServer.publicKey, // TODO need to save wg server public key
-            allowedIPs: "0.0.0.0/0, ::/0", // KeyChain.wgIpAddress (rename to KeyChain.wgPeerAllowedIPs  //Config.wgPeerAllowedIPs, // 0.0.0.0/0 basically anything
-//            allowedIPs: "0.0.0.0/0", //Config.wgPeerAllowedIPs, // 0.0.0.0/0 basically anything
-            endpoint: "13.59.81.71:80", // TODO need to save wg server public key // Peer.endpoint(host: hostServer.host, port: settings.port()),
-            persistentKeepalive: 15 // // TODO need to save wg server public key Config.wgPeerPersistentKeepalive // 25 in config
-        )
+//        let peer = Peer(
+//            publicKey: hostServer.publicKey, // TODO need to save wg server public key
+//            allowedIPs: "0.0.0.0/0, ::/0", // KeyChain.wgIpAddress (rename to KeyChain.wgPeerAllowedIPs  //Config.wgPeerAllowedIPs, // 0.0.0.0/0 basically anything
+////            allowedIPs: "0.0.0.0/0", //Config.wgPeerAllowedIPs, // 0.0.0.0/0 basically anything
+//            endpoint: "13.59.81.71:80", // TODO need to save wg server public key // Peer.endpoint(host: hostServer.host, port: settings.port()),
+//            persistentKeepalive: 15 // // TODO need to save wg server public key Config.wgPeerPersistentKeepalive // 25 in config
+//        )
         
         // this is my info
-        let interface = Interface(
-            addresses: KeyChain.wgIpAddress, //"192.168.0.6/32", 
-            listenPort: 2049, //Config.wgInterfaceListenPort,
-            privateKey: KeyChain.wgPrivateKey, // "QZqecs9M2Cj535Pky7l8VbWjRT8mADoxD3N+ilHCXHs="
-            dns: "1.1.1.1"// hostServer.localIPAddress()
+//        let interface = Interface(
+//            addresses: KeyChain.wgIpAddress, //"192.168.0.6/32",
+//            listenPort: 2049, //Config.wgInterfaceListenPort,
+//            privateKey: KeyChain.wgPrivateKey, // "QZqecs9M2Cj535Pky7l8VbWjRT8mADoxD3N+ilHCXHs="
+//            dns: "1.1.1.1"// hostServer.localIPAddress()
+//        )
+        //    static let wgPeerAllowedIPs = "0.0.0.0/0, ::/0"
+        //    static let wgPeerPersistentKeepalive: Int32 = 25
+        //    static let wgInterfaceListenPort = 51820
+        //    static let wgKeyExpirationDays = 30
+        //    static let wgKeyRegenerationRate = 1
+        
+        
+        let peer = Peer(
+            publicKey: KeyChain.wgPeerPublicKey,
+            allowedIPs: Config.wgPeerAllowedIPs,
+            endpoint: KeyChain.wgPeerEndpoint,
+            persistentKeepalive: KeyChain.wgPeerPersistentKeepAlive ?? Config.wgPeerPersistentKeepalive
         )
         
-        print("Interface public key \(String(describing: interface.publicKey))")
-        
+        let interface = Interface(
+            addresses: KeyChain.wgInterfaceAddresses,
+            listenPort: KeyChain.wgInterfaceListenPort ?? Config.wgInterfaceListenPort,
+            privateKey: KeyChain.wgInterfacePrivateKey,
+            dns: KeyChain.wgInterfaceDnsServers
+        )
         
         let tunnel = Tunnel(
             tunnelIdentifier: UIDevice.uuidString(),

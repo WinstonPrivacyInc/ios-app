@@ -52,15 +52,17 @@ class AppKeyManagerTests: XCTestCase {
         XCTAssertFalse(AppKeyManager.isKeyExpired)
         
         UserDefaults.shared.set(Date.changeDays(by: (-10 - Config.wgKeyExpirationDays)), forKey: UserDefaults.Key.wgKeyTimestamp)
-        KeyChain.wgPublicKey = "5q5ijOijHkhkJWiWT3bC7jRGFfDQo+2EL5aCgGgW5Qw="
+        // KeyChain.wgPublicKey = "5q5ijOijHkhkJWiWT3bC7jRGFfDQo+2EL5aCgGgW5Qw="
+        KeyChain.wgInterfacePublicKey = "5q5ijOijHkhkJWiWT3bC7jRGFfDQo+2EL5aCgGgW5Qw="
         
         XCTAssertTrue(AppKeyManager.isKeyExpired)
     }
     
     func test_generateKeyPair() {
         AppKeyManager.generateKeyPair()
-        XCTAssertTrue(KeyChain.wgPrivateKey != nil)
-        XCTAssertTrue(KeyChain.wgPublicKey != nil)
+        XCTAssertTrue(KeyChain.wgInterfacePrivateKey != nil)
+        // XCTAssertTrue(KeyChain.wgPublicKey != nil)
+         XCTAssertTrue(KeyChain.wgInterfacePublicKey != nil)
     }
     
 }

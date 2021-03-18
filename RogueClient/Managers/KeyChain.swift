@@ -27,76 +27,80 @@ class KeyChain {
     
     private static let usernameKey = "username"
     private static let tempUsernameKey = "tempUsernameKey"
-    private static let wgPublicKeyKey = "WGPublicKey"
-    private static let wgPrivateKeyKey = "WGPrivateKey"
-    private static let wgIpAddressKey = "WGIpAddressKey"
     private static let sessionTokenKey = "session_token"
     private static let vpnUsernameKey = "vpn_username"
     private static let vpnPasswordKey = "vpn_password"
+    // private static let wgPublicKeyKey = "WGPublicKey"
+    // private static let wgPrivateKeyKey = "WGPrivateKey"
+    // private static let wgIpAddressKey = "WGIpAddressKey"
     
-    private static let wgPeerEndpointKey = "wg_peer_endpoint"
-    private static let wgPeerDnsKey = "wg_peer_dns"
-    private static let wgPeerAllowedIpsKey = "wg_peer_allowed_ips"
-    private static let wpPeerKeepAliveKey = "wp_peer_keep_alive"
-    private static let wpPeerPublicKey = "wp_peer_public_key"
     
-    /**
-     {"endpoint":"13.59.81.71:51820","dns":"1.1.1.2","allowed_ips":"192.168.0.5/32","keep_alive":0,"public_key":"SJue4OvxWi4EwGkGZ5vKNb61hU4akFm1cV65tNcfyGU=","error":""}
-
-     */
+    private static let wgInterface_privateKey_key = "wg_interface_private_key"
+    private static let wgInterface_publicKey_key = "wg_interface_public_key"
+    private static let wgInterface_addresses_key = "wg_interface_addresses"
+    private static let wgInterface_listenPort_key = "wg_interface_listen_port"
+    private static let wgInterface_dnsServers_key = "wg_interface_dns_servers"
+    private static let wgPeer_publicKey_key = "wg_peer_public_key"
+    private static let wgPeer_endpoint_key = "wg_peer_endpoint"
+    private static let wgPeer_persistentKeepAlive_key = "wg_peer_persistent_keep_alive"
     
-    // TODO: antonio -> replace with rogue's group..
     static let bundle: Keychain = {
         return Keychain(service: "com.winstonprivacy.rogue", accessGroup: "4TSHK25NM3.com.winstonprivacy.rogue")
     }()
     
+    class var wgInterfacePrivateKey: String? {
+        get { return KeyChain.bundle[wgInterface_privateKey_key] }
+        set { KeyChain.bundle[wgInterface_privateKey_key] = newValue }
+    }
+    
+    class var wgInterfacePublicKey: String? {
+        get { return KeyChain.bundle[wgInterface_addresses_key] }
+        set { KeyChain.bundle[wgInterface_addresses_key] = newValue }
+    }
+    
+    class var wgInterfaceAddresses: String? {
+        get { return KeyChain.bundle[wgInterface_addresses_key] }
+        set { KeyChain.bundle[wgInterface_addresses_key] = newValue }
+    }
+        
+    class var wgInterfaceListenPort: Int? {
+        get {
+            guard let listenPort = KeyChain.bundle[wgInterface_listenPort_key] else {
+                return Config.wgInterfaceListenPort
+            }
+            return Int(listenPort)
+        }
+        set {
+            let listenPort = newValue ?? Config.wgInterfaceListenPort
+            KeyChain.bundle[wgInterface_listenPort_key] = String(listenPort)
+        }
+    }
+    
+    class var wgInterfaceDnsServers: String? {
+        get { return KeyChain.bundle[wgInterface_dnsServers_key] }
+        set { KeyChain.bundle[wgInterface_dnsServers_key] = newValue }
+    }
+    
+    class var wgPeerPublicKey: String? {
+        get { return KeyChain.bundle[wgPeer_publicKey_key] }
+        set { KeyChain.bundle[wgPeer_publicKey_key] = newValue }
+    }
+    
     class var wgPeerEndpoint: String? {
-        get {
-            return KeyChain.bundle[wgPeerEndpointKey]
-            
-        }
-        set {
-            KeyChain.bundle[wgPeerEndpointKey] = newValue
-        }
+        get { return KeyChain.bundle[wgPeer_endpoint_key] }
+        set { KeyChain.bundle[wgPeer_endpoint_key] = newValue }
     }
     
-    class var wpPeerDNS: String? {
+    class var wgPeerPersistentKeepAlive: Int32? {
         get {
-            return KeyChain.bundle[wgPeerDnsKey]
-            
+            guard let keepAlive = KeyChain.bundle[wgPeer_persistentKeepAlive_key]  else {
+                return Config.wgPeerPersistentKeepalive
+            }
+            return Int32(keepAlive)
         }
         set {
-            KeyChain.bundle[wgPeerDnsKey] = newValue
-        }
-    }
-    
-    class var wgPeerAllowedIPs: String? {
-        get {
-            return KeyChain.bundle[wgPeerAllowedIpsKey]
-            
-        }
-        set {
-            KeyChain.bundle[wgPeerAllowedIpsKey] = newValue
-        }
-    }
-    
-    class var wgPeerKeepAlive: String? {
-        get {
-            return KeyChain.bundle[wpPeerKeepAliveKey]
-            
-        }
-        set {
-            KeyChain.bundle[wpPeerKeepAliveKey] = newValue
-        }
-    }
-    
-    class var wpPeerPublic: String? {
-        get {
-            return KeyChain.bundle[wpPeerPublicKey]
-            
-        }
-        set {
-            KeyChain.bundle[wpPeerPublicKey] = newValue
+            let keepAlive = newValue ?? Config.wgPeerPersistentKeepalive
+            KeyChain.bundle[wgPeer_persistentKeepAlive_key] = String(keepAlive)
         }
     }
     
@@ -118,32 +122,23 @@ class KeyChain {
         }
     }
     
-    class var wgPublicKey: String? {
-        get {
-            return KeyChain.bundle[wgPublicKeyKey]
-        }
-        set {
-            KeyChain.bundle[wgPublicKeyKey] = newValue
-        }
-    }
+//    class var wgPrivateKey: String? {
+//        get {
+//            return KeyChain.bundle[wgPrivateKeyKey]
+//        }
+//        set {
+//            KeyChain.bundle[wgPrivateKeyKey] = newValue
+//        }
+//    }
     
-    class var wgPrivateKey: String? {
-        get {
-            return KeyChain.bundle[wgPrivateKeyKey]
-        }
-        set {
-            KeyChain.bundle[wgPrivateKeyKey] = newValue
-        }
-    }
-    
-    class var wgIpAddress: String? {
-        get {
-            return KeyChain.bundle[wgIpAddressKey]
-        }
-        set {
-            KeyChain.bundle[wgIpAddressKey] = newValue
-        }
-    }
+//    class var wgIpAddress: String? {
+//        get {
+//            return KeyChain.bundle[wgIpAddressKey]
+//        }
+//        set {
+//            KeyChain.bundle[wgIpAddressKey] = newValue
+//        }
+//    }
     
     class var sessionToken: String? {
         get {
@@ -181,20 +176,29 @@ class KeyChain {
         vpnUsername = session.vpnUsername
         vpnPassword = session.vpnPassword
         
-        if let wireguardResult = session.wireguard, let ipAddress = wireguardResult.ipAddress {
-            KeyChain.wgIpAddress = ipAddress
-        }
+//        if let wireguardResult = session.wireguard, let ipAddress = wireguardResult.ipAddress {
+//            KeyChain.wgIpAddress = ipAddress
+//        }
     }
     
     static func clearAll() {
         username = nil
         tempUsername = nil
-        wgPrivateKey = nil
-        wgPublicKey = nil
-        wgIpAddress = nil
+        // wgPrivateKey = nil
+        // wgPublicKey = nil
+        // wgIpAddress = nil
         sessionToken = nil
         vpnUsername = nil
         vpnPassword = nil
+        
+        wgInterfacePrivateKey = nil
+        wgInterfacePublicKey = nil
+        wgInterfaceAddresses = nil
+        wgInterfaceListenPort = nil
+        wgInterfaceDnsServers = nil
+        wgPeerPublicKey = nil
+        wgPeerPersistentKeepAlive = nil
+        wgPeerEndpoint = nil
     }
     
 }

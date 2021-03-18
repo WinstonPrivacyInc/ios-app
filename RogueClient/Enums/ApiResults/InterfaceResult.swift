@@ -27,7 +27,7 @@ class InterfaceResult: Decodable {
     let endpoint: String
     let dns: String
     let allowedIps: String
-    let keepAlive: Int
+    let keepAlive: Int32
     let publicKey: String
     let error: String
     

@@ -56,7 +56,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         os_log("antonio - started network interface")
         
         // TODO: antonio...
-        guard let wgIpAddress = KeyChain.wgIpAddress, let wgPrivateKey = KeyChain.wgPrivateKey else {
+        guard let wgIpAddress = KeyChain.wgInterfaceAddresses, let wgPrivateKey = KeyChain.wgInterfacePrivateKey else {
             tunnelSetupFailed()
             completionHandler(PacketTunnelProviderError.tunnelSetupFailed)
             return
