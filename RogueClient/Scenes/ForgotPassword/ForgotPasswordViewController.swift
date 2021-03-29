@@ -13,18 +13,43 @@ import Amplify
 
 class ForgotPasswordViewController: UIViewController {
     
+    enum ResetMode {
+        case resetting
+        case confirming
+    }
+    
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var resetPasswordView: UIView!
+    @IBOutlet weak var confirmPasswordView: UIView!
     private var isRequestingReset = false
     private let hud = JGProgressHUD(style: .dark)
+    private var resetMode = ResetMode.resetting
     
+    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "forgotPasswordScreen"
         navigationController?.navigationBar.prefersLargeTitles = false
         initNavigationBar()
+        updateViewMode()
 //
 //        addObservers()
 //        hideKeyboardOnTap()
+    }
+    
+    private func updateViewMode() {
+        if resetMode == ResetMode.resetting {
+            emailTextField.becomeFirstResponder()
+            resetPasswordView.isHidden = false
+            confirmPasswordView.isHidden = true
+            
+//            resetPasswordView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+//            resetPasswordView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
+            
+        } else {
+            resetPasswordView.isHidden = true
+            confirmPasswordView.isHidden = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +60,7 @@ class ForgotPasswordViewController: UIViewController {
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.setNeedsLayout()
         }
+        
     }
     
     private func initNavigationBar() {
@@ -60,59 +86,24 @@ class ForgotPasswordViewController: UIViewController {
         hud.detailTextLabel.text = "Requesting password reset..."
         hud.show(in: (navigationController?.view)!)
         
+       
         
-        Amplify.Auth.resetPassword(for: email) { (result) in
-            do {
-                let resetResult = try result.get()
-                switch resetResult.nextStep {
-                case .confirmResetPasswordWithCode(let deliveryDetails, let info):
-                    print("Confirm reset password with code send to - \(deliveryDetails) \(String(describing: info))")
-                case .done:
-                    print("Reset completed")
-                }
-            } catch {
-                print("Reset password failed with error \(error)")
-            }
-        }
-        /**
-         guard !loginProcessStarted else { return }
-         
-         let username = (self.emailTextField.text ?? "").trim()
-         let password = (self.passwordTextField.text ?? "").trim()
-         
-         loginProcessStarted = true
-         
-         guard ServiceStatus.isValidEmail(email: username) else {
-             loginProcessStarted = false
-             showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
-             return
-         }
-         
-         guard ServiceStatus.isValidPassword(password: password) else {
-             loginProcessStarted = false
-             showAlert(title: "Invalid Password", message: "Please enter your password.")
-             return
-         }
-         
-         hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-         hud.detailTextLabel.text = "Signin in..."
-         hud.show(in: (navigationController?.view)!)
-         
-         Amplify.Auth.signIn(username: username, password: password) { result in
-            switch result {
-                case .success:
-                     DispatchQueue.main.async {
-                         self.signInSuccess()
-                     }
-                case .failure(let error):
-                     DispatchQueue.main.async {
-                         self.signInFailure(authError: error)
-                     }
-                }
-            }
-         */
+        emailTextField.resignFirstResponder()
         
         
+//        Amplify.Auth.resetPassword(for: email) { (result) in
+//            do {
+//                let resetResult = try result.get()
+//                switch resetResult.nextStep {
+//                case .confirmResetPasswordWithCode(let deliveryDetails, let info):
+//                    print("Confirm reset password with code send to - \(deliveryDetails) \(String(describing: info))")
+//                case .done:
+//                    print("Reset completed")
+//                }
+//            } catch {
+//                print("Reset password failed with error \(error)")
+//            }
+//        }
         
     }
 }
