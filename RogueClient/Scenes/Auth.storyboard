@@ -1504,6 +1504,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="Uej-E4-YSB" id="Wze-2H-HPN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CB-S2-Thv" sceneMemberID="firstResponder"/>
             </objects>
