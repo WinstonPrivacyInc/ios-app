@@ -3,7 +3,7 @@
 //  RogueClient
 //
 //  Created by Antonio Campos on 3/11/21.
-//  Copyright © 2021 Rogue. All rights reserved.
+//  Copyright © 2021 Winston Privacy. All rights reserved.
 //
 
 import Foundation
@@ -14,7 +14,8 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "forgotPasswordScreen"
-//        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.prefersLargeTitles = false
+        initNavigationBar()
 //
 //        addObservers()
 //        hideKeyboardOnTap()
@@ -23,6 +24,7 @@ class ForgotPasswordViewController: UIViewController {
         print("password reset clicked...")
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -30,6 +32,13 @@ class ForgotPasswordViewController: UIViewController {
         // Remove when fixed in future releases
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.setNeedsLayout()
+        }
+    }
+ 
+    
+    private func initNavigationBar() {
+        if isPresentedModally {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
         }
     }
     
