@@ -16,16 +16,6 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios lint
-```
-fastlane ios lint
-```
-Runs linter
-### ios test
-```
-fastlane ios test
-```
-Runs tests
 ### ios beta
 ```
 fastlane ios beta

@@ -4,18 +4,18 @@ platform :ios do
 
   # Public lanes
   
-  desc "Runs linter"
-  lane :lint do
-    swiftlint
-    notification(message: "lint finished successfully")
-  end
+#  desc "Runs linter"
+#  lane :lint do
+#    swiftlint
+#    notification(message: "lint finished successfully")
+#  end
 
-  desc "Runs tests"
-  lane :test do
-    swiftlint
-    scan(workspace: "Rogue-iOS.xcworkspace", devices: ["iPhone 11 Pro"], scheme: "Rogue-iOS")
-    notification(message: "test finished successfully")
-  end
+#  desc "Runs tests"
+#  lane :test do
+#    swiftlint
+#    scan(workspace: "Rogue-iOS.xcworkspace", devices: ["iPhone 11 Pro"], scheme: "Rogue-iOS")
+#    notification(message: "test finished successfully")
+#  end
 
   desc "Push a new beta build to TestFlight"
   lane :beta do
@@ -40,10 +40,10 @@ platform :ios do
 
   private_lane :test_flight_beta do |options|
     configuration = options[:configuration]
-    swiftlint
-    scan(workspace: "Rogue-iOS.xcworkspace", devices: ["iPhone 11 Pro"], scheme: "Rogue-iOS")
-    increment_build_number(xcodeproj: "IVPNClient.xcodeproj")
-    build_app(workspace: "Rogue-iOS.xcworkspace", configuration: configuration, scheme: "Rogue-iOS")
+ #   swiftlint
+#    scan(workspace: "Rogue-iOS.xcworkspace", devices: ["iPhone 11 Pro"], scheme: "RogueClient")
+    increment_build_number(xcodeproj: "Rogue-iOS.xcodeproj")
+    build_app(workspace: "Rogue-iOS.xcworkspace", configuration: configuration, scheme: "RogueClient")
     upload_to_testflight(skip_waiting_for_build_processing: true)
   end
 

@@ -195,7 +195,7 @@ class ControlPanelViewController: UITableViewController {
             }
         
             guard self.evaluateHasUserConsent() else {
-                // self.controlPanelView.connectSwitch.setOn(self.vpnStatusViewModel.connectToggleIsOn, animated: true)
+                self.controlPanelView.connectSwitch.setOn(self.vpnStatusViewModel.connectToggleIsOn, animated: true)
                 NotificationCenter.default.addObserver(self, selector: #selector(self.agreedToTermsOfService), name: Notification.Name.TermsOfServiceAgreed, object: nil)
                 return
             }
