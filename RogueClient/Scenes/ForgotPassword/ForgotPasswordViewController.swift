@@ -43,9 +43,6 @@ class ForgotPasswordViewController: UIViewController {
             resetPasswordView.isHidden = false
             confirmPasswordView.isHidden = true
             
-//            resetPasswordView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-//            resetPasswordView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
-            
         } else {
             resetPasswordView.isHidden = true
             confirmPasswordView.isHidden = false
@@ -89,6 +86,11 @@ class ForgotPasswordViewController: UIViewController {
        
         
         emailTextField.resignFirstResponder()
+        
+        hud.dismiss()
+        resetMode = ResetMode.confirming
+        
+        updateViewMode()
         
         
 //        Amplify.Auth.resetPassword(for: email) { (result) in
