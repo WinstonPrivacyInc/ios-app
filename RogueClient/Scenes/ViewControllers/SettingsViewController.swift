@@ -142,7 +142,7 @@ class SettingsViewController: UITableViewController {
             return
         }
         
-        showActionAlert(title: "Logout", message: "Are you sure you want to log out?", action: "Log out") { _ in
+        showActionAlert(title: "Logout", message: "Are you sure you want to sign out?", action: "Sign out") { _ in
             self.logOut()
         }
     }

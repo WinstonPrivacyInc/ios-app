@@ -49,7 +49,7 @@ class AccountViewController: UITableViewController {
     }
     
     @IBAction func logOut(_ sender: Any) {
-        showActionAlert(title: "Logout", message: "Are you sure you want to log out?", action: "Log out", actionHandler: { _ in
+        showActionAlert(title: "Logout", message: "Are you sure you want to sign out?", action: "Sign out", actionHandler: { _ in
             self.logOut()
         })
     }
@@ -102,11 +102,11 @@ extension AccountViewController {
 //        if indexPath.row == 0 && serviceType == .standard {
 //            return 220
 //        }
-//        
+//
 //        if indexPath.row == 0 && serviceType == .pro {
 //            return 150
 //        }
-//        
+//
 //        return 71
 //    }
     
@@ -153,7 +153,7 @@ extension AccountViewController {
     
     override func deleteSessionSkip() {
         tableView.reloadData()
-        showAlert(title: "Success", message: "You are successfully logged out") { _ in
+        showAlert(title: "Success", message: "You are successfully signed out") { _ in
             self.navigationController?.dismiss(animated: true)
         }
     }
@@ -166,7 +166,7 @@ extension AccountViewController: JGProgressHUDDelegate {
     
     func progressHUD(_ progressHUD: JGProgressHUD, didDismissFrom view: UIView) {
         tableView.reloadData()
-        showAlert(title: "Success", message: "You are successfully logged out") { _ in
+        showAlert(title: "Success", message: "You are successfully signed out") { _ in
             self.navigationController?.dismiss(animated: true)
         }
     }

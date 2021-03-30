@@ -132,6 +132,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         view.accessibilityIdentifier = "loginScreen"
         navigationController?.navigationBar.prefersLargeTitles = false
+        emailTextField.becomeFirstResponder()
         
         addObservers()
         hideKeyboardOnTap()

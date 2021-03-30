@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOs-Bu-ebz" userLabel="Sign In Section View">
-                                        <rect key="frame" x="10" y="100" width="300" height="230"/>
+                                        <rect key="frame" x="10" y="50" width="300" height="230"/>
                                         <subviews>
                                             <textField clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-AY-bCY" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -65,11 +65,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTh-qG-bfZ" userLabel="Forgot Password Button">
-                                                <rect key="frame" x="0.0" y="120" width="300" height="30"/>
+                                                <rect key="frame" x="0.0" y="120" width="300" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="BUZ-Mp-3YF"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="TJ0-5R-MCC"/>
-                                                    <constraint firstAttribute="height" constant="30" id="eNU-lh-PPd"/>
+                                                    <constraint firstAttribute="height" constant="20" id="eNU-lh-PPd"/>
                                                     <constraint firstAttribute="width" constant="300" id="gfY-Tb-YEG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -81,7 +80,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51o-0K-ge0" userLabel="Sign In Button">
-                                                <rect key="frame" x="0.0" y="170" width="300" height="50"/>
+                                                <rect key="frame" x="0.0" y="190" width="300" height="50"/>
                                                 <color key="backgroundColor" name="roguePurple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="Bhb-mw-GpY"/>
@@ -107,30 +106,26 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="51o-0K-ge0" secondAttribute="trailing" id="0XD-66-vLT"/>
-                                            <constraint firstAttribute="bottom" secondItem="51o-0K-ge0" secondAttribute="bottom" constant="10" id="2jD-FR-X3Y"/>
+                                            <constraint firstAttribute="bottom" secondItem="51o-0K-ge0" secondAttribute="bottom" id="2jD-FR-X3Y"/>
                                             <constraint firstAttribute="trailing" secondItem="rTh-qG-bfZ" secondAttribute="trailing" id="53r-NS-T0q"/>
                                             <constraint firstItem="rTh-qG-bfZ" firstAttribute="top" secondItem="TmK-Gg-7sn" secondAttribute="bottom" constant="10" id="5Oc-2a-pG0"/>
-                                            <constraint firstItem="rTh-qG-bfZ" firstAttribute="top" secondItem="TmK-Gg-7sn" secondAttribute="bottom" constant="10" id="AqC-gC-UAb"/>
-                                            <constraint firstItem="rTh-qG-bfZ" firstAttribute="top" secondItem="TmK-Gg-7sn" secondAttribute="bottom" constant="10" id="BnN-5J-9SK"/>
                                             <constraint firstAttribute="height" constant="230" id="GYq-OV-Luk"/>
                                             <constraint firstItem="TmK-Gg-7sn" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="Jcb-rL-0WY"/>
                                             <constraint firstItem="TmK-Gg-7sn" firstAttribute="leading" secondItem="Hx4-AY-bCY" secondAttribute="leading" id="OEs-Jm-ym8"/>
                                             <constraint firstAttribute="trailing" secondItem="TmK-Gg-7sn" secondAttribute="trailing" id="RrV-lv-Xm9"/>
-                                            <constraint firstItem="51o-0K-ge0" firstAttribute="top" secondItem="rTh-qG-bfZ" secondAttribute="bottom" constant="20" id="Wf1-3O-lPV"/>
                                             <constraint firstAttribute="width" constant="300" id="Xa4-uJ-2wH"/>
                                             <constraint firstAttribute="trailing" secondItem="Hx4-AY-bCY" secondAttribute="trailing" id="ZYf-cr-lpg"/>
                                             <constraint firstItem="rTh-qG-bfZ" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="dn7-GF-hJa"/>
                                             <constraint firstItem="TmK-Gg-7sn" firstAttribute="top" secondItem="Hx4-AY-bCY" secondAttribute="bottom" constant="10" id="g8T-jY-gEH"/>
                                             <constraint firstItem="Hx4-AY-bCY" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="nQf-Lr-fEK"/>
                                             <constraint firstItem="Hx4-AY-bCY" firstAttribute="top" secondItem="YOs-Bu-ebz" secondAttribute="top" id="nbT-Kg-Mm6"/>
-                                            <constraint firstItem="51o-0K-ge0" firstAttribute="top" secondItem="rTh-qG-bfZ" secondAttribute="bottom" constant="20" id="ncs-Vp-zfV"/>
                                             <constraint firstItem="TmK-Gg-7sn" firstAttribute="top" secondItem="Hx4-AY-bCY" secondAttribute="bottom" constant="10" id="ojU-8g-wjf"/>
                                             <constraint firstItem="51o-0K-ge0" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="phu-YD-TBx"/>
-                                            <constraint firstItem="TmK-Gg-7sn" firstAttribute="top" secondItem="Hx4-AY-bCY" secondAttribute="bottom" constant="10" id="tuB-Yz-4vK"/>
+                                            <constraint firstItem="51o-0K-ge0" firstAttribute="top" secondItem="rTh-qG-bfZ" secondAttribute="bottom" constant="50" id="puA-n0-8Lv"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XaQ-5B-wXQ" userLabel="Sign Up Section View">
-                                        <rect key="frame" x="44.5" y="410" width="231" height="40"/>
+                                        <rect key="frame" x="44.5" y="330" width="231" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxE-Xo-gAj">
                                                 <rect key="frame" x="0.0" y="0.0" width="161" height="40"/>
@@ -157,12 +152,12 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="XaQ-5B-wXQ" firstAttribute="centerX" secondItem="mLW-w8-CLX" secondAttribute="centerX" id="7Kf-Ay-vwz"/>
+                                    <constraint firstAttribute="bottom" secondItem="XaQ-5B-wXQ" secondAttribute="bottom" id="G6W-Pg-UtZ"/>
                                     <constraint firstAttribute="height" constant="436" id="NrC-Y0-yep"/>
                                     <constraint firstItem="YOs-Bu-ebz" firstAttribute="centerX" secondItem="mLW-w8-CLX" secondAttribute="centerX" id="P8E-P7-twT"/>
-                                    <constraint firstItem="XaQ-5B-wXQ" firstAttribute="top" secondItem="YOs-Bu-ebz" secondAttribute="bottom" constant="80" id="cHC-ju-Skw"/>
-                                    <constraint firstAttribute="bottom" secondItem="XaQ-5B-wXQ" secondAttribute="bottom" constant="20" id="mJI-hq-e17"/>
+                                    <constraint firstItem="XaQ-5B-wXQ" firstAttribute="top" secondItem="YOs-Bu-ebz" secondAttribute="bottom" constant="50" id="fRM-qx-vFf"/>
                                     <constraint firstAttribute="width" constant="320" id="s0m-5g-tCc"/>
-                                    <constraint firstItem="YOs-Bu-ebz" firstAttribute="top" secondItem="mLW-w8-CLX" secondAttribute="top" constant="100" id="xel-xk-2zS"/>
+                                    <constraint firstItem="YOs-Bu-ebz" firstAttribute="top" secondItem="mLW-w8-CLX" secondAttribute="top" constant="50" id="xel-xk-2zS"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -966,7 +961,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rHQ-EK-bSh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -991,7 +986,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the QR Code in the client area of the IVPN website or in another IVPN client App." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-gs-0Hz">
-                                <rect key="frame" x="10" y="72" width="300" height="90"/>
+                                <rect key="frame" x="10" y="78" width="300" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="9K0-5D-rbb"/>
                                     <constraint firstAttribute="width" constant="300" id="laf-pe-L4Y"/>
@@ -1001,7 +996,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-b7-cZc">
-                                <rect key="frame" x="0.0" y="207" width="320" height="273"/>
+                                <rect key="frame" x="0.0" y="213" width="320" height="267"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JUN-Az-Acd"/>
@@ -1041,7 +1036,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2DR-73-ZHo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1060,7 +1055,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E9p-k0-02K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1080,7 +1075,7 @@
                     <navigationItem key="navigationItem" id="510-bm-h3Z"/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CwZ-xv-Dyg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1100,7 +1095,7 @@
                     <navigationItem key="navigationItem" id="5p8-uh-4A4"/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fwt-Vh-aQ1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1246,10 +1241,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="AOo-dY-xFe">
-                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wc-44-z61" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnO-Pm-4Fi">
                                                 <rect key="frame" x="22" y="168" width="276" height="50"/>
@@ -1371,7 +1366,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHZ-yq-cXd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1566,7 +1561,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jik-kb-GiA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

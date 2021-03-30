@@ -25,16 +25,16 @@ import UIKit
 
 class AccountView: UITableView {
     
-    // MARK: - @IBOutlets -
-    
-    // @IBOutlet weak var qrCodeImage: UIImageView!
     @IBOutlet weak var accountIdLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var subscriptionLabel: UILabel!
-    @IBOutlet weak var activeUntilLabel: UILabel!
     @IBOutlet weak var logOutActionButton: UIButton!
-    @IBOutlet weak var planLabel: UILabel!
-    @IBOutlet weak var planDescriptionHeightConstraint: NSLayoutConstraint!
+    
+    
+//    @IBOutlet weak var qrCodeImage: UIImageView!
+//    @IBOutlet weak var statusLabel: UILabel!
+//    @IBOutlet weak var subscriptionLabel: UILabel!
+//    @IBOutlet weak var activeUntilLabel: UILabel!
+//    @IBOutlet weak var planLabel: UILabel!
+//    @IBOutlet weak var planDescriptionHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Properties -
     
