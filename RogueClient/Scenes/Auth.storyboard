@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -19,21 +19,23 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="mLW-w8-CLX">
-                                <rect key="frame" x="0.0" y="88" width="414" height="778"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="mLW-w8-CLX">
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOs-Bu-ebz" userLabel="Sign In Section View">
-                                        <rect key="frame" x="4" y="274" width="406" height="230"/>
+                                        <rect key="frame" x="10" y="100" width="300" height="230"/>
                                         <subviews>
                                             <textField clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hx4-AY-bCY" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
-                                                <rect key="frame" x="53" y="0.0" width="300" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                                 <color key="backgroundColor" name="ivpnGray2"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="QUW-m4-HB2"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Wmc-PO-T6r" userLabel="width = 300"/>
+                                                    <constraint firstAttribute="width" constant="300" id="fpI-Gr-86b"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vzO-ui-hON"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
@@ -45,11 +47,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="TmK-Gg-7sn" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
-                                                <rect key="frame" x="53" y="60" width="300" height="50"/>
+                                                <rect key="frame" x="0.0" y="60" width="300" height="50"/>
                                                 <color key="backgroundColor" name="ivpnGray2"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="DaC-FT-BlV"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="WgB-FI-Noe"/>
                                                     <constraint firstAttribute="width" constant="300" id="eYg-XZ-U6i"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ofP-HB-gmz"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
@@ -61,8 +65,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTh-qG-bfZ" userLabel="Forgot Password Button">
-                                                <rect key="frame" x="53" y="120" width="300" height="30"/>
+                                                <rect key="frame" x="0.0" y="120" width="300" height="30"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="BUZ-Mp-3YF"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="TJ0-5R-MCC"/>
                                                     <constraint firstAttribute="height" constant="30" id="eNU-lh-PPd"/>
                                                     <constraint firstAttribute="width" constant="300" id="gfY-Tb-YEG"/>
                                                 </constraints>
@@ -75,11 +81,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51o-0K-ge0" userLabel="Sign In Button">
-                                                <rect key="frame" x="53" y="170" width="300" height="50"/>
+                                                <rect key="frame" x="0.0" y="170" width="300" height="50"/>
                                                 <color key="backgroundColor" name="roguePurple"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="Bhb-mw-GpY"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="BtV-pf-wdA"/>
                                                     <constraint firstAttribute="height" constant="50" id="XrW-89-PUl"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="q1M-cA-rCa"/>
                                                 </constraints>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Sign In">
@@ -98,23 +106,31 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="rTh-qG-bfZ" firstAttribute="centerX" secondItem="YOs-Bu-ebz" secondAttribute="centerX" id="5N6-la-pxn"/>
+                                            <constraint firstAttribute="trailing" secondItem="51o-0K-ge0" secondAttribute="trailing" id="0XD-66-vLT"/>
+                                            <constraint firstAttribute="bottom" secondItem="51o-0K-ge0" secondAttribute="bottom" constant="10" id="2jD-FR-X3Y"/>
+                                            <constraint firstAttribute="trailing" secondItem="rTh-qG-bfZ" secondAttribute="trailing" id="53r-NS-T0q"/>
+                                            <constraint firstItem="rTh-qG-bfZ" firstAttribute="top" secondItem="TmK-Gg-7sn" secondAttribute="bottom" constant="10" id="5Oc-2a-pG0"/>
                                             <constraint firstItem="rTh-qG-bfZ" firstAttribute="top" secondItem="TmK-Gg-7sn" secondAttribute="bottom" constant="10" id="AqC-gC-UAb"/>
-                                            <constraint firstAttribute="bottom" secondItem="51o-0K-ge0" secondAttribute="bottom" constant="10" id="Igx-ia-MO3"/>
-                                            <constraint firstItem="Hx4-AY-bCY" firstAttribute="centerX" secondItem="YOs-Bu-ebz" secondAttribute="centerX" id="J4c-jS-SWs"/>
+                                            <constraint firstItem="rTh-qG-bfZ" firstAttribute="top" secondItem="TmK-Gg-7sn" secondAttribute="bottom" constant="10" id="BnN-5J-9SK"/>
+                                            <constraint firstAttribute="height" constant="230" id="GYq-OV-Luk"/>
+                                            <constraint firstItem="TmK-Gg-7sn" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="Jcb-rL-0WY"/>
                                             <constraint firstItem="TmK-Gg-7sn" firstAttribute="leading" secondItem="Hx4-AY-bCY" secondAttribute="leading" id="OEs-Jm-ym8"/>
-                                            <constraint firstItem="Hx4-AY-bCY" firstAttribute="top" secondItem="YOs-Bu-ebz" secondAttribute="top" id="Qpz-FU-MUN"/>
-                                            <constraint firstItem="51o-0K-ge0" firstAttribute="centerX" secondItem="YOs-Bu-ebz" secondAttribute="centerX" id="UoT-Y0-osC"/>
-                                            <constraint firstAttribute="height" constant="230" id="aF0-oS-087"/>
+                                            <constraint firstAttribute="trailing" secondItem="TmK-Gg-7sn" secondAttribute="trailing" id="RrV-lv-Xm9"/>
+                                            <constraint firstItem="51o-0K-ge0" firstAttribute="top" secondItem="rTh-qG-bfZ" secondAttribute="bottom" constant="20" id="Wf1-3O-lPV"/>
+                                            <constraint firstAttribute="width" constant="300" id="Xa4-uJ-2wH"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hx4-AY-bCY" secondAttribute="trailing" id="ZYf-cr-lpg"/>
+                                            <constraint firstItem="rTh-qG-bfZ" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="dn7-GF-hJa"/>
                                             <constraint firstItem="TmK-Gg-7sn" firstAttribute="top" secondItem="Hx4-AY-bCY" secondAttribute="bottom" constant="10" id="g8T-jY-gEH"/>
-                                            <constraint firstItem="TmK-Gg-7sn" firstAttribute="centerX" secondItem="YOs-Bu-ebz" secondAttribute="centerX" id="rAz-j4-cr0"/>
-                                            <constraint firstItem="rTh-qG-bfZ" firstAttribute="centerX" secondItem="YOs-Bu-ebz" secondAttribute="centerX" id="vac-Zm-fBW"/>
-                                            <constraint firstItem="TmK-Gg-7sn" firstAttribute="centerX" secondItem="YOs-Bu-ebz" secondAttribute="centerX" id="w01-en-Eqy"/>
-                                            <constraint firstItem="Hx4-AY-bCY" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" constant="53" id="wYD-QL-ZLo"/>
+                                            <constraint firstItem="Hx4-AY-bCY" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="nQf-Lr-fEK"/>
+                                            <constraint firstItem="Hx4-AY-bCY" firstAttribute="top" secondItem="YOs-Bu-ebz" secondAttribute="top" id="nbT-Kg-Mm6"/>
+                                            <constraint firstItem="51o-0K-ge0" firstAttribute="top" secondItem="rTh-qG-bfZ" secondAttribute="bottom" constant="20" id="ncs-Vp-zfV"/>
+                                            <constraint firstItem="TmK-Gg-7sn" firstAttribute="top" secondItem="Hx4-AY-bCY" secondAttribute="bottom" constant="10" id="ojU-8g-wjf"/>
+                                            <constraint firstItem="51o-0K-ge0" firstAttribute="leading" secondItem="YOs-Bu-ebz" secondAttribute="leading" id="phu-YD-TBx"/>
+                                            <constraint firstItem="TmK-Gg-7sn" firstAttribute="top" secondItem="Hx4-AY-bCY" secondAttribute="bottom" constant="10" id="tuB-Yz-4vK"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XaQ-5B-wXQ" userLabel="Sign Up Section View">
-                                        <rect key="frame" x="91.5" y="734" width="231" height="40"/>
+                                        <rect key="frame" x="44.5" y="410" width="231" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxE-Xo-gAj">
                                                 <rect key="frame" x="0.0" y="0.0" width="161" height="40"/>
@@ -140,22 +156,24 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="YOs-Bu-ebz" firstAttribute="centerY" secondItem="mLW-w8-CLX" secondAttribute="centerY" id="2pB-Zm-3Qt"/>
-                                    <constraint firstAttribute="trailing" secondItem="YOs-Bu-ebz" secondAttribute="trailing" id="4EM-wh-bKu"/>
                                     <constraint firstItem="XaQ-5B-wXQ" firstAttribute="centerX" secondItem="mLW-w8-CLX" secondAttribute="centerX" id="7Kf-Ay-vwz"/>
-                                    <constraint firstAttribute="bottom" secondItem="YOs-Bu-ebz" secondAttribute="bottom" constant="290" id="Gko-ae-Sbx"/>
-                                    <constraint firstItem="YOs-Bu-ebz" firstAttribute="centerX" secondItem="mLW-w8-CLX" secondAttribute="centerX" id="Ozu-nk-zEk"/>
+                                    <constraint firstItem="YOs-Bu-ebz" firstAttribute="centerX" secondItem="mLW-w8-CLX" secondAttribute="centerX" id="P8E-P7-twT"/>
+                                    <constraint firstItem="XaQ-5B-wXQ" firstAttribute="top" secondItem="YOs-Bu-ebz" secondAttribute="bottom" constant="80" id="cHC-ju-Skw"/>
                                     <constraint firstAttribute="bottom" secondItem="XaQ-5B-wXQ" secondAttribute="bottom" constant="20" id="mJI-hq-e17"/>
+                                    <constraint firstItem="YOs-Bu-ebz" firstAttribute="top" secondItem="mLW-w8-CLX" secondAttribute="top" constant="100" id="xel-xk-2zS"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mxq-9C-Wgq"/>
                         <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
                         <constraints>
+                            <constraint firstItem="mLW-w8-CLX" firstAttribute="trailing" secondItem="Mxq-9C-Wgq" secondAttribute="trailing" id="0jJ-9d-7en"/>
+                            <constraint firstItem="mLW-w8-CLX" firstAttribute="leading" secondItem="Mxq-9C-Wgq" secondAttribute="leading" id="1Dr-Wh-jdd"/>
                             <constraint firstItem="mLW-w8-CLX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fas-jv-7cK"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="mLW-w8-CLX" secondAttribute="bottom" constant="-4" id="H3d-8m-YHZ"/>
+                            <constraint firstAttribute="bottom" secondItem="mLW-w8-CLX" secondAttribute="bottom" id="FoX-m4-XKb"/>
                             <constraint firstItem="mLW-w8-CLX" firstAttribute="leading" secondItem="Mxq-9C-Wgq" secondAttribute="leading" id="VzD-qc-J9a"/>
                             <constraint firstItem="mLW-w8-CLX" firstAttribute="top" secondItem="Mxq-9C-Wgq" secondAttribute="top" id="jCh-5L-nje"/>
+                            <constraint firstItem="mLW-w8-CLX" firstAttribute="top" secondItem="Mxq-9C-Wgq" secondAttribute="top" id="uXv-xc-fMo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="KqI-NH-rba">
@@ -173,18 +191,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286.9565217391305" y="-229.01785714285714"/>
+            <point key="canvasLocation" x="1286.25" y="-230"/>
         </scene>
         <!--Account created-->
         <scene sceneID="u3u-TB-jtU">
             <objects>
                 <viewController modalPresentationStyle="formSheet" id="spu-nQ-a1v" customClass="CreateAccountViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zFS-Rd-d7a" customClass="CreateAccountView" customModule="RogueClient" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5og-hw-zWP">
-                                <rect key="frame" x="67" y="782" width="280" height="50"/>
+                                <rect key="frame" x="20" y="400" width="280" height="50"/>
                                 <color key="backgroundColor" name="ivpnBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xTT-8z-OBG"/>
@@ -205,10 +223,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGe-se-bbf">
-                                <rect key="frame" x="17" y="338" width="380" height="220"/>
+                                <rect key="frame" x="17" y="130" width="286" height="220"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account ID:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAa-Cw-zd2">
-                                        <rect key="frame" x="0.0" y="0.0" width="380" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="mkI-gs-Een"/>
                                         </constraints>
@@ -217,7 +235,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i-XXXX-XXXX-XXXX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67P-Iu-XlG">
-                                        <rect key="frame" x="0.0" y="28" width="345" height="40"/>
+                                        <rect key="frame" x="0.0" y="28" width="251" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Dhn-8d-6BU"/>
                                         </constraints>
@@ -226,7 +244,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csb-Ed-uVt">
-                                        <rect key="frame" x="0.0" y="78" width="380" height="94"/>
+                                        <rect key="frame" x="0.0" y="78" width="286" height="94"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="94" id="rF3-Xt-JLg"/>
                                         </constraints>
@@ -236,7 +254,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpl-Iv-Uwu">
-                                        <rect key="frame" x="355" y="31" width="25" height="34"/>
+                                        <rect key="frame" x="261" y="31" width="25" height="34"/>
                                         <accessibility key="accessibilityConfiguration" label="Copy account to clipboard"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="gFK-uv-fdm"/>
@@ -299,16 +317,16 @@
             <objects>
                 <tableViewController id="tBH-nr-wv3" customClass="SelectPlanViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WSh-pq-wUH" customClass="SelectPlanView" customModule="RogueClient" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="DaS-S0-aed">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We offer different plans to better suit your needs. Please select one. You’ll be able to change it any time in the future." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePG-jY-ehS">
-                                    <rect key="frame" x="17" y="5" width="380" height="54"/>
+                                    <rect key="frame" x="17" y="5" width="286" height="54"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" name="ivpnLabel5"/>
                                     <nil key="highlightedColor"/>
@@ -325,17 +343,17 @@
                             <tableViewSection id="Lj8-rs-5LY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="226" id="88p-3D-F4q">
-                                        <rect key="frame" x="0.0" y="93" width="414" height="226"/>
+                                        <rect key="frame" x="0.0" y="93" width="320" height="226"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="88p-3D-F4q" id="Grr-60-n61">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="226"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qOY-q9-zA8">
-                                                    <rect key="frame" x="17" y="24" width="380" height="178"/>
+                                                    <rect key="frame" x="17" y="24" width="286" height="178"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uO8-pu-q5K">
-                                                            <rect key="frame" x="0.0" y="0.0" width="380" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="286" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IVPN STANDARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zA-L8-EEN">
                                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="20"/>
@@ -365,7 +383,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0s3-r1-KL7">
-                                                                    <rect key="frame" x="140" y="0.0" width="240" height="20"/>
+                                                                    <rect key="frame" x="140" y="0.0" width="146" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="CmD-pa-IZr"/>
@@ -374,19 +392,19 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bIs-mY-bng">
-                                                            <rect key="frame" x="0.0" y="39.5" width="380" height="74"/>
+                                                            <rect key="frame" x="0.0" y="39.5" width="286" height="74"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ioU-uK-8Jj">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 / week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIG-i6-5Eb">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All protocols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkc-gp-Bej" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -394,16 +412,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sNL-8N-H9d">
-                                                                    <rect key="frame" x="0.0" y="28" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="28" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 / month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td3-pO-cqj">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 devices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng0-0q-gPT" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -411,16 +429,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Jsy-e7-rZm">
-                                                                    <rect key="frame" x="0.0" y="56" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="56" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 / year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwG-Vp-sA9">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AntiTracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxI-T3-HbU" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -430,10 +448,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XD2-I9-v30">
-                                                            <rect key="frame" x="0.0" y="133" width="380" height="45"/>
+                                                            <rect key="frame" x="0.0" y="133" width="286" height="45"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tf-CF-xHh">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="45"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="45"/>
                                                                     <color key="backgroundColor" name="ivpnBlue"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="AWW-Q7-ie1"/>
@@ -474,17 +492,17 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="286" id="GrT-ru-LnQ">
-                                        <rect key="frame" x="0.0" y="319" width="414" height="286"/>
+                                        <rect key="frame" x="0.0" y="319" width="320" height="286"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GrT-ru-LnQ" id="Uc3-Xd-uPE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="286"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Ea-Dw-ewM">
-                                                    <rect key="frame" x="17" y="24" width="380" height="238"/>
+                                                    <rect key="frame" x="17" y="24" width="286" height="238"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Pv0-Ty-bKE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="380" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="286" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IVPN PRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x86-70-UiG">
                                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="20"/>
@@ -514,7 +532,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsA-xt-tNM">
-                                                                    <rect key="frame" x="86" y="0.0" width="294" height="20"/>
+                                                                    <rect key="frame" x="86" y="0.0" width="200" height="20"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="Bbl-85-GTS"/>
@@ -523,19 +541,19 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="geM-T7-F4m">
-                                                            <rect key="frame" x="0.0" y="41.5" width="380" height="130"/>
+                                                            <rect key="frame" x="0.0" y="41.5" width="286" height="130"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="epz-Iv-Q9C">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 / week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvG-K4-iso">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All protocols" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lF-QA-2mg" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -543,16 +561,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="avS-cM-gdS">
-                                                                    <rect key="frame" x="0.0" y="28" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="28" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 / month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNJ-zu-P2i">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 devices" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uev-ti-byI" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -560,16 +578,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5tQ-gY-Cwc">
-                                                                    <rect key="frame" x="0.0" y="56" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="56" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0 / year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5la-gi-OJq">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AntiTracker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVv-vL-GVN" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -577,16 +595,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="azR-f3-BQq">
-                                                                    <rect key="frame" x="0.0" y="84" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="84" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljz-zI-7wS">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multi-Hop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDd-tx-ybQ" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -594,16 +612,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Xe-hv-t4f">
-                                                                    <rect key="frame" x="0.0" y="112" width="380" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="112" width="286" height="18"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dro-Sr-dEh">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                                                             <color key="textColor" name="ivpnLabelPrimary"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Port Forwarding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wL-jH-OQ2" customClass="PlanLabel" customModule="RogueClient" customModuleProvider="target">
-                                                                            <rect key="frame" x="190" y="0.0" width="190" height="18"/>
+                                                                            <rect key="frame" x="143" y="0.0" width="143" height="18"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                             <color key="textColor" name="ivpnLabel5"/>
                                                                             <nil key="highlightedColor"/>
@@ -613,10 +631,10 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXs-j3-QlD">
-                                                            <rect key="frame" x="0.0" y="193" width="380" height="45"/>
+                                                            <rect key="frame" x="0.0" y="193" width="286" height="45"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bka-2j-C1Y">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="380" height="45"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="286" height="45"/>
                                                                     <color key="backgroundColor" name="ivpnBlue"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="AF7-Vo-Vy9"/>
@@ -695,19 +713,19 @@
             <objects>
                 <tableViewController id="GbE-hF-jVK" customClass="PaymentViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eid-0U-lpC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="NX1-n9-1FS">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ak0-kW-Znu" customClass="PaymentComponentView" customModule="RogueClient" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add funds to your IVPN account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnB-3p-pAb">
-                                            <rect key="frame" x="17" y="5" width="380" height="20"/>
+                                            <rect key="frame" x="17" y="5" width="286" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="LtT-MC-kyY"/>
                                             </constraints>
@@ -734,14 +752,14 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="3fw-Yl-V8z">
-                            <rect key="frame" x="0.0" y="224" width="414" height="60"/>
+                            <rect key="frame" x="0.0" y="224" width="320" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLD-yW-M4d" customClass="PaymentComponentView" customModule="RogueClient" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-xJ-uvR">
-                                            <rect key="frame" x="17" y="15" width="380" height="45"/>
+                                            <rect key="frame" x="17" y="15" width="286" height="45"/>
                                             <color key="backgroundColor" name="ivpnBlue"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Ybe-Ih-f6L"/>
@@ -779,14 +797,14 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServiceTitleTableViewCell" rowHeight="64" id="yp4-DA-nL9" customClass="ServiceTitleTableViewCell" customModule="RogueClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68" width="414" height="64"/>
+                                <rect key="frame" x="0.0" y="68" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yp4-DA-nL9" id="81z-wZ-CTY">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSt-lx-3LK" customClass="PaymentComponentView" customModule="RogueClient" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IVPN STANDARD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4C3-hH-oiJ">
                                                     <rect key="frame" x="17" y="17" width="150" height="30"/>
@@ -799,7 +817,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sP-4K-ZXY">
-                                                    <rect key="frame" x="333" y="17" width="60" height="30"/>
+                                                    <rect key="frame" x="239" y="17" width="60" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="2SK-6t-3ni"/>
                                                         <constraint firstAttribute="width" constant="60" id="8F2-EF-UWD"/>
@@ -833,14 +851,14 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ServiceTableViewCell" rowHeight="64" id="4VZ-0C-Lig" customClass="ServiceTableViewCell" customModule="RogueClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="132" width="414" height="64"/>
+                                <rect key="frame" x="0.0" y="132" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4VZ-0C-Lig" id="1CO-CW-g3H">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RyN-9Z-UyZ" customClass="PaymentComponentView" customModule="RogueClient" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-check" translatesAutoresizingMaskIntoConstraints="NO" id="3Z5-SD-W6I">
                                                     <rect key="frame" x="17" y="24" width="16" height="16"/>
@@ -884,7 +902,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$60.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UT9-wK-aHF">
-                                                    <rect key="frame" x="268" y="21" width="125" height="22"/>
+                                                    <rect key="frame" x="174" y="21" width="125" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="125" id="psi-uV-62d"/>
                                                         <constraint firstAttribute="height" constant="22" id="soE-wA-MiR"/>
@@ -946,7 +964,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rHQ-EK-bSh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -967,11 +985,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0cH-lQ-ls5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="i8u-z0-tev" customClass="ScannerView" customModule="RogueClient" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the QR Code in the client area of the IVPN website or in another IVPN client App." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-gs-0Hz">
-                                <rect key="frame" x="57" y="116" width="300" height="90"/>
+                                <rect key="frame" x="10" y="78" width="300" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="9K0-5D-rbb"/>
                                     <constraint firstAttribute="width" constant="300" id="laf-pe-L4Y"/>
@@ -981,7 +999,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-b7-cZc">
-                                <rect key="frame" x="0.0" y="251" width="414" height="645"/>
+                                <rect key="frame" x="0.0" y="213" width="320" height="267"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JUN-Az-Acd"/>
@@ -1021,7 +1039,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2DR-73-ZHo">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1040,7 +1058,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E9p-k0-02K">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1060,7 +1078,7 @@
                     <navigationItem key="navigationItem" id="510-bm-h3Z"/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CwZ-xv-Dyg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1080,7 +1098,7 @@
                     <navigationItem key="navigationItem" id="5p8-uh-4A4"/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fwt-Vh-aQ1">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1101,17 +1119,17 @@
                         <viewControllerLayoutGuide type="bottom" id="n2M-jO-dU9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ejq-N8-NqU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-4M-4x3">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inu-6x-BUa" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWX-2b-S2y">
-                                                <rect key="frame" x="69" y="82" width="276" height="50"/>
+                                                <rect key="frame" x="22" y="82" width="276" height="50"/>
                                                 <subviews>
                                                     <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="xxxxxx" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="mrp-ba-WSd" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="276" height="50"/>
@@ -1136,7 +1154,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DQ-gJ-yjM">
-                                                <rect key="frame" x="69" y="162" width="276" height="50"/>
+                                                <rect key="frame" x="22" y="162" width="276" height="50"/>
                                                 <color key="backgroundColor" name="ivpnBlue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="iJa-vp-Z3w"/>
@@ -1157,7 +1175,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account has two-factor authentication enabled. Please enter TOTP token to login." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDg-l8-8dR">
-                                                <rect key="frame" x="62" y="30" width="290" height="40"/>
+                                                <rect key="frame" x="15" y="30" width="290" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="290" id="Ief-G5-M8K"/>
                                                     <constraint firstAttribute="height" constant="40" id="gal-kF-zpf"/>
@@ -1222,17 +1240,17 @@
                         <viewControllerLayoutGuide type="bottom" id="1F1-Ur-Q0y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="isR-77-XN6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="AOo-dY-xFe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wc-44-z61" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnO-Pm-4Fi">
-                                                <rect key="frame" x="69" y="168" width="276" height="50"/>
+                                                <rect key="frame" x="22" y="168" width="276" height="50"/>
                                                 <subviews>
                                                     <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="xxxxxx" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="H4J-bJ-dOg" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="276" height="50"/>
@@ -1257,7 +1275,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycm-K0-gRI">
-                                                <rect key="frame" x="69" y="248" width="276" height="50"/>
+                                                <rect key="frame" x="22" y="248" width="276" height="50"/>
                                                 <color key="backgroundColor" name="ivpnBlue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="276" id="BaG-vQ-6Gy"/>
@@ -1278,7 +1296,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter number you see above" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7l-pP-XzT">
-                                                <rect key="frame" x="62" y="130" width="290" height="26"/>
+                                                <rect key="frame" x="15" y="130" width="290" height="26"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="26" id="5tQ-Ig-ZXi"/>
                                                     <constraint firstAttribute="width" constant="290" id="eV7-jk-UGZ"/>
@@ -1297,7 +1315,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYx-nA-sd9">
-                                        <rect key="frame" x="87" y="25" width="240" height="80"/>
+                                        <rect key="frame" x="40" y="25" width="240" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="1B8-0E-AXX"/>
                                             <constraint firstAttribute="width" constant="240" id="4YL-jj-9Tj"/>
@@ -1351,7 +1369,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHZ-yq-cXd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1370,7 +1388,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1P7-QA-y66">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1391,7 +1409,7 @@
                         <viewControllerLayoutGuide type="bottom" id="spt-xU-3jY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tGD-wn-mSe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="yMp-qe-nNe">
@@ -1527,7 +1545,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jik-kb-GiA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
