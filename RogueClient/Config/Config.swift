@@ -59,8 +59,8 @@ struct Config {
     static let openVPNLogFile = "OpenVPNLogs.txt"
     
     // Contact Support web page
-    static let contactSupportMail = "support@ivpn.net"
-    static let contactSupportPage = "mailto:support@ivpn.net"
+    static let contactSupportMail = "support@winstonprivacy.com"
+    static let contactSupportPage = "mailto:support@winstonprivacy.com"
     
     static let serviceStatusRefreshMaxIntervalSeconds: TimeInterval = 30
     static let stableVPNStatusInterval: TimeInterval = 0.5
