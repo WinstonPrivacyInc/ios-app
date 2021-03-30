@@ -2234,7 +2234,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2476,7 +2476,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2513,7 +2513,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
