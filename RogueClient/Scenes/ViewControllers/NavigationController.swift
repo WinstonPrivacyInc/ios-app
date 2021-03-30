@@ -28,7 +28,7 @@ class NavigationController: UINavigationController {
     override func viewDidLoad () {
         super.viewDidLoad()
         
-        UINavigationBar.appearance().tintColor = UIColor.init(named: Theme.ivpnBlue)
+        UINavigationBar.appearance().tintColor = UIColor.init(named: Theme.appPrimary)
         navigationBar.prefersLargeTitles = true
         
         if #available(iOS 13.0, *) {

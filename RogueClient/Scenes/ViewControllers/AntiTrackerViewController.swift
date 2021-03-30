@@ -72,7 +72,7 @@ extension AntiTrackerViewController {
         label.enabledTypes = [customType]
         label.text = footer.textLabel?.text
         label.textColor = UIColor.init(named: Theme.ivpnLabel6)
-        label.customColor[customType] = UIColor.init(named: Theme.ivpnBlue)
+        label.customColor[customType] = UIColor.init(named: Theme.appPrimary)
         label.handleCustomTap(for: customType) { _ in
             self.openWebPage(urlString)
         }

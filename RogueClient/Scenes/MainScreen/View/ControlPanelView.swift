@@ -110,7 +110,7 @@ class ControlPanelView: UITableView {
     func setupView() {
         if #available(iOS 13.0, *) {
             connectSwitch.thumbTintColor = UIColor.init(named: Theme.ivpnGray17)
-            connectSwitch.onTintColor = UIColor.init(named: Theme.ivpnBlue)
+            connectSwitch.onTintColor = UIColor.init(named: Theme.appPrimary)
         }
         ipAddressErrorLabel.icon(text: "Connection error", imageName: "icon-wifi-off", alignment: .left)
         locationErrorLabel.icon(text: "Connection error", imageName: "icon-wifi-off", alignment: .left)
@@ -153,7 +153,7 @@ class ControlPanelView: UITableView {
     
     func updateAntiTracker() {
         antiTrackerSwitch.isOn = UserDefaults.shared.isAntiTracker
-        antiTrackerSwitch.onTintColor = UserDefaults.shared.isAntiTrackerHardcore ? UIColor.init(named: Theme.ivpnDarkRed) : UIColor.init(named: Theme.ivpnBlue)
+        antiTrackerSwitch.onTintColor = UserDefaults.shared.isAntiTrackerHardcore ? UIColor.init(named: Theme.ivpnDarkRed) : UIColor.init(named: Theme.appPrimary)
     }
     
     func updateProtocol() {

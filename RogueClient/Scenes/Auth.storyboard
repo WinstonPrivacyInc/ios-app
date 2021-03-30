@@ -991,7 +991,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the QR Code in the client area of the IVPN website or in another IVPN client App." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-gs-0Hz">
-                                <rect key="frame" x="10" y="78" width="300" height="90"/>
+                                <rect key="frame" x="10" y="72" width="300" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="9K0-5D-rbb"/>
                                     <constraint firstAttribute="width" constant="300" id="laf-pe-L4Y"/>
@@ -1001,7 +1001,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-b7-cZc">
-                                <rect key="frame" x="0.0" y="213" width="320" height="267"/>
+                                <rect key="frame" x="0.0" y="207" width="320" height="273"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JUN-Az-Acd"/>
@@ -1125,10 +1125,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-4M-4x3">
-                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inu-6x-BUa" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWX-2b-S2y">
                                                 <rect key="frame" x="22" y="82" width="276" height="50"/>
@@ -1246,10 +1246,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="AOo-dY-xFe">
-                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wc-44-z61" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnO-Pm-4Fi">
                                                 <rect key="frame" x="22" y="168" width="276" height="50"/>
@@ -1371,7 +1371,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHZ-yq-cXd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1390,7 +1390,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1P7-QA-y66">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1566,7 +1566,7 @@
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jik-kb-GiA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1581,7 +1581,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="uYX-O5-UET"/>
-        <segue reference="rrg-Fe-V0v"/>
+        <segue reference="gLo-V8-Qbm"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon-check" width="24" height="24"/>

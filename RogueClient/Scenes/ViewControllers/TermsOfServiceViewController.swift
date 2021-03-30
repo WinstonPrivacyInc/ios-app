@@ -96,7 +96,7 @@ class TermsOfServiceViewController: UIViewController {
         let customType = ActiveType.custom(pattern: "Privacy Policy")
         noteLabel.enabledTypes = [customType]
         noteLabel.text = noteLabel.text
-        noteLabel.customColor[customType] = UIColor.init(named: Theme.ivpnBlue)
+        noteLabel.customColor[customType] = UIColor.init(named: Theme.appPrimary)
         noteLabel.handleCustomTap(for: customType) { _ in
             self.openPrivacyPolicy()
         }

@@ -53,7 +53,7 @@ class SelectPlanView: UITableView {
     func setupView(service: Service) {
         switch service.type {
         case .standard:
-            standardButton.backgroundColor = UIColor.init(named: Theme.ivpnBlue)
+            standardButton.backgroundColor = UIColor.init(named: Theme.appPrimary)
             standardButton.set(title: "Select", subtitle: "(Will be active until \(service.willBeActiveUntil))")
             proButton.backgroundColor = UIColor.init(named: Theme.ivpnGray5)
             proButton.set(title: "Select", subtitle: "")
@@ -62,7 +62,7 @@ class SelectPlanView: UITableView {
         case .pro:
             standardButton.backgroundColor = UIColor.init(named: Theme.ivpnGray5)
             standardButton.set(title: "Select", subtitle: "")
-            proButton.backgroundColor = UIColor.init(named: Theme.ivpnBlue)
+            proButton.backgroundColor = UIColor.init(named: Theme.appPrimary)
             proButton.set(title: "Select", subtitle: "(Will be active until \(service.willBeActiveUntil))")
             standardCurrentLabel.isHidden = true
             proCurrentLabel.isHidden = false

@@ -38,7 +38,10 @@ struct Theme {
     static let ivpnLabel5 = "ivpnLabel5"
     static let ivpnLabel6 = "ivpnLabel6"
     static let ivpnNavigationTint = "ivpnNavigationTint"
-    static let ivpnBlue = "ivpnBlue"
+    
+    // static let ivpnBlue = "ivpnBlue"
+    static let appPrimary = "roguePurple"
+    
     static let ivpnGreen = "ivpnGreen"
     static let ivpnOrange = "ivpnOrange"
     static let ivpnRed = "ivpnRed"

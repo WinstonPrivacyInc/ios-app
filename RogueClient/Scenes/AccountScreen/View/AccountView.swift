@@ -27,7 +27,7 @@ class AccountView: UITableView {
     
     // MARK: - @IBOutlets -
     
-    @IBOutlet weak var qrCodeImage: UIImageView!
+    // @IBOutlet weak var qrCodeImage: UIImageView!
     @IBOutlet weak var accountIdLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var subscriptionLabel: UILabel!
@@ -44,20 +44,22 @@ class AccountView: UITableView {
     
     func setupView(viewModel: AccountViewModel) {
         accountIdLabel.text = viewModel.accountId
-        statusLabel.text = viewModel.statusText
-        statusLabel.backgroundColor = viewModel.statusColor
-        subscriptionLabel.text = viewModel.subscriptionText
-        activeUntilLabel.text = viewModel.activeUntilText
-        planLabel.textColor = .white
+
+        //        statusLabel.text = viewModel.statusText
+//        statusLabel.backgroundColor = viewModel.statusColor
+
+        //        subscriptionLabel.text = viewModel.subscriptionText
+//        activeUntilLabel.text = viewModel.activeUntilText
+//        planLabel.textColor = .white
         
-        switch serviceType {
-        case .standard:
-            break
-        case .pro:
-            planLabel.text = "Login to the website to change subscription plan"
-            planLabel.font = .systemFont(ofSize: 12, weight: .regular)
-            planDescriptionHeightConstraint.constant = 58
-        }
+//        switch serviceType {
+//        case .standard:
+//            break
+//        case .pro:
+//            planLabel.text = "Login to the website to change subscription plan"
+//            planLabel.font = .systemFont(ofSize: 12, weight: .regular)
+//            planDescriptionHeightConstraint.constant = 58
+//        }
     }
     
     func initQRCode(viewModel: AccountViewModel) {
