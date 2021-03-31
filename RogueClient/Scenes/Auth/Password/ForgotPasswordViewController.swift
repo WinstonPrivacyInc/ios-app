@@ -16,6 +16,7 @@ class ForgotPasswordViewController: UIViewController {
     @IBOutlet weak var resetPasswordView: UIView!
     private var isRequestingReset = false
     private let hud = JGProgressHUD(style: .dark)
+    private var passwordResetUsername: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,8 @@ class ForgotPasswordViewController: UIViewController {
         
         emailTextField.resignFirstResponder()
         
+        passwordResetUsername = email
+        
         Amplify.Auth.resetPassword(for: email) { result in
             do {
                 let resetResult = try result.get()
@@ -65,30 +68,38 @@ class ForgotPasswordViewController: UIViewController {
              
                 case .confirmResetPasswordWithCode(let deliveryDetails, let info):
                     print("Confirm reset password with code send to - \(deliveryDetails) \(String(describing: info))")
-                    DispatchQueue.main.async {
-                        self.passwordResetSuccess()
-                    }
+                    self.passwordResetSuccess()
                 case .done:
                     print("Reset completed")
                 }
             } catch (let error) {
                 print("Password reset failure \(error)")
-                DispatchQueue.main.async {
-                    self.passwordResetFailure(error: error)
-                }
+                self.passwordResetFailure(error: error)
             }
         }
     }
     
     private func passwordResetSuccess() -> Void {
-        self.hud.dismiss()
         self.isRequestingReset = false
-        self.performSegue(withIdentifier: "ForgotPasswordConfirm", sender: self)
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.performSegue(withIdentifier: "ForgotPasswordConfirm", sender: self)
+        }
     }
     
     private func passwordResetFailure(error: Error) -> Void {
-        self.hud.dismiss()
-        self.showAlert(title: "Reset failed", message: "There was an error verifying the reset code.\(error)")
         self.isRequestingReset = false
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.showAlert(title: "Reset failed", message: "There was an error verifying the reset code.\(error)")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ForgotPasswordConfirm" {
+            if let destinationVC = segue.destination as? ForgotPasswordConfirmViewController {
+                destinationVC.passwordResetUsername = passwordResetUsername
+            }
+        }
     }
 }

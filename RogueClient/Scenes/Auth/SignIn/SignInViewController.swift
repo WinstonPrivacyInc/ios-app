@@ -51,6 +51,9 @@ class SignInViewController: UIViewController {
     private let hud = JGProgressHUD(style: .dark)
     private var actionType: ActionType = .signin
     
+    var passwordResetUserName: String = ""
+    var passwordResetSuccess: Bool = false
+    
     // MARK: - @IBActions -
     
     @IBAction func handleEmailInput(_ sender: AnyObject) {
@@ -137,6 +140,20 @@ class SignInViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(subscriptionDismissed), name: Notification.Name.SubscriptionDismissed, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(subscriptionActivated), name: Notification.Name.SubscriptionActivated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(termsOfServiceAgreed), name: Notification.Name.TermsOfServiceAgreed, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(passwordWasReset), name: Notification.Name.PasswordResetSuccess, object: nil)
+    }
+    
+    @objc private func passwordWasReset(notification: NSNotification) {
+        
+        if let data = notification.userInfo as? [String: String] {
+            if let email = data["email"] {
+                self.emailTextField.text = email
+                self.passwordTextField.becomeFirstResponder()
+            }
+        }
+        
+        showAlert(title: "Success", message: "Your password has been reset.")
     }
     
     @objc func newSession() {
@@ -259,6 +276,7 @@ class SignInViewController: UIViewController {
             NotificationCenter.default.post(name: Notification.Name.ServiceAuthorized, object: nil)
         })
     }
+    
     
 }
 

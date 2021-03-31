@@ -13,9 +13,11 @@ import Amplify
 
 class ForgotPasswordConfirmViewController: UIViewController {
     
+    var passwordResetUsername: String = ""
     private var isRequestingReset = false
     private let hud = JGProgressHUD(style: .dark)
     @IBOutlet weak var resetCodeField: UITextField!
+    @IBOutlet weak var newPasswordField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,7 @@ class ForgotPasswordConfirmViewController: UIViewController {
             navigationController?.navigationBar.setNeedsLayout()
         }
         
-        resetCodeField.becomeFirstResponder()
+         resetCodeField.becomeFirstResponder()
     }
     
     private func initNavigationBar() {
@@ -57,41 +59,51 @@ class ForgotPasswordConfirmViewController: UIViewController {
             return
         }
         
+        let newPassword = (self.newPasswordField.text ?? "").trim()
+        
+        guard ServiceStatus.isValidPassword(password: newPassword) else {
+            isRequestingReset = false
+            showAlert(title: "Invalid Password", message: "Please enter your password.")
+            return
+        }
+        
         hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
         hud.detailTextLabel.text = "Resetting your password..."
         hud.show(in: (navigationController?.view)!)
         
+        Amplify.Auth.confirmResetPassword(for: passwordResetUsername, with: newPassword, confirmationCode: resetCode) { result in
+            switch result {
+            case .success:
+                DispatchQueue.main.async {
+                    self.onResetSuccess()
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.onResetFailure(error: error)
+                }
+            }
+        }
+    }
+    
+    private func onResetSuccess() {
+        print("Password reset confirmed")
+        self.isRequestingReset = false
+        self.hud.dismiss()
+        self.dismissViewController(self)
         
-        
+        let data = ["email": self.passwordResetUsername]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Notification.Name.PasswordResetSuccess.rawValue), object: nil, userInfo: data)
+    }
+    
+    private func onResetFailure(error: AuthError) {
+        print("Reset password failed with error \(error)")
+        self.isRequestingReset = false
+        self.hud.dismiss()
+        self.showAlert(title: "Error", message: error.errorDescription)
     }
     
     @IBAction func goBack() {
         navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func removethisplease(_ sender: Any) {
-        
-   
-        
-        hud.dismiss()
-        
-        // updateViewMode()
-        present(NavigationManager.getForgotPasswordConfirmController(), animated: true)
-        
-        
-//        Amplify.Auth.resetPassword(for: email) { (result) in
-//            do {
-//                let resetResult = try result.get()
-//                switch resetResult.nextStep {
-//                case .confirmResetPasswordWithCode(let deliveryDetails, let info):
-//                    print("Confirm reset password with code send to - \(deliveryDetails) \(String(describing: info))")
-//                case .done:
-//                    print("Reset completed")
-//                }
-//            } catch {
-//                print("Reset password failed with error \(error)")
-//            }
-//        }
-        
-    }
 }

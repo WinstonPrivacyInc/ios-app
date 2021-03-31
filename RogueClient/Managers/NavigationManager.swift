@@ -52,11 +52,6 @@ class NavigationManager {
         let navController = storyboard.instantiateViewController(withIdentifier: "forgotPasswordView") as? UINavigationController
         navController?.modalPresentationStyle = .formSheet
         return navController!
-        
-//        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "forgotPasswordConfirmView")
-//        
-//        return viewController
     }
     
     
