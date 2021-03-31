@@ -185,7 +185,7 @@ extension ControlPanelViewController {
     
     override func createSessionAuthenticationError() {
         logOut(deleteSession: false)
-        present(NavigationManager.getLoginViewController(), animated: true)
+        present(NavigationManager.getSignInViewController(), animated: true)
     }
     
     override func createSessionFailure(error: Any?) {
@@ -198,7 +198,7 @@ extension ControlPanelViewController {
     override func sessionStatusNotFound() {
         guard !UserDefaults.standard.bool(forKey: "-UITests") else { return }
         logOut(deleteSession: false)
-        present(NavigationManager.getLoginViewController(), animated: true)
+        present(NavigationManager.getSignInViewController(), animated: true)
     }
     
     override func deleteSessionStart() {
@@ -228,7 +228,7 @@ extension ControlPanelViewController {
     }
     
     override func deleteSessionSkip() {
-        present(NavigationManager.getLoginViewController(), animated: true)
+        present(NavigationManager.getSignInViewController(), animated: true)
     }
     
     func showCreateSessionAlert(message: String) {

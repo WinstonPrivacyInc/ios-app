@@ -33,9 +33,9 @@ class NavigationManager {
         return viewController
     }
     
-    static func getLoginViewController() -> UIViewController {
+    static func getSignInViewController() -> UIViewController {
         let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "loginView")
+        let viewController = storyBoard.instantiateViewController(withIdentifier: "signInView")
         
         return viewController
     }
@@ -46,6 +46,19 @@ class NavigationManager {
         
         return viewController
     }
+    
+    static func getForgotPasswordConfirmController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let navController = storyboard.instantiateViewController(withIdentifier: "forgotPasswordView") as? UINavigationController
+        navController?.modalPresentationStyle = .formSheet
+        return navController!
+        
+//        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "forgotPasswordConfirmView")
+//        
+//        return viewController
+    }
+    
     
     static func getChangePlanViewController() -> UIViewController {
         let storyBoard = UIStoryboard(name: "Auth", bundle: nil)

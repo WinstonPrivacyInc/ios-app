@@ -225,7 +225,7 @@
 		82FF0D4223153D1000440E5D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82FF0D4123153D1000440E5D /* Colors.xcassets */; };
 		82FF0D442315587000440E5D /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FF0D432315587000440E5D /* UITextFieldPadding.swift */; };
 		9C2833741D9D3EB60024C553 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2833731D9D3EB60024C553 /* Initial.storyboard */; };
-		9C28337B1D9D3F060024C553 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833751D9D3F060024C553 /* LoginViewController.swift */; };
+		9C28337B1D9D3F060024C553 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833751D9D3F060024C553 /* SignInViewController.swift */; };
 		9C28337E1D9D3F060024C553 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833781D9D3F060024C553 /* Config.swift */; };
 		9C28338A1D9D41A60024C553 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2833891D9D41A60024C553 /* ApiService.swift */; };
 		9C3031261DB3B6E700C38B0C /* ServersUpdateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3031251DB3B6E700C38B0C /* ServersUpdateResult.swift */; };
@@ -258,6 +258,8 @@
 		A932871726027CFB0034E296 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932871626027CFB0034E296 /* KeyPair.swift */; };
 		A9B3091725FA740E00B3F73A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */; };
 		A9B3092525FA861E00B3F73A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */; };
+		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
+		A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */; };
 		A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */; };
 		E8802DC3459714DE3B42A0BA /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */; };
 		FCBFE1989E1777F317A055B6 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */; };
@@ -519,7 +521,7 @@
 		82FF0D432315587000440E5D /* UITextFieldPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
 		8F1B5D48B42C23CF45D5A6B5 /* Pods-wireguard-tunnel-provider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wireguard-tunnel-provider.release.xcconfig"; path = "Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.release.xcconfig"; sourceTree = "<group>"; };
 		9C2833731D9D3EB60024C553 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
-		9C2833751D9D3F060024C553 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9C2833751D9D3F060024C553 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9C2833781D9D3F060024C553 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		9C2833891D9D41A60024C553 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ApiService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9C3031251DB3B6E700C38B0C /* ServersUpdateResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServersUpdateResult.swift; sourceTree = "<group>"; };
@@ -558,6 +560,8 @@
 		A932871626027CFB0034E296 /* KeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
 		A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
+		A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmView.swift; sourceTree = "<group>"; };
 		A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = Config/amplifyconfiguration.json; sourceTree = "<group>"; };
 		B046A96FF272AF659CE47461 /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
 		ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -919,7 +923,7 @@
 		82A208B321BAA4C500C9AD44 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				A9B3091525FA73DB00B3F73A /* ForgotPassword */,
+				A9C299742613D4E8004CFC9A /* Auth */,
 				8208525423FD56530008C112 /* MainScreen */,
 				822563902431DFFB00AE7F8D /* AccountScreen */,
 				82A208B621BAA51000C9AD44 /* Controls */,
@@ -1085,7 +1089,6 @@
 				82DEF0222447280300CCB5CD /* CreateAccount */,
 				82DEF0232447281900CCB5CD /* SelectPlan */,
 				82DEF0242447282E00CCB5CD /* Payment */,
-				9C2833751D9D3F060024C553 /* LoginViewController.swift */,
 				828D8A6C258245AD00CB0E5B /* TwoFactorViewController.swift */,
 				825E834E25A327EB00938240 /* CaptchaViewController.swift */,
 			);
@@ -1255,13 +1258,40 @@
 			path = RogueClient;
 			sourceTree = "<group>";
 		};
-		A9B3091525FA73DB00B3F73A /* ForgotPassword */ = {
+		A9C299742613D4E8004CFC9A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A9C299772613D501004CFC9A /* Password */,
+				A9C299762613D4FB004CFC9A /* SignUp */,
+				A9C299752613D4EF004CFC9A /* SignIn */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A9C299752613D4EF004CFC9A /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				9C2833751D9D3F060024C553 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		A9C299762613D4FB004CFC9A /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		A9C299772613D501004CFC9A /* Password */ = {
 			isa = PBXGroup;
 			children = (
 				A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */,
 				A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */,
+				A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */,
+				A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */,
 			);
-			path = ForgotPassword;
+			path = Password;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1750,7 +1780,7 @@
 				82DEF0282447287000CCB5CD /* SelectPlanViewController.swift in Sources */,
 				8208525623FD56870008C112 /* FloatingPanelMainLayout.swift in Sources */,
 				82F917392344861A0025ED3A /* TermsOfServiceViewController.swift in Sources */,
-				9C28337B1D9D3F060024C553 /* LoginViewController.swift in Sources */,
+				9C28337B1D9D3F060024C553 /* SignInViewController.swift in Sources */,
 				8205963D2245264300011091 /* UITableViewController+Ext.swift in Sources */,
 				82BF32F624484E5100248E4F /* CreateAccountView.swift in Sources */,
 				82774855237596DF0061BD46 /* OpenVPNConf.swift in Sources */,
@@ -1839,6 +1869,7 @@
 				82C293BF21CCD49A000B74EC /* NavigationController.swift in Sources */,
 				82061F67238D2730009DDF4D /* PingManager.swift in Sources */,
 				9CDDD5AF1D9D2F9F00D39924 /* AppDelegate.swift in Sources */,
+				A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */,
 				82BBF26121AD213500589766 /* Theme.swift in Sources */,
 				829AA4732267372A00037198 /* Designable+Ext.swift in Sources */,
 				9C3031301DB41FBA00C38B0C /* ServerTableViewCell.swift in Sources */,
@@ -1867,6 +1898,7 @@
 				82DAB37F2457260000302F4C /* ServiceTableViewCell.swift in Sources */,
 				82061F66238D2730009DDF4D /* ICMPHeader.swift in Sources */,
 				826F7F0C23A79F1500777DB9 /* UserDefaultsTodayExtension+Ext.swift in Sources */,
+				A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */,
 				824BC466240906ED00A61B29 /* VPNStatusViewModel.swift in Sources */,
 				8247E1DE22687C28006C0C08 /* ProductIdentifier.swift in Sources */,
 				829DF2822497953C000DC2DB /* UIButton+Ext.swift in Sources */,

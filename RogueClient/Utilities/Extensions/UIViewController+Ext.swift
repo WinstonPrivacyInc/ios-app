@@ -263,7 +263,7 @@ extension UIViewController {
     
     func evaluateIsLoggedIn() -> Bool {
         guard Application.shared.authentication.isLoggedIn else {
-            let viewController = NavigationManager.getLoginViewController()
+            let viewController = NavigationManager.getSignInViewController()
             viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
             present(viewController, animated: true, completion: nil)
             return false
@@ -284,7 +284,7 @@ extension UIViewController {
     }
     
     func presentSignInView() -> Void {
-        let viewController = NavigationManager.getLoginViewController()
+        let viewController = NavigationManager.getSignInViewController()
         viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
         present(viewController, animated: true, completion: nil)
     }

@@ -124,9 +124,9 @@ class AppDelegate: UIResponder {
         case Config.urlTypeLogin:
             if let topViewController = UIApplication.topViewController() {
                 if #available(iOS 13.0, *) {
-                    topViewController.present(NavigationManager.getLoginViewController(), animated: true, completion: nil)
+                    topViewController.present(NavigationManager.getSignInViewController(), animated: true, completion: nil)
                 } else {
-                    topViewController.present(NavigationManager.getLoginViewController(), animated: true, completion: nil)
+                    topViewController.present(NavigationManager.getSignInViewController(), animated: true, completion: nil)
                 }
             }
         default:

@@ -90,7 +90,9 @@ class ForgotPasswordViewController: UIViewController {
         hud.dismiss()
         resetMode = ResetMode.confirming
         
-        updateViewMode()
+        // updateViewMode()
+        // present(NavigationManager.getForgotPasswordConfirmController(), animated: true)
+        performSegue(withIdentifier: "ForgotPasswordConfirm", sender: self)
         
         
 //        Amplify.Auth.resetPassword(for: email) { (result) in

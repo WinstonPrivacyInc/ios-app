@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  SignInController.swift
 //  IVPN iOS app
 //  https://github.com/ivpn/ios-app
 //
@@ -25,7 +25,7 @@ import UIKit
 import JGProgressHUD
 import Amplify
 
-class LoginViewController: UIViewController {
+class SignInViewController: UIViewController {
 
     // MARK: - @IBOutlets -
     
@@ -41,30 +41,15 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
-    @IBOutlet weak var scannerButton: UIButton! {
-        didSet {
-            scannerButton.isHidden = !UIImagePickerController.isSourceTypeAvailable(.camera)
-        }
-    }
-    
-    @IBOutlet weak var passwordResetButton: UIButton! {
-        didSet {
-            
-        }
-    }
-    
-    // MARK: - Properties -
-    
     private lazy var sessionManager: SessionManager = {
         let sessionManager = SessionManager()
         sessionManager.delegate = self
         return sessionManager
     }()
     
-    private var loginProcessStarted = false
+    private var signInStarted = false
     private let hud = JGProgressHUD(style: .dark)
-    private var actionType: ActionType = .login
+    private var actionType: ActionType = .signin
     
     // MARK: - @IBActions -
     
@@ -73,18 +58,15 @@ class LoginViewController: UIViewController {
         passwordTextField.becomeFirstResponder()
     }
     
-    @IBAction func loginToAccount(_ sender: AnyObject) {
+    @IBAction func signInToAccount(_ sender: AnyObject) {
         guard UserDefaults.shared.hasUserConsent else {
-            actionType = .login
+            actionType = .signin
             present(NavigationManager.getTermsOfServiceViewController(), animated: true, completion: nil)
             return
         }
         
         view.endEditing(true)
-        startLoginProcess()
-    }
-    
-    @IBAction func passwordReset(_ sender: Any) {
+        startSignInProcess()
     }
     
     @IBAction func createAccount(_ sender: AnyObject) {
@@ -100,6 +82,7 @@ class LoginViewController: UIViewController {
     @IBAction func presentForgotPasswordView(_ sender: Any) {
         present(NavigationManager.getForgotPasswordViewController(), animated: true)
     }
+    
     @IBAction func openScanner(_ sender: AnyObject) {
         present(NavigationManager.getScannerViewController(delegate: self), animated: true)
     }
@@ -130,7 +113,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.accessibilityIdentifier = "loginScreen"
+        view.accessibilityIdentifier = "signInScreen"
         navigationController?.navigationBar.prefersLargeTitles = false
         emailTextField.becomeFirstResponder()
         
@@ -157,17 +140,17 @@ class LoginViewController: UIViewController {
     }
     
     @objc func newSession() {
-        startLoginProcess()
+        startSignInProcess()
     }
     
     @objc func forceNewSession() {
-        startLoginProcess(force: true)
+        startSignInProcess(force: true)
     }
     
     @objc func termsOfServiceAgreed() {
         switch actionType {
-        case .login:
-            loginToAccount(self)
+        case .signin:
+            signInToAccount(self)
         case .signup:
             createAccount(self)
         }
@@ -175,22 +158,22 @@ class LoginViewController: UIViewController {
     
     // MARK: - Methods -
     
-    private func startLoginProcess(force: Bool = false, confirmation: String? = nil, captcha: String? = nil, captchaId: String? = nil) {
-        guard !loginProcessStarted else { return }
+    private func startSignInProcess(force: Bool = false, confirmation: String? = nil, captcha: String? = nil, captchaId: String? = nil) {
+        guard !signInStarted else { return }
         
         let username = (self.emailTextField.text ?? "").trim()
         let password = (self.passwordTextField.text ?? "").trim()
         
-        loginProcessStarted = true
+        signInStarted = true
         
         guard ServiceStatus.isValidEmail(email: username) else {
-            loginProcessStarted = false
+            signInStarted = false
             showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
             return
         }
         
         guard ServiceStatus.isValidPassword(password: password) else {
-            loginProcessStarted = false
+            signInStarted = false
             showAlert(title: "Invalid Password", message: "Please enter your password.")
             return
         }
@@ -218,14 +201,14 @@ class LoginViewController: UIViewController {
         print("Sign in success")
         self.createSessionSuccess()
         self.hud.dismiss()
-        self.loginProcessStarted = false
+        self.signInStarted = false
     }
     
     private func signInFailure(authError: AuthError) -> Void {
         print("Sign in failure \(authError.errorDescription)")
         self.hud.dismiss()
         showAlert(title: "Sign in failed", message: authError.errorDescription)
-        loginProcessStarted = false
+        signInStarted = false
     }
     
     
@@ -282,7 +265,7 @@ class LoginViewController: UIViewController {
 
 // MARK: - SessionManagerDelegate -
 
-extension LoginViewController {
+extension SignInViewController {
     
     override func createSessionStart() {
         hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
@@ -292,7 +275,7 @@ extension LoginViewController {
     
     override func createSessionSuccess() {
         hud.dismiss()
-        loginProcessStarted = false
+        signInStarted = false
         
         KeyChain.username = (self.emailTextField.text ?? "").trim()
         
@@ -304,7 +287,7 @@ extension LoginViewController {
     
     override func createSessionServiceNotActive() {
         hud.dismiss()
-        loginProcessStarted = false
+        signInStarted = false
         
         KeyChain.username = (self.emailTextField.text ?? "").trim()
         
@@ -317,7 +300,7 @@ extension LoginViewController {
     
     override func createSessionAccountNotActivated(error: Any?) {
         hud.dismiss()
-        loginProcessStarted = false
+        signInStarted = false
         
         KeyChain.tempUsername = (self.emailTextField.text ?? "").trim()
         Application.shared.authentication.removeStoredCredentials()
@@ -332,7 +315,7 @@ extension LoginViewController {
     override func createSessionTooManySessions(error: Any?) {
         hud.dismiss()
         Application.shared.authentication.removeStoredCredentials()
-        loginProcessStarted = false
+        signInStarted = false
         
         if let error = error as? ErrorResultSessionNew, let data = error.data {
             if data.upgradable {
@@ -351,7 +334,7 @@ extension LoginViewController {
     override func createSessionAuthenticationError() {
         hud.dismiss()
         Application.shared.authentication.removeStoredCredentials()
-        loginProcessStarted = false
+        signInStarted = false
         showErrorAlert(title: "Error", message: "Account ID is incorrect")
     }
     
@@ -364,13 +347,13 @@ extension LoginViewController {
         
         hud.dismiss()
         Application.shared.authentication.removeStoredCredentials()
-        loginProcessStarted = false
+        signInStarted = false
         showErrorAlert(title: "Error", message: message)
     }
     
     override func twoFactorRequired(error: Any?) {
         hud.dismiss()
-        loginProcessStarted = false
+        signInStarted = false
         present(NavigationManager.getTwoFactorViewController(delegate: self), animated: true)
     }
     
@@ -382,19 +365,19 @@ extension LoginViewController {
         }
         
         hud.dismiss()
-        loginProcessStarted = false
+        signInStarted = false
         showErrorAlert(title: "Error", message: message)
     }
     
     override func captchaRequired(error: Any?) {
         hud.dismiss()
-        loginProcessStarted = false
+        signInStarted = false
         presentCaptchaScreen(error: error)
     }
     
     override func captchaIncorrect(error: Any?) {
         hud.dismiss()
-        loginProcessStarted = false
+        signInStarted = false
         presentCaptchaScreen(error: error)
     }
     
@@ -402,9 +385,9 @@ extension LoginViewController {
         showActionSheet(title: message, actions: ["Log out from all other devices", "Try again"], sourceView: self.emailTextField) { index in
             switch index {
             case 0:
-                self.startLoginProcess(force: true)
+                self.startSignInProcess(force: true)
             case 1:
-                self.startLoginProcess()
+                self.startSignInProcess()
             default:
                 break
             }
@@ -421,7 +404,7 @@ extension LoginViewController {
 
 // MARK: - UITextFieldDelegate -
 
-extension LoginViewController: UITextFieldDelegate {
+extension SignInViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
@@ -429,7 +412,7 @@ extension LoginViewController: UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             emailTextField.resignFirstResponder()
-            startLoginProcess()
+            startSignInProcess()
         }
         
         return true
@@ -443,7 +426,7 @@ extension LoginViewController: UITextFieldDelegate {
 
 // MARK: - UIAdaptivePresentationControllerDelegate -
 
-extension LoginViewController: UIAdaptivePresentationControllerDelegate {
+extension SignInViewController: UIAdaptivePresentationControllerDelegate {
     
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         if Application.shared.authentication.isLoggedIn {
@@ -457,49 +440,49 @@ extension LoginViewController: UIAdaptivePresentationControllerDelegate {
 
 // MARK: - ScannerViewControllerDelegate -
 
-extension LoginViewController: ScannerViewControllerDelegate {
+extension SignInViewController: ScannerViewControllerDelegate {
     
     func qrCodeFound(code: String) {
         emailTextField.text = code
         
         guard UserDefaults.shared.hasUserConsent else {
             DispatchQueue.async {
-                self.actionType = .login
+                self.actionType = .signin
                 self.present(NavigationManager.getTermsOfServiceViewController(), animated: true, completion: nil)
             }
             
             return
         }
         
-        startLoginProcess()
+        startSignInProcess()
     }
     
 }
 
 // MARK: - TwoFactorViewControllerDelegate -
 
-extension LoginViewController: TwoFactorViewControllerDelegate {
+extension SignInViewController: TwoFactorViewControllerDelegate {
     
     func codeSubmitted(code: String) {
-        startLoginProcess(force: false, confirmation: code)
+        startSignInProcess(force: false, confirmation: code)
     }
     
 }
 
 // MARK: - CaptchaViewControllerDelegate -
 
-extension LoginViewController: CaptchaViewControllerDelegate {
+extension SignInViewController: CaptchaViewControllerDelegate {
     
     func captchaSubmitted(code: String, captchaId: String) {
-        startLoginProcess(force: false, captcha: code, captchaId: captchaId)
+        startSignInProcess(force: false, captcha: code, captchaId: captchaId)
     }
     
 }
 
-extension LoginViewController {
+extension SignInViewController {
     
     enum ActionType {
-        case login
+        case signin
         case signup
     }
     

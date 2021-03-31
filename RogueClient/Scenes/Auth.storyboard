@@ -13,7 +13,7 @@
         <!--Sign In-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="formSheet" id="BYZ-38-t0r" customClass="LoginViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" id="BYZ-38-t0r" customClass="SignInViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -99,7 +99,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="loginToAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jYN-zM-qKE"/>
+                                                    <action selector="signInToAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jYN-zM-qKE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -957,7 +957,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cyL-IY-0fL">
             <objects>
-                <navigationController storyboardIdentifier="loginView" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TaW-sx-eod" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="signInView" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TaW-sx-eod" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rHQ-EK-bSh">
@@ -986,7 +986,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the QR Code in the client area of the IVPN website or in another IVPN client App." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-gs-0Hz">
-                                <rect key="frame" x="10" y="78" width="300" height="90"/>
+                                <rect key="frame" x="10" y="72" width="300" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="9K0-5D-rbb"/>
                                     <constraint firstAttribute="width" constant="300" id="laf-pe-L4Y"/>
@@ -996,7 +996,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQa-b7-cZc">
-                                <rect key="frame" x="0.0" y="213" width="320" height="267"/>
+                                <rect key="frame" x="0.0" y="207" width="320" height="273"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JUN-Az-Acd"/>
@@ -1241,10 +1241,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="AOo-dY-xFe">
-                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="436"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wc-44-z61" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnO-Pm-4Fi">
                                                 <rect key="frame" x="22" y="168" width="276" height="50"/>
@@ -1421,7 +1421,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="EeW-c4-rMa"/>
                                                     <constraint firstAttribute="width" constant="300" id="VSR-3z-RHE"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1548,11 +1548,12 @@
                         <outlet property="emailTextField" destination="Uej-E4-YSB" id="Wze-2H-HPN"/>
                         <outlet property="resetPasswordView" destination="4wa-h1-nB7" id="USc-Xa-CkH"/>
                         <outlet property="scrollView" destination="yMp-qe-nNe" id="cM1-Qz-mlM"/>
+                        <segue destination="p5e-rF-WQ1" kind="show" identifier="ForgotPasswordConfirm" id="20W-Kw-xXX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CB-S2-Thv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286.25" y="-961.25"/>
+            <point key="canvasLocation" x="1568" y="-984"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c1Q-rd-9ho">
@@ -1573,9 +1574,119 @@
             </objects>
             <point key="canvasLocation" x="364" y="-960"/>
         </scene>
+        <!--Forgot Password Confirm-->
+        <scene sceneID="paj-If-XmK">
+            <objects>
+                <viewController title="Forgot Password Scene" modalPresentationStyle="formSheet" id="p5e-rF-WQ1" userLabel="Forgot Password Confirm" customClass="ForgotPasswordConfirmViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dUZ-wG-BXP"/>
+                        <viewControllerLayoutGuide type="bottom" id="LQJ-z8-cxx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b1R-kq-oTa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="fbg-Se-ptj">
+                                <rect key="frame" x="10" y="44" width="300" height="436"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2K-W3-A5N" userLabel="Reset View">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm the code sent to you email" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="str-Iv-YXJ">
+                                                <rect key="frame" x="0.0" y="20" width="300" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="SYj-L5-Kc5"/>
+                                                    <constraint firstAttribute="height" constant="60" id="hrG-60-Aal"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Rest Code" placeholder="Email Address" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="i3l-eb-ZDz" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="90" width="300" height="50"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="Yrj-Lo-rec"/>
+                                                    <constraint firstAttribute="height" constant="50" id="sTD-pa-0FR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="continue" textContentType="email"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKh-tS-TlF">
+                                                <rect key="frame" x="0.0" y="150" width="300" height="50"/>
+                                                <color key="backgroundColor" name="roguePurple"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="56l-Al-c1S"/>
+                                                    <constraint firstAttribute="width" constant="300" id="PcE-12-cmu"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Confirm">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="str-Iv-YXJ" firstAttribute="leading" secondItem="x2K-W3-A5N" secondAttribute="leading" id="1PM-7G-Glt"/>
+                                            <constraint firstItem="VKh-tS-TlF" firstAttribute="leading" secondItem="x2K-W3-A5N" secondAttribute="leading" id="6UR-s8-4lX"/>
+                                            <constraint firstAttribute="bottom" secondItem="VKh-tS-TlF" secondAttribute="bottom" id="B64-yi-Pcc"/>
+                                            <constraint firstAttribute="trailing" secondItem="VKh-tS-TlF" secondAttribute="trailing" id="IAq-UU-9T1"/>
+                                            <constraint firstAttribute="trailing" secondItem="i3l-eb-ZDz" secondAttribute="trailing" id="ikQ-Dy-cRs"/>
+                                            <constraint firstAttribute="trailing" secondItem="str-Iv-YXJ" secondAttribute="trailing" id="k6l-VE-m41"/>
+                                            <constraint firstItem="i3l-eb-ZDz" firstAttribute="leading" secondItem="x2K-W3-A5N" secondAttribute="leading" id="lR2-kL-Egw"/>
+                                            <constraint firstItem="i3l-eb-ZDz" firstAttribute="top" secondItem="str-Iv-YXJ" secondAttribute="bottom" constant="10" id="mtK-6W-nXT"/>
+                                            <constraint firstItem="VKh-tS-TlF" firstAttribute="top" secondItem="i3l-eb-ZDz" secondAttribute="bottom" constant="10" id="pp7-kx-Nq6"/>
+                                            <constraint firstItem="VKh-tS-TlF" firstAttribute="top" secondItem="i3l-eb-ZDz" secondAttribute="bottom" constant="10" id="vwn-p7-NgK"/>
+                                            <constraint firstAttribute="height" constant="200" id="vxM-4v-PPj"/>
+                                            <constraint firstItem="i3l-eb-ZDz" firstAttribute="top" secondItem="str-Iv-YXJ" secondAttribute="bottom" constant="10" id="xDe-p0-qo6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="x2K-W3-A5N" firstAttribute="top" secondItem="fbg-Se-ptj" secondAttribute="top" id="GLm-dA-lfb"/>
+                                    <constraint firstItem="x2K-W3-A5N" firstAttribute="leading" secondItem="fbg-Se-ptj" secondAttribute="leading" id="KGx-hS-V52"/>
+                                    <constraint firstItem="x2K-W3-A5N" firstAttribute="centerX" secondItem="fbg-Se-ptj" secondAttribute="centerX" id="gud-Js-cJx"/>
+                                    <constraint firstAttribute="trailing" secondItem="x2K-W3-A5N" secondAttribute="trailing" id="ybG-1Q-91b"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o09-or-gRz"/>
+                        <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
+                        <constraints>
+                            <constraint firstItem="fbg-Se-ptj" firstAttribute="centerX" secondItem="b1R-kq-oTa" secondAttribute="centerX" id="9ZW-pU-wwZ"/>
+                            <constraint firstItem="fbg-Se-ptj" firstAttribute="top" secondItem="o09-or-gRz" secondAttribute="top" id="My7-BL-uOp"/>
+                            <constraint firstItem="fbg-Se-ptj" firstAttribute="bottom" secondItem="o09-or-gRz" secondAttribute="bottom" id="rVV-82-FaP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot Your Password?" id="Gw7-N3-bya">
+                        <barButtonItem key="backBarButtonItem" title="Password Reset" id="xZN-vf-5Qu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="cSt-fX-SRN">
+                            <connections>
+                                <action selector="dismissViewController:" destination="p5e-rF-WQ1" id="XvI-Jn-uyz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJx-xp-nBg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2811" y="-961"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uYX-O5-UET"/>
+        <segue reference="IKn-po-jel"/>
         <segue reference="gLo-V8-Qbm"/>
     </inferredMetricsTieBreakers>
     <resources>
