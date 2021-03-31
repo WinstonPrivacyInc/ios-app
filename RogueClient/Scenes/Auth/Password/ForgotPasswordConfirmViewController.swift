@@ -13,40 +13,15 @@ import Amplify
 
 class ForgotPasswordConfirmViewController: UIViewController {
     
-    enum ResetMode {
-        case resetting
-        case confirming
-    }
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var resetPasswordView: UIView!
-    @IBOutlet weak var confirmPasswordView: UIView!
     private var isRequestingReset = false
     private let hud = JGProgressHUD(style: .dark)
-    private var resetMode = ResetMode.resetting
-    
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var resetCodeField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "forgotPasswordConfirmScreen"
-        navigationController?.navigationBar.prefersLargeTitles = false
+         navigationController?.navigationBar.prefersLargeTitles = false
         initNavigationBar()
-        updateViewMode()
-//
-//        addObservers()
-//        hideKeyboardOnTap()
-    }
-    
-    private func updateViewMode() {
-//        if resetMode == ResetMode.resetting {
-//            emailTextField.becomeFirstResponder()
-//            resetPasswordView.isHidden = false
-//            confirmPasswordView.isHidden = true
-//            
-//        } else {
-//            resetPasswordView.isHidden = true
-//            confirmPasswordView.isHidden = false
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,37 +33,47 @@ class ForgotPasswordConfirmViewController: UIViewController {
             navigationController?.navigationBar.setNeedsLayout()
         }
         
+        resetCodeField.becomeFirstResponder()
     }
     
     private func initNavigationBar() {
-        if isPresentedModally {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
-        }
+        let button = UIButton(type: .system)
+        button.setTitle("Back", for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
     }
-
-    @IBAction func passwordReset(_ sender: Any) {
-        
+    
+    @IBAction func resetPassword(_ sender: Any) {
         guard !isRequestingReset else { return }
         
         isRequestingReset = true
-        let email = (self.emailTextField.text ?? "").trim()
         
-        guard ServiceStatus.isValidEmail(email: email) else {
+        let resetCode = (self.resetCodeField.text ?? "").trim()
+        
+        guard !resetCode.isEmpty else {
+            showAlert(title: "Invalid Code", message: "Please enter a valid reset code.")
             isRequestingReset = false
-            showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
             return
         }
         
         hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-        hud.detailTextLabel.text = "Requesting password reset..."
+        hud.detailTextLabel.text = "Resetting your password..."
         hud.show(in: (navigationController?.view)!)
         
-       
         
-        emailTextField.resignFirstResponder()
+        
+    }
+    
+    @IBAction func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
+
+    @IBAction func removethisplease(_ sender: Any) {
+        
+   
         
         hud.dismiss()
-        resetMode = ResetMode.confirming
         
         // updateViewMode()
         present(NavigationManager.getForgotPasswordConfirmController(), animated: true)

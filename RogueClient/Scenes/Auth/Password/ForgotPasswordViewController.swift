@@ -12,52 +12,25 @@ import JGProgressHUD
 import Amplify
 
 class ForgotPasswordViewController: UIViewController {
-    
-    enum ResetMode {
-        case resetting
-        case confirming
-    }
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var resetPasswordView: UIView!
-    @IBOutlet weak var confirmPasswordView: UIView!
     private var isRequestingReset = false
     private let hud = JGProgressHUD(style: .dark)
-    private var resetMode = ResetMode.resetting
     
-    @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "forgotPasswordScreen"
         navigationController?.navigationBar.prefersLargeTitles = false
         initNavigationBar()
-        updateViewMode()
-//
-//        addObservers()
-//        hideKeyboardOnTap()
-    }
-    
-    private func updateViewMode() {
-        if resetMode == ResetMode.resetting {
-            emailTextField.becomeFirstResponder()
-            resetPasswordView.isHidden = false
-            confirmPasswordView.isHidden = true
-            
-        } else {
-            resetPasswordView.isHidden = true
-            confirmPasswordView.isHidden = false
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // iOS 13 UIKit bug: https://forums.developer.apple.com/thread/121861
-        // Remove when fixed in future releases
+        // iOS 13 UIKit bug: https://forums.developer.apple.com/thread/121861 Remove when fixed in future releases
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.setNeedsLayout()
         }
-        
     }
     
     private func initNavigationBar() {
@@ -83,31 +56,39 @@ class ForgotPasswordViewController: UIViewController {
         hud.detailTextLabel.text = "Requesting password reset..."
         hud.show(in: (navigationController?.view)!)
         
-       
-        
         emailTextField.resignFirstResponder()
         
-        hud.dismiss()
-        resetMode = ResetMode.confirming
-        
-        // updateViewMode()
-        // present(NavigationManager.getForgotPasswordConfirmController(), animated: true)
-        performSegue(withIdentifier: "ForgotPasswordConfirm", sender: self)
-        
-        
-//        Amplify.Auth.resetPassword(for: email) { (result) in
-//            do {
-//                let resetResult = try result.get()
-//                switch resetResult.nextStep {
-//                case .confirmResetPasswordWithCode(let deliveryDetails, let info):
-//                    print("Confirm reset password with code send to - \(deliveryDetails) \(String(describing: info))")
-//                case .done:
-//                    print("Reset completed")
-//                }
-//            } catch {
-//                print("Reset password failed with error \(error)")
-//            }
-//        }
-        
+        Amplify.Auth.resetPassword(for: email) { result in
+            do {
+                let resetResult = try result.get()
+                switch resetResult.nextStep {
+             
+                case .confirmResetPasswordWithCode(let deliveryDetails, let info):
+                    print("Confirm reset password with code send to - \(deliveryDetails) \(String(describing: info))")
+                    DispatchQueue.main.async {
+                        self.passwordResetSuccess()
+                    }
+                case .done:
+                    print("Reset completed")
+                }
+            } catch (let error) {
+                print("Password reset failure \(error)")
+                DispatchQueue.main.async {
+                    self.passwordResetFailure(error: error)
+                }
+            }
+        }
+    }
+    
+    private func passwordResetSuccess() -> Void {
+        self.hud.dismiss()
+        self.isRequestingReset = false
+        self.performSegue(withIdentifier: "ForgotPasswordConfirm", sender: self)
+    }
+    
+    private func passwordResetFailure(error: Error) -> Void {
+        self.hud.dismiss()
+        self.showAlert(title: "Reset failed", message: "There was an error verifying the reset code.\(error)")
+        self.isRequestingReset = false
     }
 }

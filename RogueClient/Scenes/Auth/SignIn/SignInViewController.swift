@@ -197,7 +197,6 @@ class SignInViewController: UIViewController {
     }
     
     private func signInSuccess() -> Void {
-        // sessionManager.createSession(force: force, username: username, confirmation: confirmation, captcha: captcha, captchaId: captchaId)
         print("Sign in success")
         self.createSessionSuccess()
         self.hud.dismiss()
