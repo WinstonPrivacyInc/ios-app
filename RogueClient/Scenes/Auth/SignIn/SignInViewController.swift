@@ -86,6 +86,12 @@ class SignInViewController: UIViewController {
         present(NavigationManager.getForgotPasswordViewController(), animated: true)
     }
     
+    
+    @IBAction func presentSignUpView(_ sender: Any) {
+        present(NavigationManager.getSignUpViewController(), animated: true)
+    }
+    
+    
     @IBAction func openScanner(_ sender: AnyObject) {
         present(NavigationManager.getScannerViewController(delegate: self), animated: true)
     }
@@ -142,6 +148,23 @@ class SignInViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(termsOfServiceAgreed), name: Notification.Name.TermsOfServiceAgreed, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(passwordWasReset), name: Notification.Name.PasswordResetSuccess, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(emailWasConfirmed), name: Notification.Name.EmailConfirmationSuccess, object: nil)
+    }
+    
+    @objc private func emailWasConfirmed(notification: NSNotification) {
+        
+        if let data = notification.userInfo as? [String: String] {
+            let email = data["email"]
+            let password = data["password"]
+            
+            if email != nil && password != nil {
+                self.emailTextField.text = email
+                self.passwordTextField.text = password
+                
+                self.startSignInProcess()
+            }
+        }
     }
     
     @objc private func passwordWasReset(notification: NSNotification) {
@@ -161,7 +184,7 @@ class SignInViewController: UIViewController {
     }
     
     @objc func forceNewSession() {
-        startSignInProcess(force: true)
+        startSignInProcess()
     }
     
     @objc func termsOfServiceAgreed() {
@@ -175,7 +198,7 @@ class SignInViewController: UIViewController {
     
     // MARK: - Methods -
     
-    private func startSignInProcess(force: Bool = false, confirmation: String? = nil, captcha: String? = nil, captchaId: String? = nil) {
+    private func startSignInProcess() {
         guard !signInStarted else { return }
         
         let username = (self.emailTextField.text ?? "").trim()
@@ -201,30 +224,33 @@ class SignInViewController: UIViewController {
         
         Amplify.Auth.signIn(username: username, password: password) { result in
            switch result {
-               case .success:
-                    DispatchQueue.main.async {
-                        self.signInSuccess()
-                    }
-               case .failure(let error):
-                    DispatchQueue.main.async {
-                        self.signInFailure(authError: error)
-                    }
-               }
+           case .success:
+                self.signInSuccess()
+               
+           case .failure(let error):
+                self.signInFailure(authError: error)
            }
+       }
     }
     
     private func signInSuccess() -> Void {
         print("Sign in success")
-        self.createSessionSuccess()
-        self.hud.dismiss()
         self.signInStarted = false
+        
+        DispatchQueue.main.async {
+            self.createSessionSuccess()
+            self.hud.dismiss()
+        }
     }
     
     private func signInFailure(authError: AuthError) -> Void {
         print("Sign in failure \(authError.errorDescription)")
-        self.hud.dismiss()
-        showAlert(title: "Sign in failed", message: authError.errorDescription)
-        signInStarted = false
+        self.signInStarted = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.showAlert(title: "Sign in failed", message: authError.errorDescription)
+        }
     }
     
     
@@ -402,7 +428,7 @@ extension SignInViewController {
         showActionSheet(title: message, actions: ["Log out from all other devices", "Try again"], sourceView: self.emailTextField) { index in
             switch index {
             case 0:
-                self.startSignInProcess(force: true)
+                self.startSignInProcess()
             case 1:
                 self.startSignInProcess()
             default:
@@ -481,7 +507,7 @@ extension SignInViewController: ScannerViewControllerDelegate {
 extension SignInViewController: TwoFactorViewControllerDelegate {
     
     func codeSubmitted(code: String) {
-        startSignInProcess(force: false, confirmation: code)
+        startSignInProcess()
     }
     
 }
@@ -491,7 +517,7 @@ extension SignInViewController: TwoFactorViewControllerDelegate {
 extension SignInViewController: CaptchaViewControllerDelegate {
     
     func captchaSubmitted(code: String, captchaId: String) {
-        startSignInProcess(force: false, captcha: code, captchaId: captchaId)
+        startSignInProcess()
     }
     
 }

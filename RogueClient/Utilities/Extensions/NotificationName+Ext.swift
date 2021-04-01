@@ -25,6 +25,11 @@ import Foundation
 
 extension Notification.Name {
     
+    // winston
+    public static let PasswordResetSuccess = Notification.Name("passwordResetSuccess")
+    public static let EmailConfirmationSuccess = Notification.Name("emailConfirmationSuccess")
+    
+    // TODO: remove unnecessary ones
     public static let ServerSelected = Notification.Name("serverSelected")
     public static let Connect = Notification.Name("connect")
     public static let Disconnect = Notification.Name("disconnect")
@@ -33,7 +38,7 @@ extension Notification.Name {
     public static let PingDidComplete = Notification.Name("pingDidComplete")
     public static let NetworkSaved = Notification.Name("networkSaved")
     public static let TermsOfServiceAgreed = Notification.Name("termsOfServiceAgreed")
-    public static let PasswordResetSuccess = Notification.Name("passwordResetSuccess")
+    
     public static let SubscriptionDismissed = Notification.Name("subscriptionDismissed")
     public static let SubscriptionActivated = Notification.Name("subscriptionActivated")
     public static let ServiceAuthorized = Notification.Name("serviceAuthorized")

@@ -21,7 +21,7 @@ class ForgotPasswordConfirmViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.accessibilityIdentifier = "forgotPasswordConfirmScreen"
+        view.accessibilityIdentifier = "signUpConfirmScreen"
          navigationController?.navigationBar.prefersLargeTitles = false
         initNavigationBar()
     }
@@ -35,7 +35,7 @@ class ForgotPasswordConfirmViewController: UIViewController {
             navigationController?.navigationBar.setNeedsLayout()
         }
         
-         resetCodeField.becomeFirstResponder()
+         // resetCodeField.becomeFirstResponder()
     }
     
     private func initNavigationBar() {
