@@ -206,11 +206,6 @@ class ControlPanelViewController: UITableViewController {
 //                return
 //            }
             
-            // Antonio: the problem is here... this complains about UI updates in the bg thread
-//            if AppKeyManager.isKeyPairRequired && ExtensionKeyManager.needToRegenerate() {
-//                self.keyManager.setNewKey()
-//                return
-//            }
             if ExtensionKeyManager.needToRegenerate() {
                 self.keyManager.setNewKey()
                 return

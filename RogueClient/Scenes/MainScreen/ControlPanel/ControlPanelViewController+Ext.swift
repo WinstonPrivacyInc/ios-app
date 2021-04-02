@@ -76,6 +76,9 @@ extension ControlPanelViewController {
         
         if indexPath.row == 7 {
             
+            self.presentSelectProtocol()
+            return
+            
 //            guard evaluateIsLoggedIn() else {
 //                return
 //            }
