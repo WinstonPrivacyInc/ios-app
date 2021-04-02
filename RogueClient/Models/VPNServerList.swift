@@ -59,7 +59,7 @@ class VPNServerList {
         let cacheFileUrl = VPNServerList.cacheFileURL
         
         if FileManager.default.fileExists(atPath: cacheFileUrl.path) {
-            data = FileSystemManager.loadDataFromUrl(resource: cacheFileUrl)
+         //    data = FileSystemManager.loadDataFromUrl(resource: cacheFileUrl)
         }
         
         if data == nil {

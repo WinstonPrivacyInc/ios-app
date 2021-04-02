@@ -259,6 +259,7 @@
 		A99FDB77261617D300A8B498 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB76261617D200A8B498 /* SignUpViewController.swift */; };
 		A99FDB7D2616315900A8B498 /* SignUpConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */; };
 		A99FDB83261631FC00A8B498 /* SignUpConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */; };
+		A99FDB952617649800A8B498 /* servers-backup.json in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB942617649800A8B498 /* servers-backup.json */; };
 		A9B3091725FA740E00B3F73A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */; };
 		A9B3092525FA861E00B3F73A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
@@ -564,6 +565,7 @@
 		A99FDB76261617D200A8B498 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmViewController.swift; sourceTree = "<group>"; };
 		A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmView.swift; sourceTree = "<group>"; };
+		A99FDB942617649800A8B498 /* servers-backup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "servers-backup.json"; sourceTree = "<group>"; };
 		A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
@@ -695,6 +697,7 @@
 		82234B6121BA7ACA00B082DE /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				A99FDB942617649800A8B498 /* servers-backup.json */,
 				82A9E8C323471EBE007BCA7E /* release.xcconfig */,
 				82A9E8C423471EBE007BCA7E /* staging.xcconfig */,
 				9CB2CE531DB2A999007A4D2D /* servers.json */,
@@ -1535,6 +1538,7 @@
 				9C2833741D9D3EB60024C553 /* Initial.storyboard in Resources */,
 				826470C42446F67100403A14 /* Auth.storyboard in Resources */,
 				82FF0D4223153D1000440E5D /* Colors.xcassets in Resources */,
+				A99FDB952617649800A8B498 /* servers-backup.json in Resources */,
 				A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1654,7 +1658,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "curl -sf \"https://api.ivpn.net/v4/servers.json?pretty=true\" > RogueClient/Config/servers.json\n";
+			shellScript = "curl -sf \"https://dev.winstonapis.com/vpn/servers?pretty=true\" > RogueClient/Config/servers.json\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

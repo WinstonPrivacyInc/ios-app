@@ -30,7 +30,8 @@ struct Config {
     static let minPingCheckInterval: TimeInterval = 10
     static let appGroup = "group.com.winstonprivacy.rogue"
     
-    static let apiServersFile = "/v4/servers.json"
+//    static let apiServersFile = "/v4/servers.json"
+    static let apiServersFile = "/vpn/servers"
     static let apiGeoLookup = "/v4/geo-lookup"
     static let apiSessionNew = "/v4/session/new"
     static let apiSessionStatus = "/v4/session/status"

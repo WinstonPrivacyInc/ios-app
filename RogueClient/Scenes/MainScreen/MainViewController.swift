@@ -224,7 +224,7 @@ class MainViewController: UIViewController {
     }
     
     private func startServersUpdate() {
-        updateServersList()
+        // updateServersList() // TODO antonio - come back here after you have an API that will return the available serveres
         updateServersTimer = Timer.scheduledTimer(timeInterval: 60 * 15, target: self, selector: #selector(updateServersList), userInfo: nil, repeats: true)
     }
     

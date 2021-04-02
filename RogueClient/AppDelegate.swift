@@ -154,9 +154,9 @@ extension AppDelegate: UIApplicationDelegate {
         do {
                 try Amplify.add(plugin: AWSCognitoAuthPlugin())
                 try Amplify.configure()
-                print("Amplify configured with auth plugin")
+                log(info: "Amplify configured with auth plugin")
             } catch {
-                print("Failed to initialize Amplify with \(error)")
+                log(error: "Failed to configure Amplify with \(error)")
             }
         return true
     }

@@ -104,6 +104,10 @@ class APIClient: NSObject {
         return URL(string: "http://13.59.81.71:443")!
     }
     
+    private var baseURLServerless: URL {
+        return URL(string: "https://dev.winstonapis.com")!
+    }
+    
     private var userAgent: String {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             return "ivpn/ios \(version)"
@@ -138,6 +142,12 @@ class APIClient: NSObject {
             urlComponents.host = baseURLWinston.host
             urlComponents.port = 443;
             urlComponents.path = baseURLWinston.path
+        }
+        
+        if request.path == "/vpn/servers" {
+            urlComponents.scheme = baseURLServerless.scheme
+            urlComponents.host = baseURLServerless.host
+            urlComponents.path = baseURLServerless.path
         }
         
         if request.method == .post {
