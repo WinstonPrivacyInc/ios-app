@@ -3,7 +3,7 @@
 //  RogueClient
 //
 //  Created by Antonio Campos on 4/1/21.
-//  Copyright © 2021 IVPN. All rights reserved.
+//  Copyright © 2021 Winston Privacy. All rights reserved.
 //
 
 import UIKit
