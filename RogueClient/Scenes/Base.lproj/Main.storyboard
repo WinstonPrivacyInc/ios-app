@@ -969,7 +969,7 @@
             <objects>
                 <tableViewController title="Select Protocol" modalPresentationStyle="formSheet" id="C8Y-kZ-eYV" customClass="ProtocolViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="YRl-Jj-sLY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -1085,7 +1085,7 @@
             <objects>
                 <tableViewController title="WireGuard details" id="BYK-jY-KqR" customClass="WireGuardSettingsViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dqq-IB-wUh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -2691,244 +2691,6 @@
             </objects>
             <point key="canvasLocation" x="932" y="839"/>
         </scene>
-        <!--Account-->
-        <scene sceneID="A8X-Vs-cFn">
-            <objects>
-                <tableViewController modalPresentationStyle="formSheet" id="obv-bO-Y0X" customClass="AccountViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Aws-at-2vt" customClass="AccountView" customModule="RogueClient" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="NhI-pa-20D">
-                            <rect key="frame" x="0.0" y="515.33333206176758" width="375" height="100"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVS-Nm-wlG">
-                                    <rect key="frame" x="158" y="20" width="59" height="29"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <state key="normal" title="Sign Out">
-                                        <color key="titleColor" name="ivpnRedOff"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="logOut:" destination="obv-bO-Y0X" eventType="touchUpInside" id="CHB-v2-Xp7"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="MVS-Nm-wlG" firstAttribute="centerX" secondItem="NhI-pa-20D" secondAttribute="centerX" id="LPD-zd-7fD"/>
-                                <constraint firstItem="MVS-Nm-wlG" firstAttribute="top" secondItem="NhI-pa-20D" secondAttribute="top" constant="20" id="s2B-jW-lCS"/>
-                            </constraints>
-                        </view>
-                        <sections>
-                            <tableViewSection headerTitle="Security" id="hrm-vx-VUB" userLabel="Security Settings">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="73" id="6lD-As-xyW" userLabel="Email Table View Cell">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="73"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6lD-As-xyW" id="PdP-Wh-7ft">
-                                            <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="73"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6K-T3-KRa" userLabel="Email Label">
-                                                    <rect key="frame" x="16" y="10" width="323.66666666666669" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="Wup-hQ-LJT"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="ivpnLabelPrimary"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user@email.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czo-8m-gmK" userLabel="Email Label Description">
-                                                    <rect key="frame" x="16" y="33" width="323.66666666666669" height="29.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" name="ivpnLabel5"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="czo-8m-gmK" firstAttribute="width" secondItem="L6K-T3-KRa" secondAttribute="width" id="0bW-ZT-pgK"/>
-                                                <constraint firstItem="czo-8m-gmK" firstAttribute="top" secondItem="L6K-T3-KRa" secondAttribute="bottom" constant="3" id="8G8-ru-oJT"/>
-                                                <constraint firstAttribute="bottom" secondItem="czo-8m-gmK" secondAttribute="bottom" constant="10.5" id="BqC-86-bDO"/>
-                                                <constraint firstItem="L6K-T3-KRa" firstAttribute="trailing" secondItem="PdP-Wh-7ft" secondAttribute="trailingMargin" id="R8Y-ek-qME"/>
-                                                <constraint firstItem="L6K-T3-KRa" firstAttribute="top" secondItem="PdP-Wh-7ft" secondAttribute="top" constant="10" id="SS1-sD-q06"/>
-                                                <constraint firstItem="czo-8m-gmK" firstAttribute="leading" secondItem="PdP-Wh-7ft" secondAttribute="leading" constant="16" id="Z5L-Ye-PFY"/>
-                                                <constraint firstAttribute="trailing" secondItem="czo-8m-gmK" secondAttribute="trailing" constant="8" id="gL7-LA-iY0"/>
-                                                <constraint firstItem="L6K-T3-KRa" firstAttribute="leading" secondItem="PdP-Wh-7ft" secondAttribute="leading" constant="16" id="qaz-b9-WYe"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="vfz-Bw-hrp" userLabel="Password Table View Cell">
-                                        <rect key="frame" x="0.0" y="128.33333206176758" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vfz-Bw-hrp" id="U21-ys-bYZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXE-oa-2zn" userLabel="Password Label">
-                                                    <rect key="frame" x="16" y="10" width="323.66666666666669" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="kMt-oW-MUp"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="ivpnLabelPrimary"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Change your password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akE-sP-Xzv" userLabel="Password Label Description">
-                                                    <rect key="frame" x="16" y="32" width="323.66666666666669" height="36.666666666666657"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" name="ivpnLabel5"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="akE-sP-Xzv" firstAttribute="top" secondItem="aXE-oa-2zn" secondAttribute="bottom" constant="3" id="1L7-ku-XSC"/>
-                                                <constraint firstItem="aXE-oa-2zn" firstAttribute="top" secondItem="U21-ys-bYZ" secondAttribute="top" constant="10" id="M1G-cU-Xq9"/>
-                                                <constraint firstAttribute="trailing" secondItem="akE-sP-Xzv" secondAttribute="trailing" constant="8" id="N23-8k-jbA"/>
-                                                <constraint firstItem="akE-sP-Xzv" firstAttribute="leading" secondItem="U21-ys-bYZ" secondAttribute="leading" constant="16" id="Pp0-GP-Bzr"/>
-                                                <constraint firstItem="aXE-oa-2zn" firstAttribute="leading" secondItem="U21-ys-bYZ" secondAttribute="leading" constant="16" id="RFq-8h-iMp"/>
-                                                <constraint firstAttribute="bottom" secondItem="akE-sP-Xzv" secondAttribute="bottom" constant="10.5" id="ce2-OL-Nsr"/>
-                                                <constraint firstItem="akE-sP-Xzv" firstAttribute="width" secondItem="aXE-oa-2zn" secondAttribute="width" id="df6-Ql-ImA"/>
-                                                <constraint firstItem="aXE-oa-2zn" firstAttribute="trailing" secondItem="U21-ys-bYZ" secondAttribute="trailingMargin" id="evt-Gp-8m4"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="tEf-gm-3dp" userLabel="FaceID Table View Cell">
-                                        <rect key="frame" x="0.0" y="208.33333206176758" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tEf-gm-3dp" id="Qud-Cf-AEE">
-                                            <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNG-nI-0z0" userLabel="FaceID Label">
-                                                    <rect key="frame" x="16" y="10" width="323.66666666666669" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="NTZ-Nj-234"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="ivpnLabelPrimary"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Face ID is not enabled" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVN-Wc-KfP" userLabel="FaceID Label Description">
-                                                    <rect key="frame" x="16" y="33" width="323.66666666666669" height="36.666666666666657"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" name="ivpnLabel5"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="AVN-Wc-KfP" firstAttribute="leading" secondItem="Qud-Cf-AEE" secondAttribute="leading" constant="16" id="0Ub-a4-QFj"/>
-                                                <constraint firstItem="AVN-Wc-KfP" firstAttribute="width" secondItem="TNG-nI-0z0" secondAttribute="width" id="2CF-Ct-NAt"/>
-                                                <constraint firstItem="AVN-Wc-KfP" firstAttribute="top" secondItem="TNG-nI-0z0" secondAttribute="bottom" constant="3" id="36g-xV-dcM"/>
-                                                <constraint firstItem="TNG-nI-0z0" firstAttribute="top" secondItem="Qud-Cf-AEE" secondAttribute="top" constant="10" id="INi-zz-j4P"/>
-                                                <constraint firstAttribute="trailing" secondItem="AVN-Wc-KfP" secondAttribute="trailing" constant="8" id="MaH-Pc-R5J"/>
-                                                <constraint firstItem="TNG-nI-0z0" firstAttribute="leading" secondItem="Qud-Cf-AEE" secondAttribute="leading" constant="16" id="jOe-vO-SgU"/>
-                                                <constraint firstItem="TNG-nI-0z0" firstAttribute="trailing" secondItem="Qud-Cf-AEE" secondAttribute="trailingMargin" id="oZs-xY-8tR"/>
-                                                <constraint firstAttribute="bottom" secondItem="AVN-Wc-KfP" secondAttribute="bottom" constant="10.5" id="vei-cj-uh1"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Subscription" id="Usb-bL-tA5" userLabel="Security Settings">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="73" id="P4L-ao-Luv" userLabel="Type Table View Cell">
-                                        <rect key="frame" x="0.0" y="344.33333206176758" width="375" height="73"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P4L-ao-Luv" id="fY8-Ds-AoJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="73"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qq-FI-3Kg" userLabel="Plan Type Label">
-                                                    <rect key="frame" x="16" y="10" width="323.66666666666669" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="DP4-Dw-ubO"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="ivpnLabelPrimary"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rogue VPN Pro Annual" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djD-if-bW9" userLabel="Plan Type Label Description">
-                                                    <rect key="frame" x="16" y="33" width="323.66666666666669" height="29.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" name="ivpnLabel5"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="djD-if-bW9" firstAttribute="top" secondItem="6qq-FI-3Kg" secondAttribute="bottom" constant="3" id="WtI-Se-Ezp"/>
-                                                <constraint firstItem="6qq-FI-3Kg" firstAttribute="trailing" secondItem="fY8-Ds-AoJ" secondAttribute="trailingMargin" id="XuA-RO-yeV"/>
-                                                <constraint firstItem="6qq-FI-3Kg" firstAttribute="top" secondItem="fY8-Ds-AoJ" secondAttribute="top" constant="10" id="a5V-ty-P0O"/>
-                                                <constraint firstAttribute="trailing" secondItem="djD-if-bW9" secondAttribute="trailing" constant="8" id="jNb-HG-cCa"/>
-                                                <constraint firstItem="djD-if-bW9" firstAttribute="width" secondItem="6qq-FI-3Kg" secondAttribute="width" id="khs-HY-g0F"/>
-                                                <constraint firstItem="6qq-FI-3Kg" firstAttribute="leading" secondItem="fY8-Ds-AoJ" secondAttribute="leading" constant="16" id="rHs-9m-2G5"/>
-                                                <constraint firstAttribute="bottom" secondItem="djD-if-bW9" secondAttribute="bottom" constant="10.5" id="sYb-sI-PSK"/>
-                                                <constraint firstItem="djD-if-bW9" firstAttribute="leading" secondItem="fY8-Ds-AoJ" secondAttribute="leading" constant="16" id="y0U-6q-dIY"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="80" id="Mol-hL-Yvz" userLabel="Expiration Table View Cell">
-                                        <rect key="frame" x="0.0" y="417.33333206176758" width="375" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mol-hL-Yvz" id="74u-V2-EXY">
-                                            <rect key="frame" x="0.0" y="0.0" width="347.66666666666669" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZy-43-ZE8" userLabel="Expiration Label">
-                                                    <rect key="frame" x="16" y="10" width="323.66666666666669" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="GXa-7G-OgL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" name="ivpnLabelPrimary"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June 10, 2021" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooN-il-zWA" userLabel="Expiration Label Description">
-                                                    <rect key="frame" x="16" y="33" width="323.66666666666669" height="36.666666666666657"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" name="ivpnLabel5"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ooN-il-zWA" firstAttribute="top" secondItem="GZy-43-ZE8" secondAttribute="bottom" constant="3" id="2B0-a5-9jr"/>
-                                                <constraint firstItem="ooN-il-zWA" firstAttribute="width" secondItem="GZy-43-ZE8" secondAttribute="width" id="7yV-27-Rhd"/>
-                                                <constraint firstItem="GZy-43-ZE8" firstAttribute="trailing" secondItem="74u-V2-EXY" secondAttribute="trailingMargin" id="94U-zT-uz1"/>
-                                                <constraint firstAttribute="trailing" secondItem="ooN-il-zWA" secondAttribute="trailing" constant="8" id="Tl3-5Q-EtH"/>
-                                                <constraint firstItem="GZy-43-ZE8" firstAttribute="leading" secondItem="74u-V2-EXY" secondAttribute="leading" constant="16" id="ZLn-dF-efO"/>
-                                                <constraint firstItem="ooN-il-zWA" firstAttribute="leading" secondItem="74u-V2-EXY" secondAttribute="leading" constant="16" id="dzj-M3-6vw"/>
-                                                <constraint firstItem="GZy-43-ZE8" firstAttribute="top" secondItem="74u-V2-EXY" secondAttribute="top" constant="10" id="emq-WA-A27"/>
-                                                <constraint firstAttribute="bottom" secondItem="ooN-il-zWA" secondAttribute="bottom" constant="10.5" id="tPZ-5H-qDW"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="accountIdLabel" destination="czo-8m-gmK" id="nDf-ie-CMR"/>
-                            <outlet property="dataSource" destination="obv-bO-Y0X" id="XXu-eT-PBh"/>
-                            <outlet property="delegate" destination="obv-bO-Y0X" id="c2A-2b-bO7"/>
-                            <outlet property="logOutActionButton" destination="MVS-Nm-wlG" id="Yqw-Wn-PH0"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Account" id="H32-NI-wH6"/>
-                    <connections>
-                        <outlet property="accountView" destination="Aws-at-2vt" id="GDj-ca-izv"/>
-                        <outlet property="emailTableCell" destination="6lD-As-xyW" id="k6x-1f-giz"/>
-                        <outlet property="passwordTableCell" destination="vfz-Bw-hrp" id="86X-aI-JAY"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ki9-Pc-OJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="727" y="-1609"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="QQ4-JD-4Vf">
             <objects>
@@ -3005,29 +2767,10 @@
             </objects>
             <point key="canvasLocation" x="2775" y="13"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dRx-IJ-Af6">
-            <objects>
-                <navigationController storyboardIdentifier="accountView" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Blz-QQ-xeL" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xnO-fB-Svu">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="obv-bO-Y0X" kind="relationship" relationship="rootViewController" id="P2e-oE-xRq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R6e-cS-aIK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6" y="1582"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="fnd-go-o5i"/>
-        <segue reference="oZ9-fT-UYA"/>
+        <segue reference="tOU-fs-l4P"/>
         <segue reference="9Ib-aF-gei"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -3077,9 +2820,6 @@
         </namedColor>
         <namedColor name="ivpnLightYellow">
             <color red="0.95294117647058818" green="0.88627450980392153" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="ivpnRedOff">
-            <color red="1" green="0.3843137254901961" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

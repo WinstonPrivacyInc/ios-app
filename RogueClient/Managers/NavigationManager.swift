@@ -54,12 +54,12 @@ class NavigationManager {
         return viewController
     }
     
-    static func getChangeEmailViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "changeEmailView")
-
-        return viewController
-    }
+//    static func getChangeEmailViewController() -> UIViewController {
+//        let storyboard = UIStoryboard(name: "Account", bundle: nil)
+//        let navController = storyboard.instantiateViewController(withIdentifier: "changeEmailView") as? UINavigationController
+//        navController?.modalPresentationStyle = .formSheet
+//        return navController!
+//    }
     
     static func getSignUpViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
@@ -151,7 +151,7 @@ class NavigationManager {
     }
     
     static func getAccountViewController() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: "Account", bundle: nil)
         
         return storyBoard.instantiateViewController(withIdentifier: "accountView")
     }

@@ -60,7 +60,8 @@ class AccountViewController: UITableViewController {
     }
     
     @IBAction func presentChangeEmailView(_ send: Any) -> Void {
-        present(NavigationManager.getChangeEmailViewController(), animated: true)
+        performSegue(withIdentifier: "ChangeEmail", sender: self)
+        // present(NavigationManager.getChangeEmailViewController(), animated: true)
     }
     
     

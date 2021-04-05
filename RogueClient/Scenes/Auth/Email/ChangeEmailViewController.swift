@@ -25,7 +25,7 @@ class ChangeEmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "changeEmailScreen"
-        navigationController?.navigationBar.prefersLargeTitles = false
+        // navigationController?.navigationBar.prefersLargeTitles = false
         initNavigationBar()
     }
     
@@ -40,36 +40,36 @@ class ChangeEmailViewController: UIViewController {
     
     private func initNavigationBar() {
         if isPresentedModally {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
+            // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
         }
     }
 
 //    @IBAction func passwordReset(_ sender: Any) {
-//        
+//
 //        guard !isRequestingReset else { return }
-//        
+//
 //        isRequestingReset = true
 //        let email = (self.emailTextField.text ?? "").trim()
-//        
+//
 //        guard ServiceStatus.isValidEmail(email: email) else {
 //            isRequestingReset = false
 //            showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
 //            return
 //        }
-//        
+//
 //        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
 //        hud.detailTextLabel.text = "Requesting password reset..."
 //        hud.show(in: (navigationController?.view)!)
-//        
+//
 //        emailTextField.resignFirstResponder()
-//        
+//
 //        passwordResetUsername = email
-//        
+//
 //        Amplify.Auth.resetPassword(for: email) { result in
 //            do {
 //                let resetResult = try result.get()
 //                switch resetResult.nextStep {
-//             
+//
 //                case .confirmResetPasswordWithCode(let deliveryDetails, let info):
 //                    print("Confirm reset password with code send to - \(deliveryDetails) \(String(describing: info))")
 //                    self.passwordResetSuccess()
@@ -82,7 +82,7 @@ class ChangeEmailViewController: UIViewController {
 //            }
 //        }
 //    }
-//    
+//
 //    private func passwordResetSuccess() -> Void {
 //        self.isRequestingReset = false
 //        DispatchQueue.main.async {
@@ -90,7 +90,7 @@ class ChangeEmailViewController: UIViewController {
 //            self.performSegue(withIdentifier: "ForgotPasswordConfirm", sender: self)
 //        }
 //    }
-//    
+//
 //    private func passwordResetFailure(error: Error) -> Void {
 //        self.isRequestingReset = false
 //        DispatchQueue.main.async {
@@ -98,7 +98,7 @@ class ChangeEmailViewController: UIViewController {
 //            self.showAlert(title: "Reset failed", message: "There was an error verifying the reset code.\(error)")
 //        }
 //    }
-//    
+//
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "ForgotPasswordConfirm" {
 //            if let destinationVC = segue.destination as? ForgotPasswordConfirmViewController {
