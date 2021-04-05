@@ -47,6 +47,13 @@ class NavigationManager {
         return viewController
     }
     
+    static func getChangePasswordViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "changePasswordView")
+        
+        return viewController
+    }
+    
     static func getSignUpViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "signUpView")

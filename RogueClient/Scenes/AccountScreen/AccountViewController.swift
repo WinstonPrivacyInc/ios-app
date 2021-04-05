@@ -29,6 +29,7 @@ class AccountViewController: UITableViewController {
     // MARK: - @IBOutlets -
     
     @IBOutlet weak var accountView: AccountView!
+    @IBOutlet weak var emailTableCell: UITableViewCell!
     
     // MARK: - Properties -
     
@@ -54,6 +55,11 @@ class AccountViewController: UITableViewController {
         })
     }
     
+    @IBAction func presentChangePasswordView(_ send: Any) -> Void {
+        present(NavigationManager.getChangePasswordViewController(), animated: true)
+    }
+    
+    
     // MARK: - View Lifecycle -
     
     override func viewDidLoad() {
@@ -62,6 +68,9 @@ class AccountViewController: UITableViewController {
         
         view.accessibilityIdentifier = "accountScreen"
         navigationController?.navigationBar.prefersLargeTitles = false
+        
+        // let emailTap = UITapGestureRecognizer(target: self, action: #selector(presentChangePasswordView))
+        emailTableCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentChangePasswordView)))
         
         initNavigationBar()
         addObservers()
@@ -77,6 +86,7 @@ class AccountViewController: UITableViewController {
     
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(subscriptionActivated), name: Notification.Name.SubscriptionActivated, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(passwordChanged), name: Notification.Name.PasswordChangeSuccess, object: nil)
     }
     
     // MARK: - Private methods -
@@ -90,6 +100,10 @@ class AccountViewController: UITableViewController {
     @objc private func subscriptionActivated() {
         let viewModel = AccountViewModel(serviceStatus: Application.shared.serviceStatus, authentication: Application.shared.authentication)
         accountView.setupView(viewModel: viewModel)
+    }
+    
+    @objc private func passwordChanged() {
+        showAlert(title: "Success", message: "Your password has been changed.")
     }
     
 }

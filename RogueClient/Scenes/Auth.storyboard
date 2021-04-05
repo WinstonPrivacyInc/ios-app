@@ -1984,10 +1984,177 @@
             </objects>
             <point key="canvasLocation" x="2167.5" y="495"/>
         </scene>
+        <!--Change Password-->
+        <scene sceneID="MhQ-6n-Cjf">
+            <objects>
+                <viewController title="Change Password" modalPresentationStyle="formSheet" id="Hxa-dX-WWN" customClass="ChangePasswordViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SEG-lm-AA4"/>
+                        <viewControllerLayoutGuide type="bottom" id="mj1-pJ-zSM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C2Q-Sy-q5b">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="x3B-tU-Gi2">
+                                <rect key="frame" x="0.0" y="44" width="320" height="392"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4h-nX-HNe" userLabel="Sign Up Section View">
+                                        <rect key="frame" x="10" y="50" width="300" height="220"/>
+                                        <subviews>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="4A8-V6-AoH" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="5oA-Ya-qZP"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="SKu-F5-H1G"/>
+                                                    <constraint firstAttribute="width" constant="300" id="t9n-aE-Vhx"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="xc8-9F-lPv" userLabel="width = 300"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="ybi-eN-DgA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="9bF-TK-zRn" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="300" height="50"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="2gv-zp-an9"/>
+                                                    <constraint firstAttribute="height" constant="50" id="CIu-zb-0zs"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="HKy-2L-bIZ"/>
+                                                    <constraint firstAttribute="width" constant="300" id="OQk-7N-HDc"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="kgR-DN-6ZB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" secureTextEntry="YES" textContentType="new-password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbj-FV-8Sh" userLabel="Sign In Button">
+                                                <rect key="frame" x="0.0" y="150" width="300" height="50"/>
+                                                <color key="backgroundColor" name="roguePurple"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="G9A-mG-7Rc"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="JAa-3C-2nk"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="jTb-Q7-H1y"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="lgS-ba-lVk"/>
+                                                    <constraint firstAttribute="width" constant="300" id="m6C-AR-mK7"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Change Password">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changePassword:" destination="Hxa-dX-WWN" eventType="touchUpInside" id="IjA-og-z1N"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="4A8-V6-AoH" secondAttribute="trailing" id="3Yh-I0-UTE"/>
+                                            <constraint firstItem="9bF-TK-zRn" firstAttribute="leading" secondItem="X4h-nX-HNe" secondAttribute="leading" id="4bN-sE-KEI"/>
+                                            <constraint firstAttribute="width" constant="300" id="6ac-gN-uoN"/>
+                                            <constraint firstItem="4A8-V6-AoH" firstAttribute="leading" secondItem="X4h-nX-HNe" secondAttribute="leading" id="AVx-IJ-3uT"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Gmb-pP-iYS"/>
+                                            <constraint firstAttribute="trailing" secondItem="9bF-TK-zRn" secondAttribute="trailing" id="Lwy-hs-HPp"/>
+                                            <constraint firstItem="9bF-TK-zRn" firstAttribute="top" secondItem="4A8-V6-AoH" secondAttribute="bottom" constant="10" id="QuJ-Ul-Gyi"/>
+                                            <constraint firstItem="9bF-TK-zRn" firstAttribute="top" secondItem="4A8-V6-AoH" secondAttribute="bottom" constant="10" id="TLw-4Z-451"/>
+                                            <constraint firstItem="4A8-V6-AoH" firstAttribute="leading" secondItem="X4h-nX-HNe" secondAttribute="leading" id="UTO-ou-HzM"/>
+                                            <constraint firstAttribute="height" constant="220" id="bKo-xL-6KX"/>
+                                            <constraint firstAttribute="trailing" secondItem="4A8-V6-AoH" secondAttribute="trailing" id="cEG-Nv-PRS"/>
+                                            <constraint firstItem="9bF-TK-zRn" firstAttribute="leading" secondItem="4A8-V6-AoH" secondAttribute="leading" id="cYs-uV-bVM"/>
+                                            <constraint firstItem="9bF-TK-zRn" firstAttribute="leading" secondItem="X4h-nX-HNe" secondAttribute="leading" id="gsg-nE-Fcv"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sbj-FV-8Sh" secondAttribute="trailing" id="hBC-As-COU"/>
+                                            <constraint firstAttribute="trailing" secondItem="9bF-TK-zRn" secondAttribute="trailing" id="idi-un-UtP"/>
+                                            <constraint firstItem="Sbj-FV-8Sh" firstAttribute="top" secondItem="9bF-TK-zRn" secondAttribute="bottom" constant="40" id="kF8-aS-RVY"/>
+                                            <constraint firstItem="4A8-V6-AoH" firstAttribute="top" secondItem="X4h-nX-HNe" secondAttribute="top" id="onz-RN-JIX"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sbj-FV-8Sh" secondAttribute="trailing" id="pqs-Ez-L7c"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="pv7-SE-Xpf"/>
+                                            <constraint firstItem="9bF-TK-zRn" firstAttribute="top" secondItem="4A8-V6-AoH" secondAttribute="bottom" constant="10" id="qJs-ct-jUh"/>
+                                            <constraint firstItem="Sbj-FV-8Sh" firstAttribute="leading" secondItem="X4h-nX-HNe" secondAttribute="leading" id="qii-0F-QPc"/>
+                                            <constraint firstItem="Sbj-FV-8Sh" firstAttribute="leading" secondItem="X4h-nX-HNe" secondAttribute="leading" id="z3T-P7-gR4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="DCf-uW-Xzu"/>
+                                    <constraint firstAttribute="bottom" secondItem="X4h-nX-HNe" secondAttribute="bottom" constant="166" id="Jvo-ny-KQn"/>
+                                    <constraint firstAttribute="trailing" secondItem="X4h-nX-HNe" secondAttribute="trailing" constant="10" id="NMt-Qf-CGN"/>
+                                    <constraint firstItem="X4h-nX-HNe" firstAttribute="centerX" secondItem="x3B-tU-Gi2" secondAttribute="centerX" id="fa8-Sd-7p9"/>
+                                    <constraint firstItem="X4h-nX-HNe" firstAttribute="top" secondItem="x3B-tU-Gi2" secondAttribute="top" constant="50" id="fwF-xE-d1x"/>
+                                    <constraint firstItem="X4h-nX-HNe" firstAttribute="top" secondItem="x3B-tU-Gi2" secondAttribute="top" constant="50" id="xkt-87-QxT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y6Z-s3-9mn"/>
+                        <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
+                        <constraints>
+                            <constraint firstItem="x3B-tU-Gi2" firstAttribute="centerX" secondItem="C2Q-Sy-q5b" secondAttribute="centerX" id="0RA-zZ-yhe"/>
+                            <constraint firstItem="x3B-tU-Gi2" firstAttribute="top" secondItem="Y6Z-s3-9mn" secondAttribute="top" id="1bK-a9-Exf"/>
+                            <constraint firstItem="x3B-tU-Gi2" firstAttribute="leading" secondItem="Y6Z-s3-9mn" secondAttribute="leading" id="BZ7-R6-XHb"/>
+                            <constraint firstItem="x3B-tU-Gi2" firstAttribute="top" secondItem="Y6Z-s3-9mn" secondAttribute="top" id="CAV-lJ-wzs"/>
+                            <constraint firstItem="x3B-tU-Gi2" firstAttribute="leading" secondItem="Y6Z-s3-9mn" secondAttribute="leading" id="ahG-mb-6g7"/>
+                            <constraint firstItem="mj1-pJ-zSM" firstAttribute="top" secondItem="x3B-tU-Gi2" secondAttribute="bottom" constant="132" id="hX6-xc-t7k"/>
+                            <constraint firstItem="x3B-tU-Gi2" firstAttribute="trailing" secondItem="Y6Z-s3-9mn" secondAttribute="trailing" id="qBd-Cp-jGB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Change Password" id="Uzn-yQ-Jf3">
+                        <barButtonItem key="backBarButtonItem" title="Account" id="Zkj-aB-pat"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="Ibz-9V-xEY">
+                            <connections>
+                                <action selector="dismissViewController:" destination="Hxa-dX-WWN" id="l5Z-W6-W9E"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentPasswordField" destination="4A8-V6-AoH" id="etZ-CF-1vL"/>
+                        <outlet property="newPasswordField" destination="9bF-TK-zRn" id="ziJ-qF-BFJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuN-dm-Kmf" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="-1701"/>
+        </scene>
+        <!--Change Password-->
+        <scene sceneID="ird-hg-zj9">
+            <objects>
+                <navigationController storyboardIdentifier="changePasswordView" title="Change Password" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="b4t-dn-fcC" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fg2-pD-x51">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hxa-dX-WWN" kind="relationship" relationship="rootViewController" id="ZHZ-3Q-Eac"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OxC-7v-a8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="-1702"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IKn-po-jel"/>
-        <segue reference="gLo-V8-Qbm"/>
+        <segue reference="uYX-O5-UET"/>
+        <segue reference="rrg-Fe-V0v"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon-check" width="24" height="24"/>

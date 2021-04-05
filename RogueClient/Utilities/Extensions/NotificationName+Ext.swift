@@ -27,6 +27,7 @@ extension Notification.Name {
     
     // winston
     public static let PasswordResetSuccess = Notification.Name("passwordResetSuccess")
+    public static let PasswordChangeSuccess = Notification.Name("passwordChangeSuccess")
     public static let EmailConfirmationSuccess = Notification.Name("emailConfirmationSuccess")
     
     // TODO: remove unnecessary ones

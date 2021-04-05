@@ -260,6 +260,8 @@
 		A99FDB7D2616315900A8B498 /* SignUpConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */; };
 		A99FDB83261631FC00A8B498 /* SignUpConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */; };
 		A99FDB952617649800A8B498 /* servers-backup.json in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB942617649800A8B498 /* servers-backup.json */; };
+		A99FDBA7261B711B00A8B498 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */; };
+		A99FDBAD261B712B00A8B498 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */; };
 		A9B3091725FA740E00B3F73A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */; };
 		A9B3092525FA861E00B3F73A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
@@ -566,6 +568,8 @@
 		A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmViewController.swift; sourceTree = "<group>"; };
 		A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmView.swift; sourceTree = "<group>"; };
 		A99FDB942617649800A8B498 /* servers-backup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "servers-backup.json"; sourceTree = "<group>"; };
+		A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
@@ -1302,6 +1306,8 @@
 				A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */,
 				A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */,
 				A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */,
+				A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */,
+				A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -1824,6 +1830,7 @@
 				82BBF26D21AE95C000589766 /* UIApplication+Ext.swift in Sources */,
 				8247E1DA22686217006C0C08 /* IAPManager.swift in Sources */,
 				82C973A0217DFA9C00CE06D4 /* Host.swift in Sources */,
+				A99FDBAD261B712B00A8B498 /* ChangePasswordViewController.swift in Sources */,
 				82A160BA221C4E2000730577 /* Server+CoreDataClass.swift in Sources */,
 				9CB2CE381DB0F860007A4D2D /* FileSystemManager.swift in Sources */,
 				8270D266241A477900B17B65 /* InfoAlertView.swift in Sources */,
@@ -1832,6 +1839,7 @@
 				82D598A321A55210000FABDE /* NetworkProtectionViewController.swift in Sources */,
 				82D598BC21A6949F000FABDE /* StorageManager.swift in Sources */,
 				826FBDA32461847D00B9E464 /* ServiceType.swift in Sources */,
+				A99FDBA7261B711B00A8B498 /* ChangePasswordView.swift in Sources */,
 				821429B922FC2EA40056B8FF /* ApiService+Ext.swift in Sources */,
 				8206E5D222967EAF003119AF /* UserActivityTitle.swift in Sources */,
 				82E716902181E90500D6B7C2 /* ConnectionSettings.swift in Sources */,
@@ -2077,7 +2085,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2115,7 +2123,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2282,7 +2290,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2346,7 +2354,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2524,7 +2532,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2561,7 +2569,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
