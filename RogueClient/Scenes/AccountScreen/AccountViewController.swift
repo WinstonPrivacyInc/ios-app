@@ -30,8 +30,8 @@ class AccountViewController: UITableViewController {
     
     @IBOutlet weak var accountView: AccountView!
     @IBOutlet weak var emailTableCell: UITableViewCell!
+    @IBOutlet weak var passwordTableCell: UITableViewCell!
     
-    // MARK: - Properties -
     
     private let hud = JGProgressHUD(style: .dark)
     private var viewModel = AccountViewModel(serviceStatus: Application.shared.serviceStatus, authentication: Application.shared.authentication)
@@ -59,6 +59,10 @@ class AccountViewController: UITableViewController {
         present(NavigationManager.getChangePasswordViewController(), animated: true)
     }
     
+    @IBAction func presentChangeEmailView(_ send: Any) -> Void {
+        present(NavigationManager.getChangeEmailViewController(), animated: true)
+    }
+    
     
     // MARK: - View Lifecycle -
     
@@ -70,7 +74,9 @@ class AccountViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         
         // let emailTap = UITapGestureRecognizer(target: self, action: #selector(presentChangePasswordView))
-        emailTableCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentChangePasswordView)))
+        passwordTableCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentChangePasswordView)))
+        
+        emailTableCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentChangeEmailView)))
         
         initNavigationBar()
         addObservers()

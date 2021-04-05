@@ -50,7 +50,14 @@ class NavigationManager {
     static func getChangePasswordViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "changePasswordView")
-        
+
+        return viewController
+    }
+    
+    static func getChangeEmailViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "changeEmailView")
+
         return viewController
     }
     

@@ -262,6 +262,8 @@
 		A99FDB952617649800A8B498 /* servers-backup.json in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB942617649800A8B498 /* servers-backup.json */; };
 		A99FDBA7261B711B00A8B498 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */; };
 		A99FDBAD261B712B00A8B498 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */; };
+		A99FDBB4261BA12400A8B498 /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBB3261BA12400A8B498 /* ChangeEmailView.swift */; };
+		A99FDBBE261BA13200A8B498 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBBD261BA13200A8B498 /* ChangeEmailViewController.swift */; };
 		A9B3091725FA740E00B3F73A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */; };
 		A9B3092525FA861E00B3F73A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
@@ -570,6 +572,8 @@
 		A99FDB942617649800A8B498 /* servers-backup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "servers-backup.json"; sourceTree = "<group>"; };
 		A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		A99FDBB3261BA12400A8B498 /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
+		A99FDBBD261BA13200A8B498 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
@@ -1271,9 +1275,19 @@
 			path = RogueClient;
 			sourceTree = "<group>";
 		};
+		A99FDBB2261BA11400A8B498 /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				A99FDBB3261BA12400A8B498 /* ChangeEmailView.swift */,
+				A99FDBBD261BA13200A8B498 /* ChangeEmailViewController.swift */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
 		A9C299742613D4E8004CFC9A /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				A99FDBB2261BA11400A8B498 /* Email */,
 				A9C299772613D501004CFC9A /* Password */,
 				A9C299762613D4FB004CFC9A /* SignUp */,
 				A9C299752613D4EF004CFC9A /* SignIn */,
@@ -1782,6 +1796,7 @@
 				82E716962181E96F00D6B7C2 /* OpenVPNProtocol.swift in Sources */,
 				8292E1BE2174CA6800123538 /* x25519.c in Sources */,
 				82E7168A2181E8E900D6B7C2 /* WireGuardProtocol.swift in Sources */,
+				A99FDBBE261BA13200A8B498 /* ChangeEmailViewController.swift in Sources */,
 				828E9C95231E5780001E1FCF /* Data+Ext.swift in Sources */,
 				9C51340A1DE8398400423551 /* Pinger.swift in Sources */,
 				8223C54E22EAE93F00CD283D /* SessionManager.swift in Sources */,
@@ -1927,6 +1942,7 @@
 				8247E1DE22687C28006C0C08 /* ProductIdentifier.swift in Sources */,
 				829DF2822497953C000DC2DB /* UIButton+Ext.swift in Sources */,
 				82234B6721BA7F3500B082DE /* Logging.swift in Sources */,
+				A99FDBB4261BA12400A8B498 /* ChangeEmailView.swift in Sources */,
 				82DB75EC239E75EB0073E846 /* NEVPNStatus+Ext.swift in Sources */,
 				8285D253246D28FA0088C00F /* AnimatedCircleLayer.swift in Sources */,
 				9CBFF0302102254800FE1757 /* Settings.swift in Sources */,

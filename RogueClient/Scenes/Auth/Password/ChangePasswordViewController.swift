@@ -3,7 +3,7 @@
 //  RogueClient
 //
 //  Created by Antonio Campos on 4/5/21.
-//  Copyright © 2021 IVPN. All rights reserved.
+//  Copyright © 2021 Winston Privacy. All rights reserved.
 //
 
 import Foundation
@@ -76,7 +76,6 @@ class ChangePasswordViewController: UIViewController {
                     self.passwordChangeFailure(error: error)
                 }
             }
-        
     }
     
     private func passwordChangeSuccess() -> Void {
@@ -96,11 +95,5 @@ class ChangePasswordViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ForgotPasswordConfirm" {
-//            if let destinationVC = segue.destination as? ForgotPasswordConfirmViewController {
-//                destinationVC.passwordResetUsername = passwordResetUsername
-//            }
-//        }
-    }
+
 }

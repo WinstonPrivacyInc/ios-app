@@ -60,6 +60,7 @@ class AccountView: UITableView {
 //            planLabel.font = .systemFont(ofSize: 12, weight: .regular)
 //            planDescriptionHeightConstraint.constant = 58
 //        }
+        
     }
     
     func initQRCode(viewModel: AccountViewModel) {
