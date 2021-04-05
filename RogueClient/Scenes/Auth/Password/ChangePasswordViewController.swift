@@ -21,7 +21,7 @@ class ChangePasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "changePasswordScreen"
-        navigationController?.navigationBar.prefersLargeTitles = false
+        // navigationController?.navigationBar.prefersLargeTitles = false
         initNavigationBar()
     }
     
@@ -36,7 +36,7 @@ class ChangePasswordViewController: UIViewController {
     
     private func initNavigationBar() {
         if isPresentedModally {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
+            // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
         }
     }
     

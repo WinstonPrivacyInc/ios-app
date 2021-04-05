@@ -243,11 +243,12 @@
                         <outlet property="emailTableCell" destination="Nvz-JG-TSm" id="s51-WF-cEF"/>
                         <outlet property="passwordTableCell" destination="tPc-ui-STl" id="uuF-3j-Deu"/>
                         <segue destination="twk-2k-wvd" kind="show" identifier="ChangeEmail" id="NsC-Qs-Le5"/>
+                        <segue destination="Uhx-Yq-ypJ" kind="show" identifier="ChangePassword" id="QLf-X3-qnd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxL-6Z-g8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="-1556"/>
+            <point key="canvasLocation" x="1296" y="-1556"/>
         </scene>
         <!--Account Navigation Controller-->
         <scene sceneID="BKg-UP-aGv">
@@ -266,7 +267,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEg-Sv-LQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="-1609"/>
+            <point key="canvasLocation" x="83" y="-1556"/>
         </scene>
         <!--Change Email-->
         <scene sceneID="hxW-Ex-EyE">
@@ -373,6 +374,146 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boo-JJ-ass" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2310" y="-1556"/>
+        </scene>
+        <!--Change Password-->
+        <scene sceneID="Jxd-AU-DG1">
+            <objects>
+                <viewController title="Change Password" modalPresentationStyle="formSheet" id="Uhx-Yq-ypJ" customClass="ChangePasswordViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dK4-ix-TAt"/>
+                        <viewControllerLayoutGuide type="bottom" id="bW1-dC-da3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bfN-Lh-AgQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="HgY-1H-lds">
+                                <rect key="frame" x="0.0" y="88" width="414" height="642"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sF-Gn-Rde" userLabel="Sign Up Section View">
+                                        <rect key="frame" x="57" y="50" width="300" height="220"/>
+                                        <subviews>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Current Password" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZXP-nW-iw7" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="0xZ-q7-ITu"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="1ng-eB-jMQ" userLabel="width = 300"/>
+                                                    <constraint firstAttribute="height" constant="50" id="GEW-KB-z3g"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="NHd-u5-TwE"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="dRZ-TC-GuE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OqF-Cs-gfh" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="300" height="50"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="1pt-qU-Qs3"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="9WB-V6-vbM"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="eDg-Cj-eM5"/>
+                                                    <constraint firstAttribute="width" constant="300" id="ekD-LK-SUm"/>
+                                                    <constraint firstAttribute="height" constant="50" id="s0D-FM-hIz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" secureTextEntry="YES" textContentType="new-password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eK0-wx-cnt" userLabel="Sign In Button">
+                                                <rect key="frame" x="0.0" y="150" width="300" height="50"/>
+                                                <color key="backgroundColor" name="roguePurple"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="20p-es-U4f"/>
+                                                    <constraint firstAttribute="height" constant="50" id="6rK-hD-zwc"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="JfQ-Ov-nNH"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="S3A-V3-WVL"/>
+                                                    <constraint firstAttribute="width" constant="300" id="rgE-c3-TOL"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Change Password">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changePassword:" destination="Uhx-Yq-ypJ" eventType="touchUpInside" id="YWX-gY-Wls"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ZXP-nW-iw7" secondAttribute="trailing" id="6xG-EG-MGK"/>
+                                            <constraint firstAttribute="height" constant="220" id="9Pn-l2-5Dd"/>
+                                            <constraint firstItem="OqF-Cs-gfh" firstAttribute="leading" secondItem="9sF-Gn-Rde" secondAttribute="leading" id="Bjf-Vx-z81"/>
+                                            <constraint firstItem="ZXP-nW-iw7" firstAttribute="top" secondItem="9sF-Gn-Rde" secondAttribute="top" id="J6w-nD-R7h"/>
+                                            <constraint firstAttribute="trailing" secondItem="eK0-wx-cnt" secondAttribute="trailing" id="RIS-gY-mBK"/>
+                                            <constraint firstAttribute="width" constant="300" id="T0V-Kv-xms"/>
+                                            <constraint firstItem="OqF-Cs-gfh" firstAttribute="top" secondItem="ZXP-nW-iw7" secondAttribute="bottom" constant="10" id="YCe-6K-Mas"/>
+                                            <constraint firstItem="ZXP-nW-iw7" firstAttribute="leading" secondItem="9sF-Gn-Rde" secondAttribute="leading" id="bgp-ri-llV"/>
+                                            <constraint firstAttribute="trailing" secondItem="eK0-wx-cnt" secondAttribute="trailing" id="dPB-0F-R3l"/>
+                                            <constraint firstAttribute="trailing" secondItem="OqF-Cs-gfh" secondAttribute="trailing" id="dmX-4X-qJ3"/>
+                                            <constraint firstItem="OqF-Cs-gfh" firstAttribute="leading" secondItem="9sF-Gn-Rde" secondAttribute="leading" id="eic-iJ-fKn"/>
+                                            <constraint firstItem="OqF-Cs-gfh" firstAttribute="top" secondItem="ZXP-nW-iw7" secondAttribute="bottom" constant="10" id="ejy-Cf-go7"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="220" id="fR1-1v-wi2"/>
+                                            <constraint firstItem="eK0-wx-cnt" firstAttribute="leading" secondItem="9sF-Gn-Rde" secondAttribute="leading" id="hg9-my-5NW"/>
+                                            <constraint firstItem="eK0-wx-cnt" firstAttribute="leading" secondItem="9sF-Gn-Rde" secondAttribute="leading" id="huE-L4-4Cl"/>
+                                            <constraint firstItem="OqF-Cs-gfh" firstAttribute="top" secondItem="ZXP-nW-iw7" secondAttribute="bottom" constant="10" id="kXP-Qj-Xfr"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="laB-7K-3af"/>
+                                            <constraint firstItem="OqF-Cs-gfh" firstAttribute="leading" secondItem="ZXP-nW-iw7" secondAttribute="leading" id="oEb-7X-aN6"/>
+                                            <constraint firstItem="ZXP-nW-iw7" firstAttribute="leading" secondItem="9sF-Gn-Rde" secondAttribute="leading" id="tVd-lD-hLB"/>
+                                            <constraint firstItem="eK0-wx-cnt" firstAttribute="top" secondItem="OqF-Cs-gfh" secondAttribute="bottom" constant="40" id="tdW-C1-8mK"/>
+                                            <constraint firstAttribute="trailing" secondItem="OqF-Cs-gfh" secondAttribute="trailing" id="xIY-Gh-4Xm"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZXP-nW-iw7" secondAttribute="trailing" id="zVW-iS-8Ch"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9sF-Gn-Rde" firstAttribute="top" secondItem="HgY-1H-lds" secondAttribute="top" constant="50" id="BGz-qR-zhQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="9sF-Gn-Rde" secondAttribute="bottom" constant="166" id="GWp-KW-jyF"/>
+                                    <constraint firstItem="9sF-Gn-Rde" firstAttribute="top" secondItem="HgY-1H-lds" secondAttribute="top" constant="50" id="Q3X-qw-YPk"/>
+                                    <constraint firstAttribute="trailing" secondItem="9sF-Gn-Rde" secondAttribute="trailing" constant="10" id="kB8-Bj-beT"/>
+                                    <constraint firstItem="9sF-Gn-Rde" firstAttribute="centerX" secondItem="HgY-1H-lds" secondAttribute="centerX" id="me4-Fb-dg0"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hN7-50-vZY"/>
+                        <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
+                        <constraints>
+                            <constraint firstItem="HgY-1H-lds" firstAttribute="leading" secondItem="hN7-50-vZY" secondAttribute="leading" id="7e0-Sp-urp"/>
+                            <constraint firstItem="HgY-1H-lds" firstAttribute="top" secondItem="hN7-50-vZY" secondAttribute="top" id="9ed-lv-dHD"/>
+                            <constraint firstItem="HgY-1H-lds" firstAttribute="top" secondItem="hN7-50-vZY" secondAttribute="top" id="G84-wO-P54"/>
+                            <constraint firstItem="HgY-1H-lds" firstAttribute="centerX" secondItem="bfN-Lh-AgQ" secondAttribute="centerX" id="HLN-mL-QAn"/>
+                            <constraint firstItem="HgY-1H-lds" firstAttribute="trailing" secondItem="hN7-50-vZY" secondAttribute="trailing" id="ghZ-tZ-goa"/>
+                            <constraint firstItem="bW1-dC-da3" firstAttribute="top" secondItem="HgY-1H-lds" secondAttribute="bottom" constant="132" id="kYq-WK-tBQ"/>
+                            <constraint firstItem="HgY-1H-lds" firstAttribute="leading" secondItem="hN7-50-vZY" secondAttribute="leading" id="pWB-bo-r9Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Password" id="Orp-9z-LBu" userLabel="Navigation Items"/>
+                    <connections>
+                        <outlet property="currentPasswordField" destination="ZXP-nW-iw7" id="szz-ZB-BcI"/>
+                        <outlet property="newPasswordField" destination="OqF-Cs-gfh" id="d7S-eY-gwK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eM9-KC-aE1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2309" y="-828"/>
         </scene>
     </scenes>
     <resources>

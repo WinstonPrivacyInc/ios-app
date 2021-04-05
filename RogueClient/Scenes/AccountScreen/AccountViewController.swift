@@ -56,12 +56,11 @@ class AccountViewController: UITableViewController {
     }
     
     @IBAction func presentChangePasswordView(_ send: Any) -> Void {
-        present(NavigationManager.getChangePasswordViewController(), animated: true)
+        performSegue(withIdentifier: "ChangePassword", sender: self)
     }
     
     @IBAction func presentChangeEmailView(_ send: Any) -> Void {
         performSegue(withIdentifier: "ChangeEmail", sender: self)
-        // present(NavigationManager.getChangeEmailViewController(), animated: true)
     }
     
     
