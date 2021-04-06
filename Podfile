@@ -10,7 +10,6 @@ target 'RogueClient' do
     pod 'ReachabilitySwift', '~> 5.0.0'
     pod 'FloatingPanel', '~> 1.7.2'
     pod 'SnapKit', '~> 5.0.1'
-    pod 'Alamofire'
     pod 'Amplify'
     pod 'Ipify'
     pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
