@@ -66,6 +66,23 @@ class Authentication {
         }
     }
     
+    func getUserAttribute(key: AuthUserAttributeKey, completion: @escaping (String?) -> Void) {
+        _ = Amplify.Auth.fetchUserAttributes() { result in
+                switch result {
+                case .success(let attributes):
+                    
+                    let attribute = attributes.first { (attr) -> Bool in
+                        attr.key == key
+                    }
+                    
+                    completion(attribute?.value)
+                case .failure(let error):
+                    log(error: error.errorDescription)
+                    completion(nil)
+                }
+            }
+    }
+    
     func getAccessToken(completion: @escaping (String) -> Void) {
         Amplify.Auth.fetchAuthSession { result in
             
@@ -86,7 +103,7 @@ class Authentication {
         }
     }
     
-    func logOut() {
+    func signOut() {
         KeyChain.clearAll()
         FileSystemManager.clearSession()
         StorageManager.clearSession()

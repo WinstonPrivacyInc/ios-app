@@ -181,9 +181,19 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(vpnConfigurationDisabled), name: Notification.Name.VPNConfigurationDisabled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(subscriptionActivated), name: Notification.Name.SubscriptionActivated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateGeoLocation), name: Notification.Name.UpdateGeoLocation, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(signOutSuccess), name: Notification.Name.SignOutSuccess, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(signInSuccess), name: Notification.Name.SignInSuccess, object: nil)
     }
     
     // MARK: - Private methods -
+    
+    @objc private func signOutSuccess() {
+        showFlashNotification(message: "You have been signed out", presentInView: self.mainView)
+    }
+    
+    @objc private func signInSuccess() {
+        showFlashNotification(message: "You have been signed in", presentInView: self.mainView)
+    }
     
     @objc private func updateFloatingPanelLayout() {
         floatingPanel.updateLayout()

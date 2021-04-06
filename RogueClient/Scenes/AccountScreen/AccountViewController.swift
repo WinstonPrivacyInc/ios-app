@@ -23,6 +23,7 @@
 
 import UIKit
 import JGProgressHUD
+import Amplify
 
 class AccountViewController: UITableViewController {
     
@@ -49,9 +50,9 @@ class AccountViewController: UITableViewController {
         // present(NavigationManager.getSubscriptionViewController(), animated: true, completion: nil)
     }
     
-    @IBAction func logOut(_ sender: Any) {
-        showActionAlert(title: "Logout", message: "Are you sure you want to sign out?", action: "Sign out", actionHandler: { _ in
-            self.logOut()
+    @IBAction func signOut(_ sender: Any) {
+        showActionAlert(title: "Sign Out", message: "Are you sure you want to sign out?", action: "Sign out", actionHandler: { _ in
+            self.signOut()
         })
     }
     
@@ -80,7 +81,11 @@ class AccountViewController: UITableViewController {
         
         initNavigationBar()
         addObservers()
-        accountView.setupView(viewModel: viewModel)
+        
+        Application.shared.authentication.getUserAttribute(key: .email) { (email) in
+//            self.viewModel.accountId = email ?? ""
+//            self.accountView.setupView(viewModel: viewModel)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -173,6 +178,7 @@ extension AccountViewController {
     
     override func deleteSessionSkip() {
         tableView.reloadData()
+        
         showAlert(title: "Success", message: "You are successfully signed out") { _ in
             self.navigationController?.dismiss(animated: true)
         }

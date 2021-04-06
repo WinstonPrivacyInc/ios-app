@@ -136,14 +136,14 @@ class SettingsViewController: UITableViewController {
         present(NavigationManager.getChangePlanViewController(), animated: true, completion: nil)
     }
     
-    @IBAction func logOut(_ sender: Any) {
+    @IBAction func signOut(_ sender: Any) {
         guard Application.shared.authentication.isLoggedIn else {
             authenticate(self)
             return
         }
         
-        showActionAlert(title: "Logout", message: "Are you sure you want to sign out?", action: "Sign out") { _ in
-            self.logOut()
+        showActionAlert(title: "Sign", message: "Are you sure you want to sign out?", action: "Sign out") { _ in
+            self.signOut()
         }
     }
     

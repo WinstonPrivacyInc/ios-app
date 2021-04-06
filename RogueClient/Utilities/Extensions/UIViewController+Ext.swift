@@ -71,24 +71,20 @@ extension UIViewController {
     
     // MARK: - Methods -
     
-    func logOut(deleteSession: Bool = true) {
-        if deleteSession {
-            let sessionManager = SessionManager()
-            sessionManager.delegate = self
-            sessionManager.deleteSession()
-        }
-        
+    func signOut(deleteSession: Bool = true) {
         if UserDefaults.shared.networkProtectionEnabled {
             UserDefaults.clearSession()
         }
         
         Application.shared.connectionManager.resetRulesAndDisconnectShortcut(closeApp: false)
-        DispatchQueue.delay(0.5) {
-            Application.shared.connectionManager.removeAll()
-            Application.shared.authentication.logOut()
+        Application.shared.connectionManager.removeAll()
+        Application.shared.authentication.signOut()
+        
+        navigationController?.dismiss(animated: true, completion: {
             NotificationCenter.default.post(name: Notification.Name.VPNConfigurationDisabled, object: nil)
             NotificationCenter.default.post(name: Notification.Name.UpdateControlPanel, object: nil)
-        }
+            NotificationCenter.default.post(name: Notification.Name.SignOutSuccess, object: nil)
+        })
     }
     
     func openTermsOfService() {

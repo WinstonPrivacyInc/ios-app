@@ -26,7 +26,7 @@ import UIKit
 class AccountView: UITableView {
     
     @IBOutlet weak var accountIdLabel: UILabel!
-    @IBOutlet weak var logOutActionButton: UIButton!
+    @IBOutlet weak var signOutButton: UIButton!
     
     
 //    @IBOutlet weak var qrCodeImage: UIImageView!

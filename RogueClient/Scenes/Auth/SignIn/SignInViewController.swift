@@ -325,6 +325,7 @@ extension SignInViewController {
         navigationController?.dismiss(animated: true, completion: {
             NotificationCenter.default.post(name: Notification.Name.ServiceAuthorized, object: nil)
             NotificationCenter.default.post(name: Notification.Name.UpdateFloatingPanelLayout, object: nil)
+            NotificationCenter.default.post(name: Notification.Name.SignInSuccess, object: nil)
         })
     }
     
