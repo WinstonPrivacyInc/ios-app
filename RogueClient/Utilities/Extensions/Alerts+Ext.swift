@@ -24,6 +24,7 @@
 import Foundation
 import UIKit
 import JGProgressHUD
+import KAPinField
 
 extension UIViewController {
     

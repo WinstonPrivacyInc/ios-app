@@ -1,34 +1,34 @@
 PODS:
   - ActiveLabel (1.1.0)
-  - Alamofire (5.4.1)
-  - Amplify (1.6.1):
-    - Amplify/Default (= 1.6.1)
-  - Amplify/Default (1.6.1)
-  - AmplifyPlugins/AWSCognitoAuthPlugin (1.6.1):
+  - Amplify (1.7.2):
+    - Amplify/Default (= 1.7.2)
+  - Amplify/Default (1.7.2)
+  - AmplifyPlugins/AWSCognitoAuthPlugin (1.7.2):
     - AWSAuthCore (~> 2.23.0)
     - AWSCognitoIdentityProvider (~> 2.23.0)
     - AWSCognitoIdentityProviderASF (~> 2.23.0)
     - AWSCore (~> 2.23.0)
     - AWSMobileClient (~> 2.23.0)
-    - AWSPluginsCore (= 1.6.1)
-  - AWSAuthCore (2.23.1):
-    - AWSCore (= 2.23.1)
-  - AWSCognitoIdentityProvider (2.23.1):
-    - AWSCognitoIdentityProviderASF (= 2.23.1)
-    - AWSCore (= 2.23.1)
-  - AWSCognitoIdentityProviderASF (2.23.1)
-  - AWSCore (2.23.1)
-  - AWSMobileClient (2.23.1):
-    - AWSAuthCore (= 2.23.1)
-    - AWSCognitoIdentityProvider (= 2.23.1)
-    - AWSCognitoIdentityProviderASF (= 2.23.1)
-    - AWSCore (= 2.23.1)
-  - AWSPluginsCore (1.6.1):
-    - Amplify (= 1.6.1)
+    - AWSPluginsCore (= 1.7.2)
+  - AWSAuthCore (2.23.2):
+    - AWSCore (= 2.23.2)
+  - AWSCognitoIdentityProvider (2.23.2):
+    - AWSCognitoIdentityProviderASF (= 2.23.2)
+    - AWSCore (= 2.23.2)
+  - AWSCognitoIdentityProviderASF (2.23.2)
+  - AWSCore (2.23.2)
+  - AWSMobileClient (2.23.2):
+    - AWSAuthCore (= 2.23.2)
+    - AWSCognitoIdentityProvider (= 2.23.2)
+    - AWSCognitoIdentityProviderASF (= 2.23.2)
+    - AWSCore (= 2.23.2)
+  - AWSPluginsCore (1.7.2):
+    - Amplify (= 1.7.2)
     - AWSCore (~> 2.23.0)
   - FloatingPanel (1.7.6)
   - Ipify (2.1.0)
   - JGProgressHUD (2.0.4)
+  - KAPinField (5.0.1)
   - KeychainAccess (3.2.1)
   - OpenSSL-Apple (1.1.1j.11)
   - ReachabilitySwift (5.0.0)
@@ -49,12 +49,12 @@ PODS:
 
 DEPENDENCIES:
   - ActiveLabel (~> 1.1.0)
-  - Alamofire
   - Amplify
   - AmplifyPlugins/AWSCognitoAuthPlugin
   - FloatingPanel (~> 1.7.2)
   - Ipify
   - JGProgressHUD (~> 2.0.3)
+  - KAPinField
   - KeychainAccess (~> 3.2.0)
   - ReachabilitySwift (~> 5.0.0)
   - SnapKit (~> 5.0.1)
@@ -64,7 +64,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - ActiveLabel
-    - Alamofire
     - Amplify
     - AmplifyPlugins
     - AWSAuthCore
@@ -76,6 +75,7 @@ SPEC REPOS:
     - FloatingPanel
     - Ipify
     - JGProgressHUD
+    - KAPinField
     - KeychainAccess
     - OpenSSL-Apple
     - ReachabilitySwift
@@ -86,18 +86,18 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
-  Amplify: 4d0c3b0871e1f268c81ce5e9b65532df0a013900
-  AmplifyPlugins: 51dfaeafe662cd571c4d4dfd3bdc5987fef2d5a7
-  AWSAuthCore: d9f9c418df00f45f399e407dc6c2bce33870b0af
-  AWSCognitoIdentityProvider: 8bf316cc96554d4c88ca4b1dcae0589923fb95f5
-  AWSCognitoIdentityProviderASF: f9b0d373dfce6d5395f0b69f2301f5db927d9fc8
-  AWSCore: 48bf561f5fb3616ef42c1f7f3eeb4b502d11f69d
-  AWSMobileClient: ffe1179b9e6d5db7cea3f807df7d47f5d00a5c65
-  AWSPluginsCore: f41f8a478fe3fd8839ec16278b86dededefb0628
+  Amplify: 254e40b21406cd8fb578cbeb96ce4921b996598e
+  AmplifyPlugins: 5f3a4bc1bf725d225129b55be304287817c49a1f
+  AWSAuthCore: 59770d4c2c1b3dbb183b95d1867e3584b4816e54
+  AWSCognitoIdentityProvider: 5bd6988ea7c8f9ee43151e19bdd8e803558ad45f
+  AWSCognitoIdentityProviderASF: 30ccb19228b6e743805bf15a72278ca9f399bc21
+  AWSCore: 70f79e95ee30f8eefa7122391d76ace516778f22
+  AWSMobileClient: 54fd215e76e34a8edb3cb1199788a69543cebc95
+  AWSPluginsCore: 13d0f6c3a0af58a8f219c735048cdcc4222741f8
   FloatingPanel: 9016eac88f21ca9fce53f5709e1f49485c0c355e
   Ipify: 814952650290001bee4542db6fba63df128f77c2
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
+  KAPinField: 24d85205115c1bb6aef8ff809944f41ac8c2785f
   KeychainAccess: d5470352939ced6d6f7fb51cb2e67aae51fc294f
   OpenSSL-Apple: bb7c9715a259404de040f5359ed3b3170cedf8d6
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
@@ -106,6 +106,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TunnelKit: cbd063b8b6f4f6a182cf48e646ff35cb2365bf91
 
-PODFILE CHECKSUM: 5de5d9c7f0b6655dbf54f59f45b3e82d279b1c6f
+PODFILE CHECKSUM: fbad6bfa82538f7b4776c824452b5e25efc27f79
 
 COCOAPODS: 1.10.1

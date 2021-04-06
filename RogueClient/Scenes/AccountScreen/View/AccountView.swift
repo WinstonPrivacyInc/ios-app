@@ -43,7 +43,7 @@ class AccountView: UITableView {
     // MARK: - Methods -
     
     func setupView(viewModel: AccountViewModel) {
-        accountIdLabel.text = viewModel.accountId
+        // accountIdLabel.text = viewModel.accountId
 
         //        statusLabel.text = viewModel.statusText
 //        statusLabel.backgroundColor = viewModel.statusColor

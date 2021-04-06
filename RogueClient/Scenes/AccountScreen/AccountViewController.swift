@@ -83,8 +83,9 @@ class AccountViewController: UITableViewController {
         addObservers()
         
         Application.shared.authentication.getUserAttribute(key: .email) { (email) in
-//            self.viewModel.accountId = email ?? ""
-//            self.accountView.setupView(viewModel: viewModel)
+            DispatchQueue.main.async {
+                self.accountView.accountIdLabel.text = email ?? ""
+            }
         }
     }
     
@@ -98,6 +99,7 @@ class AccountViewController: UITableViewController {
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(subscriptionActivated), name: Notification.Name.SubscriptionActivated, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(passwordChanged), name: Notification.Name.PasswordChangeSuccess, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(emailChanged), name: Notification.Name.EmailChangeSuccess, object: nil)
     }
     
     // MARK: - Private methods -
@@ -114,7 +116,11 @@ class AccountViewController: UITableViewController {
     }
     
     @objc private func passwordChanged() {
-        showAlert(title: "Success", message: "Your password has been changed.")
+        showFlashNotification(message: "Your password was changed", presentInView: (navigationController?.view)!)
+    }
+    
+    @objc private func emailChanged() {
+        showFlashNotification(message: "Your email was changed", presentInView: (navigationController?.view)!)
     }
     
 }

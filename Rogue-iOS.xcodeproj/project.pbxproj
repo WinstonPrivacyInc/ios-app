@@ -256,6 +256,8 @@
 		9CDDD5B61D9D2F9F00D39924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD5B51D9D2F9F00D39924 /* Assets.xcassets */; };
 		9CDDD5B91D9D2F9F00D39924 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CDDD5B71D9D2F9F00D39924 /* LaunchScreen.storyboard */; };
 		A932871726027CFB0034E296 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932871626027CFB0034E296 /* KeyPair.swift */; };
+		A94E2134261CE505007DC374 /* ConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */; };
+		A94E213A261CE513007DC374 /* ConfirmationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */; };
 		A99FDB77261617D300A8B498 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB76261617D200A8B498 /* SignUpViewController.swift */; };
 		A99FDB7D2616315900A8B498 /* SignUpConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */; };
 		A99FDB83261631FC00A8B498 /* SignUpConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */; };
@@ -567,6 +569,8 @@
 		9CDDD5BA1D9D2F9F00D39924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9328650260268800034E296 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A932871626027CFB0034E296 /* KeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
+		A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeViewController.swift; sourceTree = "<group>"; };
+		A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeView.swift; sourceTree = "<group>"; };
 		A99FDB76261617D200A8B498 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmViewController.swift; sourceTree = "<group>"; };
 		A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmView.swift; sourceTree = "<group>"; };
@@ -1278,6 +1282,15 @@
 			path = RogueClient;
 			sourceTree = "<group>";
 		};
+		A94E2132261CE4E8007DC374 /* ConfirmationCode */ = {
+			isa = PBXGroup;
+			children = (
+				A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */,
+				A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */,
+			);
+			path = ConfirmationCode;
+			sourceTree = "<group>";
+		};
 		A99FDBB2261BA11400A8B498 /* Email */ = {
 			isa = PBXGroup;
 			children = (
@@ -1298,6 +1311,7 @@
 		A9C299742613D4E8004CFC9A /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				A94E2132261CE4E8007DC374 /* ConfirmationCode */,
 				A99FDBB2261BA11400A8B498 /* Email */,
 				A9C299772613D501004CFC9A /* Password */,
 				A9C299762613D4FB004CFC9A /* SignUp */,
@@ -1636,12 +1650,12 @@
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPluginsCore/AWSPluginsCore.framework",
 				"${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Amplify/Amplify.framework",
 				"${BUILT_PRODUCTS_DIR}/AmplifyPlugins/AmplifyPlugins.framework",
 				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
 				"${BUILT_PRODUCTS_DIR}/Ipify/Ipify.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/KAPinField/KAPinField.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -1659,12 +1673,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPluginsCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActiveLabel.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Amplify.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AmplifyPlugins.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ipify.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KAPinField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -1866,6 +1880,7 @@
 				82D598A321A55210000FABDE /* NetworkProtectionViewController.swift in Sources */,
 				82D598BC21A6949F000FABDE /* StorageManager.swift in Sources */,
 				826FBDA32461847D00B9E464 /* ServiceType.swift in Sources */,
+				A94E213A261CE513007DC374 /* ConfirmationCodeView.swift in Sources */,
 				A99FDBA7261B711B00A8B498 /* ChangePasswordView.swift in Sources */,
 				821429B922FC2EA40056B8FF /* ApiService+Ext.swift in Sources */,
 				8206E5D222967EAF003119AF /* UserActivityTitle.swift in Sources */,
@@ -1898,6 +1913,7 @@
 				825E834F25A327EB00938240 /* CaptchaViewController.swift in Sources */,
 				82A160BB221C4E2000730577 /* Server+CoreDataProperties.swift in Sources */,
 				8270753622AFC5B90067C323 /* StringProtocol+Ext.swift in Sources */,
+				A94E2134261CE505007DC374 /* ConfirmationCodeViewController.swift in Sources */,
 				82526BEF24123D2900E00880 /* NetworkViewTableCell.swift in Sources */,
 				82DEF021244714F000CCB5CD /* ScannerView.swift in Sources */,
 				826FBDA52461848A00B9E464 /* ServiceDuration.swift in Sources */,

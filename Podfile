@@ -12,6 +12,7 @@ target 'RogueClient' do
     pod 'SnapKit', '~> 5.0.1'
     pod 'Amplify'
     pod 'Ipify'
+    pod 'KAPinField'
     pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 end
 

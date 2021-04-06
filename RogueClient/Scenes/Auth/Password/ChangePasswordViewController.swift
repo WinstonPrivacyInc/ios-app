@@ -32,6 +32,7 @@ class ChangePasswordViewController: UIViewController {
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.setNeedsLayout()
         }
+
     }
     
     private func initNavigationBar() {
@@ -82,7 +83,7 @@ class ChangePasswordViewController: UIViewController {
         self.isChangingPassword = false
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
             NotificationCenter.default.post(name: Notification.Name.PasswordChangeSuccess, object: nil, userInfo: nil)
         }
     }

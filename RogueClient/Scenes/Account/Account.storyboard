@@ -307,7 +307,7 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="iXm-dp-HgJ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" secureTextEntry="YES" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="8"/>
@@ -335,6 +335,9 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeEmail:" destination="twk-2k-wvd" eventType="touchUpInside" id="Dch-5Y-e4D"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -379,6 +382,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Email" id="5r1-WQ-QI1" userLabel="Navigation Items"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="RJY-sz-HUr" id="Cjd-Lj-xBL"/>
+                        <segue destination="2bd-kF-pJY" kind="show" identifier="EmailChangeConfirm" id="Erh-J3-zhh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boo-JJ-ass" sceneMemberID="firstResponder"/>
             </objects>
@@ -523,6 +530,118 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM9-KC-aE1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2309" y="-828"/>
+        </scene>
+        <!--Sign Up Confirm-->
+        <scene sceneID="yX3-QR-b0d">
+            <objects>
+                <viewController title="Email Change Confirm" modalPresentationStyle="formSheet" id="2bd-kF-pJY" userLabel="Sign Up Confirm" customClass="SignUpConfirmViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JTU-PG-snK"/>
+                        <viewControllerLayoutGuide type="bottom" id="pGt-TN-bC1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wWh-p4-wLB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="eKB-Np-JYS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="436"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWF-iA-c4C" userLabel="Content View">
+                                        <rect key="frame" x="57" y="50" width="300" height="200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDs-aH-QXT">
+                                                <rect key="frame" x="0.0" y="10" width="300" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="BzD-Az-pGs"/>
+                                                    <constraint firstAttribute="height" constant="30" id="myt-jD-iKt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buz-Gv-78X" userLabel="Confirmation Code Field" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="50" width="300" height="50"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="2jc-SE-s0G"/>
+                                                    <constraint firstAttribute="height" constant="50" id="99K-JI-fLM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="continue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F40-Zl-jdc">
+                                                <rect key="frame" x="0.0" y="150" width="300" height="50"/>
+                                                <color key="backgroundColor" name="roguePurple"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="van-QX-whk"/>
+                                                    <constraint firstAttribute="width" constant="300" id="y6f-LQ-ZPM"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Confirm Change">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmSignUp:" destination="2bd-kF-pJY" eventType="touchUpInside" id="pkW-Ob-Whh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="buz-Gv-78X" secondAttribute="trailing" id="0hn-Pn-thU"/>
+                                            <constraint firstItem="buz-Gv-78X" firstAttribute="leading" secondItem="OWF-iA-c4C" secondAttribute="leading" id="37u-S5-Tto"/>
+                                            <constraint firstAttribute="width" constant="300" id="DAH-dx-aO1"/>
+                                            <constraint firstItem="buz-Gv-78X" firstAttribute="leading" secondItem="OWF-iA-c4C" secondAttribute="leading" id="HKB-MU-cMW"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Lex-G1-tSq"/>
+                                            <constraint firstAttribute="trailing" secondItem="buz-Gv-78X" secondAttribute="trailing" id="N1n-Tz-cp2"/>
+                                            <constraint firstItem="F40-Zl-jdc" firstAttribute="top" secondItem="buz-Gv-78X" secondAttribute="bottom" constant="50" id="O9b-fZ-uvy"/>
+                                            <constraint firstAttribute="trailing" secondItem="nDs-aH-QXT" secondAttribute="trailing" id="gJk-m5-eEH"/>
+                                            <constraint firstAttribute="bottom" secondItem="F40-Zl-jdc" secondAttribute="bottom" id="hmZ-yE-6gF"/>
+                                            <constraint firstItem="F40-Zl-jdc" firstAttribute="leading" secondItem="buz-Gv-78X" secondAttribute="leading" id="sbg-aT-bOs"/>
+                                            <constraint firstItem="buz-Gv-78X" firstAttribute="top" secondItem="nDs-aH-QXT" secondAttribute="bottom" constant="10" id="sqF-zB-loy"/>
+                                            <constraint firstItem="nDs-aH-QXT" firstAttribute="leading" secondItem="OWF-iA-c4C" secondAttribute="leading" id="yrD-7R-KaS"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="DVy-ne-9EK"/>
+                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="VKv-uy-T2K"/>
+                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="W06-xP-oeV"/>
+                                    <constraint firstAttribute="bottom" secondItem="OWF-iA-c4C" secondAttribute="bottom" id="km9-K8-daX"/>
+                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="tSh-kx-Nzz"/>
+                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="top" secondItem="eKB-Np-JYS" secondAttribute="top" constant="50" id="yig-WK-T9V"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I0Q-w1-ZRd"/>
+                        <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eKB-Np-JYS" secondAttribute="trailing" id="3wc-Dm-trS"/>
+                            <constraint firstItem="eKB-Np-JYS" firstAttribute="leading" secondItem="wWh-p4-wLB" secondAttribute="leading" id="Kk8-CP-qIj"/>
+                            <constraint firstItem="eKB-Np-JYS" firstAttribute="bottom" secondItem="pGt-TN-bC1" secondAttribute="top" id="LzR-ZQ-xfv"/>
+                            <constraint firstItem="eKB-Np-JYS" firstAttribute="top" secondItem="I0Q-w1-ZRd" secondAttribute="top" id="TsD-kw-Kir"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Email Confirmation" id="Q04-9Y-GtW" userLabel="Navigation Items"/>
+                    <connections>
+                        <outlet property="confirmationCodeTextField" destination="buz-Gv-78X" id="qeM-1N-IFN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqx-Z2-Z6z" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3317" y="-1556"/>
         </scene>
     </scenes>
     <resources>

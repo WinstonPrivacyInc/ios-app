@@ -1924,7 +1924,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="QFJ-nr-DtV"/>
                                                 </constraints>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Confirm Email">
+                                                <state key="normal" title="Confirm">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1983,6 +1983,144 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIH-Cn-yp8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2167.5" y="495"/>
+        </scene>
+        <!--Confirmation Code-->
+        <scene sceneID="0dv-on-2hx">
+            <objects>
+                <viewController storyboardIdentifier="confirmationCodeView" title="Confirmation Code" modalPresentationStyle="formSheet" id="6XF-t1-31o" customClass="ConfirmationViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NhP-EI-j11"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aac-QF-pgM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pp7-4q-hfi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="np5-JM-WNM">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9I-D3-h1o" userLabel="Content View">
+                                        <rect key="frame" x="10" y="50" width="300" height="230"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-nn-JDH">
+                                                <rect key="frame" x="0.0" y="10" width="300" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="0AG-4j-afB"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="HhZ-uG-z58"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="8An-uk-oh6" userLabel="Confirmation Code Field" customClass="KAPinField" customModule="KAPinField">
+                                                <rect key="frame" x="0.0" y="80" width="300" height="50"/>
+                                                <color key="backgroundColor" name="ivpnGray2"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bL7-ds-I2E"/>
+                                                    <constraint firstAttribute="width" constant="300" id="jTR-Xs-hlD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="continue"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAq-pR-BwD">
+                                                <rect key="frame" x="0.0" y="180" width="300" height="50"/>
+                                                <color key="backgroundColor" name="roguePurple"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="1Ws-Y9-Iu8"/>
+                                                    <constraint firstAttribute="width" constant="300" id="w0a-ld-Gqn"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Confirm">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="8An-uk-oh6" secondAttribute="trailing" id="6tV-eE-rEn"/>
+                                            <constraint firstAttribute="width" constant="300" id="7Li-w7-cc5"/>
+                                            <constraint firstItem="e0p-nn-JDH" firstAttribute="top" secondItem="a9I-D3-h1o" secondAttribute="top" constant="10" id="Dhh-Qz-xkz"/>
+                                            <constraint firstItem="zAq-pR-BwD" firstAttribute="leading" secondItem="8An-uk-oh6" secondAttribute="leading" id="Jbd-U5-q5G"/>
+                                            <constraint firstItem="e0p-nn-JDH" firstAttribute="leading" secondItem="a9I-D3-h1o" secondAttribute="leading" id="Myf-UO-o7c"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="OAo-yu-CVn"/>
+                                            <constraint firstItem="8An-uk-oh6" firstAttribute="leading" secondItem="a9I-D3-h1o" secondAttribute="leading" id="OvZ-Lk-xtK"/>
+                                            <constraint firstItem="zAq-pR-BwD" firstAttribute="top" secondItem="8An-uk-oh6" secondAttribute="bottom" constant="50" id="QCV-c6-Sce"/>
+                                            <constraint firstAttribute="bottom" secondItem="zAq-pR-BwD" secondAttribute="bottom" id="QHn-bG-5Y3"/>
+                                            <constraint firstItem="8An-uk-oh6" firstAttribute="leading" secondItem="a9I-D3-h1o" secondAttribute="leading" id="Y8I-KE-JVr"/>
+                                            <constraint firstAttribute="height" constant="230" id="gT0-Rt-lWL"/>
+                                            <constraint firstAttribute="trailing" secondItem="8An-uk-oh6" secondAttribute="trailing" id="k8o-tF-cKX"/>
+                                            <constraint firstAttribute="trailing" secondItem="e0p-nn-JDH" secondAttribute="trailing" id="qj4-G8-4Y4"/>
+                                            <constraint firstItem="8An-uk-oh6" firstAttribute="top" secondItem="e0p-nn-JDH" secondAttribute="bottom" constant="10" id="xV7-TW-u6B"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="a9I-D3-h1o" firstAttribute="centerX" secondItem="np5-JM-WNM" secondAttribute="centerX" id="6gb-dy-RGF"/>
+                                    <constraint firstAttribute="bottom" secondItem="a9I-D3-h1o" secondAttribute="bottom" id="Cnj-yq-7Sp"/>
+                                    <constraint firstItem="a9I-D3-h1o" firstAttribute="top" secondItem="np5-JM-WNM" secondAttribute="top" constant="50" id="Kna-Ja-aXs"/>
+                                    <constraint firstItem="a9I-D3-h1o" firstAttribute="centerX" secondItem="np5-JM-WNM" secondAttribute="centerX" id="b2d-wu-UNI"/>
+                                    <constraint firstAttribute="trailing" secondItem="a9I-D3-h1o" secondAttribute="trailing" constant="10" id="lcs-My-fvx"/>
+                                    <constraint firstItem="a9I-D3-h1o" firstAttribute="centerX" secondItem="np5-JM-WNM" secondAttribute="centerX" id="qeb-Vb-rwk"/>
+                                    <constraint firstItem="a9I-D3-h1o" firstAttribute="centerX" secondItem="np5-JM-WNM" secondAttribute="centerX" id="uHx-eo-kMc"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9U0-rv-8Cj"/>
+                        <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
+                        <constraints>
+                            <constraint firstItem="np5-JM-WNM" firstAttribute="bottom" secondItem="Aac-QF-pgM" secondAttribute="top" id="BB9-Bl-0Vc"/>
+                            <constraint firstItem="np5-JM-WNM" firstAttribute="leading" secondItem="pp7-4q-hfi" secondAttribute="leading" id="EEo-P8-1va"/>
+                            <constraint firstAttribute="trailing" secondItem="np5-JM-WNM" secondAttribute="trailing" id="VKZ-fm-41P"/>
+                            <constraint firstItem="np5-JM-WNM" firstAttribute="top" secondItem="9U0-rv-8Cj" secondAttribute="top" id="qio-5y-dna"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Confirm" id="MIJ-K6-Ffe" userLabel="Navigation Items">
+                        <barButtonItem key="backBarButtonItem" title="Log In" id="dYc-6L-uxX" userLabel="Confirm"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="PRZ-pZ-1uk">
+                            <connections>
+                                <action selector="dismissViewController:" destination="U83-5O-go8" id="hmx-jn-MD8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmationCodeField" destination="8An-uk-oh6" id="Btk-rK-qn7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4J-K1-2Vt" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286" y="3511"/>
+        </scene>
+        <!--Confirmation Code-->
+        <scene sceneID="hPa-bW-tC9">
+            <objects>
+                <navigationController storyboardIdentifier="cofirmCodeView" title="Confirmation Code" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ofu-Y4-ZeW" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qKn-PR-3U2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6XF-t1-31o" kind="relationship" relationship="rootViewController" id="zKD-Qt-Zil"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgK-pV-1cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="3511"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
