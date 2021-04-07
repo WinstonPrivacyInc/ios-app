@@ -79,17 +79,19 @@ class AccountViewController: UITableViewController {
         
         initNavigationBar()
         addObservers()
-        
-        Application.shared.authentication.getUserAttribute(key: .email) { (email) in
-            DispatchQueue.main.async {
-                self.accountView.accountIdLabel.text = email ?? ""
-            }
-        }
+        self.updateEmailLabel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // accountView.initQRCode(viewModel: viewModel)
+        self.updateEmailLabel()
+    }
+    
+    private func updateEmailLabel() {
+        DispatchQueue.main.async {
+            self.accountView.accountIdLabel.text = KeyChain.username ?? ""
+        }
     }
     
     // MARK: - Observers -

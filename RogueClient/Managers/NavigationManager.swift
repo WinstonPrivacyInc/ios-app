@@ -42,9 +42,9 @@ class NavigationManager {
     
     static func getForgotPasswordViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "forgotPasswordView")
-        
-        return viewController
+        let navController = storyboard.instantiateViewController(withIdentifier: "signInView") as? UINavigationController
+        navController?.modalPresentationStyle = .formSheet
+        return navController!
     }
     
     static func getConfirmationCodeViewController() -> UIViewController {

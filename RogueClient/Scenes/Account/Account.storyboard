@@ -397,7 +397,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boo-JJ-ass" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="7z6-yR-gT5">
+                <view contentMode="scaleToFill" id="7z6-yR-gT5" userLabel="Confirmation Code View">
                     <rect key="frame" x="0.0" y="0.0" width="411" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>

@@ -33,7 +33,6 @@ class ChangeEmailViewController: UIViewController {
             self.currentEmail = KeyChain.username ?? ""
             self.emailTextField.text = self.currentEmail
         }
-        
 
         hiddenConfirmationCodeField.inputAccessoryView = keyboardView
         hiddenConfirmationCodeField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)

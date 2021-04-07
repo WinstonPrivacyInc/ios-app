@@ -83,7 +83,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func presentForgotPasswordView(_ sender: Any) {
-        present(NavigationManager.getForgotPasswordViewController(), animated: true)
+        performSegue(withIdentifier: "PasswordReset", sender: self)
     }
     
     
