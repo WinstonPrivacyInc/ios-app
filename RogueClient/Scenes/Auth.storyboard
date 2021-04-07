@@ -1993,11 +1993,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Aac-QF-pgM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pp7-4q-hfi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="np5-JM-WNM">
-                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9I-D3-h1o" userLabel="Content View">
                                         <rect key="frame" x="10" y="50" width="300" height="230"/>
@@ -2115,7 +2115,9 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="6XF-t1-31o" kind="relationship" relationship="rootViewController" id="zKD-Qt-Zil"/>
+                        <segue destination="6XF-t1-31o" kind="popoverPresentation" popoverAnchorView="qKn-PR-3U2" id="4al-Ti-9rW">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgK-pV-1cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -293,7 +293,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="jZJ-vH-Jgp">
                                 <rect key="frame" x="0.0" y="88" width="414" height="642"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWU-Cn-vhS" userLabel="Sign Up Section View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWU-Cn-vhS" userLabel="Update Email View">
                                         <rect key="frame" x="57" y="50" width="300" height="170"/>
                                         <subviews>
                                             <textField clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="user@email.com" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="RJY-sz-HUr" userLabel="Email Text Field" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
@@ -326,7 +326,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="pGm-VC-cct"/>
                                                 </constraints>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Change Email">
+                                                <state key="normal" title="Update Email">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -358,6 +358,12 @@
                                             <constraint firstItem="RJY-sz-HUr" firstAttribute="leading" secondItem="OWU-Cn-vhS" secondAttribute="leading" id="xtz-gV-tY1"/>
                                         </constraints>
                                     </view>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hideen Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zk7-fd-BGE" userLabel="Hidden Confirmation Code Field">
+                                        <rect key="frame" x="124" y="243" width="149" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartQuotesType="no"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -383,13 +389,58 @@
                     </view>
                     <navigationItem key="navigationItem" title="Email" id="5r1-WQ-QI1" userLabel="Navigation Items"/>
                     <connections>
-                        <outlet property="emailTextField" destination="RJY-sz-HUr" id="Cjd-Lj-xBL"/>
-                        <segue destination="2bd-kF-pJY" kind="show" identifier="EmailChangeConfirm" id="Erh-J3-zhh"/>
+                        <outlet property="confirmationCodeField" destination="6Lt-O6-E3A" id="WoH-DR-E3e"/>
+                        <outlet property="emailTextField" destination="RJY-sz-HUr" id="KcP-DD-n73"/>
+                        <outlet property="hiddenConfirmationCodeField" destination="zk7-fd-BGE" id="HvK-ah-eXC"/>
+                        <outlet property="keyboardView" destination="7z6-yR-gT5" id="Gd8-a9-KbM"/>
+                        <outlet property="mainView" destination="1sm-r7-mfj" id="BPD-rn-UIK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boo-JJ-ass" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="7z6-yR-gT5">
+                    <rect key="frame" x="0.0" y="0.0" width="411" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gn-CI-wZg">
+                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="AOG-26-VdC"/>
+                                <constraint firstAttribute="height" constant="30" id="X11-N4-9Ks"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-O6-E3A" customClass="KAPinField" customModule="KAPinField">
+                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
+                            <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="1If-3m-9cr"/>
+                                <constraint firstAttribute="width" constant="300" id="yuo-iM-Z3s"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="om4-Lc-j9P"/>
+                    <color key="backgroundColor" name="ivpnBackgroundSecondary"/>
+                    <constraints>
+                        <constraint firstItem="7gn-CI-wZg" firstAttribute="centerX" secondItem="7z6-yR-gT5" secondAttribute="centerX" id="C7B-A0-Rts"/>
+                        <constraint firstItem="om4-Lc-j9P" firstAttribute="bottom" secondItem="6Lt-O6-E3A" secondAttribute="bottom" constant="10" id="RxA-eT-bhv"/>
+                        <constraint firstItem="7gn-CI-wZg" firstAttribute="top" secondItem="7z6-yR-gT5" secondAttribute="top" constant="10" id="WKJ-0k-tqO"/>
+                        <constraint firstItem="6Lt-O6-E3A" firstAttribute="centerX" secondItem="7z6-yR-gT5" secondAttribute="centerX" id="XsP-5P-fpD"/>
+                        <constraint firstItem="6Lt-O6-E3A" firstAttribute="top" secondItem="7gn-CI-wZg" secondAttribute="bottom" constant="10" id="eg3-TF-8vu"/>
+                        <constraint firstItem="6Lt-O6-E3A" firstAttribute="top" secondItem="7gn-CI-wZg" secondAttribute="bottom" constant="10" id="iif-AL-oJp"/>
+                        <constraint firstItem="7gn-CI-wZg" firstAttribute="top" secondItem="7z6-yR-gT5" secondAttribute="top" constant="10" id="tnk-MT-uOn"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" name="ivpnGray18"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </objects>
-            <point key="canvasLocation" x="2310" y="-1556"/>
+            <point key="canvasLocation" x="2307.2463768115945" y="-1556.25"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="Jxd-AU-DG1">
@@ -531,125 +582,22 @@
             </objects>
             <point key="canvasLocation" x="2309" y="-828"/>
         </scene>
-        <!--Sign Up Confirm-->
-        <scene sceneID="yX3-QR-b0d">
-            <objects>
-                <viewController title="Email Change Confirm" modalPresentationStyle="formSheet" id="2bd-kF-pJY" userLabel="Sign Up Confirm" customClass="SignUpConfirmViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JTU-PG-snK"/>
-                        <viewControllerLayoutGuide type="bottom" id="pGt-TN-bC1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wWh-p4-wLB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="eKB-Np-JYS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="436"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OWF-iA-c4C" userLabel="Content View">
-                                        <rect key="frame" x="57" y="50" width="300" height="200"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDs-aH-QXT">
-                                                <rect key="frame" x="0.0" y="10" width="300" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="BzD-Az-pGs"/>
-                                                    <constraint firstAttribute="height" constant="30" id="myt-jD-iKt"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="buz-Gv-78X" userLabel="Confirmation Code Field" customClass="UITextFieldPadding" customModule="RogueClient" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="50" width="300" height="50"/>
-                                                <color key="backgroundColor" name="ivpnGray2"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="2jc-SE-s0G"/>
-                                                    <constraint firstAttribute="height" constant="50" id="99K-JI-fLM"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" returnKeyType="continue"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F40-Zl-jdc">
-                                                <rect key="frame" x="0.0" y="150" width="300" height="50"/>
-                                                <color key="backgroundColor" name="roguePurple"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="van-QX-whk"/>
-                                                    <constraint firstAttribute="width" constant="300" id="y6f-LQ-ZPM"/>
-                                                </constraints>
-                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Confirm Change">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="8"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="confirmSignUp:" destination="2bd-kF-pJY" eventType="touchUpInside" id="pkW-Ob-Whh"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="buz-Gv-78X" secondAttribute="trailing" id="0hn-Pn-thU"/>
-                                            <constraint firstItem="buz-Gv-78X" firstAttribute="leading" secondItem="OWF-iA-c4C" secondAttribute="leading" id="37u-S5-Tto"/>
-                                            <constraint firstAttribute="width" constant="300" id="DAH-dx-aO1"/>
-                                            <constraint firstItem="buz-Gv-78X" firstAttribute="leading" secondItem="OWF-iA-c4C" secondAttribute="leading" id="HKB-MU-cMW"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="Lex-G1-tSq"/>
-                                            <constraint firstAttribute="trailing" secondItem="buz-Gv-78X" secondAttribute="trailing" id="N1n-Tz-cp2"/>
-                                            <constraint firstItem="F40-Zl-jdc" firstAttribute="top" secondItem="buz-Gv-78X" secondAttribute="bottom" constant="50" id="O9b-fZ-uvy"/>
-                                            <constraint firstAttribute="trailing" secondItem="nDs-aH-QXT" secondAttribute="trailing" id="gJk-m5-eEH"/>
-                                            <constraint firstAttribute="bottom" secondItem="F40-Zl-jdc" secondAttribute="bottom" id="hmZ-yE-6gF"/>
-                                            <constraint firstItem="F40-Zl-jdc" firstAttribute="leading" secondItem="buz-Gv-78X" secondAttribute="leading" id="sbg-aT-bOs"/>
-                                            <constraint firstItem="buz-Gv-78X" firstAttribute="top" secondItem="nDs-aH-QXT" secondAttribute="bottom" constant="10" id="sqF-zB-loy"/>
-                                            <constraint firstItem="nDs-aH-QXT" firstAttribute="leading" secondItem="OWF-iA-c4C" secondAttribute="leading" id="yrD-7R-KaS"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="DVy-ne-9EK"/>
-                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="VKv-uy-T2K"/>
-                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="W06-xP-oeV"/>
-                                    <constraint firstAttribute="bottom" secondItem="OWF-iA-c4C" secondAttribute="bottom" id="km9-K8-daX"/>
-                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="centerX" secondItem="eKB-Np-JYS" secondAttribute="centerX" id="tSh-kx-Nzz"/>
-                                    <constraint firstItem="OWF-iA-c4C" firstAttribute="top" secondItem="eKB-Np-JYS" secondAttribute="top" constant="50" id="yig-WK-T9V"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="I0Q-w1-ZRd"/>
-                        <color key="backgroundColor" name="ivpnBackgroundPrimary"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="eKB-Np-JYS" secondAttribute="trailing" id="3wc-Dm-trS"/>
-                            <constraint firstItem="eKB-Np-JYS" firstAttribute="leading" secondItem="wWh-p4-wLB" secondAttribute="leading" id="Kk8-CP-qIj"/>
-                            <constraint firstItem="eKB-Np-JYS" firstAttribute="bottom" secondItem="pGt-TN-bC1" secondAttribute="top" id="LzR-ZQ-xfv"/>
-                            <constraint firstItem="eKB-Np-JYS" firstAttribute="top" secondItem="I0Q-w1-ZRd" secondAttribute="top" id="TsD-kw-Kir"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Email Confirmation" id="Q04-9Y-GtW" userLabel="Navigation Items"/>
-                    <connections>
-                        <outlet property="confirmationCodeTextField" destination="buz-Gv-78X" id="qeM-1N-IFN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oqx-Z2-Z6z" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3317" y="-1556"/>
-        </scene>
     </scenes>
     <resources>
         <namedColor name="ivpnBackgroundPrimary">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="ivpnBackgroundSecondary">
+            <color red="0.51764705882352946" green="0.58039215686274515" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ivpnBackgroundTertiary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="ivpnBlue">
             <color red="0.22352941176470589" green="0.5607843137254902" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ivpnGray18">
+            <color red="0.25882352941176473" green="0.36470588235294116" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ivpnGray2">
             <color red="0.87450980392156863" green="0.89803921568627454" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -26,7 +26,7 @@ class ChangeEmailView: UIView {
     // MARK: - Private methods -
     
     private func setupView() {
-        // accountLabel.text = KeyChain.tempUsername ?? ""
+         // accountLabel.text = KeyChain.tempUsername ?? ""
     }
     
     private func setupLayout() {

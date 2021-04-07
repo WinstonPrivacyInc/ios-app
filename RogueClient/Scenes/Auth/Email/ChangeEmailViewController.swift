@@ -8,35 +8,42 @@
 
 import UIKit
 import SnapKit
-
-
 import Foundation
 import UIKit
 import JGProgressHUD
 import Amplify
+import KAPinField
 
 class ChangeEmailViewController: UIViewController {
-    
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet var keyboardView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var changeEmailView: UIView!
-    private var isChangingEmail = false
+    @IBOutlet weak var confirmationCodeField: KAPinField!
+    @IBOutlet weak var hiddenConfirmationCodeField: UITextField!
+    
     private var currentEmail = ""
+    private var isCognitoOperationInProgress = false
     private let hud = JGProgressHUD(style: .dark)
-    private var passwordResetUsername: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "changeEmailScreen"
-        // navigationController?.navigationBar.prefersLargeTitles = false
-        initNavigationBar()
         
-        Application.shared.authentication.getUserAttribute(key: .email) { (email) in
-            DispatchQueue.main.async {
-                self.currentEmail = email ?? ""
-                self.emailTextField.text = self.currentEmail
-                self.emailTextField.becomeFirstResponder()
-            }
+        DispatchQueue.main.async {
+            self.currentEmail = KeyChain.username ?? ""
+            self.emailTextField.text = self.currentEmail
         }
+        
+
+        hiddenConfirmationCodeField.inputAccessoryView = keyboardView
+        hiddenConfirmationCodeField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        
+        confirmationCodeField.properties.delegate = self
+        confirmationCodeField.properties.numberOfCharacters = 6
+        confirmationCodeField.properties.isSecure = false
+        confirmationCodeField.properties.animateFocus = true
+        
+        mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.dismissKeyboard)))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,76 +55,121 @@ class ChangeEmailViewController: UIViewController {
         }
     }
     
-    private func initNavigationBar() {
-        if isPresentedModally {
-            // navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
-        }
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        // bug in library, must set token property first in order for text to be set
+        confirmationCodeField.properties.token = confirmationCodeField.properties.token
+        confirmationCodeField.text = textField.text
     }
 
     @IBAction func changeEmail(_ sender: Any) {
-        present(NavigationManager.getConfirmationCodeViewController(), animated: true)
-        return
+        guard !isCognitoOperationInProgress else { return }
 
-        guard !isChangingEmail else { return }
-
-        isChangingEmail = true
         let email = (self.emailTextField.text ?? "").trim()
         
         guard email != self.currentEmail else {
-            isChangingEmail = false
             showAlert(title: "No Change", message: "Please enter a new email address.")
             return
         }
 
         guard ServiceStatus.isValidEmail(email: email) else {
-            isChangingEmail = false
             showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
             return
         }
 
-        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-        hud.detailTextLabel.text = "Changing email..."
-        hud.show(in: (navigationController?.view)!)
-
         emailTextField.resignFirstResponder()
-        
-        
-        
-        // showConfirmationAlert(title: "", message: "Enter the confirmation code sent to your email", action: "Confirm")
-        
-        
-//        Amplify.Auth.update(userAttribute: AuthUserAttribute(.email, value: email)) { result in
-//                do {
-//                    let updateResult = try result.get()
-//                    switch updateResult.nextStep {
-//                    case .confirmAttributeWithCode(let deliveryDetails, let info):
-//                        print("Confirm the attribute with details send to - \(deliveryDetails) \(String(describing: info))")
-//                        self.emailChangeSuccess()
-//                    case .done:
-//                        print("Update completed")
-//                    }
-//                } catch {
-//                    print("Update attribute failed with error \(error)")
-//                }
-//            }
+        isCognitoOperationInProgress = true
+        showIndicator(message: "Changing email...")
+    
+        Amplify.Auth.update(userAttribute: AuthUserAttribute(.email, value: email)) { result in
+                do {
+                    let updateResult = try result.get()
+                    switch updateResult.nextStep {
+                    case .confirmAttributeWithCode(let deliveryDetails, let info):
+                        print("Confirm the attribute with details send to - \(deliveryDetails) \(String(describing: info))")
+                        self.emailChangeSuccess(newEmail: email)
+                    case .done:
+                        print("Update completed")
+                    }
+                } catch {
+                    print("Update attribute failed with error \(error)")
+                }
+            }
     }
-//
-    private func emailChangeSuccess() -> Void {
-        self.isChangingEmail = false
+    
+    private func showIndicator(message: String) -> Void {
+        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
+        hud.detailTextLabel.text = message
+        hud.show(in: (navigationController?.view)!)
+    }
+
+    private func confirmEmailChange(confirmationCode: String) -> Void {
+        guard !isCognitoOperationInProgress else { return }
+        
+        guard ServiceStatus.isValidConfirmationCode(confirmationCode: confirmationCode) else {
+            showAlert(title: "Error", message: "Invalid confirmation code")
+            return
+        }
+        
+        isCognitoOperationInProgress = true
+        showIndicator(message: "Confirming change...")
+        
+        Amplify.Auth.confirm(userAttribute: .email, confirmationCode: confirmationCode) { result in
+                switch result {
+                case .success:
+                    print("Email attribute verified")
+                    self.emailChangeConfirmationSuccess()
+                case .failure(let error):
+                    print("Email attribute update failed with error \(error)")
+                    self.emailChangeConfirmationFailure(error: error)
+                }
+            }
+    }
+
+    private func emailChangeSuccess(newEmail: String) -> Void {
+        self.isCognitoOperationInProgress = false
+        KeyChain.username = newEmail
+        
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.performSegue(withIdentifier: "EmailChangeConfirm", sender: self)
-//            self.navigationController?.popViewController(animated: true)
-//            NotificationCenter.default.post(name: Notification.Name.EmailChangeSuccess, object: nil, userInfo: nil)
+            self.hiddenConfirmationCodeField.becomeFirstResponder()
+        }
+    }
+    
+    private func emailChangeConfirmationSuccess() -> Void {
+        self.isCognitoOperationInProgress = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.hiddenConfirmationCodeField.resignFirstResponder()
+            self.navigationController?.popViewController(animated: true)
+            NotificationCenter.default.post(name: Notification.Name.EmailChangeSuccess, object: nil, userInfo: nil)
         }
     }
 
-    private func emailChangeFailure(error: Error) -> Void {
-        self.isChangingEmail = false
+    private func emailChangeFailure(error: AuthError) -> Void {
+        self.isCognitoOperationInProgress = false
+        
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.showAlert(title: "Reset failed", message: "There was an error verifying the reset code.\(error)")
+            self.showAlert(title: "Reset failed", message: "There was an error changing your email.\(error.errorDescription)")
+        }
+    }
+    
+    private func emailChangeConfirmationFailure(error: AuthError) -> Void {
+        self.isCognitoOperationInProgress = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.showErrorAlert(title: "Confirmation failed", message: "There was an error confirming the operation. \(error.errorDescription)")
         }
     }
 
 }
+
+extension ChangeEmailViewController : KAPinFieldDelegate {
+  func pinField(_ field: KAPinField, didFinishWith code: String) {
+    print("didFinishWith : \(code)")
+    self.confirmEmailChange(confirmationCode: code)
+  }
+}
+

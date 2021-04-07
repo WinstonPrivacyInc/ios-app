@@ -97,6 +97,10 @@ struct ServiceStatus: Codable {
         return !password.isEmpty
     }
     
+    static func isValidConfirmationCode(confirmationCode: String) -> Bool {
+        return !confirmationCode.isEmpty && confirmationCode.count == 6
+    }
+    
     static func isValid(verificationCode: String) -> Bool {
         return !verificationCode.isEmpty && verificationCode.count == 6 && NumberFormatter().number(from: verificationCode) != nil
     }

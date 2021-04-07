@@ -74,9 +74,7 @@ class AccountViewController: UITableViewController {
         view.accessibilityIdentifier = "accountScreen"
         navigationController?.navigationBar.prefersLargeTitles = false
         
-        // let emailTap = UITapGestureRecognizer(target: self, action: #selector(presentChangePasswordView))
         passwordTableCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentChangePasswordView)))
-        
         emailTableCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(presentChangeEmailView)))
         
         initNavigationBar()

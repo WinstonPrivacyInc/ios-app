@@ -24,6 +24,7 @@
 import UIKit
 import FloatingPanel
 import NetworkExtension
+import Amplify
 
 class MainViewController: UIViewController {
     
@@ -78,6 +79,15 @@ class MainViewController: UIViewController {
         addObservers()
         startServersUpdate()
         startVPNStatusObserver()
+    }
+    
+    private func listenForAuthEvents() {
+        // Assumes `unsubscribeToken` is declared as an instance variable in your view
+         _ = Amplify.Hub.listen(to: .auth) { payload in
+            Application.shared.authentication.getUserAttribute(key: .email) { (email) in
+                KeyChain.username = email ?? ""
+            }
+         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
