@@ -154,14 +154,14 @@ class SignInViewController: UIViewController {
         
         if let data = notification.userInfo as? [String: String] {
             let email = data["email"]
-            let password = data["password"]
             
-            if email != nil && password != nil {
+            
+            if email != nil {
                 self.emailTextField.text = email
-                self.passwordTextField.text = password
-                
-                self.startSignInProcess()
+                self.passwordTextField.becomeFirstResponder()
             }
+            
+            showFlashNotification(message: "Your account was created", presentInView: (navigationController?.view)!)
         }
     }
     

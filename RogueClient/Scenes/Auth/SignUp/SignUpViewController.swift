@@ -64,6 +64,12 @@ class SignUpViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func confirmationCodeUpdated(_ textField: UITextField) {
+        // bug in library, must set token property first in order for text to be set
+        confirmationCodeField.properties.token = confirmationCodeField.properties.token
+        confirmationCodeField.text = textField.text
+    }
+    
     @IBAction func singUp(_ sender: Any) {
         guard !isCognitoOperationInProgress else { return }
         
@@ -106,14 +112,12 @@ class SignUpViewController: UIViewController {
             }
     }
     
-    func confirmSignUp(_ sender: Any) {
+    func confirmSignUp(confirmationCode: String) {
         guard !isCognitoOperationInProgress else { return }
         
         isCognitoOperationInProgress = true
-        
-        let confirmationCode = (self.confirmationCodeField.text ?? "").trim()
-        
-        guard !confirmationCode.isEmpty else {
+
+        guard ServiceStatus.isValidConfirmationCode(confirmationCode: confirmationCode) else {
             showAlert(title: "Invalid Code", message: "Please enter a valid confirmation code.")
             isCognitoOperationInProgress = false
             return
@@ -123,19 +127,27 @@ class SignUpViewController: UIViewController {
         hud.detailTextLabel.text = "Confirming your email..."
         hud.show(in: (navigationController?.view)!)
         
-        let signUpUsername = ""
-        Amplify.Auth.confirmSignUp(for: signUpUsername, confirmationCode: confirmationCode) { result in
+        let email = (emailTextField.text ?? "").trim()
+        Amplify.Auth.confirmSignUp(for: email, confirmationCode: confirmationCode) { result in
                 switch result {
                 case .success:
-                    self.emailConfirmSuccess()
+                    self.emailConfirmSuccess(email: email)
                 case .failure(let error):
                     self.emailConfirmFailure(error: error)
                 }
         }
     }
     
-    private func emailConfirmSuccess() -> Void {
+    private func emailConfirmSuccess(email: String) -> Void {
+        self.isCognitoOperationInProgress = false
         
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.dismissViewController(self)
+            
+            let data = ["email": email]
+            NotificationCenter.default.post(name: Notification.Name.EmailConfirmationSuccess, object: nil, userInfo: data)
+        }
     }
     
     private func emailConfirmFailure(error: AuthError) -> Void {
@@ -176,15 +188,6 @@ class SignUpViewController: UIViewController {
         return password
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "SignUpConfirm" {
-//            if let destinationVC = segue.destination as? SignUpConfirmViewController {
-//                destinationVC.signUpUsername = (emailTextField.text ?? "").trim()
-//                destinationVC.signUpPassword = getPasswordNonSecure()
-//            }
-//        }
-//    }
-    
 }
 
 extension SignUpViewController: UITextFieldDelegate {
@@ -210,8 +213,7 @@ extension SignUpViewController: UITextFieldDelegate {
 
 extension SignUpViewController : KAPinFieldDelegate {
   func pinField(_ field: KAPinField, didFinishWith code: String) {
-    print("didFinishWith : \(code)")
-    // self.confirmEmailChange(confirmationCode: code)
+     self.confirmSignUp(confirmationCode: code)
   }
 }
 

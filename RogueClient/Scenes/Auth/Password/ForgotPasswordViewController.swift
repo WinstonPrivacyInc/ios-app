@@ -178,7 +178,7 @@ class ForgotPasswordViewController: UIViewController {
             self.hud.dismiss()
             self.dismissViewController(self)
             let data = ["email": self.passwordResetUsername]
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Notification.Name.PasswordResetSuccess.rawValue), object: nil, userInfo: data)
+            NotificationCenter.default.post(name: Notification.Name.PasswordResetSuccess, object: nil, userInfo: data)
         }
     }
     
