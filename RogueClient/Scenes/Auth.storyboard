@@ -149,6 +149,15 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </stackView>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hideen Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVj-wG-RWZ" userLabel="Hidden Confirmation Code Field">
+                                        <rect key="frame" x="86" y="369" width="149" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartQuotesType="no"/>
+                                        <connections>
+                                            <action selector="confirmationCodeUpdated:" destination="BYZ-38-t0r" eventType="editingChanged" id="ORc-kt-apL"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -182,11 +191,56 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="confirmationCodeField" destination="N9G-I7-vsc" id="Xqo-9C-9fd"/>
                         <outlet property="emailTextField" destination="Hx4-AY-bCY" id="0sY-d1-uGd"/>
+                        <outlet property="hiddenCodeField" destination="JVj-wG-RWZ" id="ED8-z5-ffj"/>
+                        <outlet property="keyboardView" destination="3KL-LR-xJA" id="mlB-cE-du4"/>
                         <outlet property="passwordTextField" destination="TmK-Gg-7sn" id="1MX-t1-OAs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="3KL-LR-xJA" userLabel="Confirmation Code View">
+                    <rect key="frame" x="0.0" y="0.0" width="411" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-v5-3oo">
+                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="PN5-wH-xTa"/>
+                                <constraint firstAttribute="width" constant="300" id="i9N-VJ-rJg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9G-I7-vsc" customClass="KAPinField" customModule="KAPinField">
+                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
+                            <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="0MK-Vm-RuZ"/>
+                                <constraint firstAttribute="width" constant="300" id="UkP-A1-Apb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="bQn-ec-8cB"/>
+                    <color key="backgroundColor" name="ivpnBackgroundSecondary"/>
+                    <constraints>
+                        <constraint firstItem="N9G-I7-vsc" firstAttribute="top" secondItem="1yd-v5-3oo" secondAttribute="bottom" constant="10" id="F9f-xq-hFU"/>
+                        <constraint firstItem="1yd-v5-3oo" firstAttribute="top" secondItem="3KL-LR-xJA" secondAttribute="top" constant="10" id="OSa-0b-xfa"/>
+                        <constraint firstItem="N9G-I7-vsc" firstAttribute="top" secondItem="1yd-v5-3oo" secondAttribute="bottom" constant="10" id="WHX-4w-aha"/>
+                        <constraint firstItem="N9G-I7-vsc" firstAttribute="centerX" secondItem="3KL-LR-xJA" secondAttribute="centerX" id="Xyq-xo-dn9"/>
+                        <constraint firstItem="bQn-ec-8cB" firstAttribute="bottom" secondItem="N9G-I7-vsc" secondAttribute="bottom" constant="10" id="lbM-ly-w7b"/>
+                        <constraint firstItem="1yd-v5-3oo" firstAttribute="centerX" secondItem="3KL-LR-xJA" secondAttribute="centerX" id="m6p-rh-Dab"/>
+                        <constraint firstItem="1yd-v5-3oo" firstAttribute="top" secondItem="3KL-LR-xJA" secondAttribute="top" constant="10" id="zLQ-CJ-4Jo"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" name="ivpnGray18"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </objects>
             <point key="canvasLocation" x="1262" y="-230"/>
         </scene>
@@ -1530,7 +1584,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-63-ebA">
-                            <rect key="frame" x="55.5" y="28" width="300" height="30"/>
+                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Rn8-dt-yEF"/>
                                 <constraint firstAttribute="width" constant="300" id="Z0j-cM-HlD"/>
@@ -1540,7 +1594,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-qg-EqE" customClass="KAPinField" customModule="KAPinField">
-                            <rect key="frame" x="55.5" y="68" width="300" height="50"/>
+                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
                             <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="322-4j-bER"/>

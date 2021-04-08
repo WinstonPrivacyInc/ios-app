@@ -61,12 +61,6 @@ class MainViewController: UIViewController {
                 }
             }
         }
-//        guard evaluateIsLoggedIn() else {
-//            return
-//        }
-//        presentAccountScreen()
-        
-        
     }
     
     // MARK: - View lifecycle -

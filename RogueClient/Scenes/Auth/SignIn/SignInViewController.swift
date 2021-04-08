@@ -24,6 +24,7 @@
 import UIKit
 import JGProgressHUD
 import Amplify
+import KAPinField
 
 class SignInViewController: UIViewController {
 
@@ -47,10 +48,13 @@ class SignInViewController: UIViewController {
         return sessionManager
     }()
     
-    private var signInStarted = false
+    private var isCognitoOperationInProgress = false
     private let hud = JGProgressHUD(style: .dark)
     private var actionType: ActionType = .signin
     
+    @IBOutlet weak var confirmationCodeField: KAPinField!
+    @IBOutlet weak var hiddenCodeField: UITextField!
+    @IBOutlet var keyboardView: UIView!
     var passwordResetUserName: String = ""
     var passwordResetSuccess: Bool = false
     
@@ -126,6 +130,12 @@ class SignInViewController: UIViewController {
         
         addObservers()
         hideKeyboardOnTap()
+        
+        hiddenCodeField.inputAccessoryView = keyboardView
+        confirmationCodeField.properties.delegate = self
+        confirmationCodeField.properties.numberOfCharacters = 6
+        confirmationCodeField.properties.isSecure = false
+        confirmationCodeField.properties.animateFocus = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -196,44 +206,189 @@ class SignInViewController: UIViewController {
     
     // MARK: - Methods -
     
+    private func showIndicator(message: String) -> Void {
+        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
+        hud.detailTextLabel.text = message
+        hud.show(in: (navigationController?.view)!)
+    }
+    
+    @IBAction func confirmationCodeUpdated(_ textField: UITextField) {
+        // bug in library, must set token property first in order for text to be set
+        confirmationCodeField.properties.token = confirmationCodeField.properties.token
+        confirmationCodeField.text = textField.text
+    }
+    
+    private func resendSignUpCode() {
+        let username = (self.emailTextField.text ?? "").trim()
+        
+        showIndicator(message: "Requesting new code")
+        isCognitoOperationInProgress = true
+        
+        Amplify.Auth.resendSignUpCode(for: username) { result in
+            switch result {
+            case .success(let deliveryDetails):
+                log(info: "resendSignUpCode success \(deliveryDetails)")
+                self.resendCodeSuccess()
+            case .failure(let error):
+                log(error: "resendSignUpCode \(error.errorDescription)")
+                self.resendCodeFailure(authError: error)
+            }
+        }
+        
+    }
+    
     private func startSignInProcess() {
-        guard !signInStarted else { return }
+        guard !isCognitoOperationInProgress else { return }
         
         let username = (self.emailTextField.text ?? "").trim()
         let password = (self.passwordTextField.text ?? "").trim()
         
-        signInStarted = true
+        isCognitoOperationInProgress = true
         
         guard ServiceStatus.isValidEmail(email: username) else {
-            signInStarted = false
+            isCognitoOperationInProgress = false
             showAlert(title: "Invalid Email", message: "Please enter a valid email address.")
             return
         }
         
         guard ServiceStatus.isValidPassword(password: password) else {
-            signInStarted = false
+            isCognitoOperationInProgress = false
             showAlert(title: "Invalid Password", message: "Please enter your password.")
             return
         }
         
-        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-        hud.detailTextLabel.text = "Signin in..."
-        hud.show(in: (navigationController?.view)!)
+        showIndicator(message: "Signin in...")
         
         Amplify.Auth.signIn(username: username, password: password) { result in
-           switch result {
-           case .success:
-                self.signInSuccess()
-               
-           case .failure(let error):
-                self.signInFailure(authError: error)
-           }
-       }
+                switch result {
+                case .success:
+                    do {
+                        let signInResult = try result.get()
+                        // ref: https://docs.amplify.aws/lib/auth/signin_next_steps/q/platform/ios
+                        
+                        switch signInResult.nextStep {
+                        
+                        case .confirmSignInWithSMSMFACode(_, _):
+                            // our cognito pool is not configured for sms authentication
+                            log(info: "sign in confirmSignInWithSMSMFACode result")
+                            self.signInResultNotSupport(message: "SMS sign in not supported. Contact support.")
+                            
+                        case .confirmSignInWithCustomChallenge(_):
+                            // our cognito pool is not configured for custom answer challenge
+                            log(info: "sign in confirmSignInWithCustomChallenge result")
+                            self.signInResultNotSupport(message: "Challenge answer sign in not supported. Contact support.")
+                        
+                        case .confirmSignInWithNewPassword(_):
+                            // this will happen if you add a user directly via aws cognito UI, not handling as we never do it that way
+                            log(info: "sign in confirmSignInWithNewPassword result")
+                            self.signInResultNotSupport(message: "Your user is in an invalid state.")
+                            
+                        case .resetPassword(_):
+                            print("here")
+                            
+                        case .confirmSignUp(_):
+                            log(info: "Email not confirmed during sign up.")
+                            self.onConfirmSignUpResult()
+
+                        case .done:
+                            log(info: "Sign in success")
+                            self.signInSuccess()
+                        }
+                        
+                    } catch (let error) {
+                        log(error: error.localizedDescription)
+                        self.signInFailure(authError: AuthError(error: error))
+                    }
+                
+                case .failure(let error):
+                    log(error: "Sign in error \(error)")
+                    self.signInFailure(authError: error)
+                }
+            }
+
+    }
+    
+    private func onResetPasswordResult() {
+        self.isCognitoOperationInProgress = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            
+            self.showActionAlert(
+                title: "Password expired",
+                message: "You current password has expired and needs to be reset in order to access your account",
+                action: "Reset Now", actionHandler:  { (action) in
+                    self.presentForgotPasswordView(self)
+                })
+        }
+    }
+    
+    private func confirmSignUp(confirmationCode: String) -> Void {
+        self.showIndicator(message: "Requesting new code...")
+        self.isCognitoOperationInProgress = true
+        
+        let username = (self.emailTextField.text ?? "").trim()
+        Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
+                switch result {
+                case .success:
+                    log(info: "confirmSignUpSucess")
+                    self.confirmSignUpSuccess()
+                case .failure(let error):
+                    log(error: "confirmSignUpError \(error.errorDescription)")
+                    self.confirmSignUpFailure(error: error)
+                }
+            }
+    }
+    
+    private func confirmSignUpSuccess() {
+        self.isCognitoOperationInProgress = false
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.startSignInProcess()
+        }
+    }
+    
+    private func confirmSignUpFailure(error: AuthError) {
+        self.isCognitoOperationInProgress = false
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.showAlert(title: "Error", message: error.errorDescription)
+        }
+        
+    }
+    
+    private func onConfirmSignUpResult() {
+        self.isCognitoOperationInProgress = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            
+            self.showActionSheet(
+                title: "Your account exists, but your email is not verified. Verify your email using the code sent to your email during sign up.",
+                actions: ["I have a code", "I need a new code"],
+                cancelAction: "Cancel",
+                sourceView: self.view) { (selectedIndex) in
+                
+                if selectedIndex == 0 {
+                    self.hiddenCodeField.becomeFirstResponder()
+                } else if selectedIndex == 1 {
+                    self.resendSignUpCode()
+                }
+            }
+        }
+    }
+    
+    private func signInResultNotSupport(message: String) -> Void {
+        self.isCognitoOperationInProgress = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.showAlert(title: "Error", message: message)
+        }
     }
     
     private func signInSuccess() -> Void {
-        print("Sign in success")
-        self.signInStarted = false
+        self.isCognitoOperationInProgress = false
         
         DispatchQueue.main.async {
             self.createSessionSuccess()
@@ -242,12 +397,29 @@ class SignInViewController: UIViewController {
     }
     
     private func signInFailure(authError: AuthError) -> Void {
-        print("Sign in failure \(authError.errorDescription)")
-        self.signInStarted = false
+        self.isCognitoOperationInProgress = false
         
         DispatchQueue.main.async {
             self.hud.dismiss()
             self.showAlert(title: "Sign in failed", message: authError.errorDescription)
+        }
+    }
+    
+    private func resendCodeSuccess() -> Void {
+        self.isCognitoOperationInProgress = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.hiddenCodeField.becomeFirstResponder()
+        }
+    }
+    
+    private func resendCodeFailure(authError: AuthError) -> Void {
+        self.isCognitoOperationInProgress = false
+        
+        DispatchQueue.main.async {
+            self.hud.dismiss()
+            self.showAlert(title: "Resend code failed", message: authError.errorDescription)
         }
     }
     
@@ -258,9 +430,7 @@ class SignInViewController: UIViewController {
             return
         }
         
-        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-        hud.detailTextLabel.text = "Creating new account..."
-        hud.show(in: (navigationController?.view)!)
+        showIndicator(message: "Creating new account...")
         
         let request = ApiRequestDI(method: .post, endpoint: Config.apiAccountNew, params: [URLQueryItem(name: "product_name", value: "IVPN Standard")])
         
@@ -304,6 +474,13 @@ class SignInViewController: UIViewController {
     
 }
 
+extension SignInViewController : KAPinFieldDelegate {
+  func pinField(_ field: KAPinField, didFinishWith code: String) {
+    self.confirmSignUp(confirmationCode: code)
+  }
+}
+
+
 // MARK: - SessionManagerDelegate -
 
 extension SignInViewController {
@@ -316,7 +493,7 @@ extension SignInViewController {
     
     override func createSessionSuccess() {
         hud.dismiss()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         
         KeyChain.username = (self.emailTextField.text ?? "").trim()
         
@@ -329,7 +506,7 @@ extension SignInViewController {
     
     override func createSessionServiceNotActive() {
         hud.dismiss()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         
         KeyChain.username = (self.emailTextField.text ?? "").trim()
         
@@ -342,7 +519,7 @@ extension SignInViewController {
     
     override func createSessionAccountNotActivated(error: Any?) {
         hud.dismiss()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         
         KeyChain.tempUsername = (self.emailTextField.text ?? "").trim()
         Application.shared.authentication.removeStoredCredentials()
@@ -357,7 +534,7 @@ extension SignInViewController {
     override func createSessionTooManySessions(error: Any?) {
         hud.dismiss()
         Application.shared.authentication.removeStoredCredentials()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         
         if let error = error as? ErrorResultSessionNew, let data = error.data {
             if data.upgradable {
@@ -376,7 +553,7 @@ extension SignInViewController {
     override func createSessionAuthenticationError() {
         hud.dismiss()
         Application.shared.authentication.removeStoredCredentials()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         showErrorAlert(title: "Error", message: "Account ID is incorrect")
     }
     
@@ -389,13 +566,13 @@ extension SignInViewController {
         
         hud.dismiss()
         Application.shared.authentication.removeStoredCredentials()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         showErrorAlert(title: "Error", message: message)
     }
     
     override func twoFactorRequired(error: Any?) {
         hud.dismiss()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         present(NavigationManager.getTwoFactorViewController(delegate: self), animated: true)
     }
     
@@ -407,19 +584,19 @@ extension SignInViewController {
         }
         
         hud.dismiss()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         showErrorAlert(title: "Error", message: message)
     }
     
     override func captchaRequired(error: Any?) {
         hud.dismiss()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         presentCaptchaScreen(error: error)
     }
     
     override func captchaIncorrect(error: Any?) {
         hud.dismiss()
-        signInStarted = false
+        isCognitoOperationInProgress = false
         presentCaptchaScreen(error: error)
     }
     

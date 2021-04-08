@@ -45,7 +45,11 @@ class ForgotPasswordViewController: UIViewController {
         confirmationCodeField.properties.isSecure = false
         confirmationCodeField.properties.animateFocus = true
         
-        // mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.dismissKeyboard)))
+        mainView.addGestureRecognizer(UITapGestureRecognizer(target: self, action:  #selector(self.dismissKeyboard)))
+        
+        if ServiceStatus.isValidEmail(email: passwordResetUsername) {
+            inputTextField.text = passwordResetUsername
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
