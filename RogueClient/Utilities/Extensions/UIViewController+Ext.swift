@@ -95,6 +95,14 @@ extension UIViewController {
         openWebPage("https://winstonprivacy.com/pages/privacy-policy")
     }
     
+    func openSupportPage() {
+        openWebPage("https://support.winstonprivacy.com")
+    }
+    
+    func openFeedbackPage() {
+        openWebPage("https://feedback.winstonprivacy.com")
+    }
+    
     func registerUserActivity(type: String, title: String) {
         let activity = NSUserActivity(activityType: type)
         activity.title = title

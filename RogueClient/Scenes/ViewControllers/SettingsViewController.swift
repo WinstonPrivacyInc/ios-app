@@ -142,9 +142,9 @@ class SettingsViewController: UITableViewController {
             return
         }
         
-        showActionAlert(title: "Sign", message: "Are you sure you want to sign out?", action: "Sign out") { _ in
+        showActionAlert(title: "Sign", message: "Are you sure you want to sign out?", action: "Sign out", actionHandler:  { _ in
             self.signOut()
-        }
+        })
     }
     
     @IBAction func authenticate(_ sender: Any) {
@@ -196,12 +196,12 @@ class SettingsViewController: UITableViewController {
             keepAliveSwitch.setOn(false, animated: false)
         }
         
-        if UserDefaults.shared.isLogging {
-            loggingSwitch.setOn(true, animated: false)
-        }
+        // if UserDefaults.shared.isLogging {
+            // loggingSwitch.setOn(true, animated: false)
+        // }
         
         updateCellInset(cell: entryServerCell, inset: UserDefaults.shared.isMultiHop)
-        updateCellInset(cell: loggingCell, inset: UserDefaults.shared.isLogging)
+        // updateCellInset(cell: loggingCell, inset: UserDefaults.shared.isLogging)
         
         updateSelectedServer()
         
@@ -418,20 +418,25 @@ extension SettingsViewController {
             sendLogs()
         }
         
-        if indexPath.section == 3 && indexPath.row == 0 {
+        // about session
+        if indexPath.section == 3 {
+            if indexPath.row == 0 {
+                openTermsOfService()
+
+            } else if indexPath.row == 1 {
+                openPrivacyPolicy()
+                
+            } else if indexPath.row == 2 {
+                openFeedbackPage()
+                
+            } else if indexPath.row == 3 {
+                openSupportPage()
+            }
+            
             tableView.deselectRow(at: indexPath, animated: true)
-            openTermsOfService()
         }
         
-        if indexPath.section == 3 && indexPath.row == 1 {
-            tableView.deselectRow(at: indexPath, animated: true)
-            openPrivacyPolicy()
-        }
         
-        if indexPath.section == 3 && indexPath.row == 2 {
-            tableView.deselectRow(at: indexPath, animated: true)
-            contactSupport()
-        }
         
         if indexPath.section == 1 && indexPath.row == 0 {
             tableView.deselectRow(at: indexPath, animated: true)
