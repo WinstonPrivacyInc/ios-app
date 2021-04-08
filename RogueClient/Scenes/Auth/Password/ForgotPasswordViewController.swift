@@ -176,7 +176,7 @@ class ForgotPasswordViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.navigationController?.popViewController(animated: true)
+            self.dismissViewController(self)
             let data = ["email": self.passwordResetUsername]
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: Notification.Name.PasswordResetSuccess.rawValue), object: nil, userInfo: data)
         }

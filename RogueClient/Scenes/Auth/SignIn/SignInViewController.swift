@@ -83,14 +83,12 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func presentForgotPasswordView(_ sender: Any) {
-        performSegue(withIdentifier: "PasswordReset", sender: self)
+        present(NavigationManager.getForgotPasswordViewController(), animated: true)
     }
-    
-    
+          
     @IBAction func presentSignUpView(_ sender: Any) {
         present(NavigationManager.getSignUpViewController(), animated: true)
     }
-    
     
     @IBAction func openScanner(_ sender: AnyObject) {
         present(NavigationManager.getScannerViewController(delegate: self), animated: true)
@@ -176,7 +174,7 @@ class SignInViewController: UIViewController {
             }
         }
         
-        showAlert(title: "Success", message: "Your password has been reset.")
+        showFlashNotification(message: "Your password has been reset", presentInView: (navigationController?.view)!)
     }
     
     @objc func newSession() {

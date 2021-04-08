@@ -9,6 +9,7 @@
 import UIKit
 import JGProgressHUD
 import Amplify
+import KAPinField
 
 class SignUpViewController: UIViewController {
  
@@ -25,14 +26,24 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    @IBOutlet var keyboardView: UIView!
+    @IBOutlet weak var hiddenConfirmationCodeField: UITextField!
+    
+    @IBOutlet weak var confirmationCodeField: KAPinField!
     private let hud = JGProgressHUD(style: .dark)
-    var isSigningUp: Bool = false
+    var isCognitoOperationInProgress: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "signUpScreen"
         navigationController?.navigationBar.prefersLargeTitles = false
         emailTextField.becomeFirstResponder()
+        
+        hiddenConfirmationCodeField.inputAccessoryView = keyboardView
+        confirmationCodeField.properties.delegate = self
+        confirmationCodeField.properties.numberOfCharacters = 6
+        confirmationCodeField.properties.isSecure = false
+        confirmationCodeField.properties.animateFocus = true
 //
 //        addObservers()
 //        hideKeyboardOnTap()
@@ -54,7 +65,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func singUp(_ sender: Any) {
-        guard !isSigningUp else { return }
+        guard !isCognitoOperationInProgress else { return }
         
         let email = (emailTextField.text ?? "").trim()
         guard ServiceStatus.isValidEmail(email: email) else {
@@ -69,7 +80,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        isSigningUp = true
+        isCognitoOperationInProgress = true
 
         hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
         hud.detailTextLabel.text = "Signin up..."
@@ -95,16 +106,53 @@ class SignUpViewController: UIViewController {
             }
     }
     
+    func confirmSignUp(_ sender: Any) {
+        guard !isCognitoOperationInProgress else { return }
+        
+        isCognitoOperationInProgress = true
+        
+        let confirmationCode = (self.confirmationCodeField.text ?? "").trim()
+        
+        guard !confirmationCode.isEmpty else {
+            showAlert(title: "Invalid Code", message: "Please enter a valid confirmation code.")
+            isCognitoOperationInProgress = false
+            return
+        }
+        
+        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
+        hud.detailTextLabel.text = "Confirming your email..."
+        hud.show(in: (navigationController?.view)!)
+        
+        let signUpUsername = ""
+        Amplify.Auth.confirmSignUp(for: signUpUsername, confirmationCode: confirmationCode) { result in
+                switch result {
+                case .success:
+                    self.emailConfirmSuccess()
+                case .failure(let error):
+                    self.emailConfirmFailure(error: error)
+                }
+        }
+    }
+    
+    private func emailConfirmSuccess() -> Void {
+        
+    }
+    
+    private func emailConfirmFailure(error: AuthError) -> Void {
+        
+    }
+    
     private func goToSignUpConfirm() -> Void {
-        self.isSigningUp = false
+        self.isCognitoOperationInProgress = false
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.performSegue(withIdentifier: "SignUpConfirm", sender: self)
+            // self.performSegue(withIdentifier: "SignUpConfirm", sender: self)
+            self.hiddenConfirmationCodeField.becomeFirstResponder()
         }
     }
     
     private func signUpSucces() -> Void {
-        self.isSigningUp = false
+        self.isCognitoOperationInProgress = false
         DispatchQueue.main.async {
             self.hud.dismiss()
             self.dismiss(animated: true, completion: nil)
@@ -112,7 +160,7 @@ class SignUpViewController: UIViewController {
     }
     
     private func signUpError(error: AuthError) {
-        self.isSigningUp = false
+        self.isCognitoOperationInProgress = false
         DispatchQueue.main.async {
             self.hud.dismiss()
             self.showAlert(title: "Error", message: error.errorDescription)
@@ -128,14 +176,14 @@ class SignUpViewController: UIViewController {
         return password
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SignUpConfirm" {
-            if let destinationVC = segue.destination as? SignUpConfirmViewController {
-                destinationVC.signUpUsername = (emailTextField.text ?? "").trim()
-                destinationVC.signUpPassword = getPasswordNonSecure()
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "SignUpConfirm" {
+//            if let destinationVC = segue.destination as? SignUpConfirmViewController {
+//                destinationVC.signUpUsername = (emailTextField.text ?? "").trim()
+//                destinationVC.signUpPassword = getPasswordNonSecure()
+//            }
+//        }
+//    }
     
 }
 
@@ -159,4 +207,11 @@ extension SignUpViewController: UITextFieldDelegate {
     
 }
 
+
+extension SignUpViewController : KAPinFieldDelegate {
+  func pinField(_ field: KAPinField, didFinishWith code: String) {
+    print("didFinishWith : \(code)")
+    // self.confirmEmailChange(confirmationCode: code)
+  }
+}
 
