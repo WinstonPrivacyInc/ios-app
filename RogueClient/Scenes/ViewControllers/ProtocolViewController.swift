@@ -30,6 +30,7 @@ class ProtocolViewController: UITableViewController {
     
     @IBOutlet weak var protocolAndPortLabel: UILabel!
     @IBOutlet weak var ipAddressLabel: UILabel!
+    @IBOutlet weak var publicKeyLabel: UILabel!
     
     var collection = [[ConnectionSettings]]()
     let keyManager = AppKeyManager()
@@ -61,13 +62,17 @@ class ProtocolViewController: UITableViewController {
     
     private func initLables() {
         protocolAndPortLabel.text = Application.shared.settings.connectionProtocol.format()
-        ipAddressLabel.text = KeyChain.wgInterfaceAddresses ?? "0.0.0.0"
+        ipAddressLabel.text = KeyChain.wgInterfaceAddresses ?? "Local IP Unavailable"
+        publicKeyLabel.text = KeyChain.wgInterfacePublicKey ?? "Public key Unavailable"
     }
     
     @IBAction func copyPublicKey(_ sender: UIButton) {
-//        guard let text = publicKeyLabel.text else { return }
-//        UIPasteboard.general.string = text
-//        showFlashNotification(message: "Public key copied to clipboard", presentInView: (navigationController?.view)!)
+        guard let text = publicKeyLabel.text else {
+            return
+        }
+        
+        UIPasteboard.general.string = text
+        showFlashNotification(message: "Public key copied to clipboard", presentInView: (navigationController?.view)!)
     }
     
     @IBAction func copyIpAddress(_ sender: UIButton) {

@@ -1034,7 +1034,7 @@
                                                     <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                     <state key="normal" title="Button" image="icon-copy"/>
                                                     <connections>
-                                                        <action selector="copyPublicKey:" destination="C8Y-kZ-eYV" eventType="touchUpInside" id="sMO-Ee-wM7"/>
+                                                        <action selector="copyPublicKey:" destination="C8Y-kZ-eYV" eventType="touchUpInside" id="xQh-3Q-q7S"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1241,6 +1241,7 @@
                     <connections>
                         <outlet property="ipAddressLabel" destination="CmU-OR-lLN" id="iob-tA-ID8"/>
                         <outlet property="protocolAndPortLabel" destination="ErJ-P3-dN9" id="EeD-W7-de7"/>
+                        <outlet property="publicKeyLabel" destination="9SI-BI-tAk" id="gGa-zj-TyB"/>
                         <segue destination="BYK-jY-KqR" kind="show" identifier="WireGuardSettings" id="hDT-b3-Uin"/>
                     </connections>
                 </tableViewController>
