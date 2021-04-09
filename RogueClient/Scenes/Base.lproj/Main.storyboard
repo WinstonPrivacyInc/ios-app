@@ -1239,6 +1239,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Protocol" id="fhG-b4-Oe9"/>
                     <connections>
+                        <outlet property="ipAddressLabel" destination="CmU-OR-lLN" id="iob-tA-ID8"/>
                         <outlet property="protocolAndPortLabel" destination="ErJ-P3-dN9" id="EeD-W7-de7"/>
                         <segue destination="BYK-jY-KqR" kind="show" identifier="WireGuardSettings" id="hDT-b3-Uin"/>
                     </connections>

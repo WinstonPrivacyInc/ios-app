@@ -29,6 +29,7 @@ class ProtocolViewController: UITableViewController {
     // MARK: - Properties -
     
     @IBOutlet weak var protocolAndPortLabel: UILabel!
+    @IBOutlet weak var ipAddressLabel: UILabel!
     
     var collection = [[ConnectionSettings]]()
     let keyManager = AppKeyManager()
@@ -60,6 +61,7 @@ class ProtocolViewController: UITableViewController {
     
     private func initLables() {
         protocolAndPortLabel.text = Application.shared.settings.connectionProtocol.format()
+        ipAddressLabel.text = KeyChain.wgInterfaceAddresses ?? "0.0.0.0"
     }
     
     @IBAction func copyPublicKey(_ sender: UIButton) {
@@ -69,9 +71,12 @@ class ProtocolViewController: UITableViewController {
     }
     
     @IBAction func copyIpAddress(_ sender: UIButton) {
-//        guard let text = ipAddressLabel.text else { return }
-//        UIPasteboard.general.string = text
-//        showFlashNotification(message: "IP address copied to clipboard", presentInView: (navigationController?.view)!)
+        guard let text = ipAddressLabel.text else {
+            return
+        }
+        
+        UIPasteboard.general.string = text
+        showFlashNotification(message: "IP address copied to clipboard", presentInView: (navigationController?.view)!)
     }
     
     func updateCollection(connectionProtocol: ConnectionSettings) {
