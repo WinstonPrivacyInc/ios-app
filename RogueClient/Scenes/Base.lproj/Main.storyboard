@@ -1066,7 +1066,7 @@
                                                     <color key="textColor" name="ivpnLabel5"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key generated on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvi-Fw-sza">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generated on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wvi-Fw-sza">
                                                     <rect key="frame" x="16" y="10" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="In2-Of-sfj"/>
@@ -1102,7 +1102,7 @@
                                                     <color key="textColor" name="ivpnLabel5"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key expires on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-5T-enn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expires on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmz-5T-enn">
                                                     <rect key="frame" x="16" y="10" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Fny-QL-UVp"/>
@@ -1138,7 +1138,7 @@
                                                     <color key="textColor" name="ivpnLabel5"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key will be rotated on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-va-PQ6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next rotation on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-va-PQ6">
                                                     <rect key="frame" x="16" y="10" width="343" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="DJb-bO-JFe"/>
@@ -1176,7 +1176,7 @@
                                                         <action selector="keyRotationChanged:" destination="C8Y-kZ-eYV" eventType="valueChanged" id="XfU-MD-Jw7"/>
                                                     </connections>
                                                 </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key rotation rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-qX-dBo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-qX-dBo">
                                                     <rect key="frame" x="16" y="10" width="241" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="gpy-rJ-qsL"/>
@@ -1243,7 +1243,10 @@
                     <navigationItem key="navigationItem" title="Protocol" id="fhG-b4-Oe9"/>
                     <connections>
                         <outlet property="ipAddressLabel" destination="CmU-OR-lLN" id="iob-tA-ID8"/>
-                        <outlet property="keyRotationIntervalLabel" destination="LDv-iG-iPi" id="zyh-JZ-T0l"/>
+                        <outlet property="keyExpirationLabel" destination="leL-0V-Ppj" id="PBR-Ue-aKY"/>
+                        <outlet property="keyGeneratedLabel" destination="He0-tS-dem" id="xRF-s6-deL"/>
+                        <outlet property="keyNextRotationLabel" destination="uQ5-oj-Ogi" id="dMK-kd-EWn"/>
+                        <outlet property="keyRotationIntervalLabel" destination="LDv-iG-iPi" id="FKb-Lt-r9F"/>
                         <outlet property="keyRotationStepper" destination="h9p-vG-3k8" id="30h-me-eeI"/>
                         <outlet property="protocolAndPortLabel" destination="ErJ-P3-dN9" id="EeD-W7-de7"/>
                         <outlet property="publicKeyLabel" destination="9SI-BI-tAk" id="gGa-zj-TyB"/>

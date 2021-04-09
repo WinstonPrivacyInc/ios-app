@@ -31,8 +31,14 @@ class ProtocolViewController: UITableViewController {
     @IBOutlet weak var protocolAndPortLabel: UILabel!
     @IBOutlet weak var ipAddressLabel: UILabel!
     @IBOutlet weak var publicKeyLabel: UILabel!
-    @IBOutlet weak var keyRotationIntervalLabel: UILabel!
+    
+    
     @IBOutlet weak var keyRotationStepper: UIStepper!
+    @IBOutlet weak var keyGeneratedLabel: UILabel!
+    @IBOutlet weak var keyExpirationLabel: UILabel!
+    @IBOutlet weak var keyNextRotationLabel: UILabel!
+    @IBOutlet weak var keyRotationIntervalLabel: UILabel!
+    
     var collection = [[ConnectionSettings]]()
     let keyManager = AppKeyManager()
     let hud = JGProgressHUD(style: .dark)
@@ -65,8 +71,16 @@ class ProtocolViewController: UITableViewController {
     
     private func updateUILabels() {
         protocolAndPortLabel.text = Application.shared.settings.connectionProtocol.format()
-        ipAddressLabel.text = KeyChain.wgInterfaceAddresses ?? "Local IP unavailable"
-        publicKeyLabel.text = KeyChain.wgInterfacePublicKey ?? "Public key unavailable"
+        ipAddressLabel.text = KeyChain.wgInterfaceAddresses ?? "Not available"
+        publicKeyLabel.text = KeyChain.wgInterfacePublicKey ?? "Not available"
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        
+        keyGeneratedLabel.text = dateFormatter.string(from: AppKeyManager.keyTimestamp)
+        keyExpirationLabel.text = dateFormatter.string(from: AppKeyManager.keyExpirationTimestamp)
+        keyNextRotationLabel.text = dateFormatter.string(from: AppKeyManager.keyRegenerationTimestamp)
         keyRotationIntervalLabel.text = "Rotate every \(UserDefaults.shared.wgRegenerationRate) day(s)"
     }
     
@@ -222,6 +236,11 @@ extension ProtocolViewController {
     
     /** antonio - this gets called every time you update the dropdown for the protocol field... this is what will create different keys for connections g*/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // TODO: antonio... remove this function... no need to handle entire table by index... just add handler to whatever buttons need to be handled individually.....
+        if true {
+            return
+        }
         
         let connectionProtocol = collection[indexPath.section][indexPath.row]
         
