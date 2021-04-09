@@ -23,6 +23,7 @@
 
 import UIKit
 
+// TODO antonio - remove this class
 class WireGuardRegenerationRateCell: UITableViewCell {
     
     // MARK: - @IBOutlets -
@@ -32,24 +33,52 @@ class WireGuardRegenerationRateCell: UITableViewCell {
     
     // MARK: - @IBActions -
     
+//    @IBAction func updateRegenerateRate(_ sender: UIStepper) {
+//        UserDefaults.shared.set(Int(sender.value), forKey: UserDefaults.Key.wgRegenerationRate)
+//        regenerationLabel.text = regenerationLabelText(days: Int(sender.value))
+//    }
     @IBAction func updateRegenerateRate(_ sender: UIStepper) {
-        //UserDefaults.shared.set(Int(sender.value), forKey: UserDefaults.Key.wgRegenerationRate)
-        //regenerationLabel.text = regenerationLabelText(days: Int(sender.value))
+        UserDefaults.shared.set(Int(sender.value), forKey: UserDefaults.Key.wgRegenerationRate)
+        regenerationLabel.text = regenerationLabelText(days: Int(sender.value))
     }
     
     // MARK: - View Lifecycle -
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //regenerationLabel.text = regenerationLabelText(days: UserDefaults.shared.wgRegenerationRate)
-        //stepper.value = Double(UserDefaults.shared.wgRegenerationRate)
+        regenerationLabel.text = regenerationLabelText(days: UserDefaults.shared.wgRegenerationRate)
+        stepper.value = Double(UserDefaults.shared.wgRegenerationRate)
     }
     
     // MARK: - Methods -
     
     private func regenerationLabelText(days: Int) -> String {
-        if days == 1 { return "Rotate key every \(days) day" }
-        return "Rotate key every \(days) days"
+        var rotationInterval = ""
+        switch days {
+        case 1:
+            rotationInterval = "day"
+        case 2:
+            rotationInterval = "two days"
+        case 3:
+            rotationInterval = "three days"
+        case 4:
+            rotationInterval = "four days"
+        case 5:
+            rotationInterval = "five days"
+        case 6:
+            rotationInterval = "six days"
+        case 7:
+            rotationInterval = "seven days"
+        case 8:
+            rotationInterval = "eight days"
+        case 9:
+            rotationInterval = "nine days"
+        default:
+            rotationInterval = "\(days) days"
+        }
+        
+        
+        return "Rotate key every \(rotationInterval)"
     }
     
 }

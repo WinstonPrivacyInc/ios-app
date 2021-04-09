@@ -31,7 +31,8 @@ class ProtocolViewController: UITableViewController {
     @IBOutlet weak var protocolAndPortLabel: UILabel!
     @IBOutlet weak var ipAddressLabel: UILabel!
     @IBOutlet weak var publicKeyLabel: UILabel!
-    
+    @IBOutlet weak var keyRotationIntervalLabel: UILabel!
+    @IBOutlet weak var keyRotationStepper: UIStepper!
     var collection = [[ConnectionSettings]]()
     let keyManager = AppKeyManager()
     let hud = JGProgressHUD(style: .dark)
@@ -44,7 +45,9 @@ class ProtocolViewController: UITableViewController {
         keyManager.delegate = self
         updateCollection(connectionProtocol: Application.shared.settings.connectionProtocol)
         initNavigationBar()
-        initLables()
+        updateUILabels()
+        
+        keyRotationStepper.value = Double(UserDefaults.shared.wgRegenerationRate)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,12 +63,17 @@ class ProtocolViewController: UITableViewController {
         }
     }
     
-    private func initLables() {
+    private func updateUILabels() {
         protocolAndPortLabel.text = Application.shared.settings.connectionProtocol.format()
-        ipAddressLabel.text = KeyChain.wgInterfaceAddresses ?? "Local IP Unavailable"
-        publicKeyLabel.text = KeyChain.wgInterfacePublicKey ?? "Public key Unavailable"
+        ipAddressLabel.text = KeyChain.wgInterfaceAddresses ?? "Local IP unavailable"
+        publicKeyLabel.text = KeyChain.wgInterfacePublicKey ?? "Public key unavailable"
+        keyRotationIntervalLabel.text = "Rotate every \(UserDefaults.shared.wgRegenerationRate) day(s)"
     }
     
+    @IBAction func keyRotationChanged(_ sender: UIStepper) {
+        UserDefaults.shared.set(Int(sender.value), forKey: UserDefaults.Key.wgRegenerationRate)
+        updateUILabels()
+    }
     @IBAction func copyPublicKey(_ sender: UIButton) {
         guard let text = publicKeyLabel.text else {
             return
