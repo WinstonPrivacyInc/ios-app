@@ -161,12 +161,12 @@ class SettingsViewController: UITableViewController {
         super.viewDidLoad()
         view.accessibilityIdentifier = "settingsScreen"
         
-        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: OperationQueue.main) { _ in
-                self.updateSelectedServer()
-                self.updateSelectedProtocol()
-        }
+//        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: OperationQueue.main) { _ in
+//                self.updateSelectedServer()
+//                self.updateSelectedProtocol()
+//        }
         
-        updateSelectedProtocol()
+        // updateSelectedProtocol()
         addObservers()
         
         versionLabel.layer.cornerRadius = 4
@@ -200,10 +200,10 @@ class SettingsViewController: UITableViewController {
             // loggingSwitch.setOn(true, animated: false)
         // }
         
-        updateCellInset(cell: entryServerCell, inset: UserDefaults.shared.isMultiHop)
+        // updateCellInset(cell: entryServerCell, inset: UserDefaults.shared.isMultiHop)
         // updateCellInset(cell: loggingCell, inset: UserDefaults.shared.isLogging)
         
-        updateSelectedServer()
+        // updateSelectedServer()
         
         Application.shared.connectionManager.onStatusChanged { status in
             if status == .disconnected {
@@ -334,23 +334,23 @@ class SettingsViewController: UITableViewController {
         deselectRow(sender: sender)
     }
     
-    private func updateSelectedServer() {
-        let serverViewModel = VPNServerViewModel(server: Application.shared.settings.selectedServer)
-        let exitServerViewModel = VPNServerViewModel(server: Application.shared.settings.selectedExitServer)
-        selectedServerName.text = serverViewModel.formattedServerNameForSettings
-        selectedServerFlag.image = serverViewModel.imageForCountryCodeForSettings
-        selectedExitServerName.text = exitServerViewModel.formattedServerNameForSettings
-        selectedExitServerFlag.image = exitServerViewModel.imageForCountryCodeForSettings
-    }
+//    private func updateSelectedServer() {
+//        let serverViewModel = VPNServerViewModel(server: Application.shared.settings.selectedServer)
+//        let exitServerViewModel = VPNServerViewModel(server: Application.shared.settings.selectedExitServer)
+//        selectedServerName.text = serverViewModel.formattedServerNameForSettings
+//        selectedServerFlag.image = serverViewModel.imageForCountryCodeForSettings
+//        selectedExitServerName.text = exitServerViewModel.formattedServerNameForSettings
+//        selectedExitServerFlag.image = exitServerViewModel.imageForCountryCodeForSettings
+//    }
     
-    private func updateSelectedProtocol() {
-        selectedProtocol.text = Application.shared.settings.connectionProtocol.format()
-        
-        if Application.shared.settings.connectionProtocol == .ipsec {
-            multiHopSwitch.setOn(false, animated: true)
-            tableView.reloadData()
-        }
-    }
+//    private func updateSelectedProtocol() {
+////        selectedProtocol.text = Application.shared.settings.connectionProtocol.format()
+////
+////        if Application.shared.settings.connectionProtocol == .ipsec {
+////            multiHopSwitch.setOn(false, animated: true)
+////            tableView.reloadData()
+////        }
+//    }
     
     private func sendLogs() {
         guard evaluateIsLoggedIn() else {
@@ -402,12 +402,12 @@ class SettingsViewController: UITableViewController {
 extension SettingsViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 && indexPath.row == 0 { return 60 }
-        if indexPath.section == 0 && indexPath.row == 2 && !multiHopSwitch.isOn { return 0 }
-        if indexPath.section == 2 && indexPath.row == 1 { return 60 }
-        if indexPath.section == 2 && indexPath.row == 2 { return 60 }
-        if indexPath.section == 2 && indexPath.row == 4 { return 60 }
-        if indexPath.section == 2 && indexPath.row == 5 && !loggingSwitch.isOn { return 0 }
+//        if indexPath.section == 0 && indexPath.row == 0 { return 60 }
+//        if indexPath.section == 0 && indexPath.row == 2 && !multiHopSwitch.isOn { return 0 }
+//        if indexPath.section == 2 && indexPath.row == 1 { return 60 }
+//        if indexPath.section == 2 && indexPath.row == 2 { return 60 }
+//        if indexPath.section == 2 && indexPath.row == 4 { return 60 }
+//        if indexPath.section == 2 && indexPath.row == 5 && !loggingSwitch.isOn { return 0 }
         
         return UITableView.automaticDimension
     }
@@ -419,7 +419,7 @@ extension SettingsViewController {
 //        }
         
         // about session
-        if indexPath.section == 3 {
+        if indexPath.section == 1 {
             tableView.deselectRow(at: indexPath, animated: true)
             
             if indexPath.row == 0 {
@@ -438,35 +438,35 @@ extension SettingsViewController {
         
         
         
-        if indexPath.section == 1 && indexPath.row == 0 {
-            tableView.deselectRow(at: indexPath, animated: true)
-            
-            // TODO: replace with cognito
-            guard evaluateIsLoggedIn() else {
-                return
-            }
-            
-            guard evaluateIsServiceActive() else {
-                return
-            }
-            
-            guard Application.shared.connectionManager.status.isDisconnected() else {
-                showConnectedAlert(message: "To change protocol, please first disconnect", sender: tableView.cellForRow(at: indexPath))
-                return
-            }
-            
-            Application.shared.connectionManager.isOnDemandEnabled { enabled in
-                guard !enabled else {
-                    self.showDisableVPNPrompt(sourceView: tableView.cellForRow(at: indexPath)!) {
-                        Application.shared.connectionManager.resetRulesAndDisconnect()
-                        self.performSegue(withIdentifier: "SelectProtocol", sender: nil)
-                    }
-                    return
-                }
-                
-                self.performSegue(withIdentifier: "SelectProtocol", sender: nil)
-            }
-        }
+//        if indexPath.section == 1 && indexPath.row == 0 {
+//            tableView.deselectRow(at: indexPath, animated: true)
+//
+//            // TODO: replace with cognito
+//            guard evaluateIsLoggedIn() else {
+//                return
+//            }
+//
+//            guard evaluateIsServiceActive() else {
+//                return
+//            }
+//
+//            guard Application.shared.connectionManager.status.isDisconnected() else {
+//                showConnectedAlert(message: "To change protocol, please first disconnect", sender: tableView.cellForRow(at: indexPath))
+//                return
+//            }
+//
+//            Application.shared.connectionManager.isOnDemandEnabled { enabled in
+//                guard !enabled else {
+//                    self.showDisableVPNPrompt(sourceView: tableView.cellForRow(at: indexPath)!) {
+//                        Application.shared.connectionManager.resetRulesAndDisconnect()
+//                        self.performSegue(withIdentifier: "SelectProtocol", sender: nil)
+//                    }
+//                    return
+//                }
+//
+//                self.performSegue(withIdentifier: "SelectProtocol", sender: nil)
+//            }
+//        }
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
