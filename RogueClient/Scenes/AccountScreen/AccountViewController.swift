@@ -61,11 +61,9 @@ class AccountViewController: UITableViewController {
     }
     
     @IBAction func presentChangeEmailView(_ send: Any) -> Void {
-        performSegue(withIdentifier: "ChangeEmail", sender: self)
+        present(NavigationManager.getChangeEmailViewController(), animated: true, completion: nil)
+        // performSegue(withIdentifier: "ChangeEmail", sender: self)
     }
-    
-    
-    // MARK: - View Lifecycle -
     
     override func viewDidLoad() {
         super.viewDidLoad()

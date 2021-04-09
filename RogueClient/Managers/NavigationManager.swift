@@ -61,20 +61,17 @@ class NavigationManager {
 //        return viewController
 //    }
     
-//    static func getForgotPasswordConfirmController() -> UIViewController {
-//        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-//        let navController = storyboard.instantiateViewController(withIdentifier: "forgotPasswordView") as? UINavigationController
-//        navController?.modalPresentationStyle = .formSheet
-//        return navController!
-//    }
+    static func getChangePasswordViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Account", bundle: nil)
+        let navController = storyboard.instantiateViewController(withIdentifier: "changePasswordView")
+        return navController
+    }
     
-//    static func getSignUpConfirmController() -> UIViewController {
-//        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-//        let navController = storyboard.instantiateViewController(withIdentifier: "signUpView") as? UINavigationController
-//        navController?.modalPresentationStyle = .formSheet
-//        return navController!
-//    }
-    
+    static func getChangeEmailViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Account", bundle: nil)
+        let navController = storyboard.instantiateViewController(withIdentifier: "changeEmailView")
+        return navController
+    }
     
     static func getChangePlanViewController() -> UIViewController {
         let storyBoard = UIStoryboard(name: "Auth", bundle: nil)

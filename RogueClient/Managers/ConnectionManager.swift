@@ -171,28 +171,38 @@ class ConnectionManager {
     }
     
     func isOnDemandEnabled(completion: @escaping (Bool) -> ()) {
-        vpnManager.getManagerFor(tunnelType: .ipsec) { manager in
+        
+        self.vpnManager.getManagerFor(tunnelType: .wireguard) { manager in
             if manager.isOnDemandEnabled {
                 completion(true)
                 return
             }
             
-            self.vpnManager.getManagerFor(tunnelType: .openvpn) { manager in
-                if manager.isOnDemandEnabled {
-                    completion(true)
-                    return
-                }
-                
-                self.vpnManager.getManagerFor(tunnelType: .wireguard) { manager in
-                    if manager.isOnDemandEnabled {
-                        completion(true)
-                        return
-                    }
-                    
-                    completion(false)
-                }
-            }
+            completion(false)
         }
+        
+//        vpnManager.getManagerFor(tunnelType: .ipsec) { manager in
+//            if manager.isOnDemandEnabled {
+//                completion(true)
+//                return
+//            }
+//
+//            self.vpnManager.getManagerFor(tunnelType: .openvpn) { manager in
+//                if manager.isOnDemandEnabled {
+//                    completion(true)
+//                    return
+//                }
+//
+//                self.vpnManager.getManagerFor(tunnelType: .wireguard) { manager in
+//                    if manager.isOnDemandEnabled {
+//                        completion(true)
+//                        return
+//                    }
+//
+//                    completion(false)
+//                }
+//            }
+//        }
     }
     
     func combineStatus(selectedTunnelType: TunnelType, ipSecStatus: NEVPNStatus, openVPNStatus: NEVPNStatus, wireGuardStatus: NEVPNStatus, completion: (TunnelType, NEVPNStatus) -> Void) {

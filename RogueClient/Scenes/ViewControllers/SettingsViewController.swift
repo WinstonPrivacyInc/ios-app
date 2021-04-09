@@ -413,13 +413,15 @@ extension SettingsViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 && indexPath.row == 5 {
-            tableView.deselectRow(at: indexPath, animated: true)
-            sendLogs()
-        }
+//        if indexPath.section == 2 && indexPath.row == 5 {
+//            tableView.deselectRow(at: indexPath, animated: true)
+//            sendLogs()
+//        }
         
         // about session
         if indexPath.section == 3 {
+            tableView.deselectRow(at: indexPath, animated: true)
+            
             if indexPath.row == 0 {
                 openTermsOfService()
 
@@ -432,8 +434,6 @@ extension SettingsViewController {
             } else if indexPath.row == 3 {
                 openSupportPage()
             }
-            
-            tableView.deselectRow(at: indexPath, animated: true)
         }
         
         
@@ -441,6 +441,7 @@ extension SettingsViewController {
         if indexPath.section == 1 && indexPath.row == 0 {
             tableView.deselectRow(at: indexPath, animated: true)
             
+            // TODO: replace with cognito
             guard evaluateIsLoggedIn() else {
                 return
             }

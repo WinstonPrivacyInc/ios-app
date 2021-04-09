@@ -246,23 +246,21 @@
                             <outlet property="signOutButton" destination="SwN-YJ-sTW" id="ilL-qH-okh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Account" id="jb9-oA-zpC"/>
+                    <navigationItem key="navigationItem" title="Account" id="jb9-oA-zpC" userLabel="Navigation Items"/>
                     <connections>
                         <outlet property="accountView" destination="mzy-cM-Xuz" id="tng-oU-x9u"/>
                         <outlet property="emailTableCell" destination="Nvz-JG-TSm" id="s51-WF-cEF"/>
                         <outlet property="passwordTableCell" destination="tPc-ui-STl" id="uuF-3j-Deu"/>
-                        <segue destination="twk-2k-wvd" kind="show" identifier="ChangeEmail" id="NsC-Qs-Le5"/>
-                        <segue destination="Uhx-Yq-ypJ" kind="show" identifier="ChangePassword" id="QLf-X3-qnd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxL-6Z-g8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1296" y="-1556"/>
         </scene>
-        <!--Account Navigation Controller-->
+        <!--Account View Controller-->
         <scene sceneID="BKg-UP-aGv">
             <objects>
-                <navigationController storyboardIdentifier="accountView" title="Account Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aEH-VO-SKg" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="accountView" title="Account View Controller" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aEH-VO-SKg" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3cz-cr-kar">
@@ -387,7 +385,7 @@
                             <constraint firstItem="jZJ-vH-Jgp" firstAttribute="centerX" secondItem="1sm-r7-mfj" secondAttribute="centerX" id="oI7-hN-0Gy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Email" id="5r1-WQ-QI1" userLabel="Navigation Items"/>
+                    <navigationItem key="navigationItem" title="Account" id="1Rw-vj-cDW" userLabel="Navigation Items"/>
                     <connections>
                         <outlet property="confirmationCodeField" destination="6Lt-O6-E3A" id="WoH-DR-E3e"/>
                         <outlet property="emailTextField" destination="RJY-sz-HUr" id="KcP-DD-n73"/>
@@ -402,7 +400,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gn-CI-wZg">
-                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
+                            <rect key="frame" x="55.5" y="28" width="300" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="AOG-26-VdC"/>
                                 <constraint firstAttribute="height" constant="30" id="X11-N4-9Ks"/>
@@ -412,7 +410,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-O6-E3A" customClass="KAPinField" customModule="KAPinField">
-                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
+                            <rect key="frame" x="55.5" y="68" width="300" height="50"/>
                             <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="1If-3m-9cr"/>
@@ -440,7 +438,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2307.2463768115945" y="-1556.25"/>
+            <point key="canvasLocation" x="1296" y="15"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="Jxd-AU-DG1">
@@ -572,7 +570,7 @@
                             <constraint firstItem="HgY-1H-lds" firstAttribute="leading" secondItem="hN7-50-vZY" secondAttribute="leading" id="pWB-bo-r9Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Password" id="Orp-9z-LBu" userLabel="Navigation Items"/>
+                    <navigationItem key="navigationItem" title="Account" id="0s0-lZ-ski" userLabel="Navigation Items"/>
                     <connections>
                         <outlet property="currentPasswordField" destination="ZXP-nW-iw7" id="szz-ZB-BcI"/>
                         <outlet property="newPasswordField" destination="OqF-Cs-gfh" id="d7S-eY-gwK"/>
@@ -580,7 +578,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eM9-KC-aE1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2309" y="-828"/>
+            <point key="canvasLocation" x="1296" y="-840"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="bb9-wK-BpL">
+            <objects>
+                <navigationController storyboardIdentifier="changePasswordView" title="Change Password View Controller" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yuz-Cz-KKN" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mc9-vo-e2l">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Uhx-Yq-ypJ" kind="relationship" relationship="rootViewController" id="FMe-j0-KoM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qy-V2-BpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="-840"/>
+        </scene>
+        <!--Change Email View Controller-->
+        <scene sceneID="itF-oN-VE8">
+            <objects>
+                <navigationController storyboardIdentifier="changeEmailView" title="Change Email View Controller" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZFm-X7-0Yc" customClass="NavigationController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <value key="contentSizeForViewInPopover" type="size" width="540" height="700"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZLj-55-Smb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="twk-2k-wvd" kind="relationship" relationship="rootViewController" id="9od-Db-j8I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dmN-Sg-fhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="15"/>
         </scene>
     </scenes>
     <resources>

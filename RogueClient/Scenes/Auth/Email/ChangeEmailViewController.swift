@@ -28,6 +28,7 @@ class ChangeEmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "changeEmailScreen"
+        initNavigationBar()
         
         DispatchQueue.main.async {
             self.currentEmail = KeyChain.username ?? ""
@@ -51,6 +52,12 @@ class ChangeEmailViewController: UIViewController {
         // iOS 13 UIKit bug: https://forums.developer.apple.com/thread/121861 Remove when fixed in future releases
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.setNeedsLayout()
+        }
+    }
+    
+    private func initNavigationBar() {
+        if isPresentedModally {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
         }
     }
     
@@ -140,8 +147,10 @@ class ChangeEmailViewController: UIViewController {
         DispatchQueue.main.async {
             self.hud.dismiss()
             self.hiddenConfirmationCodeField.resignFirstResponder()
-            self.navigationController?.popViewController(animated: true)
-            NotificationCenter.default.post(name: Notification.Name.EmailChangeSuccess, object: nil, userInfo: nil)
+            
+            self.dismiss(animated: true) {
+                NotificationCenter.default.post(name: Notification.Name.EmailChangeSuccess, object: nil, userInfo: nil)
+            }
         }
     }
 

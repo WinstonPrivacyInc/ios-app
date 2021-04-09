@@ -171,7 +171,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Protocol" id="ueS-xt-i7a">
+                            <tableViewSection headerTitle="Connection Settings" id="ueS-xt-i7a">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="44" id="1ca-U8-dvU">
                                         <rect key="frame" x="0.0" y="259.33333206176758" width="375" height="44"/>

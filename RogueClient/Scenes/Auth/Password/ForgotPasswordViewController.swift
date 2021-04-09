@@ -37,7 +37,8 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "forgotPasswordScreen"
-        navigationController?.navigationBar.prefersLargeTitles = false
+        // navigationController?.navigationBar.prefersLargeTitles = false
+        initNavigationBar()
 
         hiddenConfirmationCodeField.inputAccessoryView = keyboardView
         confirmationCodeField.properties.delegate = self
@@ -58,6 +59,12 @@ class ForgotPasswordViewController: UIViewController {
         // iOS 13 UIKit bug: https://forums.developer.apple.com/thread/121861 Remove when fixed in future releases
         if #available(iOS 13.0, *) {
             navigationController?.navigationBar.setNeedsLayout()
+        }
+    }
+    
+    private func initNavigationBar() {
+        if isPresentedModally {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
         }
     }
     
