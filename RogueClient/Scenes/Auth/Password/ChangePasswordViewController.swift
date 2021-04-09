@@ -81,8 +81,9 @@ class ChangePasswordViewController: UIViewController {
         self.isChangingPassword = false
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.navigationController?.popViewController(animated: true)
-            NotificationCenter.default.post(name: Notification.Name.PasswordChangeSuccess, object: nil, userInfo: nil)
+            self.dismiss(animated: true) {
+                NotificationCenter.default.post(name: Notification.Name.PasswordChangeSuccess, object: nil, userInfo: nil)
+            }
         }
     }
     
