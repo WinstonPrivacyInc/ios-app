@@ -151,8 +151,30 @@ class ProtocolViewController: UITableViewController {
     
     func selectPreferredProtocolAndPort(connectionProtocol: ConnectionSettings) {
         
-        print("antonio this is where you select a protocol")
+        guard Application.shared.connectionManager.status.isDisconnected() else {
+            showConnectedAlert(message: "To change protocol, please first disconnect", sender: self.protocolAndPortLabel)
+            return
+        }
         
+        Application.shared.connectionManager.isOnDemandEnabled { enabled in
+            guard !enabled else {
+                self.showDisableVPNPrompt(sourceView: self.protocolAndPortLabel) {
+                    self.disconnect()
+                    self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
+                }
+                return
+            }
+            
+            self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
+        }
+        
+        #if targetEnvironment(simulator)
+            // above will fail if running on simulator. vpn configurations are only supported on device
+            self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
+        #endif
+    }
+    
+    func showProtocolSelectionMenu(connectionProtocol: ConnectionSettings) {
         let selected = Application.shared.settings.connectionProtocol.formatProtocol()
         let protocols = connectionProtocol.supportedProtocols(protocols: Config.supportedProtocols)
         let actions = connectionProtocol.supportedProtocolsFormat(protocols: Config.supportedProtocols)
@@ -165,8 +187,51 @@ class ProtocolViewController: UITableViewController {
             let selectedProtocol = protocols[index]
             Application.shared.settings.connectionProtocol = selectedProtocol
             self.protocolAndPortLabel.text = selectedProtocol.format()
-            // self.tableView.reloadData()
             NotificationCenter.default.post(name: Notification.Name.ProtocolSelected, object: nil)
+        }
+    }
+    
+    func showConnectedAlert(message: String, sender: Any?, completion: (() -> Void)? = nil) {
+        if let sourceView = sender as? UIView {
+            showActionSheet(title: message, actions: ["Disconnect"], sourceView: sourceView) { index in
+                if let completion = completion {
+                    completion()
+                }
+                
+                switch index {
+                case 0:
+                    let status = Application.shared.connectionManager.status
+                    guard Application.shared.connectionManager.canDisconnect(status: status) else {
+                        self.showAlert(title: "Cannot disconnect", message: "Rogue VPN cannot disconnect from the current network while it is marked \"Untrusted\"")
+                        return
+                    }
+                    self.disconnect()
+                default:
+                    break
+                }
+            }
+        }
+    }
+    
+    @objc func disconnect() {
+        log(info: "Disconnect VPN")
+        
+        let manager = Application.shared.connectionManager
+        
+        if UserDefaults.shared.networkProtectionEnabled {
+            manager.resetRulesAndDisconnectShortcut()
+        } else {
+            manager.resetRulesAndDisconnect()
+        }
+        
+        registerUserActivity(type: UserActivityType.Disconnect, title: UserActivityTitle.Disconnect)
+        
+        DispatchQueue.delay(0.5) {
+            if Application.shared.connectionManager.status.isDisconnected() {
+                Pinger.shared.ping()
+                Application.shared.settings.updateRandomServer()
+            }
+            
         }
     }
     
@@ -237,14 +302,7 @@ extension ProtocolViewController {
     /** antonio - this gets called every time you update the dropdown for the protocol field... this is what will create different keys for connections g*/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // TODO: antonio... remove this function... no need to handle entire table by index... just add handler to whatever buttons need to be handled individually.....
-        if true {
-            return
-        }
-        
         let connectionProtocol = collection[indexPath.section][indexPath.row]
-        
-        print("connection protocol \(connectionProtocol)")
         
         if connectionProtocol == .wireguard(.udp, 1) {
             return

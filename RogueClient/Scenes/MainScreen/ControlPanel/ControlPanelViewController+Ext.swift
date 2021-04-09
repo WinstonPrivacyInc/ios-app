@@ -78,8 +78,28 @@ extension ControlPanelViewController {
         return 85
     }
     
+    private func onProtocolMenuSelected() {
+        self.evaluateIsSignedIn { (isSignedIn) in
+            if isSignedIn {
+                
+                // TODO: antonio
+                // guard evaluateIsServiceActive() else {
+                //   return
+                // }
+                
+                self.presentProtocolView()
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.row == 7 {
+            self.onProtocolMenuSelected()
+            return
+        }
+        
         
         if indexPath.row == 2 {
             if let topViewController = UIApplication.topViewController() as? MainViewController {
@@ -111,37 +131,10 @@ extension ControlPanelViewController {
             }
         }
         
-        if indexPath.row == 7 {
-            
-            self.presentSelectProtocol()
-            return
-            
-//            guard evaluateIsLoggedIn() else {
-//                return
-//            }
-//            
-//            guard evaluateIsServiceActive() else {
-//                return
-//            }
-            
-            guard Application.shared.connectionManager.status.isDisconnected() else {
-                showConnectedAlert(message: "To change protocol, please first disconnect", sender: controlPanelView.protocolLabel)
-                return
-            }
-            
-            Application.shared.connectionManager.isOnDemandEnabled { enabled in
-                guard !enabled else {
-                    self.showDisableVPNPrompt(sourceView: self.controlPanelView.protocolLabel) {
-                        self.disconnect()
-                        self.presentSelectProtocol()
-                    }
-                    return
-                }
-                
-                self.presentSelectProtocol()
-            }
-        }
+
     }
+    
+    
     
 }
 
