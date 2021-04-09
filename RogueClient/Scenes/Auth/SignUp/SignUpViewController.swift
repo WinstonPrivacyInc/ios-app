@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "signUpScreen"
-        navigationController?.navigationBar.prefersLargeTitles = false
+        // navigationController?.navigationBar.prefersLargeTitles = false
         emailTextField.becomeFirstResponder()
         
         hiddenConfirmationCodeField.inputAccessoryView = keyboardView

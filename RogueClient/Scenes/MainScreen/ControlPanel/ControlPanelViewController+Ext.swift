@@ -28,16 +28,53 @@ import JGProgressHUD
 
 extension ControlPanelViewController {
     
+    enum Menus: Int {
+        case status = 0
+        case multiHop = 1
+        case entryServer = 2
+        case exitServer = 3
+        case connectionLabel = 4
+        case antiTracker = 5
+        case wifiNetwork = 6
+        case connectionProtocol = 7
+        case isp = 8
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 { return 100 }
-        if indexPath.row == 1 && Application.shared.settings.connectionProtocol.tunnelType() != .openvpn { return 0 }
-        if indexPath.row == 1 { return 44 }
-        if indexPath.row == 3 && !UserDefaults.shared.isMultiHop { return 0 }
-        if indexPath.row == 4 { return 52 }
-        if indexPath.row == 6 && !UserDefaults.shared.networkProtectionEnabled { return 0 }
-        if indexPath.row == 8 { return 236 }
-        if indexPath.row == 9 { return 0 }
-
+        // 0 = status row
+        if indexPath.row == Menus.status.rawValue { return 100 }
+        // 1 = single-hop / multi-hop row
+        if indexPath.row == Menus.multiHop.rawValue {
+            // if indexPath.row == 1 && Application.shared.settings.connectionProtocol.tunnelType() != .openvpn { return 0 }
+            // if indexPath.row == 1 { return 44 }
+            return 0
+        }
+        
+        // 2 = entry server
+        // 3 = exit server
+        if indexPath.row == Menus.exitServer.rawValue {
+            //if indexPath.row == 3 && !UserDefaults.shared.isMultiHop { return 0 }
+            return 0
+        }
+        
+        // 4 connection details label -> to be removed
+        if indexPath.row == Menus.connectionLabel.rawValue {
+            // if indexPath.row == 4 { return 52 }
+            return 0
+        }
+        
+        // 5 = anti tracker toggle
+        // 6 = wifi network
+        if indexPath.row == Menus.wifiNetwork.rawValue {
+            // if indexPath.row == 6 && !UserDefaults.shared.networkProtectionEnabled { return 0 }
+            return 0
+        }
+        // 7 = connection settings (wireguard, udp/port)
+        // 8 = ip/location/isp
+        if indexPath.row == Menus.isp.rawValue {
+            return 236
+        }
+        
         return 85
     }
     

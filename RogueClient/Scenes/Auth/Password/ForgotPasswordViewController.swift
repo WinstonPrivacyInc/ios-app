@@ -64,7 +64,7 @@ class ForgotPasswordViewController: UIViewController {
     
     private func initNavigationBar() {
         if isPresentedModally {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
+            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(dismissViewController(_:)))
         }
     }
     
@@ -187,9 +187,11 @@ class ForgotPasswordViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.dismissViewController(self)
-            let data = ["email": self.passwordResetUsername]
-            NotificationCenter.default.post(name: Notification.Name.PasswordResetSuccess, object: nil, userInfo: data)
+            
+            self.dismiss(animated: true) {
+                let data = ["email": self.passwordResetUsername]
+                NotificationCenter.default.post(name: Notification.Name.PasswordResetSuccess, object: nil, userInfo: data)
+            }
         }
     }
     

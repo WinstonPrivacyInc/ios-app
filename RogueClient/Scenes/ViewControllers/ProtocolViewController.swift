@@ -28,6 +28,8 @@ class ProtocolViewController: UITableViewController {
     
     // MARK: - Properties -
     
+    @IBOutlet weak var protocolAndPortLabel: UILabel!
+    
     var collection = [[ConnectionSettings]]()
     let keyManager = AppKeyManager()
     let hud = JGProgressHUD(style: .dark)
@@ -40,6 +42,7 @@ class ProtocolViewController: UITableViewController {
         keyManager.delegate = self
         updateCollection(connectionProtocol: Application.shared.settings.connectionProtocol)
         initNavigationBar()
+        initLables()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,6 +56,22 @@ class ProtocolViewController: UITableViewController {
         if isPresentedModally {
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissViewController(_:)))
         }
+    }
+    
+    private func initLables() {
+        protocolAndPortLabel.text = Application.shared.settings.connectionProtocol.format()
+    }
+    
+    @IBAction func copyPublicKey(_ sender: UIButton) {
+//        guard let text = publicKeyLabel.text else { return }
+//        UIPasteboard.general.string = text
+//        showFlashNotification(message: "Public key copied to clipboard", presentInView: (navigationController?.view)!)
+    }
+    
+    @IBAction func copyIpAddress(_ sender: UIButton) {
+//        guard let text = ipAddressLabel.text else { return }
+//        UIPasteboard.general.string = text
+//        showFlashNotification(message: "IP address copied to clipboard", presentInView: (navigationController?.view)!)
     }
     
     func updateCollection(connectionProtocol: ConnectionSettings) {
@@ -107,9 +126,14 @@ class ProtocolViewController: UITableViewController {
         let actions = connectionProtocol.supportedProtocolsFormat(protocols: Config.supportedProtocols)
         
         showActionSheet(image: nil, selected: selected, largeText: true, centered: true, title: "Preferred protocol & port", actions: actions, sourceView: view) { index in
-            guard index > -1 else { return }
-            Application.shared.settings.connectionProtocol = protocols[index]
-            self.tableView.reloadData()
+            guard index > -1 else {
+                return
+            }
+            
+            let selectedProtocol = protocols[index]
+            Application.shared.settings.connectionProtocol = selectedProtocol
+            self.protocolAndPortLabel.text = selectedProtocol.format()
+            // self.tableView.reloadData()
             NotificationCenter.default.post(name: Notification.Name.ProtocolSelected, object: nil)
         }
     }
@@ -118,61 +142,61 @@ class ProtocolViewController: UITableViewController {
 
 // MARK: - UITableViewDataSource -
 
-extension ProtocolViewController {
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return collection.count
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return collection[section].count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let connectionProtocol = collection[indexPath.section][indexPath.row]
-        
-        if connectionProtocol == .wireguard(.udp, 1) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "WireGuardRegenerationRateCell", for: indexPath) as! WireGuardRegenerationRateCell
-            return cell
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProtocolTableViewCell", for: indexPath) as! ProtocolTableViewCell
-        
-        cell.setup(connectionProtocol: connectionProtocol, isSettings: indexPath.section > 0)
-        
-        if !validateMultiHop(connectionProtocol: connectionProtocol) || !validateCustomDNS(connectionProtocol: connectionProtocol) || !validateAntiTracker(connectionProtocol: connectionProtocol) {
-            cell.protocolLabel.textColor = UIColor.init(named: Theme.ivpnLabel6)
-        } else {
-            cell.protocolLabel.textColor = UIColor.init(named: Theme.ivpnLabelPrimary)
-        }
-        
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Protocols"
-        case 1:
-            return "Protocol settings"
-        default:
-            return ""
-        }
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        switch section {
-        case 1:
-            if Application.shared.settings.connectionProtocol.tunnelType() == .wireguard {
-                return "Keys rotation will start automatically in the defined interval. It will also change the internal IP address."
-            }
-            return nil
-        default:
-            return nil
-        }
-    }
-    
-}
+//extension ProtocolViewController {
+//
+////    override func numberOfSections(in tableView: UITableView) -> Int {
+////        return collection.count
+////    }
+//
+////    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+////        return collection[section].count
+////    }
+//
+////    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+////        let connectionProtocol = collection[indexPath.section][indexPath.row]
+////
+////        if connectionProtocol == .wireguard(.udp, 1) {
+////            let cell = tableView.dequeueReusableCell(withIdentifier: "WireGuardRegenerationRateCell", for: indexPath) as! WireGuardRegenerationRateCell
+////            return cell
+////        }
+////
+////        let cell = tableView.dequeueReusableCell(withIdentifier: "ProtocolTableViewCell", for: indexPath) as! ProtocolTableViewCell
+////
+////        cell.setup(connectionProtocol: connectionProtocol, isSettings: indexPath.section > 0)
+////
+////        if !validateMultiHop(connectionProtocol: connectionProtocol) || !validateCustomDNS(connectionProtocol: connectionProtocol) || !validateAntiTracker(connectionProtocol: connectionProtocol) {
+////            cell.protocolLabel.textColor = UIColor.init(named: Theme.ivpnLabel6)
+////        } else {
+////            cell.protocolLabel.textColor = UIColor.init(named: Theme.ivpnLabelPrimary)
+////        }
+////
+////        return cell
+////    }
+//
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        switch section {
+//        case 0:
+//            return "Protocols"
+//        case 1:
+//            return "Protocol settings"
+//        default:
+//            return ""
+//        }
+//    }
+//
+//    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+//        switch section {
+//        case 1:
+//            if Application.shared.settings.connectionProtocol.tunnelType() == .wireguard {
+//                return "Keys rotation will start automatically in the defined interval. It will also change the internal IP address."
+//            }
+//            return nil
+//        default:
+//            return nil
+//        }
+//    }
+//
+//}
 
 // MARK: - UITableViewDelegate -
 
@@ -290,9 +314,10 @@ extension ProtocolViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let connectionProtocol = collection[indexPath.section][indexPath.row]
-        if connectionProtocol == .wireguard(.udp, 1) { return 60 }
-        return 44
+        // let connectionProtocol = collection[indexPath.section][indexPath.row]
+        // if connectionProtocol == .wireguard(.udp, 1) { return 60 }
+        // return 44
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

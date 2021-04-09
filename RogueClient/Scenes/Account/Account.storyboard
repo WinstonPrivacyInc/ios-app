@@ -385,7 +385,7 @@
                             <constraint firstItem="jZJ-vH-Jgp" firstAttribute="centerX" secondItem="1sm-r7-mfj" secondAttribute="centerX" id="oI7-hN-0Gy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Account" id="1Rw-vj-cDW" userLabel="Navigation Items"/>
+                    <navigationItem key="navigationItem" title="Change Email" id="1Rw-vj-cDW" userLabel="Navigation Items"/>
                     <connections>
                         <outlet property="confirmationCodeField" destination="6Lt-O6-E3A" id="WoH-DR-E3e"/>
                         <outlet property="emailTextField" destination="RJY-sz-HUr" id="KcP-DD-n73"/>
@@ -570,7 +570,7 @@
                             <constraint firstItem="HgY-1H-lds" firstAttribute="leading" secondItem="hN7-50-vZY" secondAttribute="leading" id="pWB-bo-r9Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Account" id="0s0-lZ-ski" userLabel="Navigation Items"/>
+                    <navigationItem key="navigationItem" title="Change Password" id="0s0-lZ-ski" userLabel="Navigation Items"/>
                     <connections>
                         <outlet property="currentPasswordField" destination="ZXP-nW-iw7" id="szz-ZB-BcI"/>
                         <outlet property="newPasswordField" destination="OqF-Cs-gfh" id="d7S-eY-gwK"/>

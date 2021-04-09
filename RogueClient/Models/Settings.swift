@@ -63,8 +63,8 @@ class Settings {
     }
 
     init(serverList: VPNServerList) {
-        // let protocolIndex = UserDefaults.standard.integer(forKey: "selectedProtocolIndex")
-        let protocolIndex = 0
+        let protocolIndex = UserDefaults.standard.integer(forKey: "selectedProtocolIndex")
+        // let protocolIndex = 0
         
         selectedServer = serverList.servers.first ?? VPNServer(gateway: "Not loaded", countryCode: "US", country: "", city: "")
         selectedExitServer = serverList.getExitServer(entryServer: selectedServer)

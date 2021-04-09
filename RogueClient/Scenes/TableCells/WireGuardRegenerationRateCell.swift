@@ -33,16 +33,16 @@ class WireGuardRegenerationRateCell: UITableViewCell {
     // MARK: - @IBActions -
     
     @IBAction func updateRegenerateRate(_ sender: UIStepper) {
-        UserDefaults.shared.set(Int(sender.value), forKey: UserDefaults.Key.wgRegenerationRate)
-        regenerationLabel.text = regenerationLabelText(days: Int(sender.value))
+        //UserDefaults.shared.set(Int(sender.value), forKey: UserDefaults.Key.wgRegenerationRate)
+        //regenerationLabel.text = regenerationLabelText(days: Int(sender.value))
     }
     
     // MARK: - View Lifecycle -
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        regenerationLabel.text = regenerationLabelText(days: UserDefaults.shared.wgRegenerationRate)
-        stepper.value = Double(UserDefaults.shared.wgRegenerationRate)
+        //regenerationLabel.text = regenerationLabelText(days: UserDefaults.shared.wgRegenerationRate)
+        //stepper.value = Double(UserDefaults.shared.wgRegenerationRate)
     }
     
     // MARK: - Methods -

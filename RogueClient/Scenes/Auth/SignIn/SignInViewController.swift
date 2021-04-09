@@ -125,7 +125,7 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "signInScreen"
-        navigationController?.navigationBar.prefersLargeTitles = false
+        // navigationController?.navigationBar.prefersLargeTitles = false
         emailTextField.becomeFirstResponder()
         
         addObservers()
