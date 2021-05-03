@@ -110,10 +110,10 @@ class APIClient: NSObject {
     
     private var userAgent: String {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
-            return "ivpn/ios \(version)"
+            return "roguevpn/ios \(version)"
         }
         
-        return "ivpn/ios"
+        return "roguevpn/ios"
     }
     
     var session: URLSession {

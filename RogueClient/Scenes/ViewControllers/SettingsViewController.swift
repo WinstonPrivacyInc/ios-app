@@ -429,9 +429,6 @@ extension SettingsViewController {
                 openPrivacyPolicy()
                 
             } else if indexPath.row == 2 {
-                openFeedbackPage()
-                
-            } else if indexPath.row == 3 {
                 openSupportPage()
             }
         }

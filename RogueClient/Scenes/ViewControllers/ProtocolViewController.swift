@@ -235,6 +235,17 @@ class ProtocolViewController: UITableViewController {
         }
     }
     
+    @IBAction func regenerateKeys(_ sender: UIButton) {
+        Application.shared.connectionManager.getStatus { _, status in
+            if status == .connected || status == .connecting {
+                self.showFlashNotification(message: "To re-generate keys, please first disconnect", presentInView: self.view)
+                return
+            }
+            
+            self.keyManager.setNewKey()
+        }
+    }
+    
 }
 
 // MARK: - UITableViewDataSource -

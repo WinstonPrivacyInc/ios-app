@@ -201,14 +201,12 @@ extension UIViewController {
 extension UIViewController {
     
     func evaluateIsServiceActive() -> Bool {
-        // TODO: antonio fake active service for now... need to create apis to verify service..
-        
-//        guard Application.shared.serviceStatus.isActive else {
-//            let viewController = NavigationManager.getSubscriptionViewController()
-//            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
-//            present(viewController, animated: true, completion: nil)
-//            return false
-//        }
+        guard Application.shared.serviceStatus.isActive else {
+            let viewController = NavigationManager.getSubscriptionViewController()
+            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
+            present(viewController, animated: true, completion: nil)
+            return false
+        }
         
         return true
     }
