@@ -25,8 +25,6 @@ import UIKit
 
 class InfoAlertViewModel {
     
-    // MARK: - Properties -
-    
     var text: String {
         let days = Application.shared.serviceStatus.daysUntilSubscriptionExpiration()
         switch infoAlert {
@@ -75,8 +73,6 @@ class InfoAlertViewModel {
     
 }
 
-// MARK: - InfoAlertViewModel extension -
-
 extension InfoAlertViewModel {
     
     enum InfoAlert {
@@ -85,8 +81,6 @@ extension InfoAlertViewModel {
     }
     
 }
-
-// MARK: - InfoAlertViewDelegate -
 
 extension InfoAlertViewModel: InfoAlertViewDelegate {
     

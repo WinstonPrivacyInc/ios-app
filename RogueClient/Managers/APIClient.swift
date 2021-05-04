@@ -88,11 +88,7 @@ enum APIResult<Body> {
 
 class APIClient: NSObject {
     
-    // MARK: - Typealias -
-    
     typealias APIClientCompletion = (APIResult<Data?>) -> Void
-    
-    // MARK: - Properties -
     
     private var hostName = UserDefaults.shared.apiHostName
     
@@ -102,6 +98,10 @@ class APIClient: NSObject {
     
     private var baseURLWinston: URL {
         return URL(string: "http://13.59.81.71:443")!
+    }
+    
+    private var ivpnURL: URL {
+        return URL(string: "https://api.ivpn.net")!
     }
     
     private var baseURLServerless: URL {
@@ -142,6 +142,12 @@ class APIClient: NSObject {
             urlComponents.host = baseURLWinston.host
             urlComponents.port = 443;
             urlComponents.path = baseURLWinston.path
+        }
+        
+        if request.path == "/v4/geo-lookup" {
+            urlComponents.scheme = ivpnURL.scheme
+            urlComponents.host = ivpnURL.host
+            urlComponents.path = ivpnURL.path
         }
         
         if request.path == "/vpn/servers" {
@@ -200,19 +206,13 @@ class APIClient: NSObject {
         
         let task = session.dataTask(with: urlRequest) { data, response, _ in
             guard let httpResponse = response as? HTTPURLResponse else {
-                // this tries another server if the request failed... we don't need this
-//                if let nextHost = APIAccessManager.shared.nextHostName(failedHostName: self.hostName) {
-//                    self.retry(request, nextHost: nextHost) { result in
-//                        completion(result)
-//                    }
-//                    return
-//                }
-                
                 completion(.failure(.requestFailed))
                 return
             }
+            
             completion(.success(APIResponse<Data?>(statusCode: httpResponse.statusCode, body: data)))
         }
+        
         task.resume()
     }
     

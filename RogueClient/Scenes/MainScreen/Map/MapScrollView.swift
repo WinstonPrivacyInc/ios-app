@@ -196,7 +196,17 @@ class MapScrollView: UIScrollView {
         updateMapPosition(latitude: server.latitude, longitude: server.longitude, animated: animated, isLocalPosition: false)
         markerLocalView.hide(animated: animated)
         DispatchQueue.delay(0.25) {
-            let model = GeoLookup(ipAddress: server.ipAddresses.first ?? "", countryCode: server.countryCode, country: server.country, city: server.city, isIvpnServer: true, isp: "", latitude: server.latitude, longitude: server.longitude)
+            let model = GeoLookup(
+                ipAddress: server.ipAddresses.first ?? "",
+                isp: "",
+                organization: "",
+                country: server.country,
+                countryCode: server.countryCode,
+                city: server.city,
+                latitude: server.latitude,
+                longitude: server.longitude,
+                isIvpnServer: true
+            )
             self.markerGatewayView.viewModel = ProofsViewModel(model: model)
             self.markerGatewayView.show(animated: animated)
             self.markerLocalView.hide(animated: false)

@@ -1,5 +1,6 @@
 PODS:
   - ActiveLabel (1.1.0)
+  - Alamofire (5.4.2)
   - Amplify (1.7.2):
     - Amplify/Default (= 1.7.2)
   - Amplify/Default (1.7.2)
@@ -49,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - ActiveLabel (~> 1.1.0)
+  - Alamofire
   - Amplify
   - AmplifyPlugins/AWSCognitoAuthPlugin
   - FloatingPanel (~> 1.7.2)
@@ -64,6 +66,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - ActiveLabel
+    - Alamofire
     - Amplify
     - AmplifyPlugins
     - AWSAuthCore
@@ -86,6 +89,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   Amplify: 254e40b21406cd8fb578cbeb96ce4921b996598e
   AmplifyPlugins: 5f3a4bc1bf725d225129b55be304287817c49a1f
   AWSAuthCore: 59770d4c2c1b3dbb183b95d1867e3584b4816e54
@@ -106,6 +110,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 033d06b6f87955405d3f844a18a7687c2438592a
   TunnelKit: cbd063b8b6f4f6a182cf48e646ff35cb2365bf91
 
-PODFILE CHECKSUM: fbad6bfa82538f7b4776c824452b5e25efc27f79
+PODFILE CHECKSUM: 2a217e900bf9e7bc846fc9d4189dd6a0d80a0419
 
 COCOAPODS: 1.10.1

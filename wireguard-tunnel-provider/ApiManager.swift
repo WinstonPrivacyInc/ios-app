@@ -25,8 +25,6 @@ import Foundation
 
 class ApiManager {
     
-    // MARK: - Properties -
-    
     static let shared = ApiManager()
     
     static var authParams: [URLQueryItem] {
@@ -37,7 +35,6 @@ class ApiManager {
         return [URLQueryItem(name: "session_token", value: sessionToken)]
     }
     
-    // MARK: - Methods -
     
     func request<T>(_ requestDI: ApiRequestDI, completion: @escaping (Result<T>) -> Void) {
         let requestName = "\(requestDI.method.description) \(requestDI.endpoint)"

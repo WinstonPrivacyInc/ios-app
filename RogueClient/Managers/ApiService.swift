@@ -25,8 +25,6 @@ import UIKit
 
 class ApiService {
     
-    // MARK: - Properties -
-    
     static let shared = ApiService()
     
     static var authParams: [URLQueryItem] {

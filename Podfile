@@ -13,6 +13,7 @@ target 'RogueClient' do
     pod 'Amplify'
     pod 'Ipify'
     pod 'KAPinField'
+    pod 'Alamofire'
     pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 end
 

@@ -32,7 +32,8 @@ struct Config {
     
 //    static let apiServersFile = "/v4/servers.json"
     static let apiServersFile = "/vpn/servers"
-    static let apiGeoLookup = "/v4/geo-lookup"
+    
+    // static let apiGeoLookup = "/v4/geo-lookup"
     static let apiSessionNew = "/v4/session/new"
     static let apiSessionStatus = "/v4/session/status"
     static let apiSessionDelete = "/v4/session/delete"

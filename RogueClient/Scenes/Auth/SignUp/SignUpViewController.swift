@@ -89,7 +89,7 @@ class SignUpViewController: UIViewController {
         isCognitoOperationInProgress = true
 
         hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-        hud.detailTextLabel.text = "Signin up..."
+        hud.detailTextLabel.text = "Signing up..."
         hud.show(in: (navigationController?.view)!)
         
         let userAttributes = [AuthUserAttribute(.email, value: email)]
@@ -112,6 +112,10 @@ class SignUpViewController: UIViewController {
             }
     }
     
+    func createAccount() {
+        ApiService.shared.createAccount()
+    }
+    
     func confirmSignUp(confirmationCode: String) {
         guard !isCognitoOperationInProgress else { return }
         
@@ -132,6 +136,7 @@ class SignUpViewController: UIViewController {
                 switch result {
                 case .success:
                     self.emailConfirmSuccess(email: email)
+                    self.createAccount()
                 case .failure(let error):
                     self.emailConfirmFailure(error: error)
                 }

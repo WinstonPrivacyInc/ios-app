@@ -226,19 +226,20 @@ class SelectPlanViewController: UITableViewController {
         hud.detailTextLabel.text = "Changing plan..."
         hud.show(in: (navigationController?.view)!)
         
-        let request = ApiRequestDI(method: .get, endpoint: Config.apiGeoLookup)
-        ApiService.shared.request(request) { [weak self] (result: Result<GeoLookup>) in
-            guard let self = self else { return }
-            
-            self.hud.dismiss()
-            
-            switch result {
-            case .success:
-                self.service = Service(type: type, duration: .month)
-            case .failure:
-                break
-            }
-        }
+        // TODO: perform geo look up....
+//        let request = ApiRequestDI(method: .get, endpoint: Config.apiGeoLookup)
+//        ApiService.shared.request(request) { [weak self] (result: Result<GeoLookup>) in
+//            guard let self = self else { return }
+//
+//            self.hud.dismiss()
+//
+//            switch result {
+//            case .success:
+//                self.service = Service(type: type, duration: .month)
+//            case .failure:
+//                break
+//            }
+//        }
     }
     
     private func updateSubscriptions() {

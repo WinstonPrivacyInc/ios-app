@@ -64,7 +64,17 @@ class Application {
         }
     }
     
-    var geoLookup = GeoLookup(ipAddress: "", countryCode: "", country: "", city: "", isIvpnServer: false, isp: "", latitude: 0, longitude: 0)
+    var geoLookup = GeoLookup(
+        ipAddress: "",
+        isp: "",
+        organization: "",
+        country: "",
+        countryCode: "",
+        city: "",
+        latitude: 0,
+        longitude: 0,
+        isIvpnServer: false
+    )
     
     // MARK: - Initialize -
     
