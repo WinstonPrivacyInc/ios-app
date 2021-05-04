@@ -3,8 +3,8 @@
 //  Rogue iOS app
 //  https://github.com/WinstonPrivacyInc/rogue-ios
 //
-//  Created by Juraj Hilje on 2020-05-18.
-//  Copyright (c) 2020 Privatus Limited.
+//  Created by Antonio Campos on 2021-05-02.
+//  Copyright (c) 2021 Winston Privacy, Inc.
 //
 //  This file is part of the Rogue iOS app.
 //

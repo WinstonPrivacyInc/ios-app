@@ -270,6 +270,7 @@
 		A9B3091725FA740E00B3F73A /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */; };
 		A9B3092525FA861E00B3F73A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */; };
 		A9BD785A2641E89F00199BF9 /* GeoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD78592641E89F00199BF9 /* GeoService.swift */; };
+		A9BD785C2641F39700199BF9 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD785B2641F39700199BF9 /* AccountService.swift */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
 		A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */; };
 		A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */; };
@@ -584,6 +585,7 @@
 		A9B3091625FA740E00B3F73A /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A9BD78592641E89F00199BF9 /* GeoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoService.swift; sourceTree = "<group>"; };
+		A9BD785B2641F39700199BF9 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
 		A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmView.swift; sourceTree = "<group>"; };
 		A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = Config/amplifyconfiguration.json; sourceTree = "<group>"; };
@@ -789,8 +791,8 @@
 		82234B7621BAA1F500B082DE /* ApiResults */ = {
 			isa = PBXGroup;
 			children = (
-				9C3031251DB3B6E700C38B0C /* ServersUpdateResult.swift */,
 				8277F1CE2211A602007C6F15 /* GeoLookup.swift */,
+				9C3031251DB3B6E700C38B0C /* ServersUpdateResult.swift */,
 				8223C54B22E9E93A00CD283D /* Session.swift */,
 				82AA8817231E330A00E18ECB /* SessionStatus.swift */,
 				821429B622FC2BE90056B8FF /* Result.swift */,
@@ -1315,6 +1317,7 @@
 			isa = PBXGroup;
 			children = (
 				A9BD78592641E89F00199BF9 /* GeoService.swift */,
+				A9BD785B2641F39700199BF9 /* AccountService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1993,6 +1996,7 @@
 				82F189A2225CE8A90038ABA0 /* UIView+Ext.swift in Sources */,
 				82DEF01E244714D900CCB5CD /* ScannerViewController.swift in Sources */,
 				825D4ECA224A48F7002E7378 /* ApiManager.swift in Sources */,
+				A9BD785C2641F39700199BF9 /* AccountService.swift in Sources */,
 				8270D268241BB3D100B17B65 /* InfoAlertViewModel.swift in Sources */,
 				826E614A242A1CA80064F195 /* AccountViewModel.swift in Sources */,
 			);

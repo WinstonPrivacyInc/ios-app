@@ -112,10 +112,6 @@ class SignUpViewController: UIViewController {
             }
     }
     
-    func createAccount() {
-        ApiService.shared.createAccount()
-    }
-    
     func confirmSignUp(confirmationCode: String) {
         guard !isCognitoOperationInProgress else { return }
         
@@ -140,6 +136,12 @@ class SignUpViewController: UIViewController {
                 case .failure(let error):
                     self.emailConfirmFailure(error: error)
                 }
+        }
+    }
+    
+    private func createAccount() {
+        AccountService.shared.createAccount {
+            log(info: "account created.")
         }
     }
     

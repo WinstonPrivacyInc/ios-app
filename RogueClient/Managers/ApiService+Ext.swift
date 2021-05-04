@@ -25,19 +25,7 @@ import UIKit
 
 extension ApiService {
     
-    func createAccount() {
-        let request = APIRequest(method: .post, path: "/accounts")
-        log(info: "Creating account...")
-        
-        APIClient().perform(request) { result in
-            switch result {
-            case .success(_):
-                log(info: "account created")
-            case .failure(_):
-                log(error: "failed to create account")
-            }
-        }
-    }
+ 
     
     func getServersList(storeInCache: Bool, completion: @escaping (ServersUpdateResult) -> Void) {
         let request = APIRequest(method: .get, path: Config.apiServersFile)
