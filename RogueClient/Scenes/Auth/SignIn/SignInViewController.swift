@@ -171,9 +171,10 @@ class SignInViewController: UIViewController {
             if email != nil && password != nil {
                 self.emailTextField.text = email
                 self.passwordTextField.text = password
+                
                 self.startSignInProcess {
                     AccountService.shared.createAccount {
-                        self.showFlashNotification(message: "Your account has been created.", presentInView: (self.navigationController?.view)!)
+                        log(info: "Winston account was created")
                     }
                 }
             }
