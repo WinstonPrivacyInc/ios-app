@@ -13,6 +13,7 @@
 
 Environment = debug
 WinstonApiUrl = dev.winstonapis.com
-ApiHostName = https://dev.winstonapis.com
+IvpnApiUrl = api.ivpn.net
+ApiHostName = dev.winstonapis.com
 TlsHostName = ivpn.net
 IAPSharedSecret =

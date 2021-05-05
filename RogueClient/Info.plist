@@ -4,6 +4,8 @@
 <dict>
 	<key>WinstonApiUrl</key>
 	<string>https://$(WinstonApiUrl)</string>
+	<key>IvpnApiUrl</key>
+	<string>https://$(IvpnApiUrl)</string>
 	<key>ApiHostName</key>
 	<string>$(ApiHostName)</string>
 	<key>CFBundleDevelopmentRegion</key>

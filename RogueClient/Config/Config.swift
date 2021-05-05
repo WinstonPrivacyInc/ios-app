@@ -86,6 +86,10 @@ struct Config {
         return value(for: "WinstonApiUrl")
     }
     
+    static var IvpnApiUrl: String {
+        return value(for: "IvpnApiUrl")
+    }
+    
     static var TlsHostName: String {
         return value(for: "TlsHostName")
     }
