@@ -99,14 +99,14 @@ class SignUpViewController: UIViewController {
                 switch result {
                 case .success(let signUpResult):
                     if case let .confirmUser(deliveryDetails, _) = signUpResult.nextStep {
-                        print("Delivery details \(String(describing: deliveryDetails))")
+                        log(info: "Delivery details \(String(describing: deliveryDetails))")
                         self.goToSignUpConfirm()
                     } else {
-                        print("SignUp Complete")
+                        log(info: "SignUp Complete")
                         self.signUpSucces()
                     }
                 case .failure(let error):
-                    print("An error occurred while registering a user \(error)")
+                    log(error: "An error occurred while registering a user \(error)")
                     self.signUpError(error: error)
                 }
             }
@@ -128,6 +128,7 @@ class SignUpViewController: UIViewController {
         hud.show(in: (navigationController?.view)!)
         
         let email = (emailTextField.text ?? "").trim()
+        
         Amplify.Auth.confirmSignUp(for: email, confirmationCode: confirmationCode) { result in
                 switch result {
                 case .success:
@@ -165,7 +166,6 @@ class SignUpViewController: UIViewController {
         self.isCognitoOperationInProgress = false
         DispatchQueue.main.async {
             self.hud.dismiss()
-            // self.performSegue(withIdentifier: "SignUpConfirm", sender: self)
             self.hiddenConfirmationCodeField.becomeFirstResponder()
         }
     }
