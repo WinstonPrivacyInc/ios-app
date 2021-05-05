@@ -1,0 +1,15 @@
+//
+//  wg-debug.xcconfig
+//  wireguard-tunnel-provider
+//
+//  Created by Antonio Campos on 5/5/21.
+//  Copyright © 2021 Winston Privacy, Inc. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Pods/Target Support Files/Pods-wireguard-tunnel-provider/Pods-wireguard-tunnel-provider.debug.xcconfig"
+
+ApiHostName = https://dev.winstonapis.com
+Winston_API_URL = https://dev.winstonapis.com
+TlsHostName =

@@ -73,7 +73,9 @@ class SignInViewController: UIViewController {
         }
         
         view.endEditing(true)
-        startSignInProcess()
+        startSignInProcess {
+            
+        }
     }
     
     @IBAction func createAccount(_ sender: AnyObject) {
@@ -164,14 +166,17 @@ class SignInViewController: UIViewController {
         
         if let data = notification.userInfo as? [String: String] {
             let email = data["email"]
-            
-            
-            if email != nil {
+            let password = data["password"]
+                        
+            if email != nil && password != nil {
                 self.emailTextField.text = email
-                self.passwordTextField.becomeFirstResponder()
+                self.passwordTextField.text = password
+                self.startSignInProcess {
+                    AccountService.shared.createAccount {
+                        self.showFlashNotification(message: "Your account has been created.", presentInView: (self.navigationController?.view)!)
+                    }
+                }
             }
-            
-            showFlashNotification(message: "Your account was created", presentInView: (navigationController?.view)!)
         }
     }
     
@@ -188,11 +193,15 @@ class SignInViewController: UIViewController {
     }
     
     @objc func newSession() {
-        startSignInProcess()
+        startSignInProcess {
+            
+        }
     }
     
     @objc func forceNewSession() {
-        startSignInProcess()
+        startSignInProcess {
+            
+        }
     }
     
     @objc func termsOfServiceAgreed() {
@@ -237,7 +246,8 @@ class SignInViewController: UIViewController {
         
     }
     
-    private func startSignInProcess() {
+    private func startSignInProcess(completion: @escaping () -> Void) {
+        
         guard !isCognitoOperationInProgress else { return }
         
         let username = (self.emailTextField.text ?? "").trim()
@@ -293,6 +303,7 @@ class SignInViewController: UIViewController {
                         case .done:
                             log(info: "Sign in success")
                             self.signInSuccess()
+                            completion()
                         }
                         
                     } catch (let error) {
@@ -344,7 +355,9 @@ class SignInViewController: UIViewController {
         self.isCognitoOperationInProgress = false
         DispatchQueue.main.async {
             self.hud.dismiss()
-            self.startSignInProcess()
+            self.startSignInProcess {
+                
+            }
         }
     }
     
@@ -604,9 +617,13 @@ extension SignInViewController {
         showActionSheet(title: message, actions: ["Log out from all other devices", "Try again"], sourceView: self.emailTextField) { index in
             switch index {
             case 0:
-                self.startSignInProcess()
+                self.startSignInProcess {
+                    
+                }
             case 1:
-                self.startSignInProcess()
+                self.startSignInProcess {
+                    
+                }
             default:
                 break
             }
@@ -631,7 +648,9 @@ extension SignInViewController: UITextFieldDelegate {
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
             emailTextField.resignFirstResponder()
-            startSignInProcess()
+            startSignInProcess {
+                
+            }
         }
         
         return true
@@ -673,7 +692,9 @@ extension SignInViewController: ScannerViewControllerDelegate {
             return
         }
         
-        startSignInProcess()
+        startSignInProcess {
+            
+        }
     }
     
 }
@@ -683,7 +704,9 @@ extension SignInViewController: ScannerViewControllerDelegate {
 extension SignInViewController: TwoFactorViewControllerDelegate {
     
     func codeSubmitted(code: String) {
-        startSignInProcess()
+        startSignInProcess {
+            
+        }
     }
     
 }
@@ -693,7 +716,9 @@ extension SignInViewController: TwoFactorViewControllerDelegate {
 extension SignInViewController: CaptchaViewControllerDelegate {
     
     func captchaSubmitted(code: String, captchaId: String) {
-        startSignInProcess()
+        startSignInProcess {
+            
+        }
     }
     
 }

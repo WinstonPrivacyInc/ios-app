@@ -19,7 +19,7 @@ class AccountService {
             
             let headers: HTTPHeaders = ["Authorization": "Bearer \(accessToken)"]
             
-            AF.request("\(Config.ApiHostName)/accounts", method: .post, headers: headers).responseJSON { (data) in
+            AF.request("\(Config.WinstonApiUrl)/accounts", method: .post, headers: headers).responseJSON { (data) in
                 completion()
             }
             

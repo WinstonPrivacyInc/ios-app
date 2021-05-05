@@ -3,22 +3,10 @@
 //  Rogue iOS app
 //  https://github.com/WinstonPrivacyInc/rogue-ios
 //
-//  Created by Fedir Nepyyvoda
-//  Copyright (c) 2020 Privatus Limited.
+//  Created by Antonio Campos
+//  Copyright (c) 2021 Winston Privacy, Inc.
 //
 //  This file is part of the Rogue iOS app.
-//
-//  The Rogue iOS app is free software: you can redistribute it and/or
-//  modify it under the terms of the GNU General Public License as published by the Free
-//  Software Foundation, either version 3 of the License, or (at your option) any later version.
-//
-//  The Rogue iOS app is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-//  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-//  details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with the Rogue iOS app. If not, see <https://www.gnu.org/licenses/>.
 //
 
 import UIKit
@@ -70,14 +58,6 @@ struct Config {
     static let defaultProtocol = ConnectionSettings.ipsec
     
     static let supportedProtocols = [
-//        ConnectionSettings.ipsec,
-//        ConnectionSettings.openvpn(.udp, 2049),
-//        ConnectionSettings.openvpn(.udp, 2050),
-//        ConnectionSettings.openvpn(.udp, 53),
-//        ConnectionSettings.openvpn(.udp, 1194),
-//        ConnectionSettings.openvpn(.tcp, 443),
-//        ConnectionSettings.openvpn(.tcp, 1443),
-//        ConnectionSettings.openvpn(.tcp, 80),
         ConnectionSettings.wireguard(.udp, 2049),
         ConnectionSettings.wireguard(.udp, 2050),
         ConnectionSettings.wireguard(.udp, 53),
@@ -88,15 +68,11 @@ struct Config {
         ConnectionSettings.wireguard(.udp, 58237)
     ]
     
-    // MARK: WireGuard
-    
     static let wgPeerAllowedIPs = "0.0.0.0/0, ::/0"
     static let wgPeerPersistentKeepalive: Int32 = 25
     static let wgInterfaceListenPort = 51820
     static let wgKeyExpirationDays = 30
     static let wgKeyRegenerationRate = 1
-    
-    // MARK: ENV variables
     
     static var Environment: String {
         return value(for: "Environment")
@@ -104,6 +80,10 @@ struct Config {
     
     static var ApiHostName: String {
         return value(for: "ApiHostName")
+    }
+    
+    static var WinstonApiUrl: String {
+        return value(for: "WinstonApiUrl")
     }
     
     static var TlsHostName: String {

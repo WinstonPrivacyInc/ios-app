@@ -259,8 +259,6 @@
 		A94E2134261CE505007DC374 /* ConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */; };
 		A94E213A261CE513007DC374 /* ConfirmationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */; };
 		A99FDB77261617D300A8B498 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB76261617D200A8B498 /* SignUpViewController.swift */; };
-		A99FDB7D2616315900A8B498 /* SignUpConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */; };
-		A99FDB83261631FC00A8B498 /* SignUpConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */; };
 		A99FDB952617649800A8B498 /* servers-backup.json in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB942617649800A8B498 /* servers-backup.json */; };
 		A99FDBA7261B711B00A8B498 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */; };
 		A99FDBAD261B712B00A8B498 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */; };
@@ -271,6 +269,8 @@
 		A9B3092525FA861E00B3F73A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */; };
 		A9BD785A2641E89F00199BF9 /* GeoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD78592641E89F00199BF9 /* GeoService.swift */; };
 		A9BD785C2641F39700199BF9 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD785B2641F39700199BF9 /* AccountService.swift */; };
+		A9BD785E2643292200199BF9 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A9BD785D2643292200199BF9 /* debug.xcconfig */; };
+		A9BD78602643298C00199BF9 /* wg-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A9BD785F2643298C00199BF9 /* wg-debug.xcconfig */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
 		A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */; };
 		A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */; };
@@ -574,8 +574,6 @@
 		A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeViewController.swift; sourceTree = "<group>"; };
 		A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeView.swift; sourceTree = "<group>"; };
 		A99FDB76261617D200A8B498 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmViewController.swift; sourceTree = "<group>"; };
-		A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmView.swift; sourceTree = "<group>"; };
 		A99FDB942617649800A8B498 /* servers-backup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "servers-backup.json"; sourceTree = "<group>"; };
 		A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -586,6 +584,8 @@
 		A9B3092425FA861E00B3F73A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		A9BD78592641E89F00199BF9 /* GeoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoService.swift; sourceTree = "<group>"; };
 		A9BD785B2641F39700199BF9 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		A9BD785D2643292200199BF9 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		A9BD785F2643298C00199BF9 /* wg-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wg-debug.xcconfig"; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
 		A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmView.swift; sourceTree = "<group>"; };
 		A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = Config/amplifyconfiguration.json; sourceTree = "<group>"; };
@@ -721,6 +721,7 @@
 				9CB2CE531DB2A999007A4D2D /* servers.json */,
 				8269CD8E2164A8C700D083A1 /* servers-dev.json */,
 				9C2833781D9D3F060024C553 /* Config.swift */,
+				A9BD785D2643292200199BF9 /* debug.xcconfig */,
 				82774854237596DF0061BD46 /* OpenVPNConf.swift */,
 				82BBF26021AD213500589766 /* Theme.swift */,
 			);
@@ -943,6 +944,7 @@
 			children = (
 				82A9E8C723471FB2007BCA7E /* wg-release.xcconfig */,
 				82A9E8C823471FB2007BCA7E /* wg-staging.xcconfig */,
+				A9BD785F2643298C00199BF9 /* wg-debug.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1346,8 +1348,6 @@
 			isa = PBXGroup;
 			children = (
 				A99FDB76261617D200A8B498 /* SignUpViewController.swift */,
-				A99FDB7C2616315900A8B498 /* SignUpConfirmViewController.swift */,
-				A99FDB82261631FC00A8B498 /* SignUpConfirmView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -1575,6 +1575,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9BD78602643298C00199BF9 /* wg-debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1593,6 +1594,7 @@
 				9CDDD5B61D9D2F9F00D39924 /* Assets.xcassets in Resources */,
 				9CB2CE541DB2A999007A4D2D /* servers.json in Resources */,
 				8269CD8F2164A8C700D083A1 /* servers-dev.json in Resources */,
+				A9BD785E2643292200199BF9 /* debug.xcconfig in Resources */,
 				9CDDD5B41D9D2F9F00D39924 /* Main.storyboard in Resources */,
 				9C2833741D9D3EB60024C553 /* Initial.storyboard in Resources */,
 				A99FDBC5261BB25A00A8B498 /* Account.storyboard in Resources */,
@@ -1854,7 +1856,6 @@
 				82D598C021A6991B000FABDE /* NetworkManager.swift in Sources */,
 				82D598AC21A566CD000FABDE /* NetworkProtectionTableViewCell.swift in Sources */,
 				82DEF0282447287000CCB5CD /* SelectPlanViewController.swift in Sources */,
-				A99FDB7D2616315900A8B498 /* SignUpConfirmViewController.swift in Sources */,
 				8208525623FD56870008C112 /* FloatingPanelMainLayout.swift in Sources */,
 				82F917392344861A0025ED3A /* TermsOfServiceViewController.swift in Sources */,
 				9C28337B1D9D3F060024C553 /* SignInViewController.swift in Sources */,
@@ -1877,7 +1878,6 @@
 				8269CAC32264962F00CF488A /* AntiTrackerViewController.swift in Sources */,
 				82E5449224EE584E006DEF8D /* UIImageView+Ext.swift in Sources */,
 				82E81AE72449C44F00D81FB7 /* PaymentComponentView.swift in Sources */,
-				A99FDB83261631FC00A8B498 /* SignUpConfirmView.swift in Sources */,
 				8232FBF62240E40F006B81D2 /* Error+Ext.swift in Sources */,
 				820203932186EE0E00D756AA /* WireGuardSettingsViewController.swift in Sources */,
 				8201A5022354A32F008C83DB /* ErrorResultSessionNew.swift in Sources */,
@@ -2147,7 +2147,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2185,7 +2185,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2352,7 +2352,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2416,7 +2416,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2586,7 +2586,7 @@
 		};
 		9CDDD5D41D9D2F9F00D39924 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82A9E8C323471EBE007BCA7E /* release.xcconfig */;
+			baseConfigurationReference = A9BD785D2643292200199BF9 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2594,7 +2594,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2631,7 +2631,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

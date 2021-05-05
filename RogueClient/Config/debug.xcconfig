@@ -1,0 +1,18 @@
+//
+//  debug.xcconfig
+//  RogueClient
+//
+//  Created by Antonio Campos on 5/5/21.
+//  Copyright © 2021 Winston Privacy, Inc. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"
+
+Environment = debug
+WinstonApiUrl = dev.winstonapis.com
+ApiHostName = https://dev.winstonapis.com
+TlsHostName = ivpn.net
+IAPSharedSecret =

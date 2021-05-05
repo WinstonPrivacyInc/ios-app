@@ -4,24 +4,19 @@
 ![SwiftLint](https://github.com/ivpn/ios-app/workflows/SwiftLint/badge.svg)
 ![Lint Code Base](https://github.com/ivpn/ios-app/workflows/Lint%20Code%20Base/badge.svg)
 
-**Rogue for iOS** is a native app built using Swift language. Some of the features include: multiple protocols (IKEv2, OpenVPN, WireGuard), Kill-switch, Multi-Hop, Trusted Networks, AntiTracker, Custom DNS, Dark mode and more.  
-Rogue iOS app is distributed on the [App Store](https://apps.apple.com/us/app/ivpn-serious-privacy-protection/id1193122683?mt=8).  
+**Rogue for iOS** is a native app built using Swift language. It uses Wireguard protocol.
 
 * [About this Repo](#about-repo)
 * [Installation](#installation)
 * [Testing](#testing)
 * [Deployment](#deployment)
 * [Versioning](#versioning)
-* [Contributing](#contributing)
 * [Security Policy](#security)
-* [License](#license)
-* [Authors](#Authors)
-* [Acknowledgements](#acknowledgements)
 
 <a name="about-repo"></a>
 ## About this Repo
 
-This is the official Git repo of the [Rogue for iOS project](https://github.com/ivpn/ios-app).
+This is the official Git repo of the [Rogue for iOS project](https://github.com/WinstonPrivacyInc/rogue-ios).
 This is a fork of IVPN [IVPN for iOS project](https://github.com/ivpn/ios-app).
 
 <a name="installation"></a>
@@ -96,9 +91,7 @@ Rename and populate `.xcconfig` files:
 $ cp RogueClient/Config/staging.template.xcconfig RogueClient/Config/staging.xcconfig  
 $ cp RogueClient/Config/release.template.xcconfig RogueClient/Config/release.xcconfig  
 $ cp wireguard-tunnel-provider/Config/wg-staging.template.xcconfig wireguard-tunnel-provider/Config/wg-staging.xcconfig   
-$ cp wireguard-tunnel-provider/Config/wg-release.template.xcconfig wireguard-tunnel-provider/Config/wg-release.xcconfig  
-$ cp today-extension/Config/today-extension-staging.template.xcconfig today-extension/Config/today-extension-staging.xcconfig  
-$ cp today-extension/Config/today-extension-release.template.xcconfig today-extension/Config/today-extension-release.xcconfig   
+$ cp wireguard-tunnel-provider/Config/wg-release.template.xcconfig wireguard-tunnel-provider/Config/wg-release.xcconfig   
 ```
 
 ### OpenVPN configuration

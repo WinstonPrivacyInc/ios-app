@@ -1,6 +1,0 @@
-#include "Pods/Target Support Files/Pods-RogueClient/Pods-RogueClient.release.xcconfig"
-
-Environment = staging
-ApiHostName = 
-TlsHostName = 
-IAPSharedSecret = 
