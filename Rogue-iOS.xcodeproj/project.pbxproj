@@ -258,6 +258,7 @@
 		A932871726027CFB0034E296 /* KeyPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932871626027CFB0034E296 /* KeyPair.swift */; };
 		A94E2134261CE505007DC374 /* ConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */; };
 		A94E213A261CE513007DC374 /* ConfirmationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */; };
+		A988431A2644A54200799613 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A98843192644A54100799613 /* amplifyconfiguration.json */; };
 		A99FDB77261617D300A8B498 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB76261617D200A8B498 /* SignUpViewController.swift */; };
 		A99FDBA7261B711B00A8B498 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */; };
 		A99FDBAD261B712B00A8B498 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */; };
@@ -275,10 +276,34 @@
 		A9BD78662644845700199BF9 /* amplifyconfiguration-release.json in Resources */ = {isa = PBXBuildFile; fileRef = A9BD78652644845700199BF9 /* amplifyconfiguration-release.json */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
 		A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */; };
-		A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */; };
 		E8802DC3459714DE3B42A0BA /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */; };
 		FCBFE1989E1777F317A055B6 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		A98843152644997000799613 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		A98843172644997200799613 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		824F56092233FE8C00BCDD5C /* PBXContainerItemProxy */ = {
@@ -575,6 +600,7 @@
 		A932871626027CFB0034E296 /* KeyPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPair.swift; sourceTree = "<group>"; };
 		A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeViewController.swift; sourceTree = "<group>"; };
 		A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeView.swift; sourceTree = "<group>"; };
+		A98843192644A54100799613 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		A99FDB76261617D200A8B498 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -592,7 +618,6 @@
 		A9BD78652644845700199BF9 /* amplifyconfiguration-release.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "amplifyconfiguration-release.json"; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
 		A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmView.swift; sourceTree = "<group>"; };
-		A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = Config/amplifyconfiguration.json; sourceTree = "<group>"; };
 		B046A96FF272AF659CE47461 /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
 		ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4B0665554A6F142005387 /* Pods-RogueClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.debug.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1290,7 +1315,7 @@
 				82FF0D4123153D1000440E5D /* Colors.xcassets */,
 				9CB2CE261DAA6C1B007A4D2D /* RogueClient.entitlements */,
 				9CB2CE321DAF9283007A4D2D /* Model.xcdatamodeld */,
-				A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */,
+				A98843192644A54100799613 /* amplifyconfiguration.json */,
 			);
 			path = RogueClient;
 			sourceTree = "<group>";
@@ -1451,6 +1476,7 @@
 			buildConfigurationList = 9CDDD5D31D9D2F9F00D39924 /* Build configuration list for PBXNativeTarget "RogueClient" */;
 			buildPhases = (
 				74CA577B54186C5BDB90507D /* [CP] Check Pods Manifest.lock */,
+				A9BD78682644970800199BF9 /* Copy Amplify Configuration */,
 				9CDDD5A71D9D2F9E00D39924 /* Sources */,
 				9CDDD5A81D9D2F9E00D39924 /* Frameworks */,
 				9CDDD5A91D9D2F9E00D39924 /* Resources */,
@@ -1459,6 +1485,8 @@
 				950B24F440B80C4622BAB5DF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
+				A98843172644997200799613 /* PBXBuildRule */,
+				A98843152644997000799613 /* PBXBuildRule */,
 			);
 			dependencies = (
 				82B6052A2170840C004B40E6 /* PBXTargetDependency */,
@@ -1599,6 +1627,7 @@
 				9CDDD5B91D9D2F9F00D39924 /* LaunchScreen.storyboard in Resources */,
 				A9BD78662644845700199BF9 /* amplifyconfiguration-release.json in Resources */,
 				9CDDD5B61D9D2F9F00D39924 /* Assets.xcassets in Resources */,
+				A988431A2644A54200799613 /* amplifyconfiguration.json in Resources */,
 				9CB2CE541DB2A999007A4D2D /* servers.json in Resources */,
 				8269CD8F2164A8C700D083A1 /* servers-dev.json in Resources */,
 				A9BD785E2643292200199BF9 /* debug.xcconfig in Resources */,
@@ -1609,7 +1638,6 @@
 				A9BD78642644843E00199BF9 /* amplifyconfiguration-staging.json in Resources */,
 				826470C42446F67100403A14 /* Auth.storyboard in Resources */,
 				82FF0D4223153D1000440E5D /* Colors.xcassets in Resources */,
-				A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1732,6 +1760,27 @@
 			shellPath = /bin/sh;
 			shellScript = "curl -sf \"https://dev.winstonapis.com/vpn/servers?pretty=true\" > RogueClient/Config/servers.json\n";
 			showEnvVarsInLog = 0;
+		};
+		A9BD78682644970800199BF9 /* Copy Amplify Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/RogueClient/Config/amplifyconfiguration-debug.json",
+				"$(SRCROOT)/RogueClient/Config/amplifyconfiguration-staging.json",
+				"$(SRCROOT)/RogueClient/Config/amplifyconfiguration-release.json",
+			);
+			name = "Copy Amplify Configuration";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Copying Amplify Configuration\"\n\nif [[ \"$CONFIGURATION\" == \"Debug\" ]]; then\ncp \"$SRCROOT/RogueClient/Config/amplifyconfiguration-debug.json\" \"$SRCROOT/RogueClient/amplifyconfiguration.json\"\nfi\n\nif [[ \"$CONFIGURATION\" == \"Staging\" ]]; then\ncp \"$SRCROOT/RogueClient/Config/amplifyconfiguration-staging.json\" \"$SRCROOT/RogueClient/amplifyconfiguration.json\"\nfi\n\nif [[ \"$CONFIGURATION\" == \"Release\" ]]; then\ncp \"$SRCROOT/RogueClient/Config/amplifyconfiguration-release.json\" \"$SRCROOT/RogueClient/amplifyconfiguration.json\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
