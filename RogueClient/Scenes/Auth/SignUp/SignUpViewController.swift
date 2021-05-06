@@ -3,7 +3,7 @@
 //  RogueClient
 //
 //  Created by Antonio Campos on 4/1/21.
-//  Copyright © 2021 Winston Privacy. All rights reserved.
+//  Copyright © 2021 Winston Privacy, Inc. All rights reserved.
 //
 
 import UIKit
@@ -36,7 +36,6 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "signUpScreen"
-        // navigationController?.navigationBar.prefersLargeTitles = false
         emailTextField.becomeFirstResponder()
         
         hiddenConfirmationCodeField.inputAccessoryView = keyboardView
@@ -44,9 +43,6 @@ class SignUpViewController: UIViewController {
         confirmationCodeField.properties.numberOfCharacters = 6
         confirmationCodeField.properties.isSecure = false
         confirmationCodeField.properties.animateFocus = true
-//
-//        addObservers()
-//        hideKeyboardOnTap()
     }
     
     
@@ -87,10 +83,7 @@ class SignUpViewController: UIViewController {
         }
         
         isCognitoOperationInProgress = true
-
-        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-        hud.detailTextLabel.text = "Signing up..."
-        hud.show(in: (navigationController?.view)!)
+        showIndicator(text: "Signin up...")
         
         let userAttributes = [AuthUserAttribute(.email, value: email)]
         let options = AuthSignUpRequest.Options(userAttributes: userAttributes)
@@ -161,9 +154,6 @@ class SignUpViewController: UIViewController {
         }
         
         showIndicator(text: "Confirming your email...")
-//        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
-//        hud.detailTextLabel.text = "Confirming your email..."
-//        hud.show(in: (navigationController?.view)!)
         
         let email = (emailTextField.text ?? "").trim()
         let password = getPasswordNonSecure()
@@ -207,8 +197,8 @@ extension SignUpViewController: UITextFieldDelegate {
             emailTextField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
         } else if textField == passwordTextField {
-            emailTextField.resignFirstResponder()
-            // startSignInProcess()
+            passwordTextField.resignFirstResponder()
+            singUp(self)
         }
         
         return true

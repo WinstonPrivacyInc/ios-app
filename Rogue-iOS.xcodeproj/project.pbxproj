@@ -259,7 +259,6 @@
 		A94E2134261CE505007DC374 /* ConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */; };
 		A94E213A261CE513007DC374 /* ConfirmationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */; };
 		A99FDB77261617D300A8B498 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDB76261617D200A8B498 /* SignUpViewController.swift */; };
-		A99FDB952617649800A8B498 /* servers-backup.json in Resources */ = {isa = PBXBuildFile; fileRef = A99FDB942617649800A8B498 /* servers-backup.json */; };
 		A99FDBA7261B711B00A8B498 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */; };
 		A99FDBAD261B712B00A8B498 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */; };
 		A99FDBB4261BA12400A8B498 /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99FDBB3261BA12400A8B498 /* ChangeEmailView.swift */; };
@@ -271,6 +270,9 @@
 		A9BD785C2641F39700199BF9 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BD785B2641F39700199BF9 /* AccountService.swift */; };
 		A9BD785E2643292200199BF9 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A9BD785D2643292200199BF9 /* debug.xcconfig */; };
 		A9BD78602643298C00199BF9 /* wg-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A9BD785F2643298C00199BF9 /* wg-debug.xcconfig */; };
+		A9BD78622644840A00199BF9 /* amplifyconfiguration-debug.json in Resources */ = {isa = PBXBuildFile; fileRef = A9BD78612644840A00199BF9 /* amplifyconfiguration-debug.json */; };
+		A9BD78642644843E00199BF9 /* amplifyconfiguration-staging.json in Resources */ = {isa = PBXBuildFile; fileRef = A9BD78632644843E00199BF9 /* amplifyconfiguration-staging.json */; };
+		A9BD78662644845700199BF9 /* amplifyconfiguration-release.json in Resources */ = {isa = PBXBuildFile; fileRef = A9BD78652644845700199BF9 /* amplifyconfiguration-release.json */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
 		A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */; };
 		A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */; };
@@ -574,7 +576,6 @@
 		A94E2133261CE505007DC374 /* ConfirmationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeViewController.swift; sourceTree = "<group>"; };
 		A94E2139261CE513007DC374 /* ConfirmationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeView.swift; sourceTree = "<group>"; };
 		A99FDB76261617D200A8B498 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		A99FDB942617649800A8B498 /* servers-backup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "servers-backup.json"; sourceTree = "<group>"; };
 		A99FDBA6261B711B00A8B498 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A99FDBAC261B712B00A8B498 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		A99FDBB3261BA12400A8B498 /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
@@ -586,6 +587,9 @@
 		A9BD785B2641F39700199BF9 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 		A9BD785D2643292200199BF9 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		A9BD785F2643298C00199BF9 /* wg-debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wg-debug.xcconfig"; sourceTree = "<group>"; };
+		A9BD78612644840A00199BF9 /* amplifyconfiguration-debug.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "amplifyconfiguration-debug.json"; sourceTree = "<group>"; };
+		A9BD78632644843E00199BF9 /* amplifyconfiguration-staging.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "amplifyconfiguration-staging.json"; sourceTree = "<group>"; };
+		A9BD78652644845700199BF9 /* amplifyconfiguration-release.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "amplifyconfiguration-release.json"; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
 		A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmView.swift; sourceTree = "<group>"; };
 		A9EC2F6625F690C900E797B7 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = Config/amplifyconfiguration.json; sourceTree = "<group>"; };
@@ -715,13 +719,15 @@
 		82234B6121BA7ACA00B082DE /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				A99FDB942617649800A8B498 /* servers-backup.json */,
-				82A9E8C323471EBE007BCA7E /* release.xcconfig */,
+				A9BD785D2643292200199BF9 /* debug.xcconfig */,
 				82A9E8C423471EBE007BCA7E /* staging.xcconfig */,
+				82A9E8C323471EBE007BCA7E /* release.xcconfig */,
+				A9BD78612644840A00199BF9 /* amplifyconfiguration-debug.json */,
+				A9BD78632644843E00199BF9 /* amplifyconfiguration-staging.json */,
+				A9BD78652644845700199BF9 /* amplifyconfiguration-release.json */,
 				9CB2CE531DB2A999007A4D2D /* servers.json */,
 				8269CD8E2164A8C700D083A1 /* servers-dev.json */,
 				9C2833781D9D3F060024C553 /* Config.swift */,
-				A9BD785D2643292200199BF9 /* debug.xcconfig */,
 				82774854237596DF0061BD46 /* OpenVPNConf.swift */,
 				82BBF26021AD213500589766 /* Theme.swift */,
 			);
@@ -1591,16 +1597,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CDDD5B91D9D2F9F00D39924 /* LaunchScreen.storyboard in Resources */,
+				A9BD78662644845700199BF9 /* amplifyconfiguration-release.json in Resources */,
 				9CDDD5B61D9D2F9F00D39924 /* Assets.xcassets in Resources */,
 				9CB2CE541DB2A999007A4D2D /* servers.json in Resources */,
 				8269CD8F2164A8C700D083A1 /* servers-dev.json in Resources */,
 				A9BD785E2643292200199BF9 /* debug.xcconfig in Resources */,
+				A9BD78622644840A00199BF9 /* amplifyconfiguration-debug.json in Resources */,
 				9CDDD5B41D9D2F9F00D39924 /* Main.storyboard in Resources */,
 				9C2833741D9D3EB60024C553 /* Initial.storyboard in Resources */,
 				A99FDBC5261BB25A00A8B498 /* Account.storyboard in Resources */,
+				A9BD78642644843E00199BF9 /* amplifyconfiguration-staging.json in Resources */,
 				826470C42446F67100403A14 /* Auth.storyboard in Resources */,
 				82FF0D4223153D1000440E5D /* Colors.xcassets in Resources */,
-				A99FDB952617649800A8B498 /* servers-backup.json in Resources */,
 				A9EC2F6725F690C900E797B7 /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -200,11 +200,12 @@ class ControlPanelViewController: UITableViewController {
                 return
             }
             
-            guard self.evaluateIsServiceActive() else {
-                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
-                NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
-                return
-            }
+            // TODO: antonio - handle when subscription logic is active
+//            guard self.evaluateIsServiceActive() else {
+//                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
+//                NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
+//                return
+//            }
             
             if ExtensionKeyManager.needToRegenerate() {
                 self.keyManager.setNewKey()
