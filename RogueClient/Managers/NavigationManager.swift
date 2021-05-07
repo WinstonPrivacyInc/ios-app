@@ -146,6 +146,11 @@ class NavigationManager {
         return storyBoard.instantiateViewController(withIdentifier: "accountView")
     }
     
+    static func getBackdoorViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "backdoorView")
+    }
+    
     static func getControlPanelViewController() -> UITableViewController {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         

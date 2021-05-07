@@ -183,6 +183,12 @@ class SettingsViewController: UITableViewController {
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = UIColor.init(named: Theme.ivpnBackgroundQuaternary)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.presentBackdoorScreen))
+        // tap.numberOfTouchesRequired = 2
+        versionLabel.isUserInteractionEnabled = true
+        versionLabel.addGestureRecognizer(tap)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -302,6 +308,11 @@ class SettingsViewController: UITableViewController {
             Application.shared.connectionManager.connect()
             NotificationCenter.default.post(name: Notification.Name.ServerSelected, object: nil)
         }
+    }
+    
+    @objc func presentBackdoorScreen(sender:UITapGestureRecognizer) {
+        print("double tap is working....")
+         present(NavigationManager.getBackdoorViewController(), animated: true, completion: nil)
     }
     
     // MARK: - Methods -
