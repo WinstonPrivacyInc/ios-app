@@ -3198,7 +3198,11 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Backdoor" id="JoI-hl-XRb">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="yfa-Dr-s3W"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="yfa-Dr-s3W">
+                            <connections>
+                                <action selector="dismiss:" destination="Jqg-yg-kwc" id="oXY-Oz-sJs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="buildConfigurationLabel" destination="JkA-SB-Dve" id="HtE-Sx-sCg"/>

@@ -95,4 +95,7 @@ class BackdoorViewController: UITableViewController {
         showFlashNotification(message: "Terms and conditions agreement has been cleared.", presentInView: (navigationController?.view)!)
     }
     
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismissViewController(sender)
+    }
 }
