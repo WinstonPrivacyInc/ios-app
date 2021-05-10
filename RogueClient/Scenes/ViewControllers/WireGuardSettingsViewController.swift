@@ -61,9 +61,13 @@ class WireGuardSettingsViewController: UITableViewController {
             }
             
             self.keyManager.setNewKey { result in
-                // antonio
-                // TODO: do we need anything here....?
-                // yes show succcess or error messages
+                switch result {
+                case .success(_):
+                    self.showFlashNotification(message: "Keys have been re-generated.", presentInView: self.view)
+                    break
+                case .failure(let error):
+                self.showFlashNotification(message: "There was an error re-generating keys \(String(describing: error)).", presentInView: self.view)
+                }
             }
         }
     }

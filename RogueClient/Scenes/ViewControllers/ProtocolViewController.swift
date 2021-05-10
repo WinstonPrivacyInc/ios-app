@@ -237,15 +237,21 @@ class ProtocolViewController: UITableViewController {
     
     @IBAction func regenerateKeys(_ sender: UIButton) {
         Application.shared.connectionManager.getStatus { _, status in
+            
             if status == .connected || status == .connecting {
-                self.showFlashNotification(message: "To re-generate keys, please first disconnect", presentInView: self.view)
+                self.showAlert(title: "Active Connection", message: "Your VPN connection is active. To re-generate keys you must disconnect.")
                 return
             }
             
+            
+            self.setKeyStart()
             self.keyManager.setNewKey { result in
-                // antonio
-                // TODO: do we need anything here....?
-                // yes show succcess or error messages
+                switch result {
+                case .success(_):
+                    self.setKeySuccess()
+                case .failure(_):
+                    self.setKeyFail()
+                }
             }
         }
     }
@@ -314,10 +320,12 @@ class ProtocolViewController: UITableViewController {
 
 extension ProtocolViewController {
     
-    /** antonio - this gets called every time you update the dropdown for the protocol field... this is what will create different keys for connections g*/
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let connectionProtocol = collection[indexPath.section][indexPath.row]
+    
+        /** antonio - this gets called every time you update the dropdown for the protocol field... this is what will create different keys for connections g*/
+        // this is a bug... collection = [1][3], but section = index (2) so out of bounds....
+         let connectionProtocol = collection[indexPath.section][indexPath.row]
         
         if connectionProtocol == .wireguard(.udp, 1) {
             return
@@ -466,7 +474,7 @@ extension ProtocolViewController {
     
     override func setKeySuccess() {
         hud.indicatorView = JGProgressHUDSuccessIndicatorView()
-        hud.detailTextLabel.text = "WireGuard keys successfully generated and uploaded to IVPN server."
+        hud.detailTextLabel.text = "WireGuard keys successfully re-generated."
         hud.dismiss(afterDelay: 2)
         reloadTable(connectionProtocol: ConnectionSettings.wireguard(.udp, 2049))
         NotificationCenter.default.post(name: Notification.Name.ProtocolSelected, object: nil)
@@ -476,9 +484,12 @@ extension ProtocolViewController {
         hud.dismiss()
         
         if AppKeyManager.isKeyExpired {
-            showAlert(title: "Failed to automatically rotate WireGuard keys", message: "Cannot connect using WireGuard protocol: rotating WireGuard keys failed. This is likely because of no access to an IVPN API server. You can retry connection, rotate keys manually from preferences, or select another protocol. Please contact support if this error persists.")
+            showAlert(title: "Failed to automatically rotate WireGuard keys", message: "Cannot connect using WireGuard protocol: rotating WireGuard keys failed. This is likely because of no access to the Rogue API server. You can retry connection, rotate keys manually from preferences, or wait a few minutes and retry. Please contact support if this error persists.")
         } else {
-            showAlert(title: "Failed to regenerate WireGuard keys", message: "There was a problem generating and uploading WireGuard keys to IVPN server.")
+            showAlert(
+                title: "Error",
+                message: "There was an error generating WireGuard keys. Please try again later."
+            )
         }
     }
     
