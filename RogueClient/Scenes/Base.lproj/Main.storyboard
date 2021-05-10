@@ -3106,7 +3106,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="2eY-Po-kef">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="2eY-Po-kef" userLabel="I">
                                         <rect key="frame" x="0.0" y="748.33333206176758" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2eY-Po-kef" id="Sed-zU-H7v">
@@ -3142,6 +3142,59 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Storage" id="yC3-Ae-d3Y" userLabel="Storage settings">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="vHM-sR-2mc">
+                                        <rect key="frame" x="0.0" y="857.99999809265137" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vHM-sR-2mc" id="HSz-dc-CHh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agreed to terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UK-FE-7QO">
+                                                    <rect key="frame" x="16" y="10" width="351" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="tpO-aX-xAc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="ivpnLabelPrimary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG4-J7-FUV">
+                                                    <rect key="frame" x="16" y="33" width="351" height="16.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="ivpnLabel5"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAs-om-uN2">
+                                                    <rect key="frame" x="313" y="21" width="44" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="9nN-bc-Ei7"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="wBT-AH-ioS"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Clear"/>
+                                                    <connections>
+                                                        <action selector="clearAgreeTermsAndConditions:" destination="Jqg-yg-kwc" eventType="touchUpInside" id="CAH-Nu-GJM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GG4-J7-FUV" firstAttribute="width" secondItem="7UK-FE-7QO" secondAttribute="width" id="6et-rD-yNp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kAs-om-uN2" secondAttribute="trailing" constant="10" id="7w4-r4-dIQ"/>
+                                                <constraint firstItem="kAs-om-uN2" firstAttribute="top" secondItem="HSz-dc-CHh" secondAttribute="topMargin" constant="10" id="A7j-Ix-epx"/>
+                                                <constraint firstItem="kAs-om-uN2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HSz-dc-CHh" secondAttribute="leading" constant="20" symbolic="YES" id="G53-Lu-uam"/>
+                                                <constraint firstAttribute="bottom" secondItem="GG4-J7-FUV" secondAttribute="bottom" constant="10.5" id="KDG-bI-3Fu"/>
+                                                <constraint firstItem="7UK-FE-7QO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HSz-dc-CHh" secondAttribute="trailingMargin" id="QFG-mN-WCK"/>
+                                                <constraint firstItem="7UK-FE-7QO" firstAttribute="top" secondItem="HSz-dc-CHh" secondAttribute="top" constant="10" id="VHq-dy-nht"/>
+                                                <constraint firstItem="GG4-J7-FUV" firstAttribute="top" secondItem="7UK-FE-7QO" secondAttribute="bottom" constant="3" id="Vkk-0X-e3t"/>
+                                                <constraint firstAttribute="trailing" secondItem="GG4-J7-FUV" secondAttribute="trailing" constant="8" id="W5d-Si-92Q"/>
+                                                <constraint firstItem="GG4-J7-FUV" firstAttribute="leading" secondItem="HSz-dc-CHh" secondAttribute="leading" constant="16" id="vw4-eg-Z7x"/>
+                                                <constraint firstItem="7UK-FE-7QO" firstAttribute="leading" secondItem="HSz-dc-CHh" secondAttribute="leading" constant="16" id="xra-Gr-7r3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Backdoor" id="JoI-hl-XRb">
@@ -3153,6 +3206,7 @@
                         <outlet property="cognitoClientIdLabel" destination="76v-GS-2Au" id="TIb-jZ-EXw"/>
                         <outlet property="cognitoUserIdLabel" destination="pcW-FK-sKD" id="fo0-hB-zam"/>
                         <outlet property="cognitoUserPoolIdLabel" destination="EMz-Gb-Jbz" id="xze-Lv-Uar"/>
+                        <outlet property="tosAgreedLabel" destination="GG4-J7-FUV" id="l1y-lN-RVB"/>
                         <outlet property="vpnAllowedIpsLabel" destination="sXR-UF-d3O" id="Vri-b6-ZDP"/>
                         <outlet property="vpnDnsLabel" destination="8yu-R4-PDu" id="spB-lG-p0r"/>
                         <outlet property="vpnEndpointLabel" destination="aQK-Qc-iL8" id="5sP-XG-Hbt"/>
@@ -3163,7 +3217,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDY-sl-xl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3538" y="1595"/>
+            <point key="canvasLocation" x="3536.8000000000002" y="1594.5812807881773"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zSp-KE-yGC">

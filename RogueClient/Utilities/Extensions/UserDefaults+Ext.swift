@@ -200,4 +200,8 @@ extension UserDefaults {
         standard.synchronize()
     }
     
+    static func clearUserConsent() {
+        shared.removeObject(forKey: UserDefaults.Key.hasUserConsent)
+    }
+    
 }

@@ -24,6 +24,7 @@ class BackdoorViewController: UITableViewController {
     @IBOutlet weak var vpnAllowedIpsLabel: UILabel!
     @IBOutlet weak var vpnKeepAliveLabel: UILabel!
     @IBOutlet weak var vpnPublicKeyLabel: UILabel!
+    @IBOutlet weak var tosAgreedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,8 +84,15 @@ class BackdoorViewController: UITableViewController {
         vpnAllowedIpsLabel.text = KeyChain.wgInterfaceAddresses
         vpnKeepAliveLabel.text = "\(KeyChain.wgPeerPersistentKeepAlive ?? Config.wgPeerPersistentKeepalive)"
         vpnPublicKeyLabel.text = KeyChain.wgInterfacePublicKey
-
+        
+        tosAgreedLabel.text = "\(UserDefaults.shared.hasUserConsent)"
     }
     
+    @IBAction func clearAgreeTermsAndConditions(_ sender: Any) {
+        UserDefaults.clearUserConsent()
+        tosAgreedLabel.text = "\(UserDefaults.shared.hasUserConsent)"
+        
+        showFlashNotification(message: "Terms and conditions agreement has been cleared.", presentInView: (navigationController?.view)!)
+    }
     
 }

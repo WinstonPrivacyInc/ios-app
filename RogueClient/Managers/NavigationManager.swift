@@ -169,10 +169,10 @@ class NavigationManager {
         return navController!
     }
     
-    static func getCreateAccountViewController() -> UIViewController {
-        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
-        return storyBoard.instantiateViewController(withIdentifier: "createAccountView")
-    }
+//    static func getCreateAccountViewController() -> UIViewController {
+//        let storyBoard = UIStoryboard(name: "Auth", bundle: nil)
+//        return storyBoard.instantiateViewController(withIdentifier: "createAccountView")
+//    }
     
     static func getTwoFactorViewController(delegate: TwoFactorViewControllerDelegate? = nil) -> UIViewController {
         let storyBoard = UIStoryboard(name: "Auth", bundle: nil)

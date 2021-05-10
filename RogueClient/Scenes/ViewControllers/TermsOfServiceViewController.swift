@@ -49,8 +49,6 @@ class TermsOfServiceViewController: UIViewController {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    // MARK: - View Lifecycle -
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.accessibilityIdentifier = "termsOfServiceScreen"

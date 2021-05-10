@@ -67,7 +67,9 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func singUp(_ sender: Any) {
-        guard !isCognitoOperationInProgress else { return }
+        guard !isCognitoOperationInProgress else {
+            return
+        }
         
         let email = (emailTextField.text ?? "").trim()
         guard ServiceStatus.isValidEmail(email: email) else {

@@ -78,15 +78,15 @@ class SignInViewController: UIViewController {
         }
     }
     
-    @IBAction func createAccount(_ sender: AnyObject) {
-        guard UserDefaults.shared.hasUserConsent else {
-            actionType = .signup
-            present(NavigationManager.getTermsOfServiceViewController(), animated: true, completion: nil)
-            return
-        }
-        
-        startSignupProcess()
-    }
+//    @IBAction func createAccount(_ sender: AnyObject) {
+//        guard UserDefaults.shared.hasUserConsent else {
+//            actionType = .signup
+//            present(NavigationManager.getTermsOfServiceViewController(), animated: true, completion: nil)
+//            return
+//        }
+//
+//        startSignupProcess()
+//    }
     
     @IBAction func presentForgotPasswordView(_ sender: Any) {
         present(NavigationManager.getForgotPasswordViewController(), animated: true)
@@ -210,7 +210,8 @@ class SignInViewController: UIViewController {
         case .signin:
             signInToAccount(self)
         case .signup:
-            createAccount(self)
+            // createAccount(self)
+            print("do nothing here...")
         }
     }
     
@@ -438,30 +439,30 @@ class SignInViewController: UIViewController {
     }
     
     
-    private func startSignupProcess() {
-        if KeyChain.tempUsername != nil {
-            present(NavigationManager.getCreateAccountViewController(), animated: true, completion: nil)
-            return
-        }
-        
-        showIndicator(message: "Creating new account...")
-        
-        let request = ApiRequestDI(method: .post, endpoint: Config.apiAccountNew, params: [URLQueryItem(name: "product_name", value: "IVPN Standard")])
-        
-        ApiService.shared.requestCustomError(request) { [weak self] (result: ResultCustomError<Account, ErrorResult>) in
-            guard let self = self else { return }
-            
-            self.hud.dismiss()
-            
-            switch result {
-            case .success(let account):
-                KeyChain.tempUsername = account.accountId
-                self.present(NavigationManager.getCreateAccountViewController(), animated: true, completion: nil)
-            case .failure(let error):
-                self.showErrorAlert(title: "Error", message: error?.message ?? "There was a problem with creating a new account.")
-            }
-        }
-    }
+//    private func startSignupProcess() {
+//        if KeyChain.tempUsername != nil {
+//            present(NavigationManager.getCreateAccountViewController(), animated: true, completion: nil)
+//            return
+//        }
+//
+//        showIndicator(message: "Creating new account...")
+//
+//        let request = ApiRequestDI(method: .post, endpoint: Config.apiAccountNew, params: [URLQueryItem(name: "product_name", value: "IVPN Standard")])
+//
+//        ApiService.shared.requestCustomError(request) { [weak self] (result: ResultCustomError<Account, ErrorResult>) in
+//            guard let self = self else { return }
+//
+//            self.hud.dismiss()
+//
+//            switch result {
+//            case .success(let account):
+//                KeyChain.tempUsername = account.accountId
+//                self.present(NavigationManager.getCreateAccountViewController(), animated: true, completion: nil)
+//            case .failure(let error):
+//                self.showErrorAlert(title: "Error", message: error?.message ?? "There was a problem with creating a new account.")
+//            }
+//        }
+//    }
     
     
     private func showUsernameError() {

@@ -3,22 +3,10 @@
 //  Rogue iOS app
 //  https://github.com/WinstonPrivacyInc/rogue-ios
 //
-//  Created by Fedir Nepyyvoda on 2016-11-08.
-//  Copyright (c) 2020 Privatus Limited.
+//  Created by Antonio Campos on 2021-05-10.
+//  Copyright (c) 2021 Winston Privacy, Inc
 //
 //  This file is part of the Rogue iOS app.
-//
-//  The Rogue iOS app is free software: you can redistribute it and/or
-//  modify it under the terms of the GNU General Public License as published by the Free
-//  Software Foundation, either version 3 of the License, or (at your option) any later version.
-//
-//  The Rogue iOS app is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-//  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-//  details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with the Rogue iOS app. If not, see <https://www.gnu.org/licenses/>.
 //
 
 import KeychainAccess
@@ -30,10 +18,6 @@ class KeyChain {
     private static let sessionTokenKey = "session_token"
     private static let vpnUsernameKey = "vpn_username"
     private static let vpnPasswordKey = "vpn_password"
-    // private static let wgPublicKeyKey = "WGPublicKey"
-    // private static let wgPrivateKeyKey = "WGPrivateKey"
-    // private static let wgIpAddressKey = "WGIpAddressKey"
-    
     
     private static let wgInterface_privateKey_key = "wg_interface_private_key"
     private static let wgInterface_publicKey_key = "wg_interface_public_key"
@@ -122,24 +106,6 @@ class KeyChain {
             KeyChain.bundle[tempUsernameKey] = newValue
         }
     }
-    
-//    class var wgPrivateKey: String? {
-//        get {
-//            return KeyChain.bundle[wgPrivateKeyKey]
-//        }
-//        set {
-//            KeyChain.bundle[wgPrivateKeyKey] = newValue
-//        }
-//    }
-    
-//    class var wgIpAddress: String? {
-//        get {
-//            return KeyChain.bundle[wgIpAddressKey]
-//        }
-//        set {
-//            KeyChain.bundle[wgIpAddressKey] = newValue
-//        }
-//    }
     
     class var sessionToken: String? {
         get {

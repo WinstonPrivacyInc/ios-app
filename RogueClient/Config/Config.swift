@@ -27,7 +27,7 @@ struct Config {
     static let apiSessionDelete = "/v4/session/delete"
     //static let apiSessionWGKeySet = "/v4/session/wg/set"
     static let apiSessionWGKeySet = "/api/v1/wg/connect"
-    static let apiAccountNew = "/v4/account/new"
+    // static let apiAccountNew = "/v4/account/new"
     static let apiPaymentInitial = "/v4/account/payment/ios/initial"
     static let apiPaymentAdd = "/v4/account/payment/ios/add"
     static let apiPaymentAddLegacy = "/v2/mobile/ios/subscription-purchased"

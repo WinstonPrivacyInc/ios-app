@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -204,7 +204,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yd-v5-3oo">
-                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
+                            <rect key="frame" x="55.5" y="28" width="300" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="PN5-wH-xTa"/>
                                 <constraint firstAttribute="width" constant="300" id="i9N-VJ-rJg"/>
@@ -214,7 +214,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N9G-I7-vsc" customClass="KAPinField" customModule="KAPinField">
-                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
+                            <rect key="frame" x="55.5" y="68" width="300" height="50"/>
                             <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="0MK-Vm-RuZ"/>
@@ -394,7 +394,7 @@
                             <tableViewSection id="Lj8-rs-5LY">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="226" id="88p-3D-F4q">
-                                        <rect key="frame" x="0.0" y="93" width="320" height="226"/>
+                                        <rect key="frame" x="0.0" y="89.5" width="320" height="226"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="88p-3D-F4q" id="Grr-60-n61">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="226"/>
@@ -543,7 +543,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="286" id="GrT-ru-LnQ">
-                                        <rect key="frame" x="0.0" y="319" width="320" height="286"/>
+                                        <rect key="frame" x="0.0" y="315.5" width="320" height="286"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GrT-ru-LnQ" id="Uc3-Xd-uPE">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
@@ -803,7 +803,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="3fw-Yl-V8z">
-                            <rect key="frame" x="0.0" y="224" width="320" height="60"/>
+                            <rect key="frame" x="0.0" y="217.00000034679067" width="320" height="60"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLD-yW-M4d" customClass="PaymentComponentView" customModule="RogueClient" customModuleProvider="target">
@@ -848,7 +848,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ServiceTitleTableViewCell" rowHeight="64" id="yp4-DA-nL9" customClass="ServiceTitleTableViewCell" customModule="RogueClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="68" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="64.5" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yp4-DA-nL9" id="81z-wZ-CTY">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
@@ -902,7 +902,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ServiceTableViewCell" rowHeight="64" id="4VZ-0C-Lig" customClass="ServiceTableViewCell" customModule="RogueClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="132" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="128.5" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4VZ-0C-Lig" id="1CO-CW-g3H">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
@@ -1584,7 +1584,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7g-63-ebA">
-                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
+                            <rect key="frame" x="55.5" y="28" width="300" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Rn8-dt-yEF"/>
                                 <constraint firstAttribute="width" constant="300" id="Z0j-cM-HlD"/>
@@ -1594,7 +1594,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-qg-EqE" customClass="KAPinField" customModule="KAPinField">
-                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
+                            <rect key="frame" x="55.5" y="68" width="300" height="50"/>
                             <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="322-4j-bER"/>
@@ -1817,7 +1817,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwR-QF-Xki">
-                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
+                            <rect key="frame" x="55.5" y="28" width="300" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="P0U-Gn-aXx"/>
                                 <constraint firstAttribute="width" constant="300" id="uXg-P4-sb2"/>
@@ -1827,7 +1827,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rla-4e-h45" customClass="KAPinField" customModule="KAPinField">
-                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
+                            <rect key="frame" x="55.5" y="68" width="300" height="50"/>
                             <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="RHf-tG-mg2"/>
