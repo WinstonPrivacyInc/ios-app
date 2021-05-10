@@ -177,8 +177,17 @@ class ControlPanelViewController: UITableViewController {
         }
     }
     
+    func showIndicator(text: String) -> Void {
+        hud.indicatorView = JGProgressHUDIndeterminateIndicatorView()
+        hud.detailTextLabel.text = text
+        if let topViewController = UIApplication.topViewController() {
+            hud.show(in: topViewController.view)
+        }
+    }
+    
     func connect() {
         log(info: "Connect VPN")
+        self.showIndicator(text: "Connecting...")
         
         guard evaluateIsNetworkReachable() else {
             controlPanelView.connectSwitch.setOn(vpnStatusViewModel.connectToggleIsOn, animated: true)
@@ -189,12 +198,14 @@ class ControlPanelViewController: UITableViewController {
             
             if !isSignedIn {
                 log(info: "user is not signed in.")
+                self.hud.dismiss()
                 NotificationCenter.default.removeObserver(self, name: Notification.Name.ServiceAuthorized, object: nil)
                 NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.ServiceAuthorized, object: nil)
                 return
             }
         
             guard self.evaluateHasUserConsent() else {
+                self.hud.dismiss()
                 self.controlPanelView.connectSwitch.setOn(self.vpnStatusViewModel.connectToggleIsOn, animated: true)
                 NotificationCenter.default.addObserver(self, selector: #selector(self.agreedToTermsOfService), name: Notification.Name.TermsOfServiceAgreed, object: nil)
                 return
@@ -202,30 +213,45 @@ class ControlPanelViewController: UITableViewController {
             
             // TODO: antonio - handle when subscription logic is active
 //            guard self.evaluateIsServiceActive() else {
+            // self.hud.dismiss()
 //                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
 //                NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
 //                return
 //            }
             
-            if ExtensionKeyManager.needToRegenerate() {
-                self.keyManager.setNewKey()
-                return
-            }
+            // we want to connect every time
+//            if ExtensionKeyManager.needToRegenerate() {
+//                self.keyManager.setNewKey()
+//                return
+//            }
             
-            let manager = Application.shared.connectionManager
-            
-            if UserDefaults.shared.networkProtectionEnabled && !manager.canConnect {
-                self.showActionSheet(title: "Rogue cannot connect to trusted network. Do you want to change Network Protection settings for the current network and connect?", actions: ["Connect"], sourceView: self.controlPanelView.connectSwitch) { index in
-                    switch index {
-                    case 0:
-                        self.controlPanelView.networkView.resetTrustToDefault()
+            // TODO: antonio rename setNewKey -> requestWireguardInterface...
+            self.keyManager.setNewKey { result in
+                switch result {
+                case .success(_):
+                    
+                    let manager = Application.shared.connectionManager
+                    
+                    if UserDefaults.shared.networkProtectionEnabled && !manager.canConnect {
+                        self.showActionSheet(title: "Rogue cannot connect to trusted network. Do you want to change Network Protection settings for the current network and connect?", actions: ["Connect"], sourceView: self.controlPanelView.connectSwitch) { index in
+                            switch index {
+                            case 0:
+                                self.controlPanelView.networkView.resetTrustToDefault()
+                                manager.resetRulesAndConnect()
+                            default:
+                                self.updateStatus(vpnStatus: Application.shared.connectionManager.status)
+                            }
+                        }
+                    } else {
                         manager.resetRulesAndConnect()
-                    default:
-                        self.updateStatus(vpnStatus: Application.shared.connectionManager.status)
                     }
+                    
+                    self.hud.dismiss()
+                    
+                case .failure(let error):
+                    self.hud.dismiss()
+                    print("error....\(String(describing: error))")
                 }
-            } else {
-                manager.resetRulesAndConnect()
             }
             
             self.registerUserActivity(type: UserActivityType.Connect, title: UserActivityTitle.Connect)

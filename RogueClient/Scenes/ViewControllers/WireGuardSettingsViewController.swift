@@ -60,7 +60,11 @@ class WireGuardSettingsViewController: UITableViewController {
                 return
             }
             
-            self.keyManager.setNewKey()
+            self.keyManager.setNewKey { result in
+                // antonio
+                // TODO: do we need anything here....?
+                // yes show succcess or error messages
+            }
         }
     }
     

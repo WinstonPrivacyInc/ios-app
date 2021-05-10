@@ -76,14 +76,11 @@ class AppKeyManager {
         return Application.shared.settings.connectionProtocol.tunnelType() == .wireguard
     }
     
-    // MARK: - Methods -
-    
     static func generateKeyPair() {
+        // TODO: antonio -> we don't need this method anymore... remove from places where it's still used....
         var interface = Interface()
         interface.privateKey = Interface.generatePrivateKey()
         
-//        KeyChain.wgPrivateKey = interface.privateKey
-//        KeyChain.wgPublicKey = interface.publicKey
         KeyChain.wgInterfacePrivateKey = interface.privateKey
         KeyChain.wgInterfacePublicKey = interface.publicKey
     }
@@ -100,7 +97,7 @@ class AppKeyManager {
         }
     }
     
-    func setNewKey() {
+    func setNewKey(completion: @escaping (Result<Int>) -> Void) {
         
         let keyPair = KeyPair()
         
@@ -119,7 +116,6 @@ class AppKeyManager {
                 case .success(let wireguardInterface):
                     UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
                     
-                    // new stuff
                     KeyChain.wgInterfacePrivateKey = keyPair.privateKey
                     KeyChain.wgInterfacePublicKey = keyPair.publicKey
                     KeyChain.wgInterfaceDnsServers = wireguardInterface.dns
@@ -129,18 +125,11 @@ class AppKeyManager {
                     KeyChain.wgPeerEndpoint = wireguardInterface.endpoint
                     KeyChain.wgPeerPersistentKeepAlive = wireguardInterface.keepAlive
                     
-                    
-                    // old stuff
-//                    KeyChain.wgPeerEndpoint = wireguardInterface.endpoint
-//                    KeyChain.wgPrivateKey = keyPair.privateKey
-                    // KeyChain.wgPublicKey = keyPair.publicKey
-                    // KeyChain.wgIpAddress = wireguardInterface.allowedIps
-                    
-                    
-                    
-                    self.delegate?.setKeySuccess()
-                case .failure:
-                    self.delegate?.setKeyFail()
+                    completion(.success(0))
+                    // self.delegate?.setKeySuccess()
+                case .failure(let error):
+                    completion(.failure(error))
+                    // self.delegate?.setKeyFail()
                 }
             }
             

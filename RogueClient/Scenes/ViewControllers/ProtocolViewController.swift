@@ -242,7 +242,11 @@ class ProtocolViewController: UITableViewController {
                 return
             }
             
-            self.keyManager.setNewKey()
+            self.keyManager.setNewKey { result in
+                // antonio
+                // TODO: do we need anything here....?
+                // yes show succcess or error messages
+            }
         }
     }
     
@@ -409,7 +413,13 @@ extension ProtocolViewController {
 //                return
 //            }
             if  KeyChain.wgInterfacePublicKey == nil || ExtensionKeyManager.needToRegenerate() {
-                keyManager.setNewKey()
+                keyManager.setNewKey { result in
+                    // antonio
+                    // TODO: do we need anything here....?
+                    // yes show succcess or error messages
+                    // when is this called...?
+                    
+                }
                 return
             }
         }

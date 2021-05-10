@@ -155,12 +155,14 @@ extension ControlPanelViewController {
         hud.dismiss()
         connectionExecute()
     }
-    
+
+    // TODO, pass error here so that the message is better....
+    // TODO, if it failed, then reset toggle to off!!!!
     override func setKeyFail() {
         hud.dismiss()
         
         if AppKeyManager.isKeyExpired {
-            showAlert(title: "Failed to automatically rotate WireGuard keys", message: "Cannot connect using WireGuard protocol: rotating WireGuard keys failed. This is likely because of no access to an IVPN API server. You can retry connection, rotate keys manually from preferences, or select another protocol. Please contact support if this error persists.")
+            showAlert(title: "Failed to automatically rotate WireGuard keys", message: "Cannot connect using WireGuard protocol: rotating WireGuard keys failed. This is likely because of no access to the Rogue API server. You can retry connection, rotate keys manually from preferences, or wait a few minutes and retry. Please contact support if this error persists.")
         } else {
             showAlert(
                 title: "Error",

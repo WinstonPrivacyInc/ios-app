@@ -54,8 +54,9 @@ class KeyChain {
     }
     
     class var wgInterfacePublicKey: String? {
-        get { return KeyChain.bundle[wgInterface_addresses_key] }
-        set { KeyChain.bundle[wgInterface_addresses_key] = newValue }
+        get {
+            return KeyChain.bundle[wgInterface_publicKey_key] }
+        set { KeyChain.bundle[wgInterface_publicKey_key] = newValue }
     }
     
     class var wgInterfaceAddresses: String? {
