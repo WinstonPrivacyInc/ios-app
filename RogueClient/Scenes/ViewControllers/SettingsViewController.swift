@@ -184,10 +184,11 @@ class SettingsViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.backgroundColor = UIColor.init(named: Theme.ivpnBackgroundQuaternary)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.presentBackdoorScreen))
-        // tap.numberOfTouchesRequired = 2
         versionLabel.isUserInteractionEnabled = true
-        versionLabel.addGestureRecognizer(tap)
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(SettingsViewController.presentBackdoorScreen))
+        swipe.direction = [.right]
+        
+        versionLabel.addGestureRecognizer(swipe)
         
     }
     
