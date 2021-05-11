@@ -328,119 +328,14 @@ extension ProtocolViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-        /** antonio - this gets called every time you update the dropdown for the protocol field... this is what will create different keys for connections g*/
-        // this is a bug... collection = [1][3], but section = index (2) so out of bounds....
-         let connectionProtocol = collection[indexPath.section][indexPath.row]
-        
-        if connectionProtocol == .wireguard(.udp, 1) {
-            return
-        }
-        
-        if connectionProtocol == .openvpn(.udp, 0) || connectionProtocol == .wireguard(.udp, 0) {
+        // select protocol
+        if indexPath.row == 0 && indexPath.section == 1 {
+            let connectionProtocol = collection[indexPath.section][indexPath.row]
             selectPreferredProtocolAndPort(connectionProtocol: connectionProtocol)
             tableView.deselectRow(at: indexPath, animated: true)
-            return
+            reloadTable(connectionProtocol: connectionProtocol)
+            NotificationCenter.default.post(name: Notification.Name.ProtocolSelected, object: nil)
         }
-        
-        if connectionProtocol == .wireguard(.udp, 2) {
-            performSegue(withIdentifier: "WireGuardSettings", sender: self)
-            return
-        }
-        
-        guard validateMultiHop(connectionProtocol: connectionProtocol) else {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                showActionSheet(title: "To use this protocol you must turn Multi-Hop off", actions: ["Turn off"], sourceView: cell as UIView) { index in
-                    switch index {
-                    case 0:
-                        UserDefaults.shared.set(false, forKey: UserDefaults.Key.isMultiHop)
-                        NotificationCenter.default.post(name: Notification.Name.TurnOffMultiHop, object: nil)
-                        NotificationCenter.default.post(name: Notification.Name.UpdateControlPanel, object: nil)
-                        tableView.reloadData()
-                    default:
-                        break
-                    }
-                }
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
-            
-            return
-        }
-        
-        guard validateCustomDNSAndAntiTracker(connectionProtocol: connectionProtocol) else {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                showActionSheet(title: "To use IKEv2 protocol you must turn AntiTracker and Custom DNS off", actions: ["Turn off"], sourceView: cell as UIView) { index in
-                    switch index {
-                    case 0:
-                        UserDefaults.shared.set(false, forKey: UserDefaults.Key.isCustomDNS)
-                        UserDefaults.shared.set(false, forKey: UserDefaults.Key.isAntiTracker)
-                        NotificationCenter.default.post(name: Notification.Name.UpdateControlPanel, object: nil)
-                        tableView.reloadData()
-                    default:
-                        break
-                    }
-                }
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
-            
-            return
-        }
-        
-        guard validateAntiTracker(connectionProtocol: connectionProtocol) else {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                showActionSheet(title: "To use IKEv2 protocol you must turn AntiTracker off", actions: ["Turn off"], sourceView: cell as UIView) { index in
-                    switch index {
-                    case 0:
-                        UserDefaults.shared.set(false, forKey: UserDefaults.Key.isAntiTracker)
-                        NotificationCenter.default.post(name: Notification.Name.UpdateControlPanel, object: nil)
-                        tableView.reloadData()
-                    default:
-                        break
-                    }
-                }
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
-            
-            return
-        }
-        
-        guard validateCustomDNS(connectionProtocol: connectionProtocol) else {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                showActionSheet(title: "To use IKEv2 protocol you must turn Custom DNS off", actions: ["Turn off"], sourceView: cell as UIView) { index in
-                    switch index {
-                    case 0:
-                        UserDefaults.shared.set(false, forKey: UserDefaults.Key.isCustomDNS)
-                        tableView.reloadData()
-                    default:
-                        break
-                    }
-                }
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
-            
-            return
-        }
-        
-        if connectionProtocol.tunnelType() != Application.shared.settings.connectionProtocol.tunnelType() && connectionProtocol.tunnelType() == .wireguard {
-//            if  KeyChain.wgPublicKey == nil || ExtensionKeyManager.needToRegenerate() {
-//                keyManager.setNewKey()
-//                return
-//            }
-            if  KeyChain.wgInterfacePublicKey == nil || ExtensionKeyManager.needToRegenerate() {
-                keyManager.setNewKey { result in
-                    // antonio
-                    // TODO: do we need anything here....?
-                    // yes show succcess or error messages
-                    // when is this called...?
-                    
-                }
-                return
-            }
-        }
-        
-        reloadTable(connectionProtocol: connectionProtocol)
-        
-        NotificationCenter.default.post(name: Notification.Name.ProtocolSelected, object: nil)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -483,6 +378,7 @@ extension ProtocolViewController {
         hud.detailTextLabel.text = "WireGuard keys successfully re-generated."
         hud.dismiss(afterDelay: 2)
         reloadTable(connectionProtocol: ConnectionSettings.wireguard(.udp, 2049))
+        updateUILabels()
         NotificationCenter.default.post(name: Notification.Name.ProtocolSelected, object: nil)
     }
     
