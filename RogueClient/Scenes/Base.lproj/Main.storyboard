@@ -1061,7 +1061,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="rEc-xl-Acd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Rotate key now">
+                                                    <state key="normal" title="Re-generate key now">
                                                         <color key="titleColor" red="0.22352941179999999" green="0.56078431370000004" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>

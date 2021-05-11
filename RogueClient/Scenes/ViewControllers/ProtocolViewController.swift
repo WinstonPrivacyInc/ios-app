@@ -3,22 +3,10 @@
 //  Rogue iOS app
 //  https://github.com/WinstonPrivacyInc/rogue-ios
 //
-//  Created by Fedir Nepyyvoda on 2018-07-16.
-//  Copyright (c) 2020 Privatus Limited.
+//  Created by Antonio Campos on 2021-05-11.
+//  Copyright (c) 2021 Winston Privacy, Inc
 //
 //  This file is part of the Rogue iOS app.
-//
-//  The Rogue iOS app is free software: you can redistribute it and/or
-//  modify it under the terms of the GNU General Public License as published by the Free
-//  Software Foundation, either version 3 of the License, or (at your option) any later version.
-//
-//  The Rogue iOS app is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-//  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-//  details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with the Rogue iOS app. If not, see <https://www.gnu.org/licenses/>.
 //
 
 import UIKit
@@ -111,11 +99,11 @@ class ProtocolViewController: UITableViewController {
         collection.append(ConnectionSettings.tunnelTypes(protocols: Config.supportedProtocols))
         
         if connectionProtocol.tunnelType() == .wireguard {
-            collection.append([.wireguard(.udp, 0), .wireguard(.udp, 1), .wireguard(.udp, 2)])
-        }
-        
-        if connectionProtocol.tunnelType() == .openvpn {
-            collection.append([.openvpn(.udp, 0)])
+            collection.append([
+                .wireguard(.udp, 0),
+                .wireguard(.udp, 1),
+                .wireguard(.udp, 2)
+            ])
         }
     }
     
@@ -151,21 +139,29 @@ class ProtocolViewController: UITableViewController {
     
     func selectPreferredProtocolAndPort(connectionProtocol: ConnectionSettings) {
         
-        guard Application.shared.connectionManager.status.isDisconnected() else {
-            showConnectedAlert(message: "To change protocol, please first disconnect", sender: self.protocolAndPortLabel)
-            return
-        }
+        Application.shared.connectionManager.getStatus { _, status in
         
-        Application.shared.connectionManager.isOnDemandEnabled { enabled in
-            guard !enabled else {
-                self.showDisableVPNPrompt(sourceView: self.protocolAndPortLabel) {
-                    self.disconnect()
-                    self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
+            if status == .connected || status == .connecting {
+                self.showConnectedAlert(message: "To change protocol you must disconnect", sender: self.protocolAndPortLabel) { disconnected in
+                    if (disconnected) {
+                        self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
+                    }
                 }
-                return
+                
+            } else {
+                
+                Application.shared.connectionManager.isOnDemandEnabled { enabled in
+                    if enabled {
+                        self.showDisableVPNPrompt(sourceView: self.protocolAndPortLabel) {
+                            self.disconnect()
+                            self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
+                        }
+                    } else {
+                        self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
+                    }
+                }
+                
             }
-            
-            self.showProtocolSelectionMenu(connectionProtocol: connectionProtocol)
         }
         
         #if targetEnvironment(simulator)
@@ -191,12 +187,11 @@ class ProtocolViewController: UITableViewController {
         }
     }
     
-    func showConnectedAlert(message: String, sender: Any?, completion: (() -> Void)? = nil) {
+    func showConnectedAlert(message: String, sender: Any?, completion: ((Bool) -> Void)? = nil) {
         if let sourceView = sender as? UIView {
             showActionSheet(title: message, actions: ["Disconnect"], sourceView: sourceView) { index in
-                if let completion = completion {
-                    completion()
-                }
+                
+                var disconnected = false
                 
                 switch index {
                 case 0:
@@ -206,8 +201,13 @@ class ProtocolViewController: UITableViewController {
                         return
                     }
                     self.disconnect()
+                    disconnected = true
                 default:
                     break
+                }
+                
+                if let completion = completion {
+                    completion(disconnected)
                 }
             }
         }
@@ -237,21 +237,27 @@ class ProtocolViewController: UITableViewController {
     
     @IBAction func regenerateKeys(_ sender: UIButton) {
         Application.shared.connectionManager.getStatus { _, status in
-            
+        
             if status == .connected || status == .connecting {
-                self.showAlert(title: "Active Connection", message: "Your VPN connection is active. To re-generate keys you must disconnect.")
-                return
-            }
-            
-            
-            self.setKeyStart()
-            self.keyManager.setNewKey { result in
-                switch result {
-                case .success(_):
-                    self.setKeySuccess()
-                case .failure(_):
-                    self.setKeyFail()
+                self.showConnectedAlert(message: "To re-generate key you must disconnect", sender: self.keyNextRotationLabel) { disconnected in
+                    if (disconnected) {
+                        self.doRegenerateKeys()
+                    }
                 }
+            } else {
+                self.doRegenerateKeys()
+            }
+        }
+    }
+    
+    private func doRegenerateKeys() {
+        self.setKeyStart()
+        self.keyManager.setNewKey { result in
+            switch result {
+            case .success(_):
+                self.setKeySuccess()
+            case .failure(_):
+                self.setKeyFail()
             }
         }
     }
@@ -483,14 +489,10 @@ extension ProtocolViewController {
     override func setKeyFail() {
         hud.dismiss()
         
-        if AppKeyManager.isKeyExpired {
-            showAlert(title: "Failed to automatically rotate WireGuard keys", message: "Cannot connect using WireGuard protocol: rotating WireGuard keys failed. This is likely because of no access to the Rogue API server. You can retry connection, rotate keys manually from preferences, or wait a few minutes and retry. Please contact support if this error persists.")
-        } else {
-            showAlert(
-                title: "Error",
-                message: "There was an error generating WireGuard keys. Please try again later."
-            )
-        }
+        showAlert(
+            title: "Error",
+            message: "There was an error re-generating WireGuard keys. Please try again later."
+        )
     }
     
 }
