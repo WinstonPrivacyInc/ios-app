@@ -355,7 +355,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the confirmation code sent to your email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gn-CI-wZg">
-                            <rect key="frame" x="55.5" y="28" width="300" height="30"/>
+                            <rect key="frame" x="55.5" y="10" width="300" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="AOG-26-VdC"/>
                                 <constraint firstAttribute="height" constant="30" id="X11-N4-9Ks"/>
@@ -365,7 +365,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Lt-O6-E3A" customClass="KAPinField" customModule="KAPinField">
-                            <rect key="frame" x="55.5" y="68" width="300" height="50"/>
+                            <rect key="frame" x="55.5" y="50" width="300" height="50"/>
                             <color key="backgroundColor" name="ivpnBackgroundTertiary"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="1If-3m-9cr"/>

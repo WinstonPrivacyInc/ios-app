@@ -58,11 +58,5 @@ class AppKeyManagerTests: XCTestCase {
         XCTAssertTrue(AppKeyManager.isKeyExpired)
     }
     
-    func test_generateKeyPair() {
-        AppKeyManager.generateKeyPair()
-        XCTAssertTrue(KeyChain.wgInterfacePrivateKey != nil)
-        // XCTAssertTrue(KeyChain.wgPublicKey != nil)
-         XCTAssertTrue(KeyChain.wgInterfacePublicKey != nil)
-    }
-    
+
 }

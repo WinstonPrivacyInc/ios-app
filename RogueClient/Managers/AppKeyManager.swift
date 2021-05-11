@@ -76,15 +76,6 @@ class AppKeyManager {
         return Application.shared.settings.connectionProtocol.tunnelType() == .wireguard
     }
     
-    static func generateKeyPair() {
-        // TODO: antonio -> we don't need this method anymore... remove from places where it's still used....
-        var interface = Interface()
-        interface.privateKey = Interface.generatePrivateKey()
-        
-        KeyChain.wgInterfacePrivateKey = interface.privateKey
-        KeyChain.wgInterfacePublicKey = interface.publicKey
-    }
-    
     private func getIpAddress(completion: @escaping (String) -> Void) {
         Ipify.getPublicIPAddress { (result) in
             switch result {

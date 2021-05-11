@@ -60,10 +60,10 @@ class SessionManager {
     func createSession(force: Bool = false, connecting: Bool = false, username: String? = nil, confirmation: String? = nil, captcha: String? = nil, captchaId: String? = nil) {    
         delegate?.createSessionStart()
         
-        if AppKeyManager.isKeyPairRequired || connecting {
-            AppKeyManager.generateKeyPair()
-            UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
-        }
+//        if AppKeyManager.isKeyPairRequired || connecting {
+//            AppKeyManager.generateKeyPair()
+//            UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
+//        }
         
         let params = sessionNewParams(force: force, username: username, confirmation: confirmation, captcha: captcha, captchaId: captchaId)
         let request = ApiRequestDI(method: .post, endpoint: Config.apiSessionNew, params: params)
