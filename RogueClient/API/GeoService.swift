@@ -14,7 +14,7 @@ class GeoService {
     static var shared = GeoService()
     
     func geoLookUp(completion: @escaping (GeoLookup?) -> Void) {
-        AF.request("\(Config.IvpnApiUrl)/v4/geo-lookup").responseDecodable(of: GeoLookup.self) { (response) in
+        AF.request("\(Config.WinstonApiUrl)/vpn/geolookup").responseDecodable(of: GeoLookup.self) { (response) in
             completion(response.value)
         }
     }

@@ -144,12 +144,6 @@ class APIClient: NSObject {
             urlComponents.path = baseURLWinston.path
         }
         
-        if request.path == "/v4/geo-lookup" {
-            urlComponents.scheme = ivpnURL.scheme
-            urlComponents.host = ivpnURL.host
-            urlComponents.path = ivpnURL.path
-        }
-        
         if request.path == "/vpn/servers" {
             urlComponents.scheme = baseURLServerless.scheme
             urlComponents.host = baseURLServerless.host

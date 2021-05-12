@@ -27,10 +27,10 @@ import XCTest
 
 class ProofsViewModelTests: XCTestCase {
     
-    var viewModel = ProofsViewModel(model: GeoLookup(ipAddress: "0.0.0.0", countryCode: "DE", country: "Germany", city: "Berlin", isIvpnServer: false, isp: "ISP Provider", latitude: 0, longitude: 0))
+    var viewModel = ProofsViewModel(model: GeoLookup(ipAddress: "0.0.0.0", countryCode: "DE", country: "Germany", city: "Berlin", isp: "ISP Provider", latitude: 0, longitude: 0))
     
     override func setUp() {
-        viewModel.model = GeoLookup(ipAddress: "0.0.0.0", countryCode: "DE", country: "Germany", city: "Berlin", isIvpnServer: false, isp: "ISP Provider", latitude: 0, longitude: 0)
+        viewModel.model = GeoLookup(ipAddress: "0.0.0.0", countryCode: "DE", country: "Germany", city: "Berlin", isp: "ISP Provider", latitude: 0, longitude: 0)
     }
     
     func test_imageNameForCountryCode() {
@@ -52,7 +52,7 @@ class ProofsViewModelTests: XCTestCase {
     func test_provider() {
         XCTAssertEqual(viewModel.provider, "ISP Provider")
         
-        viewModel.model = GeoLookup(ipAddress: "0.0.0.0", countryCode: "DE", country: "Germany", city: "Berlin", isIvpnServer: true, isp: "ISP Provider", latitude: 0, longitude: 0)
+        viewModel.model = GeoLookup(ipAddress: "0.0.0.0", countryCode: "DE", country: "Germany", city: "Berlin", isp: "ISP Provider", latitude: 0, longitude: 0)
         XCTAssertEqual(viewModel.provider, "IVPN")
     }
     

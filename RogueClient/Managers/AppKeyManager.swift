@@ -3,22 +3,10 @@
 //  Rogue iOS app
 //  https://github.com/WinstonPrivacyInc/rogue-ios
 //
-//  Created by Juraj Hilje on 2018-10-30.
-//  Copyright (c) 2020 Privatus Limited.
+//  Created by Antonio Campos on 2021-05-11.
+//  Copyright (c) 2021 Winston Privacy, Inc.
 //
 //  This file is part of the Rogue iOS app.
-//
-//  The Rogue iOS app is free software: you can redistribute it and/or
-//  modify it under the terms of the GNU General Public License as published by the Free
-//  Software Foundation, either version 3 of the License, or (at your option) any later version.
-//
-//  The Rogue iOS app is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-//  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
-//  details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with the Rogue iOS app. If not, see <https://www.gnu.org/licenses/>.
 //
 
 import Foundation
@@ -31,9 +19,7 @@ import Ipify
 }
 
 class AppKeyManager {
-    
-    // MARK: - Properties -
-    
+
     weak var delegate: AppKeyManagerDelegate?
     
     static var keyTimestamp: Date {
@@ -62,18 +48,6 @@ class AppKeyManager {
         }
         
         return regenerationDate
-    }
-    
-    static var isKeyExpired: Bool {
-        // guard KeyChain.wgPublicKey != nil else { return false }
-        guard KeyChain.wgInterfacePublicKey != nil else { return false }
-        guard Date() > keyExpirationTimestamp else { return false }
-        
-        return true
-    }
-    
-    static var isKeyPairRequired: Bool {
-        return Application.shared.settings.connectionProtocol.tunnelType() == .wireguard
     }
     
     private func getIpAddress(completion: @escaping (String) -> Void) {
@@ -117,49 +91,13 @@ class AppKeyManager {
                     KeyChain.wgPeerPersistentKeepAlive = wireguardInterface.keepAlive
                     
                     completion(.success(0))
-                    // self.delegate?.setKeySuccess()
                 case .failure(let error):
                     completion(.failure(error))
-                    // self.delegate?.setKeyFail()
                 }
             }
             
         }
-        
-    
-        
-//        var interface = Interface()
-//        interface.privateKey = Interface.generatePrivateKey()
-        
-//        let params = ApiService.authParams + [
-//            URLQueryItem(name: "public_key", value: interface.publicKey ?? "")
-//        ]
-        
-        
-        
-        // antonio this throws error
-        // TODO: move out of here... why is the background thread making UI updates? UI thread should start this before calling .setNewKey right?
-//        DispatchQueue.main.async {
-//            self.delegate?.setKeyStart()
-//        }
-        // delegate?.setKeyStart()
-        
-        
-        // this fails with:
-        // Main Thread Checker: UI API called on a background thread:
-//        ApiService.shared.request(request) { (result: Result<InterfaceResult>) in
-//            switch result {
-//            case .success(let model):
-//                UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)
-//                KeyChain.wgPrivateKey = interface.privateKey
-//                KeyChain.wgPublicKey = interface.publicKey
-//                // KeyChain.wgIpAddress = model.ipAddress
-//                KeyChain.wgIpAddress = model.allowed_ips
-//                self.delegate?.setKeySuccess()
-//            case .failure:
-//                self.delegate?.setKeyFail()
-//            }
-//        }
+ 
     }
     
 }

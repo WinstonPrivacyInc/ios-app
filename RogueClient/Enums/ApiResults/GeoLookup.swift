@@ -32,7 +32,6 @@ struct GeoLookup: Decodable {
     let city: String
     let latitude: Double
     let longitude: Double
-    let isIvpnServer: Bool
     
     enum CodingKeys: String, CodingKey {
         case ipAddress = "ip_address"
@@ -43,6 +42,5 @@ struct GeoLookup: Decodable {
         case city
         case latitude
         case longitude
-        case isIvpnServer
     }
 }

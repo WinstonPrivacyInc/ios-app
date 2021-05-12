@@ -164,9 +164,7 @@ class MainViewController: UIViewController {
             self.mainView.infoAlertViewModel.infoAlert = .subscriptionExpiration
             self.mainView.updateInfoAlert()
             
-            if !geoInformation.isIvpnServer {
-                Application.shared.geoLookup = geoInformation
-            }
+            Application.shared.geoLookup = geoInformation
         }
     }
     

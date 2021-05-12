@@ -38,10 +38,8 @@ class MainView: UIView {
         didSet {
             mapScrollView.viewModel = connectionViewModel
             
-            if !connectionViewModel.model.isIvpnServer {
                 localCoordinates = (connectionViewModel.model.latitude, connectionViewModel.model.longitude)
                 mapScrollView.localCoordinates = (connectionViewModel.model.latitude, connectionViewModel.model.longitude)
-            }
         }
     }
     

@@ -72,8 +72,7 @@ class Application {
         countryCode: "",
         city: "",
         latitude: 0,
-        longitude: 0,
-        isIvpnServer: false
+        longitude: 0
     )
     
     // MARK: - Initialize -
