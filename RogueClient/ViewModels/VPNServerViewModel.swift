@@ -56,29 +56,33 @@ struct VPNServerViewModel {
     }
     
     var formattedServerNameForSettings: String {
-        if server.fastest {
-            return "Fastest server"
-        }
-        
-        if server.random {
-            return "Random server"
-        }
+        // FIXME: Antonio - because we only have one server... it ends up being the fastests...
+        // reset when we add more servers
+//        if server.fastest {
+//            return "Fastest server"
+//        }
+//
+//        if server.random {
+//            return "Random server"
+//        }
         
         return formattedServerName
     }
     
     var imageForCountryCodeForSettings: UIImage? {
-        if server.fastest {
-            let image = UIImage(named: "icon-fastest-server")
-            image?.accessibilityIdentifier = "icon-fastest-server"
-            return image
-        }
-        
-        if server.random {
-            let image = UIImage(named: "icon-shuffle")
-            image?.accessibilityIdentifier = "icon-shuffle"
-            return image
-        }
+        // FIXME: Antonio - because we only have one server... it ends up being the fastests...
+        // reset when we add more servers
+//        if server.fastest {
+//            let image = UIImage(named: "icon-fastest-server")
+//            image?.accessibilityIdentifier = "icon-fastest-server"
+//            return image
+//        }
+//
+//        if server.random {
+//            let image = UIImage(named: "icon-shuffle")
+//            image?.accessibilityIdentifier = "icon-shuffle"
+//            return image
+//        }
         
         return UIImage(named: server.countryCode.uppercased())
     }

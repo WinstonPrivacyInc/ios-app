@@ -161,10 +161,10 @@ class SettingsViewController: UITableViewController {
         super.viewDidLoad()
         view.accessibilityIdentifier = "settingsScreen"
         
-//        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: OperationQueue.main) { _ in
-//                self.updateSelectedServer()
-//                self.updateSelectedProtocol()
-//        }
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: OperationQueue.main) { _ in
+                self.updateSelectedServer()
+                // self.updateSelectedProtocol()
+        }
         
         // updateSelectedProtocol()
         addObservers()
@@ -210,7 +210,7 @@ class SettingsViewController: UITableViewController {
         // updateCellInset(cell: entryServerCell, inset: UserDefaults.shared.isMultiHop)
         // updateCellInset(cell: loggingCell, inset: UserDefaults.shared.isLogging)
         
-        // updateSelectedServer()
+        updateSelectedServer()
         
         Application.shared.connectionManager.onStatusChanged { status in
             if status == .disconnected {
@@ -346,14 +346,16 @@ class SettingsViewController: UITableViewController {
         deselectRow(sender: sender)
     }
     
-//    private func updateSelectedServer() {
-//        let serverViewModel = VPNServerViewModel(server: Application.shared.settings.selectedServer)
-//        let exitServerViewModel = VPNServerViewModel(server: Application.shared.settings.selectedExitServer)
-//        selectedServerName.text = serverViewModel.formattedServerNameForSettings
-//        selectedServerFlag.image = serverViewModel.imageForCountryCodeForSettings
-//        selectedExitServerName.text = exitServerViewModel.formattedServerNameForSettings
-//        selectedExitServerFlag.image = exitServerViewModel.imageForCountryCodeForSettings
-//    }
+    private func updateSelectedServer() {
+        let serverViewModel = VPNServerViewModel(server: Application.shared.settings.selectedServer)
+        selectedServerName.text = serverViewModel.formattedServerNameForSettings
+        selectedServerFlag.image = serverViewModel.imageForCountryCodeForSettings
+        
+        // let exitServerViewModel = VPNServerViewModel(server: Application.shared.settings.selectedExitServer)
+        
+        // selectedExitServerName.text = exitServerViewModel.formattedServerNameForSettings
+        // selectedExitServerFlag.image = exitServerViewModel.imageForCountryCodeForSettings
+    }
     
 //    private func updateSelectedProtocol() {
 ////        selectedProtocol.text = Application.shared.settings.connectionProtocol.format()
@@ -414,6 +416,7 @@ class SettingsViewController: UITableViewController {
 extension SettingsViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print("section = \(indexPath.section). row = \(indexPath.row)")
 //        if indexPath.section == 0 && indexPath.row == 0 { return 60 }
 //        if indexPath.section == 0 && indexPath.row == 2 && !multiHopSwitch.isOn { return 0 }
 //        if indexPath.section == 2 && indexPath.row == 1 { return 60 }
@@ -430,8 +433,48 @@ extension SettingsViewController {
 //            sendLogs()
 //        }
         
-        // about session
-        if indexPath.section == 1 {
+        
+        // This is for protocol selection... add later
+//        // server seletion
+//        if indexPath.section == 0 && indexPath.row == 0 {
+//            tableView.deselectRow(at: indexPath, animated: true)
+//
+//            guard evaluateIsLoggedIn() else {
+//                return
+//            }
+//
+//            // TODO: enable once subscription service is done
+////            guard evaluateIsServiceActive() else {
+////                return
+////            }
+//
+//            guard Application.shared.connectionManager.status.isDisconnected() else {
+//                showConnectedAlert(message: "To change server, disconnect", sender: tableView.cellForRow(at: indexPath))
+//                return
+//            }
+//
+//            Application.shared.connectionManager.isOnDemandEnabled { enabled in
+//                guard !enabled else {
+//                    self.showDisableVPNPrompt(sourceView: tableView.cellForRow(at: indexPath)!) {
+//                        Application.shared.connectionManager.resetRulesAndDisconnect()
+//                        self.performSegue(withIdentifier: "SelectProtocol", sender: nil)
+//                    }
+//                    return
+//                }
+//
+//                self.performSegue(withIdentifier: "SelectProtocol", sender: nil)
+//            }
+//
+//            #if targetEnvironment(simulator)
+//                // above will fail if running on simulator. vpn configurations are only supported on device
+//                self.performSegue(withIdentifier: "SelectProtocol", sender: nil)
+//            #endif
+//
+//        }
+//
+        
+        // about section
+        if indexPath.section == 2 {
             tableView.deselectRow(at: indexPath, animated: true)
             
             if indexPath.row == 0 {
