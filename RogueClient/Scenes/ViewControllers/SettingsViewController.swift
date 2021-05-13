@@ -416,7 +416,13 @@ class SettingsViewController: UITableViewController {
 extension SettingsViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("section = \(indexPath.section). row = \(indexPath.row)")
+        let isNetworkProtection = indexPath.section == 1 && indexPath.row == 0
+        let isAntiTracker = indexPath.section == 1 && indexPath.row == 1
+        let isCustomDns = indexPath.section == 1 && indexPath.row == 2
+        
+        if isNetworkProtection || isAntiTracker || isCustomDns {
+            return 0
+        }
 //        if indexPath.section == 0 && indexPath.row == 0 { return 60 }
 //        if indexPath.section == 0 && indexPath.row == 2 && !multiHopSwitch.isOn { return 0 }
 //        if indexPath.section == 2 && indexPath.row == 1 { return 60 }
