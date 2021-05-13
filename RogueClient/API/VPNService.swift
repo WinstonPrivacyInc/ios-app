@@ -38,9 +38,9 @@ class VPNService {
                                 
                 let parameters: [String: Any] = [
                     "ip_address" : ipAddress,
-                    "listen_port" : 5353,
+                    "listen_port" : KeyChain.wgInterfaceListenPort ?? Config.wgInterfaceListenPort,
                     "public_key" : keyPair.publicKey ?? "",
-                    "server_port": 51820
+                    "server_port": Application.shared.settings.connectionProtocol.port()
                 ]
                 
                 AF.request("http://13.59.81.71:443/api/v1/wg/connect",

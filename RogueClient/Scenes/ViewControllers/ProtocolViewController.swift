@@ -379,7 +379,7 @@ extension ProtocolViewController {
         hud.indicatorView = JGProgressHUDSuccessIndicatorView()
         hud.detailTextLabel.text = "WireGuard keys successfully re-generated."
         hud.dismiss(afterDelay: 2)
-        reloadTable(connectionProtocol: ConnectionSettings.wireguard(.udp, 2049))
+        reloadTable(connectionProtocol: ConnectionSettings.wireguard(.udp, 53))
         updateUILabels()
         NotificationCenter.default.post(name: Notification.Name.ProtocolSelected, object: nil)
     }

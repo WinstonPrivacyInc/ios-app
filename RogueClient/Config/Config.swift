@@ -55,14 +55,20 @@ struct Config {
     static let defaultProtocol = ConnectionSettings.ipsec
     
     static let supportedProtocols = [
-        ConnectionSettings.wireguard(.udp, 2049),
-        ConnectionSettings.wireguard(.udp, 2050),
         ConnectionSettings.wireguard(.udp, 53),
-        ConnectionSettings.wireguard(.udp, 1194),
-        ConnectionSettings.wireguard(.udp, 30587),
-        ConnectionSettings.wireguard(.udp, 41893),
-        ConnectionSettings.wireguard(.udp, 48574),
-        ConnectionSettings.wireguard(.udp, 58237)
+        ConnectionSettings.wireguard(.udp, 80),
+        ConnectionSettings.wireguard(.udp, 443),
+        ConnectionSettings.wireguard(.udp, 51820)
+
+        // per Rich's request, disable the default ports and used above for now
+//        ConnectionSettings.wireguard(.udp, 2049),
+//        ConnectionSettings.wireguard(.udp, 2050),
+//        ConnectionSettings.wireguard(.udp, 53),
+//        ConnectionSettings.wireguard(.udp, 1194),
+//        ConnectionSettings.wireguard(.udp, 30587),
+//        ConnectionSettings.wireguard(.udp, 41893),
+//        ConnectionSettings.wireguard(.udp, 48574),
+//        ConnectionSettings.wireguard(.udp, 58237)
     ]
     
     static let wgPeerAllowedIPs = "0.0.0.0/0, ::/0"
