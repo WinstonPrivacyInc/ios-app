@@ -219,14 +219,8 @@ class ControlPanelViewController: UITableViewController {
 //                return
 //            }
             
-            // we want to connect every time
-//            if ExtensionKeyManager.needToRegenerate() {
-//                self.keyManager.setNewKey()
-//                return
-//            }
-            
-            // TODO: antonio rename setNewKey -> requestWireguardInterface...
-            self.keyManager.setNewKey { result in
+             VPNService.shared.getWiregardInterface { result in
+                
                 switch result {
                 case .success(_):
                     

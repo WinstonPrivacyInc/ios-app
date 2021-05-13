@@ -60,7 +60,8 @@ class WireGuardSettingsViewController: UITableViewController {
                 return
             }
             
-            self.keyManager.setNewKey { result in
+            VPNService.shared.getWiregardInterface { result in
+                
                 switch result {
                 case .success(_):
                     self.showFlashNotification(message: "Keys have been re-generated.", presentInView: self.view)

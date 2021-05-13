@@ -27,8 +27,8 @@
 		8208525823FD5EB20008C112 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208525723FD5EB20008C112 /* MainViewController.swift */; };
 		8208525A23FD5F670008C112 /* FloatingPanelController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208525923FD5F670008C112 /* FloatingPanelController+Ext.swift */; };
 		8208525C23FD64160008C112 /* MainViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8208525B23FD64160008C112 /* MainViewController+Ext.swift */; };
-		820EA86823223F7900E16B2D /* InterfaceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA86723223F7900E16B2D /* InterfaceResult.swift */; };
-		820EA8692322406000E16B2D /* InterfaceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA86723223F7900E16B2D /* InterfaceResult.swift */; };
+		820EA86823223F7900E16B2D /* WireguardInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA86723223F7900E16B2D /* WireguardInterface.swift */; };
+		820EA8692322406000E16B2D /* WireguardInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA86723223F7900E16B2D /* WireguardInterface.swift */; };
 		820EA86B232242F800E16B2D /* ApiRequestDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821429BA22FC36100056B8FF /* ApiRequestDI.swift */; };
 		820EA86C2322430700E16B2D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821429B622FC2BE90056B8FF /* Result.swift */; };
 		820EA86E232264EC00E16B2D /* SuccessResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820EA86D232264EC00E16B2D /* SuccessResult.swift */; };
@@ -276,6 +276,7 @@
 		A9BD78662644845700199BF9 /* amplifyconfiguration-release.json in Resources */ = {isa = PBXBuildFile; fileRef = A9BD78652644845700199BF9 /* amplifyconfiguration-release.json */; };
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
 		A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */; };
+		A9D4D6FA264C713100A5A4EF /* VPNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D6F9264C713100A5A4EF /* VPNService.swift */; };
 		A9ECBEC22645A37300DDC398 /* BackdoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988431E2645A18C00799613 /* BackdoorViewController.swift */; };
 		E8802DC3459714DE3B42A0BA /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */; };
 		FCBFE1989E1777F317A055B6 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */; };
@@ -374,7 +375,7 @@
 		8208525723FD5EB20008C112 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8208525923FD5F670008C112 /* FloatingPanelController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPanelController+Ext.swift"; sourceTree = "<group>"; };
 		8208525B23FD64160008C112 /* MainViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Ext.swift"; sourceTree = "<group>"; };
-		820EA86723223F7900E16B2D /* InterfaceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceResult.swift; sourceTree = "<group>"; };
+		820EA86723223F7900E16B2D /* WireguardInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireguardInterface.swift; sourceTree = "<group>"; };
 		820EA86D232264EC00E16B2D /* SuccessResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResult.swift; sourceTree = "<group>"; };
 		821429B622FC2BE90056B8FF /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		821429B822FC2EA40056B8FF /* ApiService+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiService+Ext.swift"; sourceTree = "<group>"; };
@@ -620,6 +621,7 @@
 		A9BD78652644845700199BF9 /* amplifyconfiguration-release.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "amplifyconfiguration-release.json"; sourceTree = "<group>"; };
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
 		A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmView.swift; sourceTree = "<group>"; };
+		A9D4D6F9264C713100A5A4EF /* VPNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNService.swift; sourceTree = "<group>"; };
 		B046A96FF272AF659CE47461 /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
 		ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4B0665554A6F142005387 /* Pods-RogueClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.debug.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -826,12 +828,12 @@
 			isa = PBXGroup;
 			children = (
 				8277F1CE2211A602007C6F15 /* GeoLookup.swift */,
+				820EA86723223F7900E16B2D /* WireguardInterface.swift */,
 				9C3031251DB3B6E700C38B0C /* ServersUpdateResult.swift */,
 				8223C54B22E9E93A00CD283D /* Session.swift */,
 				82AA8817231E330A00E18ECB /* SessionStatus.swift */,
 				821429B622FC2BE90056B8FF /* Result.swift */,
 				8232FBF32240DE19006B81D2 /* ErrorResult.swift */,
-				820EA86723223F7900E16B2D /* InterfaceResult.swift */,
 				820EA86D232264EC00E16B2D /* SuccessResult.swift */,
 				8201A5012354A32F008C83DB /* ErrorResultSessionNew.swift */,
 				827855B82472B27F00B3B6BD /* Account.swift */,
@@ -1362,6 +1364,7 @@
 			children = (
 				A9BD78592641E89F00199BF9 /* GeoService.swift */,
 				A9BD785B2641F39700199BF9 /* AccountService.swift */,
+				A9D4D6F9264C713100A5A4EF /* VPNService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1857,7 +1860,7 @@
 				82E716942181E90500D6B7C2 /* ConnectionSettings.swift in Sources */,
 				82F638CF217DC25600410318 /* CIDRAddress.swift in Sources */,
 				8223C53F22326375006C4F14 /* Logging.swift in Sources */,
-				820EA8692322406000E16B2D /* InterfaceResult.swift in Sources */,
+				820EA8692322406000E16B2D /* WireguardInterface.swift in Sources */,
 				8264CFFC22422F6700E1721E /* Date+Ext.swift in Sources */,
 				82E716822181E8AF00D6B7C2 /* TunnelType.swift in Sources */,
 				820EA86B232242F800E16B2D /* ApiRequestDI.swift in Sources */,
@@ -1893,7 +1896,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				820EA86823223F7900E16B2D /* InterfaceResult.swift in Sources */,
+				820EA86823223F7900E16B2D /* WireguardInterface.swift in Sources */,
 				823DA733215E3CCB00DAFE37 /* Array+Ext.swift in Sources */,
 				82F638C7217DC22300410318 /* Endpoint.swift in Sources */,
 				824777E721A6BC3A001EEFAF /* Network+CoreDataClass.swift in Sources */,
@@ -2053,6 +2056,7 @@
 				826F7F0C23A79F1500777DB9 /* UserDefaultsTodayExtension+Ext.swift in Sources */,
 				A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */,
 				824BC466240906ED00A61B29 /* VPNStatusViewModel.swift in Sources */,
+				A9D4D6FA264C713100A5A4EF /* VPNService.swift in Sources */,
 				8247E1DE22687C28006C0C08 /* ProductIdentifier.swift in Sources */,
 				829DF2822497953C000DC2DB /* UIButton+Ext.swift in Sources */,
 				82234B6721BA7F3500B082DE /* Logging.swift in Sources */,

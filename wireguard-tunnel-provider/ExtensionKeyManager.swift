@@ -66,7 +66,7 @@ struct ExtensionKeyManager {
         
         let request = ApiRequestDI(method: .post, endpoint: Config.apiSessionWGKeySet, params: params)
         
-        ApiManager.shared.request(request) { (result: Result<InterfaceResult>) in
+        ApiManager.shared.request(request) { (result: Result<WireguardInterface>) in
             switch result {
             case .success(let model):
                 UserDefaults.shared.set(Date(), forKey: UserDefaults.Key.wgKeyTimestamp)

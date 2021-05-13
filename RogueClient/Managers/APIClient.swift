@@ -100,10 +100,6 @@ class APIClient: NSObject {
         return URL(string: "http://13.59.81.71:443")!
     }
     
-    private var ivpnURL: URL {
-        return URL(string: "https://api.ivpn.net")!
-    }
-    
     private var baseURLServerless: URL {
         return URL(string: "https://dev.winstonapis.com")!
     }

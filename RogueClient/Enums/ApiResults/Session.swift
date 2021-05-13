@@ -23,16 +23,16 @@
 
 import Foundation
 
-struct WireGuardResult: Codable {
-    let status: Int?
-    let message: String?
-    let ipAddress: String?
-}
+//struct WireGuardResult: Codable {
+//    let status: Int?
+//    let message: String?
+//    let ipAddress: String?
+//}
 
 struct Session: Decodable {
     let token: String?
     let vpnUsername: String?
     let vpnPassword: String?
     let serviceStatus: ServiceStatus
-    let wireguard: WireGuardResult?
+    // let wireguard: WireGuardResult?
 }

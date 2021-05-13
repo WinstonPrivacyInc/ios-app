@@ -252,7 +252,9 @@ class ProtocolViewController: UITableViewController {
     
     private func doRegenerateKeys() {
         self.setKeyStart()
-        self.keyManager.setNewKey { result in
+        
+        VPNService.shared.getWiregardInterface { result in
+        
             switch result {
             case .success(_):
                 self.setKeySuccess()
