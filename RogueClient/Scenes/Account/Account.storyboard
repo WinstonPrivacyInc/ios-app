@@ -1069,10 +1069,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="6pN-8V-fU6" firstAttribute="centerX" secondItem="iRy-fW-FLv" secondAttribute="centerX" id="9lh-Dd-MOu"/>
                                     <constraint firstItem="6pN-8V-fU6" firstAttribute="top" secondItem="fqJ-0P-XvO" secondAttribute="bottom" constant="20" id="CKe-qw-BEA"/>
                                     <constraint firstItem="617-HR-OJr" firstAttribute="top" secondItem="iRy-fW-FLv" secondAttribute="top" constant="5" id="HuR-LG-0LE"/>
+                                    <constraint firstItem="v2W-ml-tDh" firstAttribute="centerX" secondItem="iRy-fW-FLv" secondAttribute="centerX" id="K2m-cq-77k"/>
                                     <constraint firstItem="617-HR-OJr" firstAttribute="leading" secondItem="fqJ-0P-XvO" secondAttribute="leading" id="WrK-eA-fUk"/>
                                     <constraint firstItem="v2W-ml-tDh" firstAttribute="leading" secondItem="6pN-8V-fU6" secondAttribute="leading" id="YhS-oa-10v"/>
+                                    <constraint firstItem="fqJ-0P-XvO" firstAttribute="centerX" secondItem="iRy-fW-FLv" secondAttribute="centerX" id="b17-id-kGa"/>
                                     <constraint firstItem="v2W-ml-tDh" firstAttribute="top" secondItem="6pN-8V-fU6" secondAttribute="bottom" constant="21.5" id="ddl-m4-FnP"/>
                                     <constraint firstAttribute="bottom" secondItem="617-HR-OJr" secondAttribute="bottom" constant="719" id="fc3-47-3hC"/>
                                     <constraint firstItem="fqJ-0P-XvO" firstAttribute="top" secondItem="617-HR-OJr" secondAttribute="bottom" constant="30" id="gdZ-nO-VSM"/>

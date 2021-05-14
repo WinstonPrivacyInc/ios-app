@@ -279,6 +279,7 @@
 		A9D4D6FA264C713100A5A4EF /* VPNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D6F9264C713100A5A4EF /* VPNService.swift */; };
 		A9D4D700264EBA6200A5A4EF /* VPNServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D6FE264EB9B800A5A4EF /* VPNServerError.swift */; };
 		A9D4D703264ED03700A5A4EF /* SelectSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D702264ED03700A5A4EF /* SelectSubscriptionViewController.swift */; };
+		A9D4D705264EF98C00A5A4EF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D704264EF98B00A5A4EF /* APIService.swift */; };
 		A9ECBEC22645A37300DDC398 /* BackdoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988431E2645A18C00799613 /* BackdoorViewController.swift */; };
 		E8802DC3459714DE3B42A0BA /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */; };
 		FCBFE1989E1777F317A055B6 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */; };
@@ -626,6 +627,7 @@
 		A9D4D6F9264C713100A5A4EF /* VPNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNService.swift; sourceTree = "<group>"; };
 		A9D4D6FE264EB9B800A5A4EF /* VPNServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNServerError.swift; sourceTree = "<group>"; };
 		A9D4D702264ED03700A5A4EF /* SelectSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSubscriptionViewController.swift; sourceTree = "<group>"; };
+		A9D4D704264EF98B00A5A4EF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B046A96FF272AF659CE47461 /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
 		ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4B0665554A6F142005387 /* Pods-RogueClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.debug.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1371,6 +1373,7 @@
 				A9BD78592641E89F00199BF9 /* GeoService.swift */,
 				A9BD785B2641F39700199BF9 /* AccountService.swift */,
 				A9D4D6F9264C713100A5A4EF /* VPNService.swift */,
+				A9D4D704264EF98B00A5A4EF /* APIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -2083,6 +2086,7 @@
 				9C3031371DB4307D00C38B0C /* SettingsViewController.swift in Sources */,
 				821F1C7E21FF544200107311 /* VPNServerViewModel.swift in Sources */,
 				82F189A2225CE8A90038ABA0 /* UIView+Ext.swift in Sources */,
+				A9D4D705264EF98C00A5A4EF /* APIService.swift in Sources */,
 				82DEF01E244714D900CCB5CD /* ScannerViewController.swift in Sources */,
 				825D4ECA224A48F7002E7378 /* ApiManager.swift in Sources */,
 				A9BD785C2641F39700199BF9 /* AccountService.swift in Sources */,

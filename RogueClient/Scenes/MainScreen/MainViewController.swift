@@ -181,9 +181,15 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateGeoLocation), name: Notification.Name.UpdateGeoLocation, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(signOutSuccess), name: Notification.Name.SignOutSuccess, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(signInSuccess), name: Notification.Name.SignInSuccess, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(openSubscriptionSelectionScreen), name: Notification.Name.OpenSubscriptionSelectionScreen, object: nil)
     }
     
     // MARK: - Private methods -
+    
+    @objc private func openSubscriptionSelectionScreen() {
+        self.present(NavigationManager.getSelectSubscriptionViewController(), animated: true, completion: nil)
+    }
     
     @objc private func signOutSuccess() {
         showFlashNotification(message: "You have been signed out", presentInView: self.mainView)

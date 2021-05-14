@@ -10,7 +10,7 @@ import Foundation
 import Ipify
 import Alamofire
 
-class VPNService {
+class VPNService: APIService {
     
     static var shared = VPNService()
     
@@ -48,7 +48,9 @@ class VPNService {
                     parameters: parameters,
                     encoding: JSONEncoding.default,
                     headers: headers
-                ).responseDecodable(of: WireguardInterface.self) { response in
+                )
+                .validate(statusCode: 200..<300)
+                .responseDecodable(of: WireguardInterface.self) { response in
                             
                             switch response.result {
                             
@@ -71,13 +73,13 @@ class VPNService {
                             case .failure(let error):
                                 log(error: "getWireguardInterface error \(error)")
                                 
-                                let decoder = JSONDecoder()
-
-                                if let apiError = try? decoder.decode(VPNServerError.self, from: response.data!) {
-                                    completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : apiError.error])))
-                                } else {
-                                    completion(.failure(error))
-                                }
+                                let vpnServerError = self.getVpnServerError(
+                                    error: error,
+                                    data: response.data,
+                                    statusCode: response.response?.statusCode ?? 500
+                                )
+                                
+                                completion(.failure(vpnServerError))
                             }
                 }
 

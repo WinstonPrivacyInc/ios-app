@@ -102,10 +102,6 @@ class BackdoorViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 3 && indexPath.row == 1 {
-            
-//            if let topViewController = UIApplication.topViewController() as? MainViewController {
-//                topViewController.present(NavigationManager.getSelectSubscriptionViewController(), animated: true, completion: nil)
-//            }
             self.present(NavigationManager.getSelectSubscriptionViewController(), animated: true, completion: nil)
         }
         

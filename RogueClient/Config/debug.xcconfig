@@ -12,8 +12,8 @@
 #include "Pods/Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"
 
 Environment = debug
-WinstonApiUrl = dev.winstonapis.com
+WinstonApiUrl = qa.winstonapis.com
 IvpnApiUrl = api.ivpn.net
-ApiHostName = dev.winstonapis.com
+ApiHostName = qa.winstonapis.com
 TlsHostName = ivpn.net
 IAPSharedSecret =

@@ -173,8 +173,16 @@ class SignInViewController: UIViewController {
                 self.passwordTextField.text = password
                 
                 self.startSignInProcess {
-                    AccountService.shared.createAccount {
-                        log(info: "Winston account was created")
+                    AccountService.shared.createAccount { result in
+                        
+                        switch result {
+                        case .success(_):
+                            NotificationCenter.default.post(name: Notification.Name.OpenSubscriptionSelectionScreen, object: nil, userInfo: data)
+                            
+                        case .failure(let error):
+                            self.showAlert(title: "Error", message: error?.localizedDescription ?? "There was an error creating your account")
+                        
+                        }
                     }
                 }
             }

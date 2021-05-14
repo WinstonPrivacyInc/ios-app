@@ -24,5 +24,5 @@
 import Foundation
 
 struct Account: Decodable {
-    let accountId: String
+    let accountId: String?
 }

@@ -33,6 +33,7 @@ extension Notification.Name {
     public static let SignInSuccess = Notification.Name("signInSuccess")
     public static let SignOutSuccess = Notification.Name("signOutSuccess")
     public static let OpenAccountScreen = Notification.Name("openAccountScreen")
+    public static let OpenSubscriptionSelectionScreen = Notification.Name("openSubscriptionSelectionScreen")
     
     // TODO: remove unnecessary ones
     public static let ServerSelected = Notification.Name("serverSelected")
