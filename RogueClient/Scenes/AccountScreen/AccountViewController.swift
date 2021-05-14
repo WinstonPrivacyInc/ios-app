@@ -33,6 +33,7 @@ class AccountViewController: UITableViewController {
     @IBOutlet weak var emailTableCell: UITableViewCell!
     @IBOutlet weak var passwordTableCell: UITableViewCell!
     
+    @IBOutlet weak var currentPlanLabel: UILabel!
     
     private let hud = JGProgressHUD(style: .dark)
     private var viewModel = AccountViewModel(serviceStatus: Application.shared.serviceStatus, authentication: Application.shared.authentication)
@@ -88,6 +89,7 @@ class AccountViewController: UITableViewController {
     private func updateEmailLabel() {
         DispatchQueue.main.async {
             self.accountView.accountIdLabel.text = KeyChain.username ?? ""
+            self.currentPlanLabel.text = KeyChain.rogueSubscription ?? "No subscription"
         }
     }
     
