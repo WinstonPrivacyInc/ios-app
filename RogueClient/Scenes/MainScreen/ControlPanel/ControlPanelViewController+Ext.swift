@@ -82,10 +82,9 @@ extension ControlPanelViewController {
         self.evaluateIsSignedIn { (isSignedIn) in
             if isSignedIn {
                 
-                // TODO: antonio
-                // guard evaluateIsServiceActive() else {
-                //   return
-                // }
+                guard self.evaluateIsServiceActive() else {
+                   return
+                 }
                 
                 self.presentProtocolView()
             }

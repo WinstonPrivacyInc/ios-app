@@ -1095,6 +1095,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Subscription" id="n0R-zh-n7l" userLabel="Navigation Items"/>
+                    <connections>
+                        <outlet property="basicPlanView" destination="6pN-8V-fU6" id="Bs6-LA-L8f"/>
+                        <outlet property="freePlanView" destination="fqJ-0P-XvO" id="gFr-zk-rMh"/>
+                        <outlet property="proPlanView" destination="v2W-ml-tDh" id="3Dw-M0-7T8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUe-bE-fIS" sceneMemberID="firstResponder"/>
             </objects>

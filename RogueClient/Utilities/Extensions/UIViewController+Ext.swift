@@ -201,14 +201,22 @@ extension UIViewController {
 extension UIViewController {
     
     func evaluateIsServiceActive() -> Bool {
-        guard Application.shared.serviceStatus.isActive else {
-            let viewController = NavigationManager.getSubscriptionViewController()
-            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
-            present(viewController, animated: true, completion: nil)
+//        guard Application.shared.serviceStatus.isActive else {
+//            let viewController = NavigationManager.getSubscriptionViewController()
+//            viewController.presentationController?.delegate = self as? UIAdaptivePresentationControllerDelegate
+//            present(viewController, animated: true, completion: nil)
+//            return false
+//        }
+//
+//        return true
+        
+        // antonio - this is temporary to simulate
+        if KeyChain.rogueSubscription != nil {
+            return true
+        } else {
+            self.present(NavigationManager.getSelectSubscriptionViewController(), animated: true, completion: nil)
             return false
         }
-        
-        return true
     }
     
     func deviceCanMakePurchases() -> Bool {

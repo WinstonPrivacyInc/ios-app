@@ -25,6 +25,7 @@ class BackdoorViewController: UITableViewController {
     @IBOutlet weak var vpnKeepAliveLabel: UILabel!
     @IBOutlet weak var vpnPublicKeyLabel: UILabel!
     @IBOutlet weak var tosAgreedLabel: UILabel!
+    @IBOutlet weak var currentSubscriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +87,8 @@ class BackdoorViewController: UITableViewController {
         vpnPublicKeyLabel.text = KeyChain.wgInterfacePublicKey
         
         tosAgreedLabel.text = "\(UserDefaults.shared.hasUserConsent)"
+        
+        currentSubscriptionLabel.text = KeyChain.rogueSubscription ?? "No subscription"
     }
     
     @IBAction func clearAgreeTermsAndConditions(_ sender: Any) {
@@ -95,16 +98,22 @@ class BackdoorViewController: UITableViewController {
         showFlashNotification(message: "Terms and conditions agreement has been cleared.", presentInView: (navigationController?.view)!)
     }
     
+    @IBAction func clearCurrentSubscription(_ sender: Any) {
+        KeyChain.rogueSubscription = nil
+        currentSubscriptionLabel.text = "No subscription"
+        showFlashNotification(message: "Active subscription has been cleared", presentInView: (navigationController?.view)!)
+    }
+    
     @IBAction func dismiss(_ sender: Any) {
         self.dismissViewController(sender)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.section == 3 && indexPath.row == 1 {
-            self.present(NavigationManager.getSelectSubscriptionViewController(), animated: true, completion: nil)
-        }
-        
+//        if indexPath.section == 3 && indexPath.row == 1 {
+//            self.present(NavigationManager.getSelectSubscriptionViewController(), animated: true, completion: nil)
+//        }
+//        
         
     }
 }

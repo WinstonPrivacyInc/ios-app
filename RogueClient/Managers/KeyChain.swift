@@ -28,9 +28,20 @@ class KeyChain {
     private static let wgPeer_endpoint_key = "wg_peer_endpoint"
     private static let wgPeer_persistentKeepAlive_key = "wg_peer_persistent_keep_alive"
     
+    private static let rogue_subscription = "rogue_subscription"
+    
     static let bundle: Keychain = {
         return Keychain(service: "com.winstonprivacy.rogue", accessGroup: "4TSHK25NM3.com.winstonprivacy.rogue")
     }()
+    
+    class var rogueSubscription: String? {
+        get {
+            return KeyChain.bundle[rogue_subscription]
+        }
+        set {
+            KeyChain.bundle[rogue_subscription] = newValue
+        }
+    }
     
     class var wgInterfacePrivateKey: String? {
         get { return KeyChain.bundle[wgInterface_privateKey_key] }

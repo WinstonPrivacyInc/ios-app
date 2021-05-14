@@ -72,7 +72,8 @@ class ControlPanelViewController: UITableViewController {
         connectionExecute()
         
         // Disable multiple tap gestures on VPN connect button
-        sender.isUserInteractionEnabled = false
+        // antonio disable for now... fix later
+        // sender.isUserInteractionEnabled = false
 //        DispatchQueue.delay(1) {
 //            sender.isUserInteractionEnabled = true
 //        }
@@ -211,13 +212,12 @@ class ControlPanelViewController: UITableViewController {
                 return
             }
             
-            // TODO: antonio - handle when subscription logic is active
-//            guard self.evaluateIsServiceActive() else {
-            // self.hud.dismiss()
-//                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
-//                NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
-//                return
-//            }
+            guard self.evaluateIsServiceActive() else {
+             self.hud.dismiss()
+                NotificationCenter.default.removeObserver(self, name: Notification.Name.SubscriptionActivated, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(self.connectionExecute), name: Notification.Name.SubscriptionActivated, object: nil)
+                return
+            }
             
              VPNService.shared.getWiregardInterface { result in
                 
