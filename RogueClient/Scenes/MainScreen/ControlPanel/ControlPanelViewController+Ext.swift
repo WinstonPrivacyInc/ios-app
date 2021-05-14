@@ -65,7 +65,7 @@ extension ControlPanelViewController {
         
         // 5 = anti tracker toggle
         // 6 = wifi network
-        if indexPath.row == Menus.wifiNetwork.rawValue {
+        if indexPath.row == Menus.antiTracker.rawValue ||  indexPath.row == Menus.wifiNetwork.rawValue {
             // if indexPath.row == 6 && !UserDefaults.shared.networkProtectionEnabled { return 0 }
             return 0
         }

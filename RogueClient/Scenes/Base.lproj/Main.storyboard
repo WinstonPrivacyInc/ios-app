@@ -359,7 +359,7 @@
             <objects>
                 <tableViewController modalPresentationStyle="formSheet" id="zAv-yM-Pqo" customClass="ServerViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="j8B-k6-W0Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="sectionIndexColor" name="ivpnLabelPrimary"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="mxa-PH-5sr">
@@ -2268,7 +2268,7 @@
             <objects>
                 <tableViewController id="ELw-vc-l7K" customClass="ServersConfigurationTableViewController" customModule="RogueClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KpS-b3-6R0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="a4G-c8-WjK">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
@@ -3289,7 +3289,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="fnd-go-o5i"/>
         <segue reference="oZ9-fT-UYA"/>
-        <segue reference="PCC-Z6-hZU"/>
+        <segue reference="X5B-6f-Pgc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon-alert-dark-yellow" width="16" height="16"/>
