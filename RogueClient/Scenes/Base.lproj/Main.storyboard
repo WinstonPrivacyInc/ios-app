@@ -3149,7 +3149,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="2eY-Po-kef" userLabel="I">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="2eY-Po-kef" userLabel="Publick Key">
                                         <rect key="frame" x="0.0" y="748.33333206176758" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2eY-Po-kef" id="Sed-zU-H7v">
@@ -3185,9 +3185,9 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Storage" id="yC3-Ae-d3Y" userLabel="Storage settings">
+                            <tableViewSection headerTitle="Storage" id="yC3-Ae-d3Y" userLabel="Actions settings">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="vHM-sR-2mc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="vHM-sR-2mc" userLabel="Clear TOS">
                                         <rect key="frame" x="0.0" y="857.99999809265137" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vHM-sR-2mc" id="HSz-dc-CHh">
@@ -3236,11 +3236,46 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="29W-N2-w0Q" userLabel="Open Subscription Selection">
+                                        <rect key="frame" x="0.0" y="917.99999809265137" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="29W-N2-w0Q" id="ryV-gR-I1r">
+                                            <rect key="frame" x="0.0" y="0.0" width="349.33333333333331" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subscription Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH4-6c-2j8">
+                                                    <rect key="frame" x="16" y="10" width="325.33333333333331" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="uxk-QN-2ZE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="ivpnLabelPrimary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View subscription selection screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-Qc-4vd">
+                                                    <rect key="frame" x="16" y="33" width="325.33333333333331" height="16.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="ivpnLabel5"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="jDv-Qc-4vd" secondAttribute="bottom" constant="10.5" id="1uW-u9-bOq"/>
+                                                <constraint firstItem="jDv-Qc-4vd" firstAttribute="top" secondItem="pH4-6c-2j8" secondAttribute="bottom" constant="3" id="4tW-FO-D5N"/>
+                                                <constraint firstItem="pH4-6c-2j8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ryV-gR-I1r" secondAttribute="trailingMargin" id="Cu2-mg-EN2"/>
+                                                <constraint firstItem="pH4-6c-2j8" firstAttribute="leading" secondItem="ryV-gR-I1r" secondAttribute="leading" constant="16" id="DLz-M8-DzG"/>
+                                                <constraint firstItem="jDv-Qc-4vd" firstAttribute="width" secondItem="pH4-6c-2j8" secondAttribute="width" id="TLk-6g-dyI"/>
+                                                <constraint firstItem="jDv-Qc-4vd" firstAttribute="leading" secondItem="ryV-gR-I1r" secondAttribute="leading" constant="16" id="hqb-h5-vyq"/>
+                                                <constraint firstAttribute="trailing" secondItem="jDv-Qc-4vd" secondAttribute="trailing" constant="8" id="ifT-BT-HM8"/>
+                                                <constraint firstItem="pH4-6c-2j8" firstAttribute="top" secondItem="ryV-gR-I1r" secondAttribute="top" constant="10" id="kzw-7g-gTk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Backdoor" id="JoI-hl-XRb">
+                    <navigationItem key="navigationItem" title="Developer" id="JoI-hl-XRb">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="yfa-Dr-s3W">
                             <connections>
                                 <action selector="dismiss:" destination="Jqg-yg-kwc" id="oXY-Oz-sJs"/>

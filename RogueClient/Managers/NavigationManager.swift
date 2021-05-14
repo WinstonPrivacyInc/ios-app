@@ -54,13 +54,6 @@ class NavigationManager {
         return navController
     }
     
-//    static func getConfirmationCodeViewController() -> UIViewController {
-//        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "confirmationCodeView")
-//
-//        return viewController
-//    }
-    
     static func getChangePasswordViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Account", bundle: nil)
         let navController = storyboard.instantiateViewController(withIdentifier: "changePasswordView")
@@ -70,6 +63,12 @@ class NavigationManager {
     static func getChangeEmailViewController() -> UIViewController {
         let storyboard = UIStoryboard(name: "Account", bundle: nil)
         let navController = storyboard.instantiateViewController(withIdentifier: "changeEmailView")
+        return navController
+    }
+    
+    static func getSelectSubscriptionViewController() -> UIViewController {
+        let storyboard = UIStoryboard(name: "Account", bundle: nil)
+        let navController = storyboard.instantiateViewController(withIdentifier: "selectSubscriptionView")
         return navController
     }
     
