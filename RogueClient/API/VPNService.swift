@@ -70,7 +70,14 @@ class VPNService {
 
                             case .failure(let error):
                                 log(error: "getWireguardInterface error \(error)")
-                                completion(.failure(error))
+                                
+                                let decoder = JSONDecoder()
+
+                                if let apiError = try? decoder.decode(VPNServerError.self, from: response.data!) {
+                                    completion(.failure(NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : apiError.error])))
+                                } else {
+                                    completion(.failure(error))
+                                }
                             }
                 }
 

@@ -277,6 +277,7 @@
 		A9C299852614C33E004CFC9A /* ForgotPasswordConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */; };
 		A9C2998B2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */; };
 		A9D4D6FA264C713100A5A4EF /* VPNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D6F9264C713100A5A4EF /* VPNService.swift */; };
+		A9D4D700264EBA6200A5A4EF /* VPNServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D4D6FE264EB9B800A5A4EF /* VPNServerError.swift */; };
 		A9ECBEC22645A37300DDC398 /* BackdoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A988431E2645A18C00799613 /* BackdoorViewController.swift */; };
 		E8802DC3459714DE3B42A0BA /* Pods_RogueClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */; };
 		FCBFE1989E1777F317A055B6 /* Pods_wireguard_tunnel_provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE70E94CA7188F14E3D0733 /* Pods_wireguard_tunnel_provider.framework */; };
@@ -622,6 +623,7 @@
 		A9C299842614C33D004CFC9A /* ForgotPasswordConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmViewController.swift; sourceTree = "<group>"; };
 		A9C2998A2614C3AD004CFC9A /* ForgotPasswordConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordConfirmView.swift; sourceTree = "<group>"; };
 		A9D4D6F9264C713100A5A4EF /* VPNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNService.swift; sourceTree = "<group>"; };
+		A9D4D6FE264EB9B800A5A4EF /* VPNServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNServerError.swift; sourceTree = "<group>"; };
 		B046A96FF272AF659CE47461 /* Pods-RogueClient.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.staging.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.staging.xcconfig"; sourceTree = "<group>"; };
 		ECC8448E68432C7F50B6DDB9 /* Pods_RogueClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC4B0665554A6F142005387 /* Pods-RogueClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueClient.debug.xcconfig"; path = "Target Support Files/Pods-RogueClient/Pods-RogueClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -829,6 +831,7 @@
 			children = (
 				8277F1CE2211A602007C6F15 /* GeoLookup.swift */,
 				820EA86723223F7900E16B2D /* WireguardInterface.swift */,
+				A9D4D6FE264EB9B800A5A4EF /* VPNServerError.swift */,
 				9C3031251DB3B6E700C38B0C /* ServersUpdateResult.swift */,
 				8223C54B22E9E93A00CD283D /* Session.swift */,
 				82AA8817231E330A00E18ECB /* SessionStatus.swift */,
@@ -1935,6 +1938,7 @@
 				82BF32F624484E5100248E4F /* CreateAccountView.swift in Sources */,
 				82774855237596DF0061BD46 /* OpenVPNConf.swift in Sources */,
 				A9BD785A2641E89F00199BF9 /* GeoService.swift in Sources */,
+				A9D4D700264EBA6200A5A4EF /* VPNServerError.swift in Sources */,
 				82589A2B21FB5A580009CC6C /* UIImage+Ext.swift in Sources */,
 				A932871726027CFB0034E296 /* KeyPair.swift in Sources */,
 				829D2C8221664D5E004FA2B3 /* NSMutableAttributedString+Ext.swift in Sources */,
@@ -2220,7 +2224,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2258,7 +2262,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2425,7 +2429,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2489,7 +2493,7 @@
 				CODE_SIGN_ENTITLEMENTS = "wireguard-tunnel-provider/wireguard_tunnel_provider.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2667,7 +2671,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2704,7 +2708,7 @@
 				CODE_SIGN_ENTITLEMENTS = RogueClient/RogueClient.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = 4TSHK25NM3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

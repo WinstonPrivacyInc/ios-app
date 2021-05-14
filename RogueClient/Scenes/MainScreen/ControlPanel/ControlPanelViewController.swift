@@ -73,9 +73,9 @@ class ControlPanelViewController: UITableViewController {
         
         // Disable multiple tap gestures on VPN connect button
         sender.isUserInteractionEnabled = false
-        DispatchQueue.delay(1) {
-            sender.isUserInteractionEnabled = true
-        }
+//        DispatchQueue.delay(1) {
+//            sender.isUserInteractionEnabled = true
+//        }
     }
     
     @IBAction func toggleMultiHop(_ sender: UIButton) {
@@ -241,11 +241,16 @@ class ControlPanelViewController: UITableViewController {
                     }
                     
                     self.hud.dismiss()
+                    self.controlPanelView.connectSwitch.setOn(true, animated: true)
                     
                 case .failure(let error):
                     self.hud.dismiss()
-                    print("error....\(String(describing: error))")
+                    self.controlPanelView.connectSwitch.setOn(false, animated: true)
+                    let errorMessage = error?.localizedDescription ?? "There was an error connecting to Rogue server. Please try again later"
+                    self.showAlert(title: "Error", message: errorMessage)
                 }
+                
+                self.controlPanelView.connectSwitch.isUserInteractionEnabled = true
             }
             
             self.registerUserActivity(type: UserActivityType.Connect, title: UserActivityTitle.Connect)
